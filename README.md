@@ -2,8 +2,8 @@
 
 > As lovely as sagiri
 
-[![npm](https://img.shields.io/npm/l/hexo-theme-sagiri.svg?style=flat-square)](https://github.com/DIYgod/hexo-theme-sagiri/blob/master/LICENSE)
-[![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyi/typecho-theme-sagiri#donate)
+[![npm](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE)
+[![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
 ## Introduction
 

@@ -68,6 +68,144 @@ function getLink(){
     
 }
 
+function getBrowser($agent){
+    if (preg_match('/MSIE\s([^\s|;]+)/i', $agent, $regs)) {
+        $browserVersion = 'IE';
+    } else if (preg_match('/FireFox\/([^\s]+)/i', $agent, $regs)) {
+        $str1 = explode('Firefox/', $regs[0]);
+        $FireFox_vern = explode('.', $str1[1]);
+        $browserVersion = 'Firefox '. $FireFox_vern[0];
+    } else if (preg_match('/Maxthon([\d]*)\/([^\s]+)/i', $agent, $regs)) {
+        $str1 = explode('Maxthon/', $agent);
+        $Maxthon_vern = explode('.', $str1[1]);
+        $browserVersion = 'Maxthon '.$Maxthon_vern[0];
+    } else if (preg_match('#SE 2([a-zA-Z0-9.]+)#i', $agent, $regs)) {
+        $browserVersion = 'Sogo';
+    } else if (preg_match('#360([a-zA-Z0-9.]+)#i', $agent, $regs)) {
+        $browserVersion = '360';
+    } else if (preg_match('/Edge([\d]*)\/([^\s]+)/i', $agent, $regs)) {
+        $str1 = explode('Edge/', $regs[0]);
+        $Edge_vern = explode('.', $str1[1]);
+        $browserVersion = 'Edge '.$Edge_vern[0];
+    } else if (preg_match('/UC/i', $agent)) {
+        $str1 = explode('rowser/',  $agent);
+        $UCBrowser_vern = explode('.', $str1[1]);
+        $browserVersion = 'UC '.$UCBrowser_vern[0];
+    } else if (preg_match('/MicroMesseng/i', $agent, $regs)) {
+        $browserVersion = 'Wechat';
+    }  else if (preg_match('/WeiBo/i', $agent, $regs)) {
+        $browserVersion = 'Weibo';
+    }  else if (preg_match('/QQ/i', $agent, $regs)||preg_match('/QQBrowser\/([^\s]+)/i', $agent, $regs)) {
+        $str1 = explode('rowser/',  $agent);
+        $QQ_vern = explode('.', $str1[1]);
+        $browserVersion = 'QQ '.$QQ_vern[0];
+    } else if (preg_match('/BIDU/i', $agent, $regs)) {
+        $browserVersion = 'Baidu';
+    } else if (preg_match('/LBBROWSER/i', $agent, $regs)) {
+        $browserVersion = 'LieBao';
+    } else if (preg_match('/TheWorld/i', $agent, $regs)) {
+        $browserVersion = '世界之窗';
+    } else if (preg_match('/XiaoMi/i', $agent, $regs)) {
+        $browserVersion = 'Mi';
+    } else if (preg_match('/UBrowser/i', $agent, $regs)) {
+        $str1 = explode('rowser/',  $agent);
+        $UCBrowser_vern = explode('.', $str1[1]);
+        $browserVersion = 'UC '.$UCBrowser_vern[0];
+    } else if (preg_match('/mailapp/i', $agent, $regs)) {
+        $browserVersion = 'email内嵌';
+    } else if (preg_match('/2345Explorer/i', $agent, $regs)) {
+        $browserVersion = '2345';
+    } else if (preg_match('/Sleipnir/i', $agent, $regs)) {
+        $browserVersion = '神马';
+    } else if (preg_match('/YaBrowser/i', $agent, $regs)) {
+        $browserVersion = 'Yandex';
+    }  else if (preg_match('/Opera[\s|\/]([^\s]+)/i', $agent, $regs)) {
+        $browserVersion = 'Opera';
+    } else if (preg_match('/MZBrowser/i', $agent, $regs)) {
+        $browserVersion = '魅族';
+    } else if (preg_match('/VivoBrowser/i', $agent, $regs)) {
+        $browserVersion = 'vivo';
+    } else if (preg_match('/Quark/i', $agent, $regs)) {
+        $browserVersion = '夸克';
+    } else if (preg_match('/mixia/i', $agent, $regs)) {
+        $browserVersion = '米侠';
+    }else if (preg_match('/fusion/i', $agent, $regs)) {
+        $browserVersion = '客户端';
+    } else if (preg_match('/CoolMarket/i', $agent, $regs)) {
+        $browserVersion = '基安内置';
+    } else if (preg_match('/Thunder/i', $agent, $regs)) {
+        $browserVersion = '迅雷内置';
+    } else if (preg_match('/Chrome([\d]*)\/([^\s]+)/i', $agent, $regs)) {
+        $str1 = explode('Chrome/', $agent);
+        $chrome_vern = explode('.', $str1[1]);
+        $browserVersion = 'Chrome '.$chrome_vern[0];
+    } else if (preg_match('/safari\/([^\s]+)/i', $agent, $regs)) {
+         $str1 = explode('Version/',  $agent);
+        $safari_vern = explode('.', $str1[1]);
+        $browserVersion = 'Safari '.$safari_vern[0];
+    } else{
+        $browserVersion = '?';
+    }
+    echo $browserVersion;
+}
+function getOs($agent){
+    if (preg_match('/win/i', $agent)) {
+        if (preg_match('/nt 6.0/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-windows"></i> Vista';
+        } else if (preg_match('/nt 6.1/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-windows"></i> 7';
+        } else if (preg_match('/nt 6.2/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-windows"></i> 8';
+        } else if(preg_match('/nt 6.3/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-windows"></i> 8.1';
+        } else if(preg_match('/nt 5.1/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-windows"></i> XP';
+        } else if (preg_match('/nt 10.0/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-windows"></i> 10';
+        } else{
+            $OSVersion = '<i class="iconfont icon-windows"></i>';
+        }
+    } else if (preg_match('/android/i', $agent)) {
+        if (preg_match('/android 9/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-android"></i> P';
+        }
+        else if (preg_match('/android 8/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-android"></i> O';
+        }
+        else if (preg_match('/android 7/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-android"></i> N';
+        }
+        else if (preg_match('/android 6/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-android"></i> M';
+        }
+        else if (preg_match('/android 5/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-android"></i> L';
+        }
+        else{
+            $OSVersion = '<i class="iconfont icon-android"></i>';
+        }
+    } else if (preg_match('/ubuntu/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-linux"></i>';
+        } else if (preg_match('/linux/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-linux"></i>';
+        }else if (preg_match('/iPhone/i', $agent)) {
+            if(preg_match('/iPhone OS 11/i', $agent)){
+                $OSVersion = '<i class="iconfont icon-iphone"></i> 11';
+            }else if(preg_match('/iPhone OS 12/i', $agent)){
+                $OSVersion = '<i class="iconfont icon-iphone"></i> 12';
+            }else{
+                $OSVersion = '<i class="iconfont icon-iphone"></i> < 11';
+            }
+        } else if (preg_match('/mac/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-mac"></i>';
+        }else if (preg_match('/fusion/i', $agent)) {
+            $OSVersion = '<i class="iconfont icon-android"></i>';
+        } else {
+            $OSVersion = '?系统';
+        }
+    echo $OSVersion;
+}
+
 
 // 添加浏览数字段到内容
 function themeFields($layout) {
