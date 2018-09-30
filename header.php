@@ -41,6 +41,11 @@
     <meta name="Baiduspider" content="noarchive">
     
 
+   <!-- Prism -->
+    <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
+    <link href="<?php $this->options->themeUrl('./lib/prism/prism.css'); ?>" rel="stylesheet" />
+    <?php endif; ?>
+    
     <!-- CSS Style -->
     <link rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.css'); ?>">

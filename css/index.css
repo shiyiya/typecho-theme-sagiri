@@ -288,6 +288,7 @@ body {
 }
 code {
   padding: 2px 4px;
+  margin: 0 4px;
   word-wrap: break-word;
   color: #555;
   background: #eee;
@@ -297,7 +298,13 @@ code {
 code,
 pre {
   font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
-    Consolas, 'PingFang SC', 'Microsoft YaHei', monospace;
+    Consolas, 'PingFang SC', 'Microsoft YaHei', monospace !important;
+}
+pre {
+  background: #f7f7f7 !important;
+}
+pre code {
+  background: none;
 }
 html,
 body,

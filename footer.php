@@ -30,6 +30,10 @@
 
 <script src="<?php $this->options->themeUrl('js/index.js'); ?>"></script>
 
+<?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
+<script src="<?php $this->options->themeUrl('./lib/prism/prism.js'); ?>"></script>
+<?php endif; ?>
+
 </body>
 
 </html>
