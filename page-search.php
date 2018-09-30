@@ -4,7 +4,8 @@
 *
 * @package custom
 */
-if (!defined('__TYPECHO_ROOT_DIR__')) exit;?>
+?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
 
 <div  id="main" class="main" role="main">
@@ -31,7 +32,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;?>
                     <?php endwhile; ?>
                     </ul>
                 </div>
-                
             </article>
         </div>
     </div>

@@ -10,7 +10,6 @@
                 <?php _e('404 施工中(ง •_•)ง'); ?>
                 </h1>
             </article>
-            <?php $this->need('comments.php'); ?>
         </div>
     </div>
 </div>

@@ -44,14 +44,14 @@
                 </div>
                 <div class="site-status">
                     <div class="site-status-posts site-status-item">
-                        <a href="./archives">
+                        <a href="<?php $this->options->siteUrl('archive.html') ?>">
                             <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?>
                             <span class="site-state-item-count"><?php $stat->publishedPostsNum() ?></span>
                             <span class="site-state-item-name">日志</span>
                         </a>
                     </div>
                     <div class="site-status-categories site-status-item">
-                        <a href="./categories">
+                        <a href="<?php $this->options->siteUrl('category.html') ?>">
                             <span class="site-state-item-count"><?php $stat->categoriesNum() ?></span>
                             <span class="site-state-item-name">分类</span>
                         </a>
