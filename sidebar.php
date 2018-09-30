@@ -65,5 +65,5 @@
 </aside>
 
 <?php if($this->is('post')||$this->is('page')): ?>
-<script src="<?php $this->options->themeUrl('js/post-detail.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/sidebar.js'); ?>"></script>
 <?php endif; ?>

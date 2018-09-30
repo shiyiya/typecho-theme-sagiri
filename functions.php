@@ -64,10 +64,6 @@ function showThumb($obj,$size=null,$link=false){
     }
 }
 
-function getLink(){
-    
-}
-
 function getBrowser($agent){
     if (preg_match('/MSIE\s([^\s|;]+)/i', $agent, $regs)) {
         $browserVersion = 'IE';

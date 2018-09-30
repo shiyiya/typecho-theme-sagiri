@@ -30,8 +30,8 @@ echo $commentClass;
                 <?php $comments->gravatar('40', ''); ?>
                 <cite class="fn"><?php $comments->author(); ?></cite>
                 <div class="device-info">
-                    
-                    <span><?php $comments->agent(); getBrowser($comments->agent); ?></span> <span><?php getOs($comments->agent); ?></span>
+                    <span><?php getBrowser($comments->agent); ?></span> 
+                    <span><?php getOs($comments->agent); ?></span>
                 </div>
             </div>
             <div class="comment-content">
