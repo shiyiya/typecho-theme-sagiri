@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <?php endif; ?>
-                <p itemprop="keywords" class="tags"><?php _e('标签: '); ?><?php $this->tags(', ', true, 'none'); ?></p>
+                <div itemprop="keywords" class="tags"><?php $this->tags('', true, ''); ?></div>
                 <footer class="post-footer">
                     <div class="post-nav-next post-nav-item"><i class="iconfont icon-prev-m"></i><?php $this->thePrev('%s','没有了'); ?></div>
                     <div class="post-nav-prev post-nav-item"><?php $this->theNext('%s','没有了'); ?><i class="iconfont icon-next-m"></i></div>

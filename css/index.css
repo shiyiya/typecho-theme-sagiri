@@ -886,7 +886,6 @@ ol.comment-list ol {
 }
 #footer {
   background: #fff;
-  margin-top: 50px;
   padding: 20px 0px;
   text-align: center;
 }
@@ -940,11 +939,29 @@ ol.comment-list ol {
   list-style: none;
   display: inline-block;
 }
-.search-placeholder ul li a {
+.tag-link,
+.tags a {
   color: #fff;
   border-radius: 15px;
   padding: 6px 10px;
   border: none;
+}
+.tags a {
+  display: inline-block;
+  line-height: 1;
+}
+.tags a:nth-of-type(odd) {
+  color: #fff;
+  background-color: #ed143d7d;
+  margin: 5px;
+}
+.tags a:nth-of-type(even) {
+  color: #fff;
+  background-color: #40b3ec;
+  margin: 5px;
+}
+.tags a::before {
+  content: '# ';
 }
 .search-placeholder hr:after {
   content: attr(title);
