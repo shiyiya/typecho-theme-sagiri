@@ -34,7 +34,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 					<?php if(!empty($thumb)):?>
 						<img src="<?php echo $thumb;?>" >
 					<?php endif; ?>
-					<? endif; ?>
+					<?php endif; ?>
 					<!-- <?php if($this->attachments(1)->attachment and $this->attachments(1)->attachment->isImage): ?>
 						<img src="<?php $this->attachments(1)->attachment->url(); ?>"/> 
 					<?php endif; ?> -->

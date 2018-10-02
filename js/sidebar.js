@@ -1,25 +1,71 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var rootToc = document.querySelector('.toc-nav'),
-    h2Title = [
-      ...document.querySelector('.post-content').querySelectorAll('h2')
-    ]
-  if (h2Title.length > 0) {
-    h2Title.forEach((i, k) => {
-      var li = document.createElement('li')
-      var a = document.createElement('a')
-      i.id = (Math.random() + '').replace(/\D/, '')
-      a.href = '#' + i.id
-      a.innerText = i.innerText
-      li.appendChild(a)
-      li.classList.add('toc-subnav')
-      rootToc.appendChild(li)
+  var rootToc = document.querySelector('.toc-nav')
+
+  function deepTree(node = document) {
+    var tagLevel = 1,
+      rootToc = [...node.querySelectorAll('h2')],
+      TOC = {}
+
+    TOC = rootToc.map((i, k) => {
+      return {
+        root: i,
+        children: SmallerSiblingTagElems(i)
+      }
     })
-  } else {
-    document.querySelector('.post-toc-wrap').style.display = 'none'
-    document.querySelector('.sidebar-nav-toc').style.display = 'none'
-    document
-      .querySelector('.site-overview-wrap')
-      .classList.add('sidebar-section-active')
+
+    return TOC
+  }
+  /**
+   *
+   *
+   * @param {Element} elem h1 ~ h6
+   * @returns
+   */
+  function SmallerSiblingTagElems(elem) {
+    var nodes = [],
+      tagLevel = elem.tagName.slice(-1) || 2
+
+    while ((elem = elem.nextSibling)) {
+      if (elem.nodeType == 1) {
+        elemTagLevel = Number(elem.tagName.slice(-1))
+        if (elemTagLevel > tagLevel) {
+          nodes.push(elem)
+        }
+        if (elemTagLevel <= tagLevel) {
+          return nodes
+        }
+      }
+    }
+
+    return nodes
+  }
+
+  var Toc = deepTree(document.querySelector('.post-content'))
+
+  Toc.forEach(v => {
+    var li = document.createElement('li'),
+      a = document.createElement('a')
+    a.href = '#' + v.root.innerText
+    a.innerText = v.root.id = v.root.innerText
+    li.appendChild(a)
+    if (v.children.length > 0) {
+      li.appendChild(createTocFragment(v.children))
+    }
+    li.classList.add('toc-subnav')
+    rootToc.appendChild(li)
+  })
+
+  function createTocFragment(children) {
+    var ul = document.createElement('ul')
+    children.forEach(v => {
+      var li = document.createElement('li'),
+        a = document.createElement('a')
+      a.href = '#' + v.innerHTML
+      v.id = a.innerHTML = v.innerHTML
+      li.appendChild(a)
+      ul.appendChild(li)
+    })
+    return ul
   }
 
   var sidebarOverview = document.querySelector('.sidebar-nav-overview')
