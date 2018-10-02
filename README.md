@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Lovely theme for Hexo.
+Lovely theme for Typecho.
 
 As lovely as sagiri, based on [hexo-theme-sagiri](https://github.com/DIYgod/hexo-theme-sagiri)
 
