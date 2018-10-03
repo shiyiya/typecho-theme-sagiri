@@ -184,15 +184,15 @@ p {
   margin: 0 0 20px 0;
 }
 a {
-  color: #555;
+  color: #505160;
   text-decoration: none;
   outline: 0;
   border-bottom: 1px solid #999;
   word-wrap: break-word;
 }
 a:hover {
-  color: crimson;
-  border-bottom-color: crimson;
+  color: #000;
+  border-bottom-color: #000;
 }
 blockquote {
   margin: 0;
@@ -488,6 +488,7 @@ body,
   }
 }
 .sidebar-inner {
+  animation: fade-in-left 0.3s 0.3s backwards;
   background-color: #fff;
   border-radius: 5px;
   padding: 20px;
@@ -602,14 +603,20 @@ body,
   display: inline-block;
 }
 .page-navigator li a {
+  box-sizing: border-box;
   margin: 0 10px;
   padding: 4px 12px;
-  border: 1px solid #40b3ec;
+  border: 1px solid #5f5f5f47;
   border-radius: 3px;
 }
+.page-navigator li a .iconfont {
+  font-size: 14px;
+}
+.page-navigator li a:hover,
 .page-navigator li.current a {
   background-color: #00a7e0;
   color: #fff;
+  border-color: transparent;
 }
 /* page-navigator end */
 .post-content h1,
@@ -638,6 +645,21 @@ body,
   background: #fff;
   margin-bottom: 40px;
   border-radius: 5px;
+}
+.post:nth-child(1) {
+  animation: fade-in-right 0.3s 0.3s backwards;
+}
+.post:nth-child(2) {
+  animation: fade-in-right 0.3s 0.4s backwards;
+}
+.post:nth-child(3) {
+  animation: fade-in-right 0.3s 0.5s backwards;
+}
+.post:nth-child(4) {
+  animation: fade-in-right 0.3s 0.6s backwards;
+}
+.post:nth-child(5) {
+  animation: fade-in-right 0.3s 0.7s backwards;
 }
 @media (max-width: 991px) {
   .post {
@@ -688,7 +710,7 @@ body,
   border-radius: 20px;
 }
 .post-button a:hover {
-  background: crimson;
+  background: #4cb5f5;
   color: #fff;
   border: none;
 }
@@ -748,11 +770,17 @@ body,
   width: 45%;
   vertical-align: top;
 }
+.post-nav-item a {
+  border: none;
+}
 .post-nav-prev {
   text-align: right;
 }
 /* post php end */
 /* comment */
+#comments {
+  animation: fade-in-top 0.3s 0.6s backwards;
+}
 .comment-title a,
 [title='Logout'] {
   border: none;
@@ -981,10 +1009,16 @@ ol.comment-list ol {
   background-color: #ed143d7d;
   margin: 5px;
 }
+.tags a:nth-of-type(odd):hover {
+  background-color: #ed143db0;
+}
 .tags a:nth-of-type(even) {
   color: #fff;
-  background-color: #40b3ec;
+  background-color: #4cb5f5;
   margin: 5px;
+}
+.tags a:nth-of-type(even):hover {
+  background-color: #00a7e0;
 }
 .tags a::before {
   content: '# ';
@@ -1035,4 +1069,38 @@ ol.comment-list ol {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   border-bottom: #dc2f60 2px solid;
+}
+.timeline-archives {
+  animation: fade-in-top 0.2s 0.3s backwards;
+}
+/* animate */
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-in-top {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -10,7 +10,7 @@
 
 <div  id="main" class="main" role="main">
     <div class="main-inner clearfix">
-        <div class="content-wrap">
+        <div class="content-wrap timeline-archives">
         <?php
             $stat = Typecho_Widget::widget('Widget_Stat');
             $this->widget('Widget_Contents_Post_Recent', 'pageSize='.$stat->publishedPostsNum)->to($archives);
