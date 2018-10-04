@@ -32,20 +32,6 @@
     }
   }
 
-  var sider = document.querySelector('.sidebar-inner')
-  if (sider) {
-    document.addEventListener('scroll', function(e) {
-      if (
-        e.target.body.scrollTop >= 500 ||
-        e.target.documentElement.scrollTop >= 500
-      ) {
-        sider.classList.add('affix')
-      } else {
-        sider.classList.remove('affix')
-      }
-    })
-  }
-
   var btnPay = document.querySelector('.btn-pay')
 
   if (btnPay) {
@@ -71,3 +57,41 @@
     'background: #40b3ec;padding:5px 5px 5px 0;'
   )
 })()
+
+function postScroll() {
+  var needScroll,
+    speed = 10
+  isMobile() ? (needScroll = 180) : (needScroll = 500)
+
+  var scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+  var clientHeight =
+    document.body.clientHeight || document.documentElement.clientHeight
+  var scrollHeight =
+    document.body.scrollHeight || document.documentElement.scrollHeight
+  if (document.body.scrollTop < 500) {
+    document.body.scrollTop += speed
+  }
+  if (document.documentElement.scrollTop < 500) {
+    document.documentElement.scrollTop += speed
+  }
+  if (scrollTop >= needScroll || clientHeight + scrollTop >= scrollHeight) {
+    clearInterval(postScrolltimer)
+  }
+}
+
+function isMobile() {
+  const Agents = navigator.userAgent,
+    mobileAgents = [
+      'Android',
+      'iPhone',
+      'SymbianOS',
+      'Windows Phone',
+      'iPad',
+      'iPod'
+    ]
+  for (let agents of mobileAgents) {
+    while (Agents.includes(agents)) {
+      return true
+    }
+  }
+}

@@ -46,25 +46,5 @@
         <?php $this->need('comments.php'); ?>
      </div>
 </div>
-    
 
 <?php $this->need('footer.php'); ?>
-
-<script>
-   var scrollToptimer = setInterval(function () {
-    var  needScroll = 500;
-    var speed = 10;
-    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-    var clientHeight = document.body.clientHeight || document.documentElement.clientHeight
-    var scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight
-    if (document.body.scrollTop < 500) {
-        document.body.scrollTop += speed;
-    }
-    if(document.documentElement.scrollTop < 500) {
-        document.documentElement.scrollTop += speed;
-    }
-    if (scrollTop >= needScroll || clientHeight + scrollTop >= scrollHeight) {
-        clearInterval(scrollToptimer);
-    }
-}, 10); 
-</script>

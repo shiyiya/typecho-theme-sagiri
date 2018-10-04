@@ -15,7 +15,6 @@
 </div>
 <footer id="footer" role="contentinfo">
     <p>
-        <?php time_tran('2017/11/02 11:31:29') ?>
         已经续 xxx 天 xx 小时
     </p>
     <p>
@@ -24,6 +23,10 @@
         <?php _e('<a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/dev" rel="external nofollow">Theme</a> by <a href="https://runtua.cn">Shiyi</a>'); ?>
     </p>
 </footer>
+
+<div class="preview">
+    <img src="" alt="">
+</div>
 
 </div><!-- End root -->
 
@@ -35,8 +38,15 @@
 <script src="<?php $this->options->themeUrl('./lib/prism/prism.js'); ?>"></script>
 <?php endif; ?>
 
-<!-- Custom Javascript -->
-<?php _e($this->options->customScript) ?>
+<?php if($this->is('post')) :?>
+
+<script>
+    var postScrolltimer = setInterval(postScroll, 10)
+</script>
+<?php endif; ?>
+
+ <!-- Custom Javascript -->
+ <?php _e($this->options->customScript) ?>
 
 </body>
 
