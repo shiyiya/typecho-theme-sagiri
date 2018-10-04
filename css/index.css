@@ -685,6 +685,10 @@ body,
 }
 .post-meta {
   font-size: 12px;
+  margin-bottom: 30px;
+}
+.post-meta span {
+  margin: 0 5px;
 }
 .post-meta a,
 .post-button a,
@@ -696,7 +700,7 @@ body,
   margin-top: 10px;
 }
 .post-button {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 .post img {
   box-sizing: border-box;

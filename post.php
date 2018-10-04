@@ -9,9 +9,10 @@
                 <header class="post-header">
                 <h1 class="post-title" itemprop="name headline"><?php $this->title() ?></h1>
                 <div class="post-meta">
-				    <span><?php _e('时间: '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></span>
-				    <span><?php _e('• 分类: '); ?><?php $this->category(','); ?></span>
-				    <span itemprop="interactionCount"><a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('• 评论', '• 1 条评论', '• %d 条评论'); ?></a></span>
+                <span><?php _e('<i class="iconfont icon-time"></i> 发表于 '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></span>
+							<!-- <span><?php _e('•  '); ?><?php $this->category(','); ?></span> -->
+							<span><?php if(isset($this->fields->viewsNum)){  _e('<i class="iconfont icon-eye"></i> 浏览量 '); $this->fields->viewsNum(); } ?></span>
+							<span itemprop="interactionCount"><a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('没有评论', '1 条评论', '%d 条评论'); ?></a></span>
                 </div>
                 </header>
                 <div class="post-content" itemprop="articleBody">
@@ -47,5 +48,23 @@
 </div>
     
 
-
 <?php $this->need('footer.php'); ?>
+
+<script>
+   var scrollToptimer = setInterval(function () {
+    var  needScroll = 500;
+    var speed = 10;
+    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+    var clientHeight = document.body.clientHeight || document.documentElement.clientHeight
+    var scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight
+    if (document.body.scrollTop < 500) {
+        document.body.scrollTop += speed;
+    }
+    if(document.documentElement.scrollTop < 500) {
+        document.documentElement.scrollTop += speed;
+    }
+    if (scrollTop >= needScroll || clientHeight + scrollTop >= scrollHeight) {
+        clearInterval(scrollToptimer);
+    }
+}, 10); 
+</script>

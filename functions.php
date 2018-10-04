@@ -13,15 +13,25 @@ function themeConfig($form) {
 
     $backGroundImage = new Typecho_Widget_Helper_Form_Element_Text('backGroundImage', NULL, NULL, _t('网站 Banner 背景图'), _t('请填入完整链接，作为网站背景，不填则为默认'));
     $form->addInput($backGroundImage);
+    $IOSIcon = new Typecho_Widget_Helper_Form_Element_Text('IOSIcon', NULL, NULL, _t('IOS 图标'), _t('请填入完整链接，作为网站图标，手机建议大小 114x114，适用 IOS 全系列'));
+    $form->addInput($IOSIcon);
+    $themeColor = new Typecho_Widget_Helper_Form_Element_Text('themeColor', NULL, NULL, _t('网站基础色调，用于浏览器搜索头部颜色显示'), _t('请填入完整 RGB（rgb(255, 255, 255)） 色值或者十六进制颜色代码（#fff）'));
+    $form->addInput($themeColor);
 
     $WechatQR = new Typecho_Widget_Helper_Form_Element_Text('WechatQR', NULL, NULL, _t('微信二维码'), _t('请填入完整二维码图片链接'));
     $form->addInput($WechatQR);
     $AlipayQR = new Typecho_Widget_Helper_Form_Element_Text('AlipayQR', NULL, NULL, _t('支付宝二维码'), _t('请填入完整二维码图片链接'));
     $form->addInput($AlipayQR);
 
-    $GoogleAnalytics = new Typecho_Widget_Helper_Form_Element_Textarea('GoogleAnalytics', NULL, NULL, _t('Google Analytics 代码'), _t('填写你从 Google Analytics 获取到的 Universal Analytics 跟踪代码，不需要 script 标签'));
+
+    $customCss = new Typecho_Widget_Helper_Form_Element_Textarea('customCss', NULL, NULL, _t('自定义 CSS 代码'), _t('填写你的 CSS 代码，需要 `style` 标签'));
+    $form->addInput($customCss);
+    $customScript = new Typecho_Widget_Helper_Form_Element_Textarea('customScript', NULL, NULL, _t('自定义 JavaScript 代码'), _t('填写你 JavaScript 代码，需要 `script` 标签'));
+    $form->addInput($customScript);
+    $GoogleAnalytics = new Typecho_Widget_Helper_Form_Element_Textarea('GoogleAnalytics', NULL, NULL, _t('Google Analytics 代码'), _t('填写你从 Google Analytics 获取到的 Universal Analytics 跟踪代码，需要 script 标签'));
     $form->addInput($GoogleAnalytics);
-    
+
+
     /* Theme feature */
     $feature = new Typecho_Widget_Helper_Form_Element_Checkbox('feature', 
     array('showThumb' => _t('显示文章题图设置'),
@@ -203,25 +213,15 @@ function getOs($agent){
 }
 
 
-// 添加浏览数字段到内容
 function themeFields($layout) {
     $viewsNum = new Typecho_Widget_Helper_Form_Element_Text('viewsNum', NULL, 0, _t('文章浏览数'), _t('文章浏览数统计'));
     $layout->addItem($viewsNum);
 }
-
-/*
- * @params Widget_Archive $archive
- */
 function themeInit($archive){
-    // 判断是否为文章或页面
     if($archive->is('single')){
         viewCounter($archive);
     }
 }
-/*
- * 统计文章浏览数
- * @params Widget_Archive $archive
- */
 function viewCounter($archive){
     $cid = $archive->cid;
     $views = Typecho_Cookie::get('__typecho_views');
@@ -240,6 +240,3 @@ function viewCounter($archive){
         Typecho_Cookie::set('__typecho_views', $views); //记录到cookie
     }
 }
-
-
-

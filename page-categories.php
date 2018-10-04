@@ -70,6 +70,9 @@
         margin: 10px;
         font-size: 14px;
     }
+    .category-post-item{
+        animation: fade-in-top .3s .3s backwards;
+    }
     
 </style>
 

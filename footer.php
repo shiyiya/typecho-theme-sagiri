@@ -15,6 +15,7 @@
 </div>
 <footer id="footer" role="contentinfo">
     <p>
+        <?php time_tran('2017/11/02 11:31:29') ?>
         已经续 xxx 天 xx 小时
     </p>
     <p>
@@ -33,6 +34,9 @@
 <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
 <script src="<?php $this->options->themeUrl('./lib/prism/prism.js'); ?>"></script>
 <?php endif; ?>
+
+<!-- Custom Javascript -->
+<?php _e($this->options->customScript) ?>
 
 </body>
 

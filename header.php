@@ -30,7 +30,12 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- IOS Config -->
-
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="<?php $this->options->title() ?>">
+    <meta name="theme-color" content="<?php $this->options->themeColor() || _e('#FFFFFF') ?>">
+    <link rel="apple-touch-icon" sizes="32x32 58x58 72x72 96x96 114x114" href="<?php $this->options->IOSIcon(); ?>">
+   
 
 
     <!-- Disable Baidu transformation -->
@@ -40,6 +45,19 @@
     <!-- Disable Baidu snapshot -->
     <meta name="Baiduspider" content="noarchive">
     
+    
+    <!-- OGP https://www.ogp.me/ -->
+    <?php if($this->is('post')||$this->is('page')): ?>
+    <meta property="og:url" content="<?php $this->permalink() ?>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<?php $this->title() ?>" />
+    <meta property="og:author" content="<?php $this->author(); ?>" />
+    <meta property="og:site_name" content="<?php $this->options->title() ?>" />
+    <meta property="og:description" content=" <?php $this->description() ?>" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <?php endif; ?>
+
+    <?php _e($this->options->GoogleAnalytics) ?>
 
    <!-- Prism -->
     <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
@@ -51,23 +69,9 @@
     <link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('./css/_variable.css'); ?>">
 
+
     <!-- Custom Style -->
-    
-
-    <!-- Custom Javascript -->
-    
-
-
-    <!-- OGP https://www.ogp.me/ -->
-    <?php if($this->is('post')||$this->is('page')): ?>
-    <meta property="og:url" content="<?php $this->permalink() ?>" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="<?php $this->title() ?>" />
-    <meta property="og:author" content="<?php $this->author(); ?>" />
-    <meta property="og:site_name" content="<?php $this->options->title() ?>" />
-    <meta property="og:description" content=" <?php $this->description() ?>" />
-    <meta property="og:locale:alternate" content="zh_CN" />
-    <?php endif; ?>
+    <?php _e($this->options->customCss) ?>
 
     <!--[if lt IE 9]>
     <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
