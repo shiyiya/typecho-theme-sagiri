@@ -27,7 +27,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 							<span><?php _e('<i class="iconfont icon-time"></i> 发表于 '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></span>
 							<!-- <span><?php _e('•  '); ?><?php $this->category(','); ?></span> -->
 							<span><?php if(isset($this->fields->viewsNum)){  _e('<i class="iconfont icon-eye"></i> 浏览量 '); $this->fields->viewsNum(); } ?></span>
-							<span itemprop="interactionCount"><a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('<i class="iconfont icon-Comments"></i> 没有评论', '<i class="iconfont icon-Comments"></i> 1 条评论', '<i class="iconfont icon-Comments"></i> %d 条评论'); ?></a></span>
+							<span itemprop="interactionCount"><a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('<i class="iconfont icon-Comments"></i> 没有评论', '<i class="iconfont icon-Comments"></i> 评论数 1', '<i class="iconfont icon-Comments"></i> 评论数 %d'); ?></a></span>
 						</div>
 					</header>
 					<?php if (!empty($this->options->feature) && in_array('showThumb', $this->options->feature)): ?>

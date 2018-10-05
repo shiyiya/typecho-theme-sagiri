@@ -693,6 +693,10 @@ body,
   margin: 0 5px;
 }
 .post-meta a,
+.post-meta span {
+  color: #666;
+}
+.post-meta a,
 .post-button a,
 .post-button a {
   border: none;
@@ -716,9 +720,9 @@ body,
   border-radius: 20px;
 }
 .post-button a:hover {
-  background: #4cb5f5;
-  color: #fff;
-  border: none;
+  color: #000;
+  font-weight: 600;
+  border: #000 solid 2px;
 }
 /* post php */
 .free-reward {
@@ -951,6 +955,10 @@ ol.comment-list ol {
 }
 #footer p {
   margin: 5px 0;
+}
+#footer a {
+  color: #000;
+  border: none;
 }
 /* search page */
 .search-post form {

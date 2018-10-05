@@ -98,7 +98,7 @@ function postScroll() {
   if (document.documentElement.scrollTop < 500) {
     document.documentElement.scrollTop += speed
   }
-  if (scrollTop >= needScroll || clientHeight + scrollTop >= scrollHeight) {
+  if (scrollTop >= needScroll || clientHeight + scrollTop >= scrollHeight -1) {
     clearInterval(postScrolltimer)
   }
 }
