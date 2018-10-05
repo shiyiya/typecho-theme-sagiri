@@ -280,6 +280,7 @@ body {
   position: relative;
   font-family: system, -apple-system, BlinkMacSystemFont, 'PingFang SC', Arial,
     'Microsoft YaHei', Lato, sans-serif;
+  -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 2;
   color: #555;
@@ -318,7 +319,7 @@ body,
   top: 0;
   position: fixed;
   z-index: 3;
-  background: rgba(40, 42, 44, 0.5);
+  background: rgba(255, 255, 255, 0.1);
   transition: transform 0.6s;
 }
 .menu {
@@ -345,7 +346,7 @@ body,
 }
 .site-nav .menu-item a.current {
   position: relative;
-  color: #fff;
+  color: #000;
 }
 .site-nav .menu-item a.current::before {
   position: absolute;
@@ -356,7 +357,7 @@ body,
   vertical-align: middle;
   bottom: 0;
   left: 50%;
-  color: #fff;
+  color: #000;
   transform: translateX(-50%);
 }
 @media (max-width: 991px) {
@@ -380,7 +381,7 @@ body,
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
-  color: #fff;
+  color: #000;
   font-size: 16px;
   border-bottom: none;
 }
@@ -422,6 +423,7 @@ body,
   background-size: cover;
   background-position: center 50%;
   background-repeat: no-repeat;
+  animation: fade-in-bottom 0.3s 0.3s backwards;
 }
 @media (max-width: 991px) {
   .site-config {
@@ -1102,6 +1104,16 @@ ol.comment-list ol {
   0% {
     opacity: 0;
     transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
   }
   100% {
     opacity: 1;

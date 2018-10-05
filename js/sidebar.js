@@ -1,19 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   var rootToc = document.querySelector('.toc-nav')
 
-  var sider = document.querySelector('.sidebar-inner')
-  if (sider) {
-    document.addEventListener('scroll', function(e) {
-      if (
-        e.target.body.scrollTop >= 500 ||
-        e.target.documentElement.scrollTop >= 500
-      ) {
-        sider.classList.add('affix')
-      } else {
-        sider.classList.remove('affix')
-      }
-    })
-  }
 
   function deepTree(node = document) {
     var tagLevel = 1,

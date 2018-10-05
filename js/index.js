@@ -32,6 +32,30 @@
     }
   }
 
+  var sider = document.querySelector('.sidebar-inner')
+  if (sider) {
+    document.addEventListener('scroll', function(e) {
+      var scrollTop =
+          e.target.body.scrollTop || e.target.documentElement.scrollTop,
+        siteNav = document.querySelector('.site-nav')
+      if (scrollTop >= 500) {
+        siteNav.style.background = 'rgba(255,255,255,.8)'
+        siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
+      } else {
+        siteNav.style.background = 'rgba(255, 255, 255, 0.1)'
+        siteNav.style.boxShadow = 'none'
+      }
+      if (
+        e.target.body.scrollTop >= 500 ||
+        e.target.documentElement.scrollTop >= 500
+      ) {
+        sider.classList.add('affix')
+      } else {
+        sider.classList.remove('affix')
+      }
+    })
+  }
+
   var btnPay = document.querySelector('.btn-pay')
 
   if (btnPay) {
