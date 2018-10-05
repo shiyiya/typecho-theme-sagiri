@@ -8,7 +8,6 @@
     <!-- DNS Prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
     <link rel="dns-prefetch" href="//secure.gravatar.com" />
-    <link rel="dns-prefetch" href="//cdnjscn.b0.upaiyun.com" />
     <link rel="dns-prefetch" href="//i.loli.net" />
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,10 +20,12 @@
             'author'    =>  _t('%s 发布的文章')
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
 
-    <meta name="author" content="<?php $this->options->author() ?>" />
-    <meta name="keywords" content="<?php $this->keywords() ?>" />
+    <meta name="author" content="<?php $this->author() ?>" />
     <?php $this->header('keywords=&generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&atom='); ?>
+    <meta name="keywords" content="<?php $this->keywords() ?>" />
 
+
+     <link rel="icon" href="<?php $this->options->fav() || $this->options->themeUrl('favicon.jpg'); ?>" />
 
     <!-- About IOS -->
     <meta name="format-detection" content="telephone=no">
