@@ -32,6 +32,8 @@
 
 <?php $this->footer(); ?>
 
+<canvas> </canvas>
+
 <script src="<?php $this->options->themeUrl('js/index.js'); ?>"></script>
 
 <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
