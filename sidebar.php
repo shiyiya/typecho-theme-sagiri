@@ -15,7 +15,7 @@
          <?php endif; ?>
         <section class="site-overview-wrap <?php  if($this->is('index'))  _e('sidebar-section-active'); ?>" text-center>
             <div class="site-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                <img src="<?php $this->options->themeUrl('./img/author.jpg'); ?>" alt="" class="site-author-image" itemprop="image" >
+                <img src="<?php $this->options->author() && $this->options->themeUrl('./img/author.jpg'); ?>" alt="" class="site-author-image" itemprop="image" >
                 <p class="site-author-name"><?php $this->user->screenName(); ?></p>
             </div>
             <div class="author-social">

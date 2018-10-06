@@ -32,13 +32,20 @@
 
 <?php $this->footer(); ?>
 
-<canvas> </canvas>
+<canvas id="ribbons"> </canvas>
+
+<canvas id="live2d" class="live2d" width="140" height="250"></canvas>
 
 <script src="<?php $this->options->themeUrl('js/index.js'); ?>"></script>
 
 <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
 <script src="<?php $this->options->themeUrl('./lib/prism/prism.js'); ?>"></script>
 <?php endif; ?>
+
+<!-- <script src="<?php $this->options->themeUrl('./lib/live2d/live2d.js'); ?>"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "<?php $this->options->themeUrl('./lib/live2d/model.json'); ?>");
+</script> -->
 
 <?php if($this->is('post')) :?>
 

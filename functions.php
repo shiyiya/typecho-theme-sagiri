@@ -10,6 +10,10 @@ function themeConfig($form) {
     $themeColor = new Typecho_Widget_Helper_Form_Element_Text('themeColor', NULL, NULL, _t('网站基础色调，用于浏览器搜索头部颜色显示'), _t('请填入完整 RGB（rgb(255, 255, 255)） 色值或者十六进制颜色代码（#fff）'));
     $form->addInput($themeColor);
 
+
+    $author = new Typecho_Widget_Helper_Form_Element_Text('author', NULL, NULL, _t('网站概要头像'), _t('请填入完整链接，作为网站头像，不填则为默认，建议为方形'));
+    $form->addInput($author);
+
     /* Social account */
     $GitHubLink = new Typecho_Widget_Helper_Form_Element_Text('GitHubLink', NULL, NULL, _t('GitHub 链接'), _t('请填入完整链接'));
     $form->addInput($GitHubLink);
