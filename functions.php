@@ -13,6 +13,8 @@ function themeConfig($form) {
 
     $author = new Typecho_Widget_Helper_Form_Element_Text('author', NULL, NULL, _t('网站概要头像'), _t('请填入完整链接，作为网站头像，不填则为默认，建议为方形'));
     $form->addInput($author);
+    $liveTime = new Typecho_Widget_Helper_Form_Element_Textarea('liveTime', NULL, NULL, _t('建站日期'), _t('填写你的建站日期，格式：2017/11/02 11:31:29 '));
+    $form->addInput($liveTime);
 
     /* Social account */
     $GitHubLink = new Typecho_Widget_Helper_Form_Element_Text('GitHubLink', NULL, NULL, _t('GitHub 链接'), _t('请填入完整链接'));

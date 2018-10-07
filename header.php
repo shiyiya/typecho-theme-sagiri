@@ -95,7 +95,7 @@
                 </li>
                 <?php endwhile; ?>
                 <li class="menu-item search">
-                    <a <?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl('search.html') ?>"><i class="iconfont icon-search"></i></a> 
+                    <a href="<?php $this->options->siteUrl('search.html') ?>"><i class="iconfont icon-search"></i></a> 
                  </li>
             </ul>
         </nav>

@@ -480,7 +480,7 @@ body,
   .content-wrap {
     width: 100%;
     padding: 0;
-    min-height: auto;
+    min-height: 600px;
     border-radius: initial;
   }
 }

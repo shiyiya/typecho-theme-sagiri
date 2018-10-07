@@ -14,8 +14,8 @@
     </div>
 </div>
 <footer id="footer" role="contentinfo">
-    <p>
-        已经续 xxx 天 xx 小时
+    <p id="live-time">
+        loading···
     </p>
     <p>
         &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
@@ -56,6 +56,10 @@
 
  <!-- Custom Javascript -->
  <?php _e($this->options->customScript) ?>
+
+<script>
+    setInterval(() => liveTime('<?php strval($this->options->liveTime()); ?>'), 1000)
+</script>
 
 </body>
 
