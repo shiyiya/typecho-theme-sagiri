@@ -1,6 +1,6 @@
 ;(function() {
   var siteNnav = document.querySelector('.site-nav')
-  var toolBar = document.querySelector('.tool-bar')
+  //var toolBar = document.querySelector('.tool-bar')
   var agent = navigator.userAgent
   if (/.*Firefox.*/.test(agent)) {
     document.addEventListener('DOMMouseScroll', function(e) {
@@ -8,11 +8,11 @@
       var detail = e.detail
       if (detail > 0) {
         siteNnav.style.transform = 'translateY(-100%)'
-        toolBar.style.transform = 'translateY(100%)'
+        //toolBar.style.transform = 'translateY(100%)'
         console.log('firefox ↓')
       } else {
         siteNnav.style.transform = 'translateY(0%)'
-        toolBar.style.transform = 'translateY(0%)'
+        //toolBar.style.transform = 'translateY(0%)'
         console.warn('firef ↑')
       }
     })
@@ -22,11 +22,11 @@
       var wheelDelta = e.wheelDelta
       if (wheelDelta > 0) {
         siteNnav.style.transform = 'translateY(0%)'
-        toolBar.style.transform = 'translateY(0%)'
+        //toolBar.style.transform = 'translateY(0%)'
         console.warn('↑')
       } else {
         siteNnav.style.transform = 'translateY(-100%)'
-        toolBar.style.transform = 'translateY(100%)'
+        //toolBar.style.transform = 'translateY(100%)'
         console.warn('↓')
       }
     }
@@ -69,7 +69,26 @@
     })
   }
 
-  !isMobile() && (document.querySelector('.tool-bar').style.display = 'none')
+  //!isMobile() && (document.querySelector('.tool-bar').style.display = 'none')
+
+  var img = document.querySelectorAll('img'),
+    imgVIew = document.querySelector('.img-view'),
+    viewImg = document.querySelector('.img-view > img')
+  Array.from(img).forEach(v => {
+    v.onclick = function() {
+      console.log(imgVIew.style.display == 'block')
+      viewImg.src = this.src
+      viewImg.alt = this.alt
+
+      if (imgVIew.style.display == 'block') {
+        imgVIew.style.display = 'none'
+        document.body.style.overflow = 'auto'
+      } else {
+        imgVIew.style.display = 'block'
+        document.body.style.overflow = 'hidden'
+      }
+    }
+  })
 
   console.info(
     ' %c Theme in development %c please wait ',

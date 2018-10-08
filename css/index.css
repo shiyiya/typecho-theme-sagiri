@@ -654,6 +654,9 @@ body,
   margin-bottom: 40px;
   border-radius: 5px;
 }
+.post img {
+  cursor: zoom-in;
+}
 .post:nth-child(1) {
   animation: fade-in-right 0.3s 0.3s backwards;
 }
@@ -1157,5 +1160,37 @@ canvas#live2d {
   canvas#live2d {
     width: 70px;
     height: 125px;
+  }
+}
+.img-view,
+.img-view > img {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(26, 26, 26, 0.65);
+  margin: auto;
+  z-index: 999;
+}
+.img-view {
+  display: none;
+  position: fixed;
+  overflow: auto;
+}
+.img-view > img {
+  animation: feda-large 0.3s;
+  cursor: zoom-out;
+  position: absolute;
+  max-height: 90%;
+  max-width: 90%;
+}
+@keyframes feda-large {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

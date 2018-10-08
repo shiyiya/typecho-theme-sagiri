@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
-
+<?php if ($this->options->PWA == 'able'): ?>
 <div class="tool-bar">
     <div class="tool-bar-inner">
         <!-- <div class="social-share">
@@ -13,6 +13,8 @@
         </div>
     </div>
 </div>
+<?php endif; ?>
+
 <footer id="footer" role="contentinfo">
     <p id="live-time">
         loading···
@@ -24,8 +26,8 @@
     </p>
 </footer>
 
-<div class="preview">
-    <img src="" alt="">
+<div class="img-view">
+    <img src="<?php $this->options->backGroundImage() ?>" alt="">
 </div>
 
 </div><!-- End root -->
@@ -42,10 +44,12 @@
 <script src="<?php $this->options->themeUrl('./lib/prism/prism.js'); ?>"></script>
 <?php endif; ?>
 
-<!-- <script src="<?php $this->options->themeUrl('./lib/live2d/live2d.js'); ?>"></script>
+<?php if($_SERVER['HTTP_HOST'] == 'runtua.cn' || $_SERVER['HTTP_HOST'] == 'www.runtua.cn'): ?>
+<script src="<?php $this->options->themeUrl('./lib/live2d/live2d.js'); ?>"></script>
 <script type="text/javascript">
     loadlive2d("live2d", "<?php $this->options->themeUrl('./lib/live2d/model.json'); ?>");
-</script> -->
+</script>
+<?php endif; ?>
 
 <?php if($this->is('post')) :?>
 
