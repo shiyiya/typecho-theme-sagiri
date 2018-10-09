@@ -15,7 +15,7 @@
          <?php endif; ?>
         <section class="site-overview-wrap <?php  if($this->is('index'))  _e('sidebar-section-active'); ?>" text-center>
             <div class="site-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                <img src="<?php $this->options->author() && $this->options->themeUrl('./img/author.jpg'); ?>" alt="" class="site-author-image" itemprop="image" >
+                <img src="<?php $this->options->authorImage() or $this->options->themeUrl('./img/author.jpg'); ?>" alt="author" class="site-author-image" itemprop="image" >
                 <p class="site-author-name"><?php $this->user->screenName(); ?></p>
             </div>
             <div class="author-social">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             <div class="cc-license" itemprop="license">
-                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" target="_blank"><img src="<?php $this->options->themeUrl('./img/cc-by-nc-sa.png'); ?>" alt="Creative Commons"></a>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" target="_blank" rel="noopener"><img src="<?php $this->options->themeUrl('./img/cc-by-nc-sa.png'); ?>" alt="Creative Commons"></a>
             </div>
         </section>
     </div>
@@ -68,5 +68,5 @@
 </aside>
 
 <?php if($this->is('post')||$this->is('page')): ?>
-<script src="<?php $this->options->themeUrl('js/sidebar.min.js'); ?>"></script>
+<script defer src="<?php $this->options->themeUrl('js/sidebar.js'); ?>"></script>
 <?php endif; ?>

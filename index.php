@@ -2,7 +2,7 @@
 /**
  * Sagiri - Lovely theme for Typecho.
  * 
- * @package Typecho Theme 
+ * @package Sagiri Theme
  * @author shiyi
  * @version 1.0
  * @link https://runtua.cn
@@ -32,7 +32,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 					<?php if (!empty($this->options->feature) && in_array('showThumb', $this->options->feature)): ?>
 					<?php $thumb = showThumb($this,null,true); ?>
 					<?php if(!empty($thumb)):?>
-						<img src="<?php echo $thumb;?>" >
+						<?php echo $thumb;?>
 					<?php endif; ?>
 					<?php endif; ?>
 					<!-- <?php if($this->attachments(1)->attachment and $this->attachments(1)->attachment->isImage): ?>

@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <!DOCTYPE HTML>
-<html class="no-js">
+<html class="no-js" lang="Zh-CN">
 <head>
     
     <meta charset="<?php $this->options->charset(); ?>">
@@ -25,7 +25,7 @@
     <meta name="keywords" content="<?php $this->keywords() ?>" />
 
 
-     <link rel="icon" href="<?php $this->options->fav() || $this->options->themeUrl('favicon.jpg'); ?>" />
+     <link rel="icon" href="<?php $this->options->fav() or $this->options->themeUrl('favicon.jpg'); ?>" />
 
     <!-- About IOS -->
     <meta name="format-detection" content="telephone=no">
@@ -66,9 +66,9 @@
     <?php endif; ?>
     
     <!-- CSS Style -->
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.min.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.min.css'); ?>">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('./css/_variable.min.css'); ?>">
+    <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.min.css'); ?>">
+    <link async rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.min.css'); ?>">
+    <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/_variable.min.css'); ?>">
 
 
     <!-- Custom Style -->
@@ -100,7 +100,7 @@
             </ul>
         </nav>
         <div class="header-wrap">
-            <div class="site-config" style="background-image:url(<?php $this->options->backGroundImage() ?>)">
+            <div class="site-config" style="background-image:url(<?php $this->options->backGroundImage() or _e('https://i.loli.net/2018/10/05/5bb7144897e8c.jpg') ?>)">
                 <div class="site-meta">
                     <div class="site-title"><?php $this->options->title() ?></div>
                     <div class="site-description"><?php $this->options->description() ?></div>
