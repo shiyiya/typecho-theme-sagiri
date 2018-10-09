@@ -22,12 +22,12 @@
     <p>
         &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
         <?php _e('Power By  <a href="http://www.typecho.org">Typecho</a> '); ?>.
-        <?php _e('<a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/dev" rel="external nofollow">Theme</a> by <a href="https://runtua.cn">Shiyi</a>'); ?>
+        <?php _e('<a href="https://github.com/shiyiya/typecho-theme-sagiri" rel="external nofollow">Theme</a> by <a href="https://runtua.cn">Shiyi</a>'); ?>
     </p>
 </footer>
 
 <div class="img-view">
-    <img src="<?php $this->options->backGroundImage() ?>" alt="">
+    <img src="<?php $this->options->backGroundImage() ?>" alt="This is just a placeholder img.">
 </div>
 
 </div><!-- End root -->

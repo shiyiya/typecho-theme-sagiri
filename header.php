@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <!DOCTYPE HTML>
-<html class="no-js">
+<html class="no-js" lang="Zh-CN">
 <head>
     
     <meta charset="<?php $this->options->charset(); ?>">
@@ -100,7 +100,7 @@
             </ul>
         </nav>
         <div class="header-wrap">
-            <div class="site-config" style="background-image:url(<?php $this->options->backGroundImage() ?>)">
+            <div class="site-config" style="background-image:url(<?php $this->options->backGroundImage() or _e('https://i.loli.net/2018/10/05/5bb7144897e8c.jpg') ?>)">
                 <div class="site-meta">
                     <div class="site-title"><?php $this->options->title() ?></div>
                     <div class="site-description"><?php $this->options->description() ?></div>
