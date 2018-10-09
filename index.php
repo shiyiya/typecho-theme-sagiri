@@ -2,7 +2,7 @@
 /**
  * Sagiri - Lovely theme for Typecho.
  * 
- * @package Typecho Theme 
+ * @package Sagiri Theme
  * @author shiyi
  * @version 1.0
  * @link https://runtua.cn
