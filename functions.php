@@ -246,6 +246,6 @@ function viewCounter($archive){
         }
         array_push($views, $cid);
         $views = implode(',', $views);
-        Typecho_Cookie::set('__typecho_views', $views); //记录到cookie
+        Typecho_Cookie::set('__typecho_views', $views);
     }
 }

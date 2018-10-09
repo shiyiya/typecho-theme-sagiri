@@ -43,7 +43,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 						<?php $this->excerpt(100); ?>
 						<div text-center class="post-button">
 							<a href="<?php $this->permalink() ?>">
-								-   阅读全文   -
+								<?php _e('-   阅读全文   -'); ?>
 							</a>
 						</div>
             		</div>
