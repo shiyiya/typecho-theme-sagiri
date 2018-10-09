@@ -1,0 +1,8 @@
+.DS_Store
+.idea/
+*.log
+*.iml
+node_modules/
+
+# 小老婆
+lib/live2d/*

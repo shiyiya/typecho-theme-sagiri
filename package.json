@@ -1,0 +1,39 @@
+{
+  "name": "typecho-theme-sagiri",
+  "version": "1.0.0",
+  "description": "Lovely theme for Typecho.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiyiya/typecho-theme-sagiri.git"
+  },
+  "keywords": [
+    "typecho-theme"
+  ],
+  "author": "shiyiya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shiyiya/typecho-theme-sagiri/issues"
+  },
+  "homepage": "https://github.com/shiyiya/typecho-theme-sagiri#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sequence": "^1.0.0",
+    "gulp-uglify": "^3.0.1"
+  }
+}
