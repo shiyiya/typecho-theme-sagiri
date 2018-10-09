@@ -1,7 +1,6 @@
 <?php
 /**
- * 一款响应式 WebApp 主题，让你的站点拥有接近 Native 的体验。
- * A responsive WebApp theme that makes your blog look like an app.
+ * Sagiri - Lovely theme for Typecho.
  * 
  * @package Typecho Theme 
  * @author shiyi
