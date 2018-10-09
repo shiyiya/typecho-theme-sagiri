@@ -38,7 +38,7 @@
 
 <canvas id="live2d" class="live2d" width="140" height="250"></canvas>
 
-<script src="<?php $this->options->themeUrl('js/index.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/index.min.js'); ?>"></script>
 
 <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
 <script src="<?php $this->options->themeUrl('./lib/prism/prism.js'); ?>"></script>

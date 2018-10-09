@@ -66,9 +66,9 @@
     <?php endif; ?>
     
     <!-- CSS Style -->
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.css'); ?>">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('./css/_variable.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.min.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('./css/_variable.min.css'); ?>">
 
 
     <!-- Custom Style -->
