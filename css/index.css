@@ -425,7 +425,7 @@ body,
   height: 520px;
   width: 100%;
   background-size: cover;
-  background-position: center 50%;
+  background-position: 50%;
   background-repeat: no-repeat;
   animation: fade-in-bottom 1s 0.3s backwards;
   background-attachment: fixed;

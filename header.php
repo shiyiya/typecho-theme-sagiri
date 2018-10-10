@@ -34,7 +34,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <meta name="apple-mobile-web-app-title" content="<?php $this->options->title() ?>">
-    <meta name="theme-color" content="<?php $this->options->themeColor() || _e('#FFFFFF') ?>">
+    <meta name="theme-color" content="<?php $this->options->themeColor ? $this->options->themeColor() : _e('#FFFFFF') ?>">
     <link rel="apple-touch-icon" sizes="32x32 58x58 72x72 96x96 114x114" href="<?php $this->options->IOSIcon(); ?>">
    
 
@@ -48,7 +48,7 @@
     
     
     <!-- OGP https://www.ogp.me/ -->
-    <?php if($this->is('post')||$this->is('page')): ?>
+    <?php if($this->is('post') || $this->is('page')): ?>
     <meta property="og:url" content="<?php $this->permalink() ?>" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="<?php $this->title() ?>" />
@@ -100,10 +100,10 @@
             </ul>
         </nav>
         <div class="header-wrap">
-            <div class="site-config" style="background-image:url(<?php $this->options->backGroundImage() or _e('https://i.loli.net/2018/10/05/5bb7144897e8c.jpg') ?>)">
+            <div class="site-config" style="background-image:url(<?php $this->options->backGroundImage ? $this->options->backGroundImage() : _e('https://i.loli.net/2018/10/05/5bb7144897e8c.jpg') ?>)">
                 <div class="site-meta">
-                    <div class="site-title"><?php $this->options->title() ?></div>
-                    <div class="site-description"><?php $this->options->description() ?></div>
+                    <div class="site-title"><?php $this->options->title(); ?></div>
+                    <div class="site-description"><?php $this->options->description(); ?></div>
                 </div>
             </div>
         </div>

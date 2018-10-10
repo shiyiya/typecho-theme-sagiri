@@ -107,7 +107,7 @@ function getBrowser($agent){
         $browserVersion = 'Wechat';
     }  else if (preg_match('/WeiBo/i', $agent, $regs)) {
         $browserVersion = 'Weibo';
-    }  else if (preg_match('/QQ/i', $agent, $regs)||preg_match('/QQBrowser\/([^\s]+)/i', $agent, $regs)) {
+    }  else if (preg_match('/QQ/i', $agent, $regs) || preg_match('/QQBrowser\/([^\s]+)/i', $agent, $regs)) {
         $str1 = explode('rowser/',  $agent);
         $QQ_vern = explode('.', $str1[1]);
         $browserVersion = 'QQ '.$QQ_vern[0];
