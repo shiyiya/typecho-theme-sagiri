@@ -166,7 +166,6 @@ function isMobile() {
 /* eslint-disable */
 
 function liveTime(time) {
-  console.log(time)
   if (!time) {
     throw Error('未指定日期！')
     return void 0

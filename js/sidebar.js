@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var tagLevel = 1,
       rootToc = [
         ...node.querySelectorAll(
-          getFristTitle(document.querySelector('.post-content').firstChild)
+          getFristTitle(
+            document.querySelector('.post-content').firstElementChild
+          )
         )
       ],
       TOC = {}
@@ -31,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     while ((elem = elem.nextSibling)) {
       if (elem.nodeType == 1) {
-        elemTagLevel = Number(elem.tagName.slice(-1))
+        var elemTagLevel = Number(elem.tagName.slice(-1))
         if (elemTagLevel > tagLevel) {
           nodes.push(elem)
         }
@@ -49,14 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
     while ((elem = elem.nextSibling)) {
       if (elem.nodeType == 1) {
         elemTag = elem.tagName.slice(0, 1)
-        console.log(elem)
         if (elemTag == 'H') {
           return elem.tagName
         }
       }
     }
   }
-  getFristTitle(document.querySelector('.post-content').firstChild)
 
   var Toc = deepTree(document.querySelector('.post-content'))
 
