@@ -65,7 +65,8 @@ echo $commentClass;
     			<input type="email" name="mail" id="mail" class="text" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> placeholder="E-mail"  />
     			<input type="url" name="url" id="url" class="text" placeholder="<?php _e('http://'); ?>" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
             <?php endif; ?>
-                <textarea name="text" id="textarea" class="textarea" required placeholder="Write here."><?php $this->remember('text'); ?></textarea>
+                <textarea name="text" id="textarea" class="OwO-textarea textarea" required placeholder="Write here."><?php $this->remember('text'); ?></textarea>
+                <div class="OwO"></div>
                 <button type="submit" class="submit"><?php _e('提交'); ?></button>
     	</form>
         <?php endif; ?>
@@ -78,3 +79,20 @@ echo $commentClass;
     <?php endif; ?>
    
 </div>
+
+<!-- OwO emoji -->
+<?php if (!empty($this->options->feature) && in_array('commentEmoji', $this->options->feature)): ?>
+<script src="<?php $this->options->themeUrl('./lib/OwO/OwO.min.js'); ?>"></script>
+
+<script>
+var OwO_demo = new OwO({
+    logo: 'OωO表情',
+    container: document.getElementsByClassName('OwO')[0],
+    target: document.getElementsByClassName('OwO-textarea')[0],
+    api: '<?php $this->options->themeUrl('./lib/OwO/OwO.json'); ?>',
+    position: 'down',
+    width: '100%',
+    maxHeight: '250px'
+  })
+</script>
+<?php endif; ?>

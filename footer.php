@@ -38,10 +38,11 @@
 
 <canvas id="live2d" class="live2d" width="140" height="250"></canvas>
 
+
 <script src="<?php $this->options->themeUrl('js/index.min.js'); ?>"></script>
 
 <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
-<script src="<?php $this->options->themeUrl('./lib/prism/prism.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('./lib/prism/'. $this->options->codeHighlightTheme . '/prism.js'); ?>"></script>
 <?php endif; ?>
 
 <?php if($_SERVER['HTTP_HOST'] == 'runtua.cn' || $_SERVER['HTTP_HOST'] == 'www.runtua.cn'): ?>
@@ -52,7 +53,6 @@
 <?php endif; ?>
 
 <?php if($this->is('post')) :?>
-
 <script>
     var postScrolltimer = setInterval(postScroll, 10)
 </script>
@@ -61,9 +61,11 @@
  <!-- Custom Javascript -->
  <?php _e($this->options->customScript) ?>
 
+<?php if($this->options->liveTime) :?>
 <script>
-    setInterval(() => liveTime('<?php strval($this->options->liveTime()); ?>'), 1000)
+    var liveTimeer = setInterval(() => liveTime('<?php strval($this->options->liveTime()); ?>'), 1000)
 </script>
+<?php endif; ?>
 
 </body>
 

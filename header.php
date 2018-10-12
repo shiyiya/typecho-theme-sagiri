@@ -62,8 +62,10 @@
 
    <!-- Prism -->
     <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
-    <link href="<?php $this->options->themeUrl('./lib/prism/prism.css'); ?>" rel="stylesheet" />
+    <link href="<?php $this->options->themeUrl('./lib/prism/'. $this->options->codeHighlightTheme . '/prism.css'); ?>" rel="stylesheet" />
     <?php endif; ?>
+
+     <link rel="stylesheet" href="<?php $this->options->themeUrl('./lib/OwO/OwO.min.css'); ?>">
     
     <!-- CSS Style -->
     <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.min.css'); ?>">
