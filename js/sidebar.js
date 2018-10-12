@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
   var rootToc = document.querySelector('.toc-nav')
 
-
   function deepTree(node = document) {
     var tagLevel = 1,
-      rootToc = [...node.querySelectorAll('h2')],
+      rootToc = [
+        ...node.querySelectorAll(
+          getFristTitle(document.querySelector('.post-content').firstChild)
+        )
+      ],
       TOC = {}
 
     TOC = rootToc.map((i, k) => {
@@ -40,6 +43,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     return nodes
   }
+
+  function getFristTitle(elem) {
+    var elemTag
+    while ((elem = elem.nextSibling)) {
+      if (elem.nodeType == 1) {
+        elemTag = elem.tagName.slice(0, 1)
+        console.log(elem)
+        if (elemTag == 'H') {
+          return elem.tagName
+        }
+      }
+    }
+  }
+  getFristTitle(document.querySelector('.post-content').firstChild)
 
   var Toc = deepTree(document.querySelector('.post-content'))
 

@@ -301,9 +301,9 @@ pre {
   font-family: Menlo, Bitstream Vera Sans Mono, DejaVu Sans Mono, Monaco,
     Consolas, 'PingFang SC', 'Microsoft YaHei', monospace !important;
 }
-pre {
+/* pre {
   background: #f7f7f7 !important;
-}
+} */
 pre code {
   background: none;
 }

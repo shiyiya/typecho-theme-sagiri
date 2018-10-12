@@ -166,7 +166,11 @@ function isMobile() {
 /* eslint-disable */
 
 function liveTime(time) {
-  if (!time) throw Error('未指定日期！')
+  console.log(time)
+  if (!time) {
+    throw Error('未指定日期！')
+    return void 0
+  }
   var time = new Date(time)
   const live = Math.floor(new Date().getTime() - time.getTime()),
     m = 24 * 60 * 60 * 1000
