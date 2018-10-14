@@ -20,6 +20,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 			<section id="posts">
 			<?php while($this->next()): ?>
 				<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+					<div class="post-badge">
+						<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+							<?php $this->category(','); ?>
+						</span>
+					</div>
 					<header class="post-header">
 						<h1 class="post-title" itemprop="name headline"><a class="post-title-link" itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
 						<div class="post-meta">
