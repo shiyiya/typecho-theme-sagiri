@@ -13,6 +13,11 @@
         <?php if ($this->have()): ?>
     	<?php while($this->next()): ?>
             <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                <div class="post-badge">
+					<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+						<?php $this->category(','); ?>
+					</span>
+				</div>
                 <header class="post-header">
                     <h2 class="post-title" itemprop="name headline"><a class="post-title-link" itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
                     <div class="post-meta">
