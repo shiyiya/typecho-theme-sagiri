@@ -2,17 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
   var rootToc = document.querySelector('.toc-nav')
 
   function deepTree(node = document) {
-    var tagLevel = 1,
-      rootToc = [
-        ...node.querySelectorAll(
-          getFristTitle(
-            document.querySelector('.post-content').firstElementChild
-          )
-        )
-      ],
-      TOC = {}
+    var fristTitle
 
-    TOC = rootToc.map((i, k) => {
+    //获取文章第一个 hn 标签最为做高标题
+    if (!(fristTitle = getFristTitle(node.firstElementChild))) {
+      return null
+    }
+
+    var tagLevel = 1,
+      rootToc = [...node.querySelectorAll(fristTitle)]
+
+    var TOC = rootToc.map((i, k) => {
       return {
         root: i,
         children: SmallerSiblingTagElems(i)
@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function getFristTitle(elem) {
+    if (elem.tagName.slice(0, 1) == 'H') {
+      return elem.tagName
+    }
     var elemTag
     while ((elem = elem.nextSibling)) {
       if (elem.nodeType == 1) {
@@ -57,21 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }
-
-  var Toc = deepTree(document.querySelector('.post-content'))
-
-  Toc.forEach(v => {
-    var li = document.createElement('li'),
-      a = document.createElement('a')
-    a.href = '#' + v.root.innerText
-    a.innerText = v.root.id = v.root.innerText
-    li.appendChild(a)
-    if (v.children.length > 0) {
-      li.appendChild(createTocFragment(v.children))
-    }
-    li.classList.add('toc-subnav')
-    rootToc.appendChild(li)
-  })
 
   function createTocFragment(children) {
     var ul = document.createElement('ul')
@@ -90,6 +78,32 @@ document.addEventListener('DOMContentLoaded', function() {
   var sidebarToc = document.querySelector('.sidebar-nav-toc ')
   var postToc = document.querySelector('.post-toc-wrap')
   var siteOverview = document.querySelector('.site-overview-wrap ')
+
+  if (sidebarToc) {
+    var Toc
+    if ((Toc = deepTree(document.querySelector('.post-content')))) {
+      Toc.forEach(v => {
+        var li = document.createElement('li'),
+          a = document.createElement('a')
+        a.href = '#' + v.root.innerText
+        a.innerText = v.root.id = v.root.innerText
+        li.appendChild(a)
+        if (v.children.length > 0) {
+          li.appendChild(createTocFragment(v.children))
+        }
+        li.classList.add('toc-subnav')
+        rootToc.appendChild(li)
+      })
+    } else {
+      sidebarToc.classList.remove('sidebar-nav-active')
+      postToc.classList.remove('sidebar-section-active')
+      sidebarOverview.classList.add('sidebar-nav-active')
+      siteOverview.classList.add('sidebar-section-active')
+      var li = document.createElement('li')
+      li.innerText = '居然没有目录'
+      rootToc.appendChild(li)
+    }
+  }
 
   if (sidebarToc) {
     var sidebarNav = [sidebarOverview, sidebarToc]

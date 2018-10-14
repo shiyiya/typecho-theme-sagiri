@@ -71,6 +71,9 @@ function themeConfig($form) {
     $form->addInput($PWA);
 }
 
+function APlayerHelper($obj){
+}
+
 function showThumb($obj,$size=null,$link=false){
     preg_match_all( "/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?alt=[\'|\"](.*?)[\'|\"].*?[\/]?>/", $obj->content, $matches );
     $thumb = '';

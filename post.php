@@ -6,6 +6,11 @@
         <?php $this->need('sidebar.php'); ?>
         <div class="content-wrap">
             <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                <div class="post-badge">
+					<span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+						<?php $this->category(','); ?>
+					</span>
+				</div>
                 <header class="post-header">
                 <h1 class="post-title" itemprop="name headline"><?php $this->title() ?></h1>
                 <div class="post-meta">
