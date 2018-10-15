@@ -689,6 +689,12 @@ body,
   padding: 7px 11px 7px 32px;
   line-height: 1;
 }
+@media (max-width: 991px) {
+  .post-badge {
+    top: 10px;
+    left: -20px;
+  }
+}
 .post-badge::after {
   position: absolute;
   content: '';
@@ -1218,4 +1224,9 @@ canvas#live2d {
     opacity: 1;
     transform: scale(1);
   }
+}
+img[alt='sticker'] {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
 }
