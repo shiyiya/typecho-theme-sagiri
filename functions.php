@@ -3,7 +3,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form) {   
 
-    $fav = new Typecho_Widget_Helper_Form_Element_Text('fav', NULL, NULL, _t('通用图标'), _t('请填入完整链接，作为网站标签页图标，手机建议大小 114x114，适用 IOS 全系列'));
+    $fav = new Typecho_Widget_Helper_Form_Element_Text('fav', NULL, NULL, _t('通用图标'), _t('请填入完整链接，作为网站标签页图标，手机建议大小 114x114'));
     $form->addInput($fav);
     $IOSIcon = new Typecho_Widget_Helper_Form_Element_Text('IOSIcon', NULL, NULL, _t('IOS 图标'), _t('请填入完整链接，作为网站图标，手机建议大小 114x114，适用 IOS 全系列'));
     $form->addInput($IOSIcon);
@@ -46,7 +46,7 @@ function themeConfig($form) {
         array('showThumb' => _t('显示文章题图设置'),
         'codeHighlight' => _t('启用代码高亮'),
         'commentEmoji' => _t('评论表情'),
-        'pjax' => _t('启用pjax'),
+        'pjax' => _t('启用mini-pjax'),
         'tocThree' => _t('启用目录树'),),
         array('feature'), _t('额外功能设置'));
     $form->addInput($feature->multiMode());
@@ -58,8 +58,9 @@ function themeConfig($form) {
         'oky' => _t('MDN 配色，白底蓝边'),
         'solarized-Light' => _t('淡黄底色'),
         'Tomorrow-Night' => _t('黑底色'),),
-    array('codeHighlightTheme'), _t('代码高亮主题'));
-    $form->addInput($codeHighlightTheme);
+        'default',_t('代码高亮主题'), _t('代码高亮主题')
+   );
+   $form->addInput($codeHighlightTheme);
    
     
    
@@ -67,7 +68,8 @@ function themeConfig($form) {
     $PWA = new Typecho_Widget_Helper_Form_Element_Radio('PWA',
         array('able' => _t('启用'),
         'disable' => _t('禁用'),),
-        'disable', _t('桌面级支持'), _t('需升级 Pro 版'));
+        'disable',_t('桌面支持'), _t('默认禁止，Pro版可开启')
+    );
     $form->addInput($PWA);
 }
 

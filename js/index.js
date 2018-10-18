@@ -1,4 +1,10 @@
 ;(function() {
+  new miniPjax({
+    target: 'a',
+    body: '#root',
+    container: ['.content-wrap', '#sidebar']
+  })
+
   var siteNnav = document.querySelector('.site-nav')
   //var toolBar = document.querySelector('.tool-bar')
   var agent = navigator.userAgent
@@ -98,7 +104,7 @@
     }
   })
 
-  console.info(
+  /*  console.info(
     ' %c Theme in development %c please wait ',
     'background: #ed143d7d; padding:5px 0;',
     'background: #40b3ec;padding:5px 5px 5px 0;'
@@ -108,7 +114,7 @@
     ' %c 主题开发中  %c 敬请期待',
     ' background: #ed143d7d; padding:5px 0;',
     'background: #40b3ec;padding:5px 5px 5px 0;'
-  )
+  ) */
 })()
 
 function postScroll() {
