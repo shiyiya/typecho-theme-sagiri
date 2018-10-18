@@ -30,16 +30,17 @@
     <img src="<?php $this->options->backGroundImage() ?>" alt="This is just a placeholder img.">
 </div>
 
-</div><!-- End root -->
-
-<?php $this->footer(); ?>
 
 <canvas id="ribbons"> </canvas>
 
 <canvas id="live2d" class="live2d" width="140" height="250"></canvas>
 
+<?php if (!empty($this->options->feature) && in_array('pjax', $this->options->feature)): ?>
+<script src="<?php $this->options->themeUrl('util/pjax.mini.js'); ?>"></script>
+<?php endif; ?>
 
-<script src="<?php $this->options->themeUrl('js/index.min.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/index.js'); ?>"></script>
+
 
 <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
 <script src="<?php $this->options->themeUrl('./lib/prism/'. $this->options->codeHighlightTheme . '/prism.js'); ?>"></script>
@@ -66,6 +67,12 @@
     var liveTimeer = setInterval(() => liveTime('<?php strval($this->options->liveTime()); ?>'), 1000)
 </script>
 <?php endif; ?>
+
+</div><!-- End root -->
+
+<?php $this->footer(); ?>
+
+
 
 </body>
 
