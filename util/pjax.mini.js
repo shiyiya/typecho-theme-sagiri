@@ -44,6 +44,7 @@
         }
       })
       window.addEventListener('popstate', async function(e) {
+        //重新挂载 点击事件
         const url = e.target.location.href,
           domString = await _this.fetchData(url),
           realDom = _this.parseHtml(domString.data, option.body)
@@ -144,25 +145,26 @@
 
     // el.innerhtml don't run script
     appendScriptTobodyEnd(scriptDom) {
-      const s = [...scriptDom],
-        docuScriptDom = document
-          .querySelector(this.option.body)
-          .querySelectorAll('script')
+      const docuScriptDom = document
+        .querySelector(this.option.body)
+        .querySelectorAll('script')
 
       docuScriptDom.forEach(v => {
         v.parentElement.removeChild(v)
       })
-      ;[...scriptDom].forEach(v => {
-        let script
 
-        if (v.scr) {
-          script = document.createElement('script')
-          script.src = v.src
-        } else {
-          script = document.createElement('script')
-          script.text = v.text
-        }
-        console.log(script)
+      const oldScript = document.body.querySelectorAll('script')
+
+      oldScript.forEach(v => {
+        v.parentElement.removeChild(v)
+      })
+
+      document.body.removeChild
+      ;[...scriptDom].forEach(v => {
+        let script = document.createElement('script')
+
+        v.getAttribute('src') ? (script.src = v.src) : (script.text = v.text)
+
         document.body.append(script)
       })
     }

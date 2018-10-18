@@ -90,7 +90,6 @@
     viewImg = document.querySelector('.img-view > img')
   Array.from(img).forEach(v => {
     v.onclick = function() {
-      console.log(imgVIew.style.display == 'block')
       viewImg.src = this.src
       viewImg.alt = this.alt
 

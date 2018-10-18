@@ -35,7 +35,10 @@
 
 <canvas id="live2d" class="live2d" width="140" height="250"></canvas>
 
+<?php if (!empty($this->options->feature) && in_array('pjax', $this->options->feature)): ?>
 <script src="<?php $this->options->themeUrl('util/pjax.mini.js'); ?>"></script>
+<?php endif; ?>
+
 <script src="<?php $this->options->themeUrl('js/index.js'); ?>"></script>
 
 
