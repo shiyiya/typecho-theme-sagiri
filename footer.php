@@ -16,15 +16,18 @@
 <?php endif; ?>
 
 <footer id="footer" role="contentinfo">
-    <p id="live-time">
-        loading···
-    </p>
+    <p id="live-time"></p>
     <p>
         &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
         <?php _e('Power By  <a href="http://www.typecho.org">Typecho</a> '); ?>.
         <?php _e('<a href="https://github.com/shiyiya/typecho-theme-sagiri" rel="external nofollow">Theme</a> by <a href="https://runtua.cn">Shiyi</a>'); ?>
     </p>
 </footer>
+
+<!-- <div id="back-to-top-bottom">
+    <span><i class="iconfont icon-prev-m"></i></span>
+    <span><i class="iconfont icon-next-m"></i></span>
+</div> -->
 
 <div class="img-view">
     <img src="<?php $this->options->backGroundImage() ?>" alt="This is just a placeholder img.">
@@ -64,7 +67,9 @@
 
 <?php if($this->options->liveTime) :?>
 <script>
-    var liveTimeer = setInterval(() => liveTime('<?php strval($this->options->liveTime()); ?>'), 1000)
+    var liveTimeer = setInterval(function (){
+        liveTime('<?php strval($this->options->liveTime());?>'
+    }), 1000)
 </script>
 <?php endif; ?>
 

@@ -43,6 +43,11 @@
 </div>
 
 <style>
+    @media (max-width: 991px){
+        .main-inner{
+            padding: 20px 30px;
+        }
+    } 
     .content-wrap{
         float: none;
         position: relative

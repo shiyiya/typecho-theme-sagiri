@@ -220,7 +220,8 @@ hr {
 blockquote {
   padding: 0 15px;
   color: #666;
-  border-left: 4px solid #ddd;
+  border-left: 3px solid #38a3fd;
+  background: #eef6fd;
 }
 blockquote cite::before {
   content: '-';
@@ -365,7 +366,7 @@ body,
   transform: translateX(-50%);
 }
 @media (max-width: 991px) {
-  .menu .menu-item {
+  .menu li.menu-item {
     flex: 1;
     -webkit-box-flex: 1;
     margin: 0;
@@ -609,12 +610,13 @@ body,
 .page-navigator li {
   list-style: none;
   display: inline-block;
+  margin: 5px 0;
 }
 .page-navigator li a {
   box-sizing: border-box;
   margin: 0 10px;
   padding: 4px 12px;
-  border: 1px solid #5f5f5f47;
+  border: 1px solid #5f5f5f;
   border-radius: 3px;
 }
 .page-navigator li a .iconfont {
@@ -921,7 +923,7 @@ ol.comment-list ol {
   display: inline-block;
   width: 40px;
   height: 40px;
-  margin-right: 20px;
+  margin-right: 5px;
   vertical-align: middle;
   border-radius: 50%;
 }
@@ -944,9 +946,9 @@ ol.comment-list ol {
   margin: 10px 0;
   color: #313131;
 }
-.comment-meta {
+/* .comment-meta {
   letter-spacing: 2px;
-}
+} */
 .comment-reply a {
   float: right;
   color: #40b3ec;
