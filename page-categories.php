@@ -50,6 +50,11 @@
         float: left;
         padding: 10px;
     }
+    @media (max-width: 991px){
+        .category-post-wrap{
+            width: 50%;
+        }
+    } 
     .category-post{
         background-color: #fff;
         padding: 20px;
