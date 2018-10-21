@@ -68,8 +68,8 @@
 <?php if($this->options->liveTime) :?>
 <script>
     var liveTimeer = setInterval(function (){
-        liveTime('<?php strval($this->options->liveTime());?>'
-    }), 1000)
+        liveTime('<?php strval($this->options->liveTime());?>')
+    }, 1000)
 </script>
 <?php endif; ?>
 
