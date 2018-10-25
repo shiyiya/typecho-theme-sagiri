@@ -3,17 +3,17 @@
 <aside id="sidebar" class="sidebar" >
     <div class="sidebar-inner">
         <ul class="sidebar-nav" text-center>
-            <?php if($this->is('post') || $this->is('page')) :?>
+            <?php if($this->is('post')) :?>
             <li class="sidebar-nav-toc sidebar-nav-active">文章目录</li>
             <?php endif; ?>
-            <li class="sidebar-nav-overview <?php  if($this->is('index'))  _e('sidebar-nav-active'); ?>">站点概览</li>
+            <li class="sidebar-nav-overview <?php  if($this->is('index') || $this->is('page'))  _e('sidebar-nav-active'); ?>">站点概览</li>
         </ul>
-        <?php if($this->is('post') || $this->is('page')) :?>
+        <?php if($this->is('post')) :?>
         <section class="post-toc-wrap sidebar-section-active">
             <ol class="toc-nav"></ol>
         </section>
          <?php endif; ?>
-        <section class="site-overview-wrap <?php  if($this->is('index'))  _e('sidebar-section-active'); ?>" text-center>
+        <section class="site-overview-wrap <?php  if($this->is('index') || $this->is('page'))  _e('sidebar-section-active'); ?>" text-center>
             <div class="site-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
                 <img src="<?php $this->options->authorImage ? $this->options->authorImage() : $this->options->themeUrl('./img/author.jpg'); ?>" alt="author" class="site-author-image" itemprop="image" >
                 <p class="site-author-name"><?php $this->user->screenName(); ?></p>
@@ -44,14 +44,14 @@
                 </div>
                 <div class="site-status">
                     <div class="site-status-posts site-status-item">
-                        <a href="<?php $this->options->siteUrl('archive.html') ?>">
+                        <a href="<?php $this->options->isRewrite == 'able' ? $this->options->siteUrl('archive.html') : $this->options->siteUrl('index.php/archive.html') ?>">
                             <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?>
                             <span class="site-state-item-count"><?php $stat->publishedPostsNum() ?></span>
                             <span class="site-state-item-name">日志</span>
                         </a>
                     </div>
                     <div class="site-status-categories site-status-item">
-                        <a href="<?php $this->options->siteUrl('category.html') ?>">
+                        <a href="<?php $this->options->isRewrite == 'able' ? $this->options->siteUrl('category.html') : $this->options->siteUrl('index.php/category.html') ?>">
                             <span class="site-state-item-count"><?php $stat->categoriesNum() ?></span>
                             <span class="site-state-item-name">分类</span>
                         </a>

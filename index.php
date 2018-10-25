@@ -2,10 +2,10 @@
 /**
  * Sagiri - Lovely theme for Typecho.
  * 
- * @package Sagiri Theme
+ * @package Sagiri
  * @author shiyi
  * @version 1.0
- * @link https://runtua.cn
+ * @link https://github.com/shiyiya/typecho-theme-sagiri
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
