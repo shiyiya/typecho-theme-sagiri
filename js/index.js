@@ -44,11 +44,11 @@ function isMobile() {
    * ribbons func
    * @return {void}
    */
-  (function ribbons() {
+  function ribbons() {
     document.onclick = i
     document.ontouchstart = i
     i()
-  })()
+  }
 }
 /* eslint-disable */
 
@@ -72,13 +72,8 @@ function liveTime(time) {
   // prettier-ignore
   document.querySelector('#live-time').innerText ="( •̀ ω •́ ) 被续 " + mliveDay +' 天 ' + mliveHour +' 小时 ' + mliveMin +' 分 ' + liveSec +' 秒'
 }
-;(function() {
-  new miniPjax({
-    target: 'a',
-    body: '#root',
-    container: ['.content-wrap', '#sidebar']
-  })
 
+;(function() {
   var siteNnav = document.querySelector('.site-nav')
   //var toolBar = document.querySelector('.tool-bar')
   var agent = navigator.userAgent

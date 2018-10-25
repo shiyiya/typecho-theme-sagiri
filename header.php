@@ -97,7 +97,7 @@
                 </li>
                 <?php endwhile; ?>
                 <li class="menu-item search">
-                    <a href="<?php $this->options->siteUrl('search.html') ?>"><i class="iconfont icon-search"></i></a> 
+                    <a href="<?php $this->options->isRewrite == 'able' ?  $this->options->siteUrl('search.html') :  $this->options->siteUrl('index.php/search.html') ?>"><i class="iconfont icon-search"></i></a> 
                  </li>
             </ul>
         </nav>

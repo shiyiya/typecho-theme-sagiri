@@ -24,9 +24,9 @@
     </p>
 </footer>
 
-<!-- <div id="back-to-top-bottom">
-    <span><i class="iconfont icon-prev-m"></i></span>
-    <span><i class="iconfont icon-next-m"></i></span>
+<!-- <div id="back-actions">
+    <span class="back-top back"><i class="iconfont icon-prev-m"></i></span>
+    <span class="back-bottom back"><i class="iconfont icon-next-m"></i></span>
 </div> -->
 
 <div class="img-view">
@@ -34,16 +34,29 @@
 </div>
 
 
-<canvas id="ribbons"> </canvas>
+<canvas id="ribbons"></canvas>
 
 <canvas id="live2d" class="live2d" width="140" height="250"></canvas>
 
 <?php if (!empty($this->options->feature) && in_array('pjax', $this->options->feature)): ?>
 <script src="<?php $this->options->themeUrl('util/pjax.mini.js'); ?>"></script>
+
+<script>
+  new miniPjax({
+    target: 'a',
+    body: '#root',
+    container: ['.content-wrap', '#sidebar']
+  })
+</script>
 <?php endif; ?>
 
 <script src="<?php $this->options->themeUrl('js/index.js'); ?>"></script>
 
+<?php if ($this->options->ribbons == 'able'): ?>
+<script>
+    ribbons()
+</script>
+<?php endif; ?>
 
 <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
 <script src="<?php $this->options->themeUrl('./lib/prism/'. $this->options->codeHighlightTheme . '/prism.js'); ?>"></script>
