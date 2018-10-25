@@ -55,8 +55,8 @@ echo $commentClass;
 <div id="comments">
     <?php $this->comments()->to($comments); ?>
     <div class="comments-header" id="<?php $this->respondId(); ?>" >
-	    <h3 class="comment-title"> 回复  <?php $comments->cancelReply('/ 取消回复'); ?></h3>
         <?php if($this->allow('comment')): ?>
+        <h3 class="comment-title"> 回复  <?php $comments->cancelReply('/ 取消回复'); ?></h3>
         <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
             <?php if($this->user->hasLogin()): ?>
     		<p><?php _e('登录身份: '); ?><a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a></p>
@@ -70,7 +70,6 @@ echo $commentClass;
                 <button type="submit" class="submit"><?php _e('提交'); ?></button>
     	</form>
         <?php endif; ?>
-
     </div>
     
     <?php if ($comments->have()): ?>

@@ -60,14 +60,14 @@
         margin-left: -2px;
         width: 4px;
         height: 105%;
-        background: #ed143d33;
+        background: #3a3f51;
         z-index: -1;
     }
     .archive-timeline-title{
         margin-left: 10px;
     }
     .archive-post{
-        margin: 30px 0;
+        margin: 30px 0 0 4px;
     }
     .archive-post-header{
         position: relative;
@@ -80,9 +80,9 @@
         top: 12px;
         width: 6px;
         height: 6px;
-        margin-left: -4px;
-        border: 1px solid #ff093f;
-        background: #ff093f;
+        margin-left: -10px;
+        border: 4px solid #292c38;
+        background: #fff;
         border-radius: 50%;
     }
     .archive-post-title{

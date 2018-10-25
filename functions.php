@@ -3,6 +3,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form) {   
 
+    $isRewrite = new Typecho_Widget_Helper_Form_Element_Radio('isRewrite',
+        array('able' => _t('启用'),
+        'disable' => _t('禁用'),),
+        'disable',_t('地址重写'), _t('是否开启了地址重写（伪静态）')
+    );
+    $form->addInput($isRewrite);
+
     $fav = new Typecho_Widget_Helper_Form_Element_Text('fav', NULL, NULL, _t('通用图标'), _t('请填入完整链接，作为网站标签页图标，手机建议大小 114x114'));
     $form->addInput($fav);
     $IOSIcon = new Typecho_Widget_Helper_Form_Element_Text('IOSIcon', NULL, NULL, _t('IOS 图标'), _t('请填入完整链接，作为网站图标，手机建议大小 114x114，适用 IOS 全系列'));
@@ -63,7 +70,6 @@ function themeConfig($form) {
    $form->addInput($codeHighlightTheme);
    
     
-   
 
     $PWA = new Typecho_Widget_Helper_Form_Element_Radio('PWA',
         array('able' => _t('启用'),
@@ -71,6 +77,14 @@ function themeConfig($form) {
         'disable',_t('桌面支持'), _t('默认禁止，Pro版可开启')
     );
     $form->addInput($PWA);
+
+    $ribbons = new Typecho_Widget_Helper_Form_Element_Radio('ribbons',
+        array('able' => _t('启用'),
+        'disable' => _t('禁用'),),
+        'disable',_t('背景彩带'), _t('默认禁止')
+    );
+    $form->addInput($ribbons);
+
 }
 
 function APlayerHelper($obj){
