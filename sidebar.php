@@ -19,22 +19,28 @@
                 <p class="site-author-name"><?php $this->user->screenName(); ?></p>
             </div>
             <div class="author-social">
-                    <ul class="author-social-links">
+            <ul class="author-social-links">
+                        <?php if($this->options->GitHubLink): ?>
                         <li>
                             <a href="<?php $this->options->GitHubLink(); ?>" title="Github">
                                 <i class="iconfont icon-github"></i>
                             </a>
                         </li>
+                        <?php endif; ?>
+                        <?php if($this->options->TwitterLink): ?>
                         <li>
                             <a href="<?php $this->options->TwitterLink(); ?>" title="Twitter">
                                 <i class="iconfont icon-twitter"></i>
                             </a>
                         </li>
+                        <?php endif; ?>
+                        <?php if($this->options->QQLink): ?>
                         <li>
                             <a href="<?php $this->options->QQLink(); ?>" title="QQ">
                                 <i class="iconfont icon-qq"></i>
                             </a>
                         </li>
+                        <?php endif; ?>
                         <li>
                             <a href="<?php $this->options->feedUrl(); ?>" title="RSS">
                                 <i class="iconfont icon-rss"></i>
@@ -63,7 +69,7 @@
         </section>
     </div>
     <!-- <div class="sidebar-inner"> 
-        <span class="siderbar-item-nav">浏览排行</span>
+        <span class="siderbar-item-nav">相关文章</span>
     </div> -->
 </aside>
 
