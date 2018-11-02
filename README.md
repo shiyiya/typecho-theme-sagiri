@@ -9,8 +9,10 @@
 
 [The English Version](./doc/README-EN.md)
 
+
 Sagiri ，简洁可爱的 `typecho` 主题。
 主题样式基于 [hexo-theme-sagiri](https://github.com/DIYgod/hexo-theme-sagiri) 上修改与添加。
+
 
 - [change log](./doc/changelog.md)
 
@@ -26,6 +28,7 @@ Sagiri ，简洁可爱的 `typecho` 主题。
 ## 预览
 
 [![overview](./doc/shot.png)](https://runtua.cn)
+
 
 ## 主题使用
 
