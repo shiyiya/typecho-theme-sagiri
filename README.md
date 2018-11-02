@@ -2,15 +2,19 @@
 
 > 如 ‘你’ 般可爱，简单纯粹。
 
-[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE)
+[![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE)
 [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
 ## 介绍
 
-[EN](./doc/README-EN.md) [ZH-CN](./README.md)
+[The English Version](./doc/README-EN.md)
+
 
 Sagiri ，简洁可爱的 `typecho` 主题。
 主题样式基于 [hexo-theme-sagiri](https://github.com/DIYgod/hexo-theme-sagiri) 上修改与添加。
+
+
+- [change log](./doc/changelog.md)
 
 - 轻量级，无 JQery，仅使用 Prism 作为代码高亮
 - 支持代码高亮，5 主题，支持主流代码，使用 Prism
@@ -23,7 +27,8 @@ Sagiri ，简洁可爱的 `typecho` 主题。
 
 ## 预览
 
-[![overview](https://runtua.cn/usr/uploads/2018/10/4100730242.png)](https://runtua.cn)
+[![overview](./doc/shot.png)](https://runtua.cn)
+
 
 ## 主题使用
 
