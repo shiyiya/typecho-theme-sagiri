@@ -2,39 +2,46 @@
 
 <aside id="sidebar" class="sidebar" >
     <div class="sidebar-inner">
-        <ul class="sidebar-nav" text-center>
+        <div class="sider-item">
+            <ul class="sidebar-nav" text-center>
+                <?php if($this->is('post')) :?>
+                <li class="sidebar-nav-toc sidebar-nav-active">文章目录</li>
+                <?php endif; ?>
+                <li class="sidebar-nav-overview <?php  if($this->is('index') || $this->is('page'))  _e('sidebar-nav-active'); ?>">站点概览</li>
+            </ul>
             <?php if($this->is('post')) :?>
-            <li class="sidebar-nav-toc sidebar-nav-active">文章目录</li>
+            <section class="post-toc-wrap sidebar-section-active">
+                <ul class="toc-list"></ul>
+            </section>
             <?php endif; ?>
-            <li class="sidebar-nav-overview <?php  if($this->is('index') || $this->is('page'))  _e('sidebar-nav-active'); ?>">站点概览</li>
-        </ul>
-        <?php if($this->is('post')) :?>
-        <section class="post-toc-wrap sidebar-section-active">
-            <ol class="toc-nav"></ol>
-        </section>
-         <?php endif; ?>
-        <section class="site-overview-wrap <?php  if($this->is('index') || $this->is('page'))  _e('sidebar-section-active'); ?>" text-center>
-            <div class="site-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                <img src="<?php $this->options->authorImage ? $this->options->authorImage() : $this->options->themeUrl('./img/author.jpg'); ?>" alt="author" class="site-author-image" itemprop="image" >
-                <p class="site-author-name"><?php $this->user->screenName(); ?></p>
-            </div>
-            <div class="author-social">
+            <section class="site-overview-wrap <?php  if($this->is('index') || $this->is('page'))  _e('sidebar-section-active'); ?>" text-center>
+                <div class="site-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                    <img src="<?php $this->options->authorImage ? $this->options->authorImage() : $this->options->themeUrl('./img/author.jpg'); ?>" alt="author" class="site-author-image" itemprop="image" >
+                    <p class="site-author-name"><?php $this->user->screenName(); ?></p>
+                </div>
+                <div class="author-social">
                     <ul class="author-social-links">
+                        <?php if($this->options->GitHubLink): ?>
                         <li>
                             <a href="<?php $this->options->GitHubLink(); ?>" title="Github">
                                 <i class="iconfont icon-github"></i>
                             </a>
                         </li>
+                        <?php endif; ?>
+                        <?php if($this->options->TwitterLink): ?>
                         <li>
                             <a href="<?php $this->options->TwitterLink(); ?>" title="Twitter">
                                 <i class="iconfont icon-twitter"></i>
                             </a>
                         </li>
+                        <?php endif; ?>
+                        <?php if($this->options->QQLink): ?>
                         <li>
                             <a href="<?php $this->options->QQLink(); ?>" title="QQ">
                                 <i class="iconfont icon-qq"></i>
                             </a>
                         </li>
+                        <?php endif; ?>
                         <li>
                             <a href="<?php $this->options->feedUrl(); ?>" title="RSS">
                                 <i class="iconfont icon-rss"></i>
@@ -57,16 +64,20 @@
                         </a>
                     </div>
                 </div>
-            <div class="cc-license" itemprop="license">
-                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" target="_blank" rel="noopener"><img src="<?php $this->options->themeUrl('./img/cc-by-nc-sa.png'); ?>" alt="Creative Commons"></a>
-            </div>
-        </section>
+                <div class="cc-license" itemprop="license">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" target="_blank" rel="noopener"><img src="<?php $this->options->themeUrl('./img/cc-by-nc-sa.png'); ?>" alt="Creative Commons"></a>
+                </div>
+            </section>
+        </div>
+        <?php if (!empty($this->options->feature) && in_array('relatedArticles', $this->options->feature)): ?>
+        <div class="sider-item">
+            <p class="rand-archive-nav-title"" text-center>相关文章</p>
+            <?php getRandomPosts(); ?>
+        </div>
+        <?php endif; ?>
     </div>
-    <!-- <div class="sidebar-inner"> 
-        <span class="siderbar-item-nav">浏览排行</span>
-    </div> -->
 </aside>
 
 <?php if($this->is('post') || $this->is('page')): ?>
-<script defer src="<?php $this->options->themeUrl('js/sidebar.js'); ?>"></script>
+<script defer src="<?php $this->options->themeUrl('js/sidebar.min.js'); ?>"></script>
 <?php endif; ?>

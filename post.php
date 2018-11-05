@@ -21,7 +21,7 @@
                 </div>
                 </header>
                 <div class="post-content" itemprop="articleBody">
-                    <?php $this->content(); ?>
+					<?php replaceTag($this->content); ?>
                 </div>
                 <?php if ($this->options->WechatQR || $this->options->AlipayQR): ?>
                 <div class="free-reward">

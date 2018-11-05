@@ -1,3 +1,19 @@
+/* eslint-disable */
+// prettier-ignore
+{
+  function i(){for(x.clearRect(0,0,w,h),q=[{x:0,y:.7*h+f},{x:0,y:.7*h-f}];q[1].x<w+f;)d(q[0],q[1])}function d(e,t){x.beginPath(),x.moveTo(e.x,e.y),x.lineTo(t.x,t.y);var i=t.x+(2*z()-.25)*f,n=y(t.y);x.lineTo(i,n),x.closePath(),r-=u/-50,x.fillStyle="#"+(127*v(r)+128<<16|127*v(r+u/3)+128<<8|127*v(r+u/3*2)+128).toString(16),x.fill(),q[0]=q[1],q[1]={x:i,y:n}}function y(e){var t=e+(2*z()-1.1)*f;return t>h||t<0?y(e):t}var c=document.getElementById("ribbons"),x=c.getContext("2d"),pr=window.devicePixelRatio||1,w=window.innerWidth,h=window.innerHeight,f=90,q,m=Math,r=0,u=2*m.PI,v=m.cos,z=m.random;c.width=w*pr,c.height=h*pr,x.scale(pr,pr),x.globalAlpha=.6;
+  /**
+   * ribbons func
+   * @return {void}
+   */
+  function ribbons() {
+    document.onclick = i
+    document.ontouchstart = i
+    i()
+  }
+}
+/* eslint-disable */
+
 function postScroll() {
   var needScroll,
     speed = 10
@@ -20,7 +36,7 @@ function postScroll() {
 }
 
 function isMobile() {
-  const Agents = navigator.userAgent,
+  var Agents = navigator.userAgent,
     mobileAgents = [
       'Android',
       'iPhone',
@@ -29,28 +45,13 @@ function isMobile() {
       'iPad',
       'iPod'
     ]
-  for (let agents of mobileAgents) {
+  for (var agents of mobileAgents) {
     while (Agents.includes(agents)) {
       return true
     }
   }
+  return false
 }
-
-/* eslint-disable */
-// prettier-ignore
-{
-  function i(){for(x.clearRect(0,0,w,h),q=[{x:0,y:.7*h+f},{x:0,y:.7*h-f}];q[1].x<w+f;)d(q[0],q[1])}function d(e,t){x.beginPath(),x.moveTo(e.x,e.y),x.lineTo(t.x,t.y);var i=t.x+(2*z()-.25)*f,n=y(t.y);x.lineTo(i,n),x.closePath(),r-=u/-50,x.fillStyle="#"+(127*v(r)+128<<16|127*v(r+u/3)+128<<8|127*v(r+u/3*2)+128).toString(16),x.fill(),q[0]=q[1],q[1]={x:i,y:n}}function y(e){var t=e+(2*z()-1.1)*f;return t>h||t<0?y(e):t}var c=document.getElementById("ribbons"),x=c.getContext("2d"),pr=window.devicePixelRatio||1,w=window.innerWidth,h=window.innerHeight,f=90,q,m=Math,r=0,u=2*m.PI,v=m.cos,z=m.random;c.width=w*pr,c.height=h*pr,x.scale(pr,pr),x.globalAlpha=.6;
-  /**
-   * ribbons func
-   * @return {void}
-   */
-  function ribbons() {
-    document.onclick = i
-    document.ontouchstart = i
-    i()
-  }
-}
-/* eslint-disable */
 
 function liveTime(time) {
   if (!time) {
@@ -61,7 +62,7 @@ function liveTime(time) {
   const live = Math.floor(new Date().getTime() - time.getTime()),
     m = 24 * 60 * 60 * 1000
 
-  let liveDay = live / m,
+  var liveDay = live / m,
     mliveDay = Math.floor(liveDay),
     liveHour = (liveDay - mliveDay) * 24,
     mliveHour = Math.floor(liveHour),
@@ -75,7 +76,6 @@ function liveTime(time) {
 
 ;(function() {
   var siteNnav = document.querySelector('.site-nav')
-  //var toolBar = document.querySelector('.tool-bar')
   var agent = navigator.userAgent
   if (/.*Firefox.*/.test(agent)) {
     document.addEventListener(
@@ -85,12 +85,8 @@ function liveTime(time) {
         var detail = e.detail
         if (detail > 0) {
           siteNnav.style.transform = 'translateY(-100%)'
-          //toolBar.style.transform = 'translateY(100%)'
-          console.log('firefox ↓')
         } else {
           siteNnav.style.transform = 'translateY(0%)'
-          //toolBar.style.transform = 'translateY(0%)'
-          console.warn('firef ↑')
         }
       },
       { passive: true }
@@ -101,12 +97,8 @@ function liveTime(time) {
       var wheelDelta = e.wheelDelta
       if (wheelDelta > 0) {
         siteNnav.style.transform = 'translateY(0%)'
-        //toolBar.style.transform = 'translateY(0%)'
-        console.warn('↑')
       } else {
         siteNnav.style.transform = 'translateY(-100%)'
-        //toolBar.style.transform = 'translateY(100%)'
-        console.warn('↓')
       }
     }
   }
@@ -119,6 +111,7 @@ function liveTime(time) {
         var scrollTop =
             e.target.body.scrollTop || e.target.documentElement.scrollTop,
           siteNav = document.querySelector('.site-nav')
+
         if (scrollTop >= 500) {
           siteNav.style.background = 'rgba(255,255,255,.8)'
           siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
@@ -134,6 +127,7 @@ function liveTime(time) {
         } else {
           sider.classList.remove('affix')
         }
+        /* lazyLoadImg() */
       },
       { passive: true }
     )
@@ -172,15 +166,36 @@ function liveTime(time) {
     }
   })
 
-  /*  console.info(
-    ' %c Theme in development %c please wait ',
+  /*   var lazyImgs = [...document.querySelectorAll('div[lazy-src]')]
+
+  function lazyLoadImg() {
+    var docHeight =
+        document.clientHeight || document.documentElement.clientHeight,
+      docSTop = document.scrollTop || document.documentElement.scrollTop
+
+    if (lazyImgs.length > 0) {
+      lazyImgs.map((v, k) => {
+        var key = k,
+          v = v
+        if (v.offsetTop - docSTop < docHeight) {
+          var img = document.createElement('img')
+          img.setAttribute('src', v.getAttribute('lazy-src'))
+          lazyImgs.splice(key, 1)
+          img.onload = function() {
+            v.parentElement.replaceChild(this, v)
+            console.log(new Date() + '已加载 ==>' + this.src)
+          }
+        }
+      })
+    }
+  }
+  lazyLoadImg() */
+
+  function currentToc() {}
+
+  console.info(
+    ' %c Sagiri Free %c https://github.com/shiyiya/typecho-theme-sagiri ',
     'background: #ed143d7d; padding:5px 0;',
     'background: #40b3ec;padding:5px 5px 5px 0;'
   )
-
-  console.info(
-    ' %c 主题开发中  %c 敬请期待',
-    ' background: #ed143d7d; padding:5px 0;',
-    'background: #40b3ec;padding:5px 5px 5px 0;'
-  ) */
 })()

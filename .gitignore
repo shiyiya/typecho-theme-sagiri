@@ -10,3 +10,11 @@ lib/live2d/*
 # my site config
 sw.js
 manifest.json
+
+# my post 
+post/
+
+
+# util 
+util/pjaxmini.js
+util/lazyload.js

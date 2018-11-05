@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp"
+    "start": "gulp start",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",

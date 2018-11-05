@@ -26,18 +26,21 @@
 					    <span itemprop="interactionCount"><a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('• 评论', '• 1 条评论', '• %d 条评论'); ?></a></span>
                     </div>
                 </header>
-                <?php $thumb = showThumb($this,null,true); ?>
+                <?php if (!empty($this->options->feature) && in_array('showThumb', $this->options->feature)): ?>
+					<?php $thumb = showThumb($this,null,true); ?>
 					<?php if(!empty($thumb)):?>
-						<img src="<?php echo $thumb;?>" >
+						<?php echo $thumb;?>
 					<?php endif; ?>
-					<div class="post-content" itemprop="articleBody">
-						<?php $this->excerpt(100); ?>
-						<div text-center class="post-button">
-							<a href="<?php $this->permalink() ?>">
-								-   阅读全文   -
-							</a>
-						</div>
-            		</div>
+				<?php endif; ?>
+				<?php replaceTag($this->excerpt(100)); ?>
+				<div class="post-content" itemprop="articleBody">
+					<?php $this->excerpt(100); ?>
+					<div text-center class="post-button">
+						<a href="<?php $this->permalink() ?>">
+							-   阅读全文   -
+						</a>
+					</div>
+            	</div>
     		</article>
     	<?php endwhile; ?>
         <?php else: ?>

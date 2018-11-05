@@ -40,11 +40,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 						<?php echo $thumb;?>
 					<?php endif; ?>
 					<?php endif; ?>
-					<!-- <?php if($this->attachments(1)->attachment and $this->attachments(1)->attachment->isImage): ?>
-						<img src="<?php $this->attachments(1)->attachment->url(); ?>"/> 
-					<?php endif; ?> -->
 					<div class="post-content" itemprop="articleBody">
-						<?php $this->excerpt(100); ?>
+						<?php replaceTag($this->excerpt(100)); ?>
 						<div text-center class="post-button">
 							<a href="<?php $this->permalink() ?>">
 								<?php _e('-   阅读全文   -'); ?>

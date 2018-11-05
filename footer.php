@@ -50,18 +50,45 @@
 </script>
 <?php endif; ?>
 
-<script src="<?php $this->options->themeUrl('js/index.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/index.min.js'); ?>"></script>
 
-<?php if ($this->options->ribbons == 'able'): ?>
-<script>
-    ribbons()
-</script>
+<!--  Lazy load images -->
+<?php if (!empty($this->options->feature) && in_array('lazyImg', $this->options->feature)): ?>
+<script src="<?php $this->options->themeUrl('util/lazyload.min.js'); ?>"></script>
 <?php endif; ?>
 
+
+<script>
+
+// Scroll to article area
+<?php if($this->is('post')) :?>
+    var postScrolltimer = setInterval(postScroll, 10)
+<?php endif; ?>
+
+// Background like ribbon
+<?php if ($this->options->ribbons == 'able'): ?>
+    ribbons()
+<?php endif; ?>
+
+// How long has the website been alive ?
+<?php if($this->options->liveTime) :?>
+var liveTimeer = setInterval(function (){
+        liveTime('<?php strval($this->options->liveTime());?>')
+    }, 1000)
+<?php endif; ?>
+
+// Custom Javascript
+ <?php _e($this->options->customScript) ?>
+
+</script>
+
+
+<!-- Code highlight -->
 <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
 <script src="<?php $this->options->themeUrl('./lib/prism/'. $this->options->codeHighlightTheme . '/prism.js'); ?>"></script>
 <?php endif; ?>
 
+<!-- My PAPERWIFE -->
 <?php if($_SERVER['HTTP_HOST'] == 'runtua.cn' || $_SERVER['HTTP_HOST'] == 'www.runtua.cn'): ?>
 <script src="<?php $this->options->themeUrl('./lib/live2d/live2d.js'); ?>"></script>
 <script type="text/javascript">
@@ -69,28 +96,10 @@
 </script>
 <?php endif; ?>
 
-<?php if($this->is('post')) :?>
-<script>
-    var postScrolltimer = setInterval(postScroll, 10)
-</script>
-<?php endif; ?>
-
- <!-- Custom Javascript -->
- <?php _e($this->options->customScript) ?>
-
-<?php if($this->options->liveTime) :?>
-<script>
-    var liveTimeer = setInterval(function (){
-        liveTime('<?php strval($this->options->liveTime());?>')
-    }, 1000)
-</script>
-<?php endif; ?>
 
 </div><!-- End root -->
 
 <?php $this->footer(); ?>
-
-
 
 </body>
 

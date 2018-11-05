@@ -288,6 +288,7 @@ body {
   background: #f5f7f9;
   margin: 0;
 }
+pre,
 code {
   padding: 2px 4px;
   margin: 0 4px;
@@ -370,8 +371,7 @@ body,
     flex: 1;
     -webkit-box-flex: 1;
     margin: 0;
-  }
-  /* .menu .menu-item a.current,
+  } /* .menu .menu-item a.current,
   .site-nav .menu-item a.current::before {
     color: #40b3ec;
   } */
@@ -496,7 +496,7 @@ body,
     display: none;
   }
 }
-.sidebar-inner {
+.sider-item {
   animation: fade-in-left 0.3s 0.3s backwards;
   background-color: #fff;
   border-radius: 5px;
@@ -506,6 +506,10 @@ body,
   background: #fff;
   border-radius: 5px;
   z-index: 2;
+  margin-bottom: 10px;
+}
+.rand-archive-nav-title {
+  margin: 0;
 }
 .sidebar-inner.affix {
   position: fixed;
@@ -649,6 +653,25 @@ body,
   left: -15px;
   content: '#';
   color: #ec6149;
+}
+@media (max-width: 991px) {
+  .post-content > h1,
+  .post-content > h2,
+  .post-content > h3,
+  .post-content > h4,
+  .post-content > h5,
+  .post-content > h6 {
+    padding-left: 2px;
+    margin-left: 12px;
+  }
+  .post-content > h1::before,
+  .post-content > h2::before,
+  .post-content > h3::before,
+  .post-content > h4::before,
+  .post-content > h5::before,
+  .post-content > h6::before {
+    left: -12px;
+  }
 }
 .post {
   padding: 40px;
@@ -904,6 +927,9 @@ ol.comment-list li.comment-parent {
 ol.comment-list a {
   border: none;
 }
+.comment-content a {
+  border-bottom: 1px solid #999;
+}
 ol.comment-list p {
   margin: 0;
 }
@@ -917,7 +943,7 @@ ol.comment-list ol {
   padding: 20px;
 }
 .comment-child {
-  border-top: 1px solid #c4d3e6;
+  border-top: 1px solid #eee;
 }
 .comment-author .avatar {
   display: inline-block;
@@ -1057,11 +1083,10 @@ ol.comment-list ol {
   border-radius: 15px;
   padding: 6px 10px;
   border: none;
-  border: #e0e2e2 1px solid
+  border: #e0e2e2 1px solid;
 }
-.tag-link:hover,
-.tags a:hover{
-  border-color: #999
+.tag-link:hover {
+  border-color: #999;
 }
 .tags a {
   display: inline-block;
@@ -1103,9 +1128,9 @@ ol.comment-list ol {
   box-sizing: border-box;
   width: 40%;
   display: inline-block;
-  border: 1px solid #dc2f60;
+  border: 1px solid #eee;
   border-radius: 3px;
-  box-shadow: 4px 4px 20px 0px #eee;
+  box-shadow: rgba(172, 172, 172, 0.4) 0px 0px 2px 2px;
   padding: 32px 10px 10px 10px;
   margin: 20px;
   text-align: center;
@@ -1131,7 +1156,6 @@ ol.comment-list ol {
   height: 64px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  border-bottom: #dc2f60 2px solid;
 }
 .timeline-archives {
   animation: fade-in-top 0.2s 0.3s backwards;
@@ -1236,18 +1260,47 @@ img[alt='sticker'] {
   height: 40px;
   display: inline-block;
 }
-
-#back-actions{
+#back-actions {
   position: fixed;
   right: 0px;
   bottom: 20%;
   line-height: 1;
 }
-#back-actions .back{
+#back-actions .back {
   display: block;
   padding: 8px;
   border: #dee5e7 1px solid;
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   background-color: #f6f8f8;
+}
+/* lazy img animation */
+.lazy-loader {
+  background-color: #59488b;
+  padding: 10px;
+}
+.lazy-loader > span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px #fff solid;
+  border-radius: 50%;
+  animation: rotation 1s ease-in-out infinite;
+  margin: 0 auto;
+}
+.lazy-loader > span::after {
+  width: 5px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 100%;
+  position: absolute;
+  content: '';
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -2,12 +2,12 @@
 
 > As lovely as sagiri
 
-[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE)
+[![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE)
 [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
 ## Introduction
 
-[EN](./README-EN.md) [ZH-CN](../README.md)
+[中文版](../README.md)
 
 Lovely theme for Typecho.
 
