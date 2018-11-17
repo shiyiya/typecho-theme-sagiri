@@ -3,7 +3,7 @@
 
 <div  id="main" class="main" role="main">
    <section class="home-404">
-      <h1>Oh, shit</h1>
+      <h1>Oh, Oooops!</h1>
       <p>Something went worong.Please try again</p>
       <a href="<?php $this->options->siteUrl() ?>" class="btn">Go home</a>
    </section>

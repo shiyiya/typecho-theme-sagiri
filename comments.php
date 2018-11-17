@@ -80,7 +80,7 @@ echo $commentClass;
 </div>
 
 <!-- OwO emoji -->
-<?php if (!empty($this->options->feature) && in_array('commentEmoji', $this->options->feature)): ?>
+<?php if (!empty($this->options->feature) && in_array('commentEmoji', $this->options->feature) && $this->allow('comment')): ?>
 <script src="<?php $this->options->themeUrl('./lib/OwO/OwO.min.js'); ?>"></script>
 
 <script>

@@ -21,10 +21,10 @@
                 <header class="post-header">
                     <h2 class="post-title" itemprop="name headline"><a class="post-title-link" itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
                     <div class="post-meta">
-                        <span><?php _e('时间: '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></span>
-					    <span><?php _e('• 分类: '); ?><?php $this->category(','); ?></span>
-					    <span itemprop="interactionCount"><a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('• 评论', '• 1 条评论', '• %d 条评论'); ?></a></span>
-                    </div>
+					    <span><?php _e('<i class="iconfont icon-time"></i>  '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></span>
+					    <span><?php _e('<i class="iconfont icon-eye"></i>  浏览 '); getPostView($this); ?></span>
+					    <span itemprop="interactionCount"><a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('<i class="iconfont icon-Comments"></i>  没有评论', '<i class="iconfont icon-Comments"></i>  评论 1', '<i class="iconfont icon-Comments"></i>  评论数 %d'); ?></a></span>
+				    </div>
                 </header>
                 <?php if (!empty($this->options->feature) && in_array('showThumb', $this->options->feature)): ?>
 					<?php $thumb = showThumb($this,null,true); ?>
@@ -32,18 +32,15 @@
 						<?php echo $thumb;?>
 					<?php endif; ?>
 				<?php endif; ?>
-                <!-- <?php $thumb = showThumb($this,null,true); ?>
-					<?php if(!empty($thumb)):?>
-						<img src="<?php echo $thumb;?>" >
-					<?php endif; ?> -->
-					<div class="post-content" itemprop="articleBody">
-						<?php $this->excerpt(100); ?>
-						<div text-center class="post-button">
-							<a href="<?php $this->permalink() ?>">
-								-   阅读全文   -
-							</a>
-						</div>
-            		</div>
+				<?php replaceTag($this->excerpt(100)); ?>
+				<div class="post-content" itemprop="articleBody">
+					<?php $this->excerpt(100); ?>
+					<div text-center class="post-button">
+						<a href="<?php $this->permalink() ?>">
+							-   阅读全文   -
+						</a>
+					</div>
+            	</div>
     		</article>
     	<?php endwhile; ?>
         <?php else: ?>

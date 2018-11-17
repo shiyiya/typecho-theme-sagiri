@@ -34,7 +34,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <meta name="apple-mobile-web-app-title" content="<?php $this->options->title() ?>">
-    <meta name="theme-color" content="<?php $this->options->themeColor ? $this->options->themeColor() : _e('#FFFFFF') ?>">
+    <meta name="theme-color" content="<?php $this->options->themeColor ? $this->options->themeColor() : _e('#fff') ?>">
     <link rel="apple-touch-icon" sizes="32x32 58x58 72x72 96x96 114x114" href="<?php $this->options->IOSIcon(); ?>">
    
 
@@ -68,13 +68,15 @@
      <link rel="stylesheet" href="<?php $this->options->themeUrl('./lib/OwO/OwO.min.css'); ?>">
     
     <!-- CSS Style -->
-    <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.min.css'); ?>">
-    <link async rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.min.css'); ?>">
+    <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.min.css?t='). _e(time()); ?>">
+    <link async rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.css'); ?>">
     <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/_variable.min.css'); ?>">
 
 
     <!-- Custom Style -->
-    <?php _e($this->options->customCss) ?>
+    <style>
+        <?php _e($this->options->customCss) ?>
+    </style>
 
     <!--[if lt IE 9]>
     <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>

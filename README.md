@@ -3,16 +3,15 @@
 > 如 ‘你’ 般可爱，简单纯粹。
 
 [![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE)
+
 [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
 ## 介绍
 
 [The English Version](./doc/README-EN.md)
 
-
 Sagiri ，简洁可爱的 `typecho` 主题。
 主题样式基于 [hexo-theme-sagiri](https://github.com/DIYgod/hexo-theme-sagiri) 上修改与添加。
-
 
 - [change log](./doc/changelog.md)
 
@@ -20,29 +19,20 @@ Sagiri ，简洁可爱的 `typecho` 主题。
 - 支持代码高亮，5 主题，支持主流代码，使用 Prism
 - 响应式，适用于移动端与桌面端，桌面端 > 移动端
 - 支持首页文章缩略图、~~随机图~~
-- 支持文章目录树、~~相关文章与数学公式渲染~~
+- 支持文章目录树、相关文章与~~数学公式渲染~~
 - 独立页面支持归档、分类、友链
+- ~~全站无刷新 miniPjax~~、图片懒加载支持
 - ~~国际化支持（i18N）~~
-- ~~全站无刷新 miniPjax 支持~~
 
 ## 预览
 
 [![overview](./doc/shot.png)](https://runtua.cn)
-
 
 ## 主题使用
 
 点击“Download ZIP”下载，解压后将文件夹改名（不改名 typecho 会报文件夹名过长的错误（500））为 Sagiri 后上传到 /usr/themes，并启用主题
 
 如果需要更新主题，则先下载最新文件，然后覆盖原文件即可完成更新，部分新增加的功能需要到后台开启才会生效
-
-**注意事项**：由于`浏览量`是使用 typecho 自定义字段生成，而其在 **php7+ 上存在问题**，导致 php7+ 无法显示浏览量可将 function.php 添加以下代码：
-
-```php
-function getDbView($archive){
-
-}
-```
 
 ## 相关设置
 
@@ -55,6 +45,7 @@ function getDbView($archive){
 - 首页文章概览默认最大输出 100 个字符, 可手动添加截断符 <!-- more --> 控制输出。
 
 - 如何创建归档 & 搜索 & 分类
+
   - 归档 :
     新建独立页面 -> 选择模板 -> page-archive -> 设置 url 为 archive -> 高级选项 -> 隐藏
   - 搜索 :  
@@ -63,6 +54,29 @@ function getDbView($archive){
     新建独立页面 -> 选择模板 -> page-categories-> 设置 url 为 categorie -> 高级选项 -> 隐藏
   - 示例：
     ![how-to-create-archive-page](https://runtua.cn/usr/uploads/2018/10/3336908615.png)
+
+- 圖片嬾加載
+
+```markdown
+--> 文章内嬾加載
+![圖片描述 寬 高](圖片鏈接)
+![這是一段描述 300 200](https://xxx.gif)
+```
+
+```javascript
+其它
+<elem class=".lazy-loader" lazy-src="https://xxx.gif"></elem>
+new LazyLoadImg({
+  selector: '.lazy-loader',
+  virtualSrc: 'lazy-src',
+  callback: function(image, src) {//元素出現到可視區域執行回調，接受該元素
+    image.innerHTML = ''
+    image.style.backgroundColor = 'transparent'
+    image.style.backgroundImage = `url(${src})`
+    image.style.backgroundSize = 'contain'
+  }
+})
+```
 
 ## Author
 
