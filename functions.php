@@ -3,13 +3,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form) {   
 
-    $isRewrite = new Typecho_Widget_Helper_Form_Element_Radio('isRewrite',
-        array('able' => _t('启用'),
-        'disable' => _t('禁用'),),
-        'disable',_t('地址重写'), _t('是否开启了地址重写（伪静态），用于分类，归档的显示')
-    );
-    $form->addInput($isRewrite);
-
     $fav = new Typecho_Widget_Helper_Form_Element_Text('fav', NULL, NULL, _t('通用图标'), _t('请填入完整链接，作为网站标签页图标，手机建议大小 114x114'));
     $form->addInput($fav);
     $IOSIcon = new Typecho_Widget_Helper_Form_Element_Text('IOSIcon', NULL, NULL, _t('IOS 图标'), _t('请填入完整链接，作为网站图标，手机建议大小 114x114，适用 IOS 全系列'));
@@ -56,9 +49,8 @@ function themeConfig($form) {
         'commentEmoji' => _t('评论表情'),
         /* 'pjax' => _t('mini-pjax'), */
         /* 'lazyImg' => _t('文章内图片懒加载'), */
-        'tocThree' => _t('文章目录树'),
         'ribbons' => _t('类彩带背景'),),
-        array('tocThree'), _t('额外功能设置'));
+        array('showThumb'), _t('额外功能设置'));
     $form->addInput($feature->multiMode());
 
     $siderbarOption = new Typecho_Widget_Helper_Form_Element_Checkbox('siderbarOption', 
@@ -78,10 +70,6 @@ function themeConfig($form) {
         'default',_t('代码高亮主题'), _t('代码高亮主题')
    );
    $form->addInput($codeHighlightTheme);
-
-   $lazyPlaceholderImg = new Typecho_Widget_Helper_Form_Element_Text('lazyPlaceholderImg', NULL, NULL, _t('图片懒加载 loading 图'), _t('请填入完整链接，作为懒加载占位图，不填则为默认'));
-   $form->addInput($lazyPlaceholderImg);
-   
     
 
     /* $PWA = new Typecho_Widget_Helper_Form_Element_Radio('PWA',
@@ -193,7 +181,7 @@ function getBrowser($agent){
         $safari_vern = explode('.', $str1[1]);
         $browserVersion = 'Safari '.$safari_vern[0];
     } else{
-        $browserVersion = '?';
+        $browserVersion = '404 Browser';
     }
     echo $browserVersion;
 }
@@ -250,7 +238,7 @@ function getOs($agent){
         }else if (preg_match('/fusion/i', $agent)) {
             $OSVersion = '<i class="iconfont icon-android"></i>';
         } else {
-            $OSVersion = '?系统';
+            $OSVersion = '404 系统';
         }
     echo $OSVersion;
 }
@@ -299,9 +287,7 @@ function getRandomPosts($limit = 5){
 
     $adapterName =  $db->getAdapterName();
     $rand = "RAND()";
-    /* if (stripos($db->getAdapterName(), 'sqlite')) {
-        $rand = "RANDOM()";
-    }; */
+    
     if($adapterName == 'pgsql' || $adapterName == 'Pdo_Pgsql' || $adapterName == 'Pdo_SQLite' || $adapterName == 'SQLite'){
         $rand = 'RANDOM()';
     }
