@@ -74,9 +74,7 @@
 
 
     <!-- Custom Style -->
-    <style>
-        <?php _e($this->options->customCss) ?>
-    </style>
+    <?php _e($this->options->customCss) ?>
 
     <!--[if lt IE 9]>
     <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
@@ -99,7 +97,7 @@
                 </li>
                 <?php endwhile; ?>
                 <li class="menu-item search">
-                    <a href="<?php $this->options->isRewrite == 'able' ?  $this->options->siteUrl('search.html') :  $this->options->siteUrl('index.php/search.html') ?>"><i class="iconfont icon-search"></i></a> 
+                    <a href="<?php $this->options->rewrite ?  $this->options->siteUrl('search.html') :  $this->options->siteUrl('index.php/search.html') ?>"><i class="iconfont icon-search"></i></a> 
                  </li>
             </ul>
         </nav>
