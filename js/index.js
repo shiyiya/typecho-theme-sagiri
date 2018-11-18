@@ -14,6 +14,105 @@
 }
 /* eslint-disable */
 
+function isMobile() {
+  var Agents = navigator.userAgent,
+    mobileAgents = [
+      'Android',
+      'iPhone',
+      'SymbianOS',
+      'Windows Phone',
+      'iPad',
+      'iPod'
+    ]
+  for (var agents of mobileAgents) {
+    while (Agents.indexOf(agents) != -1) {
+      return true
+    }
+  }
+  return false
+}
+
+function liveTime(time) {
+  if (!time) {
+    throw Error('未指定日期！')
+    return void 0
+  }
+  var time = new Date(time)
+  var live = Math.floor(new Date().getTime() - time.getTime()),
+    m = 24 * 60 * 60 * 1000
+
+  var liveDay = live / m,
+    mliveDay = Math.floor(liveDay),
+    liveHour = (liveDay - mliveDay) * 24,
+    mliveHour = Math.floor(liveHour),
+    liveMin = (liveHour - mliveHour) * 60,
+    mliveMin = Math.floor((liveHour - mliveHour) * 60),
+    liveSec = Math.floor((liveMin - mliveMin) * 60)
+
+  // prettier-ignore
+  document.querySelector('#live-time').innerText ="( •̀ ω •́ ) 被续 " + mliveDay +' 天 ' + mliveHour +' 小时 ' + mliveMin +' 分 ' + liveSec +' 秒'
+}
+
+function request(method, url, param, callback) {
+  var xhr = new XMLHttpRequest()
+
+  xhr.onreadystatechange = () => {
+    if (xhr.readyState === 4) {
+      if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+        callback(xhr.responseText)
+      } else {
+        callback(xhr.responseText)
+      }
+    }
+  }
+  if (method.toLocaleUpperCase === 'POST') {
+    if (param && Object.keys(param).length > 0) {
+      var temp = ''
+      for (var key in param) {
+        temp += '&' + key + '=' + param[key]
+      }
+      param = temp.slice(1)
+    }
+
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+  }
+  xhr.open(method, url, true)
+  xhr.send(param)
+}
+
+var loadNextPagePost = (() => {
+  var postWrap = document.querySelector('#posts'),
+    nexturl =
+      document.querySelector('.next > a') &&
+      document.querySelector('.next > a').getAttribute('href'),
+    hasNextPost = true
+  return () => {
+    if (hasNextPost) {
+      request('get', nexturl + '?loadNextPagePost=true', null, function(res) {
+        var next,
+          fragment = document.createElement('div')
+        fragment.innerHTML = res
+        next = fragment.querySelector('.next')
+        if (next || fragment.querySelector('.post')) {
+          if (next) {
+            nexturl = next.getAttribute('href')
+          } else {
+            var loadMorePost = document.querySelector('.loading-more-post')
+            loadMorePost.innerText = '没有更多了'
+            setTimeout(function() {
+              loadMorePost.parentElement.removeChild(loadMorePost)
+            }, 2000)
+            hasNextPost = false
+          }
+
+          postWrap.appendChild(fragment)
+        }
+        return
+      })
+    }
+  }
+})()
+
 function postScroll() {
   var needScroll,
     speed = 10
@@ -35,43 +134,51 @@ function postScroll() {
   }
 }
 
-function isMobile() {
-  var Agents = navigator.userAgent,
-    mobileAgents = [
-      'Android',
-      'iPhone',
-      'SymbianOS',
-      'Windows Phone',
-      'iPad',
-      'iPod'
-    ]
-  for (var agents of mobileAgents) {
-    while (Agents.includes(agents)) {
-      return true
-    }
+function animateScrollTo(needScroll) {
+  var scrollTop = document.body.scrollTop || document.documentElement.scrollTop,
+    scrollHeight =
+      document.body.scrollHeight || document.documentElement.scrollHeight,
+    clientHeight =
+      document.body.clientHeight || document.documentElement.clientHeight
+
+  if (typeof needScroll == 'string') {
+    var target = document.querySelector(needScroll),
+      needScroll = Math.floor(target.getBoundingClientRect().top + scrollTop)
+  } else if (needScroll.nodeName) {
+    needScroll = Math.floor(needScroll.getBoundingClientRect().top + scrollTop)
   }
-  return false
-}
 
-function liveTime(time) {
-  if (!time) {
-    throw Error('未指定日期！')
-    return void 0
+  if (needScroll == scrollTop) return false
+  if (needScroll > scrollHeight - clientHeight) {
+    needScroll = Math.floor(scrollHeight - clientHeight)
   }
-  var time = new Date(time)
-  const live = Math.floor(new Date().getTime() - time.getTime()),
-    m = 24 * 60 * 60 * 1000
 
-  var liveDay = live / m,
-    mliveDay = Math.floor(liveDay),
-    liveHour = (liveDay - mliveDay) * 24,
-    mliveHour = Math.floor(liveHour),
-    liveMin = (liveHour - mliveHour) * 60,
-    mliveMin = Math.floor((liveHour - mliveHour) * 60),
-    liveSec = Math.floor((liveMin - mliveMin) * 60)
+  if (scrollTop > needScroll) {
+    var timer = setInterval(function() {
+      var scrollTop =
+          document.body.scrollTop || document.documentElement.scrollTop,
+        tspeed = Math.floor(-scrollTop / 30)
 
-  // prettier-ignore
-  document.querySelector('#live-time').innerText ="( •̀ ω •́ ) 被续 " + mliveDay +' 天 ' + mliveHour +' 小时 ' + mliveMin +' 分 ' + liveSec +' 秒'
+      document.documentElement.scrollTop = tspeed + scrollTop
+
+      if (scrollTop <= needScroll) {
+        document.body.scrollTop = document.documentElement.scrollTop = needScroll
+        clearTimeout(timer)
+      }
+    }, 10)
+  } else if (scrollTop < needScroll) {
+    var timer = setInterval(function() {
+      var scrollTop =
+        document.body.scrollTop || document.documentElement.scrollTop
+      var tspeed = needScroll / 30
+      document.documentElement.scrollTop = document.body.scrollTop =
+        tspeed + scrollTop
+      if (scrollTop >= needScroll) {
+        document.body.scrollTop = document.documentElement.scrollTop = needScroll
+        clearTimeout(timer)
+      }
+    }, 10)
+  }
 }
 
 ;(function() {
@@ -112,29 +219,24 @@ function liveTime(time) {
             e.target.body.scrollTop || e.target.documentElement.scrollTop,
           siteNav = document.querySelector('.site-nav')
 
-        if (scrollTop >= 500) {
+        if (!isMobile() && scrollTop >= 500) {
+          siteNav.style.background = 'rgba(255,255,255,.8)'
+          siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
+          sider.classList.add('affix')
+        } else if (isMobile() && scrollTop >= 200) {
           siteNav.style.background = 'rgba(255,255,255,.8)'
           siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
         } else {
           siteNav.style.background = 'rgba(255, 255, 255, 0.1)'
           siteNav.style.boxShadow = 'none'
+          !isMobile() && sider.classList.remove('affix')
         }
-        if (
-          e.target.body.scrollTop >= 500 ||
-          e.target.documentElement.scrollTop >= 500
-        ) {
-          sider.classList.add('affix')
-        } else {
-          sider.classList.remove('affix')
-        }
-        /* lazyLoadImg() */
       },
       { passive: true }
     )
   }
 
   var btnPay = document.querySelector('.btn-pay')
-
   if (btnPay) {
     btnPay.addEventListener('click', function(e) {
       var qr = document.querySelector('.qr')
@@ -146,12 +248,10 @@ function liveTime(time) {
     })
   }
 
-  //!isMobile() && (document.querySelector('.tool-bar').style.display = 'none')
-
-  var img = document.querySelectorAll('img'),
+  var img = [].slice.call(document.querySelectorAll('img')),
     imgVIew = document.querySelector('.img-view'),
     viewImg = document.querySelector('.img-view > img')
-  Array.from(img).forEach(v => {
+  img.forEach(v => {
     v.onclick = function() {
       viewImg.src = this.src
       viewImg.alt = this.alt
@@ -166,35 +266,13 @@ function liveTime(time) {
     }
   })
 
-  /*   var lazyImgs = [...document.querySelectorAll('div[lazy-src]')]
-
-  function lazyLoadImg() {
-    var docHeight =
-        document.clientHeight || document.documentElement.clientHeight,
-      docSTop = document.scrollTop || document.documentElement.scrollTop
-
-    if (lazyImgs.length > 0) {
-      lazyImgs.map((v, k) => {
-        var key = k,
-          v = v
-        if (v.offsetTop - docSTop < docHeight) {
-          var img = document.createElement('img')
-          img.setAttribute('src', v.getAttribute('lazy-src'))
-          lazyImgs.splice(key, 1)
-          img.onload = function() {
-            v.parentElement.replaceChild(this, v)
-            console.log(new Date() + '已加载 ==>' + this.src)
-          }
-        }
-      })
-    }
-  }
-  lazyLoadImg() */
-
-  function currentToc() {}
+  /*   var toTop = document.querySelector('.back-top'),
+    toBottom = document.querySelector('.back-bottom')
+  toTop.onclick = () => animateScrollTo('#header')
+  toBottom.onclick = () => animateScrollTo('#footer') */
 
   console.info(
-    ' %c Sagiri Free %c https://github.com/shiyiya/typecho-theme-sagiri ',
+    ' %c Sagiri %c https://github.com/shiyiya/typecho-theme-sagiri ',
     'background: #ed143d7d; padding:5px 0;',
     'background: #40b3ec;padding:5px 5px 5px 0;'
   )

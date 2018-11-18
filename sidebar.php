@@ -69,15 +69,39 @@
                 </div>
             </section>
         </div>
-        <?php if (!empty($this->options->feature) && in_array('relatedArticles', $this->options->feature)): ?>
-        <div class="sider-item">
-            <p class="rand-archive-nav-title"" text-center>相关文章</p>
-            <?php getRandomPosts(); ?>
+        <?php if (!empty($this->options->siderbarOption)): ?>
+        <div class="sider-item sider-other">
+            <ul class="sidebar-nav" text-center>
+                <?php if (in_array('TopViewPost', $this->options->siderbarOption)): ?>
+                    <li class="sidebar-nav-topview">热门文章</li>
+                <?php endif; ?>
+                <?php if (in_array('topComnentPost', $this->options->siderbarOption)): ?>
+                    <li class="sidebar-nav-random">热评文章</li>
+                <?php endif; ?>
+                <?php if (in_array('randomPost', $this->options->siderbarOption)): ?>
+                    <li class="sidebar-nav-random">相关文章</li>
+                <?php endif; ?>
+            </ul>
+            <?php if (in_array('TopViewPost', $this->options->siderbarOption)): ?>
+                <section class="topview-post-wrap sidebar-section-active">
+                    <?php getTopView($this); ?>
+                </section>
+            <?php endif; ?>
+            <?php if (in_array('topComnentPost', $this->options->siderbarOption)): ?>
+                <section class="topcomment-post-wrap">
+                <?php getTopCommentPosts(); ?>
+                </section>
+            <?php endif; ?>
+            <?php if (in_array('randomPost', $this->options->siderbarOption)): ?>
+                <section class="random-post-wrap">
+                <?php getRandomPosts(); ?>
+                </section>
+            <?php endif; ?>
         </div>
         <?php endif; ?>
     </div>
 </aside>
 
-<?php if($this->is('post') || $this->is('page')): ?>
+<?php if($this->is('post') || $this->is('page') || $this->is('index')): ?>
 <script defer src="<?php $this->options->themeUrl('js/sidebar.min.js'); ?>"></script>
 <?php endif; ?>
