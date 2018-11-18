@@ -55,17 +55,17 @@ function themeConfig($form) {
         'codeHighlight' => _t('代码高亮'),
         'commentEmoji' => _t('评论表情'),
         /* 'pjax' => _t('mini-pjax'), */
-        'lazyImg' => _t('文章内图片懒加载'),
+        /* 'lazyImg' => _t('文章内图片懒加载'), */
         'tocThree' => _t('文章目录树'),
         'ribbons' => _t('类彩带背景'),),
-        array('feature'), _t('额外功能设置'));
+        array('tocThree'), _t('额外功能设置'));
     $form->addInput($feature->multiMode());
 
     $siderbarOption = new Typecho_Widget_Helper_Form_Element_Checkbox('siderbarOption', 
         array('TopViewPost' => _t('热门文章'),
         'topComnentPost' => _t('热评文章'),
         'randomPost' => _t('随机文章'),),
-        array('siderbarOption'), _t('侧栏相关设置'));
+        array('randomPost'), _t('侧栏相关设置'));
     $form->addInput($siderbarOption->multiMode());
 
 
@@ -371,9 +371,9 @@ function getTopCommentPosts($limit = 5){
 
 function replaceTag($content,$isLogin = false){
     $config =  Typecho_Widget::widget('Widget_Options')->feature;
-    if(in_array('lazyImg', $config)){
-        $content = preg_replace("/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?alt=[\'|\"].*?\s(\d+)\s(\d+)[\'|\"].*?[\/]?>/sm",'<div class="lazy-loader" lazy-src="$1" style="width:$2px;height:$3px"><span></span></div>', $content);
-    }
+   /*  if(in_array('lazyImg', $config)){
+        $content = preg_replace("/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?alt=[\'|\"].*?\s(\d+)\s(\d+)[\'|\"].*?[\/|img|IMG]?>/sm",'<div class="lazy-loader" lazy-src="$1" style="width:$2px;height:$3px"><span></span></div>', $content);
+    } */
     /* if($isLogin){
         $obj->content = preg_replace("/\[hide\](.*?)\[\/hide\]/sm",'$1',$obj->content);
     }else{

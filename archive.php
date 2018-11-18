@@ -21,10 +21,10 @@
                 <header class="post-header">
                     <h2 class="post-title" itemprop="name headline"><a class="post-title-link" itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
                     <div class="post-meta">
-					    <span><?php _e('<i class="iconfont icon-time"></i>  '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></span>
-					    <span><?php _e('<i class="iconfont icon-eye"></i>  浏览 '); getPostView($this); ?></span>
-					    <span itemprop="interactionCount"><a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('<i class="iconfont icon-Comments"></i>  没有评论', '<i class="iconfont icon-Comments"></i>  评论 1', '<i class="iconfont icon-Comments"></i>  评论数 %d'); ?></a></span>
-				    </div>
+                        <span><?php _e('<i class="iconfont icon-time"></i> 发表于 '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></span>
+					    <span><?php _e('<i class="iconfont icon-eye"></i> 浏览量 '); getPostView($this); ?></span>
+					    <span itemprop="interactionCount"><a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('<i class="iconfont icon-Comments"></i> 没有评论', '<i class="iconfont icon-Comments"></i> 评论数 1', '<i class="iconfont icon-Comments"></i> 评论数 %d'); ?></a></span>
+                    </div>
                 </header>
                 <?php if (!empty($this->options->feature) && in_array('showThumb', $this->options->feature)): ?>
 					<?php $thumb = showThumb($this,null,true); ?>

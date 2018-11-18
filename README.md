@@ -34,6 +34,14 @@ Sagiri ，简洁可爱的 `typecho` 主题。
 
 如果需要更新主题，则先下载最新文件，然后覆盖原文件即可完成更新，部分新增加的功能需要到后台开启才会生效
 
+**注意事项**：由于`浏览量`是使用 typecho 自定义字段生成，而其在 **php7+ 上存在问题**，导致 php7+ 无法显示浏览量可将 function.php 添加以下代码：
+
+```php
+function getDbView($archive){
+
+}
+```
+
 ## 相关设置
 
 - 缩略图
@@ -54,29 +62,6 @@ Sagiri ，简洁可爱的 `typecho` 主题。
     新建独立页面 -> 选择模板 -> page-categories-> 设置 url 为 categorie -> 高级选项 -> 隐藏
   - 示例：
     ![how-to-create-archive-page](https://runtua.cn/usr/uploads/2018/10/3336908615.png)
-
-- 圖片嬾加載
-
-```markdown
---> 文章内嬾加載
-![圖片描述 寬 高](圖片鏈接)
-![這是一段描述 300 200](https://xxx.gif)
-```
-
-```javascript
-其它
-<elem class=".lazy-loader" lazy-src="https://xxx.gif"></elem>
-new LazyLoadImg({
-  selector: '.lazy-loader',
-  virtualSrc: 'lazy-src',
-  callback: function(image, src) {//元素出現到可視區域執行回調，接受該元素
-    image.innerHTML = ''
-    image.style.backgroundColor = 'transparent'
-    image.style.backgroundImage = `url(${src})`
-    image.style.backgroundSize = 'contain'
-  }
-})
-```
 
 ## Author
 

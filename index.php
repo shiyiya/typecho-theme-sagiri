@@ -85,7 +85,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 				</article>
 			<?php endwhile; ?>
 			</section>
-			<div class="loading-more-post"">加载中···</div>
+			<div class="loading-more-post" style="display:none">加载中···</div>
 			<?php if (!empty($this->options->feature) && in_array('loadNextPagePost', $this->options->feature)): ?>
 				<?php $this->pageLink('下一页','next','hidden'); ?>	
 			<?php endif; ?>
@@ -97,7 +97,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 	
 <?php if (!empty($this->options->feature) && in_array('loadNextPagePost', $this->options->feature)): ?>
 <style>
-	.page-navigator,.next,.loading-more-post{
+	.page-navigator,.next{
 		display: none
 	}
 </style>

@@ -16,7 +16,7 @@
 <?php endif; ?>
 
 <footer id="footer" role="contentinfo">
-    <p><i class="iconfont icon-eye"></i>&nbsp;<?php echo getSiteViews(); ?></p>
+    <!-- <p><i class="iconfont icon-eye"></i>&nbsp;<?php echo getSiteViews(); ?></p> -->
     <p id="live-time"></p>
     <p>
         &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
@@ -63,18 +63,17 @@
 
 // Scroll to article area
 <?php if($this->is('post')) :?>
-    var postScrolltimer = setInterval(postScroll, 10)
+var postScrolltimer = setInterval(postScroll, 10)
 <?php endif; ?>
 
-
 // Index auto loading
-<?php if($this->is('index')) :?>
+<?php if($this->is('index') && !empty($this->options->feature) && in_array('loadNextPagePost', $this->options->feature)) :?>
 document.addEventListener('scroll',function(e){
     var scrollTop = e.target.body.scrollTop || e.target.documentElement.scrollTop,
         clientHeight = e.target.body.clientHeight || e.target.documentElement.clientHeight,
         scrollHeight = e.target.body.scrollHeight || e.target.documentElement.scrollHeight;
     if (scrollTop + clientHeight === scrollHeight) {
-        document.querySelector('.loading-more-post').style.display = 'block'
+        document.querySelector('.loading-more-post') && (document.querySelector('.loading-more-post').style.display = 'block')
         loadNextPagePost()
         }
 })
