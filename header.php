@@ -69,7 +69,7 @@
     
     <!-- CSS Style -->
     <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.min.css?t='). _e(time()); ?>">
-    <link async rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.css'); ?>">
+    <link async rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.min.css'); ?>">
     <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/_variable.min.css'); ?>">
 
 
