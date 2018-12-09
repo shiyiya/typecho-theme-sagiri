@@ -34,7 +34,7 @@
             a = document.createElement('a')
 
           a.href = '#' + _.innerText
-          a.innerText = _.id = _.innerText
+          a.innerHTML = _.id = _.innerText
           /* a.onclick = e => {
             e.preventDefault()
             animateScrollTo(_)

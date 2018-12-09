@@ -104,7 +104,6 @@ var loadNextPagePost = (() => {
             }, 2000)
             hasNextPost = false
           }
-
           postWrap.appendChild(fragment)
         }
         return
@@ -256,7 +255,7 @@ function animateScrollTo(needScroll) {
       viewImg.src = this.src
       viewImg.alt = this.alt
 
-      if (imgVIew.style.display == 'block' || imgVIew.style.display == '') {
+      if (imgVIew.style.display == 'block') {
         imgVIew.style.display = 'none'
         document.body.style.overflow = 'auto'
       } else {

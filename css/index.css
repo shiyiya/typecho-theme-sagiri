@@ -566,7 +566,6 @@ body,
 .author-social-links {
   padding-left: 0;
   margin: 0 0 5px;
-  cursor: pointer;
 }
 .author-social-links li {
   line-height: 1;
@@ -755,7 +754,7 @@ body,
 }
 .post-meta {
   font-size: 12px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .post-meta > span:nth-child(1) {
   color: #00a7e0;
@@ -952,6 +951,7 @@ ol.comment-list a {
 }
 ol.comment-list p {
   margin: 0;
+  word-break: break-all;
 }
 ol.comment-list li {
   list-style: none;

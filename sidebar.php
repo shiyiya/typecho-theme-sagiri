@@ -84,7 +84,7 @@
             </ul>
             <?php if (in_array('TopViewPost', $this->options->siderbarOption)): ?>
                 <section class="topview-post-wrap sidebar-section-active">
-                    <?php getTopView($this); ?>
+                    <?php getTopView(); ?>
                 </section>
             <?php endif; ?>
             <?php if (in_array('topComnentPost', $this->options->siderbarOption)): ?>
