@@ -7,6 +7,7 @@
 
     <!-- DNS Prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
     <link rel="dns-prefetch" href="//secure.gravatar.com" />
     <link rel="dns-prefetch" href="//i.loli.net" />
     
@@ -58,14 +59,7 @@
     <meta property="og:locale:alternate" content="zh_CN" />
     <?php endif; ?>
 
-    <?php _e($this->options->GoogleAnalytics) ?>
-
-   <!-- Prism -->
-    <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
-    <link href="<?php $this->options->themeUrl('./lib/prism/'. $this->options->codeHighlightTheme . '/prism.css'); ?>" rel="stylesheet" />
-    <?php endif; ?>
-
-     <link rel="stylesheet" href="<?php $this->options->themeUrl('./lib/OwO/OwO.min.css'); ?>">
+    <?php _e($this->options->GoogleAnalytics) ?>     
     
     <!-- CSS Style -->
     <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.min.css?t='). _e(time()); ?>">
@@ -75,6 +69,16 @@
 
     <!-- Custom Style -->
     <?php _e($this->options->customCss) ?>
+
+     <!-- Prism -->
+     <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
+    <link href="<?php $this->options->themeUrl('./lib/prism/'. $this->options->codeHighlightTheme . '/prism.css'); ?>" rel="stylesheet" />
+    <?php endif; ?>
+
+    <!-- OwO emoji style -->
+    <?php if (!empty($this->options->feature) && in_array('commentEmoji', $this->options->feature) && $this->allow('comment')): ?>
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('./lib/OwO/OwO.min.css'); ?>">
+    <?php endif; ?>    
 
     <!--[if lt IE 9]>
     <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
@@ -88,12 +92,12 @@
         <nav  role="navigation" class="site-nav">
             <ul id='menu' class="menu">
                 <li class="menu-item">
-                    <a<?php if($this->is('index')): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl(); ?>"><?php _e('<i class="iconfont icon-Home"></i>Home'); ?></a>
+                    <a <?php if($this->is('index')): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl(); ?>"><?php _e('<i class="iconfont icon-Home"></i>Home'); ?></a>
                 </li>
                 <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                 <?php while($pages->next()): ?>
                 <li class="menu-item">
-                    <a<?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>" rel="section"><i class="iconfont icon-<?php $pages->title(); ?>"></i><?php $pages->title(); ?></a>
+                    <a <?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>" rel="section"><i class="iconfont icon-<?php $pages->title(); ?>"></i><?php $pages->title(); ?></a>
                 </li>
                 <?php endwhile; ?>
                 <li class="menu-item search">

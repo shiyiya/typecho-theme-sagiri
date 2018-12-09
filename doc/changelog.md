@@ -25,4 +25,10 @@
 - [fix]修复浏览量 php7+ 不显示，自定义字段 --> insert Db //与旧方法不兼容
 - [fix]禁止评论不加载 OwO 表情
 
+## 2018/12/09
+
+- [feature]Fastclick ——FastClick is a simple, easy-to-use library for eliminating the 300ms delay between a physical tap and the firing of a click event on mobile browsers.
+- [feature]指定一个图片链接作为头图。
+- [bug]fix any bugs.
+
 ## todo

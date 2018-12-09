@@ -45,11 +45,13 @@ function themeConfig($form) {
     $feature = new Typecho_Widget_Helper_Form_Element_Checkbox('feature', 
         array('showThumb' => _t('首页文章缩略图'),
         'loadNextPagePost' => _t('首页滚动加载'),
+        'ribbons' => _t('类彩带背景'),
         'codeHighlight' => _t('代码高亮'),
         'commentEmoji' => _t('评论表情'),
+        'fastclick' => _t('解决移动端300ms延迟'),
         /* 'pjax' => _t('mini-pjax'), */
         /* 'lazyImg' => _t('文章内图片懒加载'), */
-        'ribbons' => _t('类彩带背景'),),
+        ),
         array('showThumb'), _t('额外功能设置'));
     $form->addInput($feature->multiMode());
 
@@ -82,19 +84,37 @@ function themeConfig($form) {
 }
 
 
+function themeFields(Typecho_Widget_Helper_Layout $layout){
+    $thumb = new Typecho_Widget_Helper_Form_Element_Text('thumb', NULL, NULL, _t('头图地址(thumb)'), _t('输入图片URL，则优先使用该图片作为头图。'));
+    $layout->addItem($thumb);
+
+    $thumbAlt = new Typecho_Widget_Helper_Form_Element_Text('thumbAlt', NULL, NULL, _t('头图描述(alt)'), _t('输入图片的描述。'));
+    $layout->addItem($thumbAlt);
+}
+
+
+
 function showThumb($obj,$size=null,$link=false){
+
+    $fieldThumb = $obj->fields->thumb;
+    
+    if(isset($fieldThumb)){
+        return '<img src="'. $fieldThumb .'" alt="'. $obj->fields->thumbAlt .'" />';
+    }
+
     preg_match_all( "/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?alt=[\'|\"](.*?)[\'|\"].*?[\/]?>/", $obj->content, $matches );
     $thumb = '';
-    //$thumbAlt = '';
     $options = Typecho_Widget::widget('Widget_Options');
     $attach = $obj->attachments(1)->attachment;
-    if (isset($attach->isImage) && $attach->isImage == 1){
+
+    if(isset($attach->isImage) && $attach->isImage == 1){
         //$thumb = $attach->url;
-        $thumb = '<img src="'. $attach->url. '" alt="'. $attach->name. '">';
+        $thumb = '<img src="'. $attach->url. '" alt="'. $attach->name. '" />';
     }elseif(isset($matches[1][0])){
         //$thumb = $matches[1][0];
         $thumb = $matches[0][0];
     }
+
     if(empty($thumb) && empty($options->default_thumb)){
         return '';
     }else{
@@ -238,7 +258,7 @@ function getOs($agent){
         }else if (preg_match('/fusion/i', $agent)) {
             $OSVersion = '<i class="iconfont icon-android"></i>';
         } else {
-            $OSVersion = '404 系统';
+            $OSVersion = '404 OS';
         }
     echo $OSVersion;
 }
@@ -312,7 +332,6 @@ function getRandomPosts($limit = 5){
 
 function getTopView($limit = 5){
     $days = 99999999999999;
-    $num = 6;
     $time = time() - (24 * 60 * 60 * $days);
     $db = Typecho_Db::get();
     $result = $db->fetchAll($db->select()->from('table.contents')
@@ -320,7 +339,7 @@ function getTopView($limit = 5){
         ->where('type = ?', 'post')
         ->where('status = ?','publish')
         ->where('created <= ?',time())
-        ->limit($num)
+        ->limit($limit)
         ->order('views',Typecho_Db::SORT_DESC));
     if($result){
         echo '<ul class="top-view-archive list">';
@@ -353,6 +372,10 @@ function getTopCommentPosts($limit = 5){
         }
         echo '</ul>';
     }
+}
+
+function getRecentComments(){
+    
 }
 
 function replaceTag($content,$isLogin = false){

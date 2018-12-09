@@ -13,6 +13,9 @@
 Sagiri ，简洁可爱的 `typecho` 主题。
 主题样式基于 [hexo-theme-sagiri](https://github.com/DIYgod/hexo-theme-sagiri) 上修改与添加。
 
+如果有相关问题 / 想知道更多？
+Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
+
 - [change log](./doc/changelog.md)
 
 - 轻量级，无 JQery，仅使用 Prism 作为代码高亮
@@ -28,32 +31,29 @@ Sagiri ，简洁可爱的 `typecho` 主题。
 
 [![overview](./doc/shot.png)](https://runtua.cn)
 
+## 演示站点
+
+> 如果介意联系我将其撤下，想留在这儿请留言或者直接 `PR`。
+
+- https://konoha.moe/
+
 ## 主题使用
 
 点击“Download ZIP”下载，解压后将文件夹改名（不改名 typecho 会报文件夹名过长的错误（500））为 Sagiri 后上传到 /usr/themes，并启用主题
 
 如果需要更新主题，则先下载最新文件，然后覆盖原文件即可完成更新，部分新增加的功能需要到后台开启才会生效
 
-**注意事项**：由于`浏览量`是使用 typecho 自定义字段生成，而其在 **php7+ 上存在问题**，导致 php7+ 无法显示浏览量可将 function.php 添加以下代码：
-
-```php
-function getDbView($archive){
-
-}
-```
-
 ## 相关设置
 
 - 缩略图
 
   - 文章缩略图为附件第一张图片 -> 文章内第一张图片。
-  - 缩略图支持 Markdown 格式, HTML 格式以及附件形式, Markdown 格式为 ![图片描述](图片链接) 。
+  - 缩略图支持 Markdown 格式, HTML 格式以及附件形式, Markdown 格式为 `![图片描述](图片链接)` 。
   - 如果想要自定义某篇文章的缩略图, 但是不想让该图片在文章中出现, 则可上传附件而不使用。
 
-- 首页文章概览默认最大输出 100 个字符, 可手动添加截断符 <!-- more --> 控制输出。
+- 首页文章概览默认最大输出 100 个字符, 可手动添加截断符 `<!-- more -->` 控制输出。
 
 - 如何创建归档 & 搜索 & 分类
-
   - 归档 :
     新建独立页面 -> 选择模板 -> page-archive -> 设置 url 为 archive -> 高级选项 -> 隐藏
   - 搜索 :  
@@ -62,6 +62,35 @@ function getDbView($archive){
     新建独立页面 -> 选择模板 -> page-categories-> 设置 url 为 categorie -> 高级选项 -> 隐藏
   - 示例：
     ![how-to-create-archive-page](https://runtua.cn/usr/uploads/2018/10/3336908615.png)
+
+### 头部个性化标徽
+
+独立页面文字需为：
+
+- Home <-> 主页
+- Comments <-> 留言
+- About <-> 关于
+- Link <-> 友链
+  暂定以上四个
+
+## 图片懒加载
+
+## 友情链接
+
+```markdown
+- ![头像描述](头像链接)[链接描述](链接)<hr> 一个有趣的站点
+- [链接描述](链接) <hr> 另一个有趣的站点
+- [链接描述](链接)
+```
+
+## 备份
+
+由于浏览量是新增字段故迁移时需要新建一个字段
+
+```sql
+-- mysql
+ALTER TABLE `typecho_contents` ADD `views` INT(10) NULL DEFAULT '0' AFTER `parent`;
+```
 
 ## Author
 
