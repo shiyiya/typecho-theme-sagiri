@@ -41,6 +41,13 @@ function themeConfig($form) {
     $form->addInput($GoogleAnalytics);
 
 
+    $StyleSettings = new Typecho_Widget_Helper_Form_Element_Checkbox('StyleSettings', 
+        array('Banner' => _t('是否显示 Banner'),
+        ),
+        array(), _t('主题样式设置'));
+    $form->addInput($StyleSettings->multiMode());
+
+
      /* Theme feature */
     $feature = new Typecho_Widget_Helper_Form_Element_Checkbox('feature', 
         array('showThumb' => _t('首页文章缩略图'),
@@ -50,11 +57,12 @@ function themeConfig($form) {
         'commentEmoji' => _t('评论表情'),
         'fastclick' => _t('解决移动端300ms延迟'),
         /* 'pjax' => _t('mini-pjax'), */
-        /* 'lazyImg' => _t('文章内图片懒加载'), */
+        'lazyImg' => _t('文章内图片懒加载'),
         ),
         array('showThumb'), _t('额外功能设置'));
     $form->addInput($feature->multiMode());
 
+    
     $siderbarOption = new Typecho_Widget_Helper_Form_Element_Checkbox('siderbarOption', 
         array('TopViewPost' => _t('热门文章'),
         'topComnentPost' => _t('热评文章'),
@@ -205,6 +213,7 @@ function getBrowser($agent){
     }
     echo $browserVersion;
 }
+
 function getOs($agent){
     if (preg_match('/win/i', $agent)) {
         if (preg_match('/nt 6.0/i', $agent)) {
@@ -374,15 +383,15 @@ function getTopCommentPosts($limit = 5){
     }
 }
 
-function getRecentComments(){
-    
-}
+function getRecentComments(){}
+
+function thumbUp(){}
 
 function replaceTag($content,$isLogin = false){
     $config =  Typecho_Widget::widget('Widget_Options')->feature;
-   /*  if(in_array('lazyImg', $config)){
-        $content = preg_replace("/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?alt=[\'|\"].*?\s(\d+)\s(\d+)[\'|\"].*?[\/|img|IMG]?>/sm",'<div class="lazy-loader" lazy-src="$1" style="width:$2px;height:$3px"><span></span></div>', $content);
-    } */
+    if(in_array('lazyImg', $config)){
+        $content = preg_replace("/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?alt=[\'|\"].*?[\'|\"].*?[\/|img|IMG]?>/sm",'<div class="lazy-loader" lazy-src="$1"><span></span></div>', $content);
+    }
     /* if($isLogin){
         $obj->content = preg_replace("/\[hide\](.*?)\[\/hide\]/sm",'$1',$obj->content);
     }else{
