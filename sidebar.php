@@ -81,6 +81,9 @@
                 <?php if (in_array('randomPost', $this->options->siderbarOption)): ?>
                     <li class="sidebar-nav-random">相关文章</li>
                 <?php endif; ?>
+				<?php if (in_array('recentComment', $this->options->siderbarOption)): ?>
+					<?php $this->widget('Widget_Comments_Recent','ignoreAuthor=true')->to($comments); ?>
+				<?php endif; ?>
             </ul>
             <?php if (in_array('TopViewPost', $this->options->siderbarOption)): ?>
                 <section class="topview-post-wrap sidebar-section-active">

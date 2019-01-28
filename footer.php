@@ -70,12 +70,17 @@ if ('addEventListener' in document) {
 <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
 <?php endif; ?>
 
-<script>
 
-// Scroll to article area
-<?php if($this->is('post')) :?>
+<!-- Scroll to article area -->
+<?php if(!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings) && $this->is('post')) :?>
+<script>
+hasBanner()
 var postScrolltimer = setInterval(postScroll, 10)
+</script>
 <?php endif; ?>
+
+
+<script>
 
 // Index auto loading
 <?php if($this->is('index') && !empty($this->options->feature) && in_array('loadNextPagePost', $this->options->feature)) :?>
@@ -86,7 +91,7 @@ document.addEventListener('scroll',function(e){
     if (scrollTop + clientHeight === scrollHeight) {
         document.querySelector('.loading-more-post') && (document.querySelector('.loading-more-post').style.display = 'block')
         loadNextPagePost()
-        }
+    }
 })
 <?php endif; ?>
 

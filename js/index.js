@@ -85,13 +85,16 @@ var loadNextPagePost = (() => {
     nexturl =
       document.querySelector('.next > a') &&
       document.querySelector('.next > a').getAttribute('href'),
-    hasNextPost = true
+    hasNextPost = true,
+    isFetch = false
   return () => {
     if (hasNextPost) {
+      isFetch = true
       request('get', nexturl + '?loadNextPagePost=true', null, function(res) {
         var next,
           fragment = document.createElement('div')
         fragment.innerHTML = res
+        isFetch = false
         next = fragment.querySelector('.next')
         if (next || fragment.querySelector('.post')) {
           if (next) {
@@ -180,7 +183,20 @@ function animateScrollTo(needScroll) {
   }
 }
 
-;(function() {
+function fixSider(needScroll) {
+  var sider = document.querySelector('.sidebar-inner')
+  document.addEventListener('scroll', function(e) {
+    var scrollTop =
+      e.target.body.scrollTop || e.target.documentElement.scrollTop
+    if (scrollTop >= needScroll) {
+      sider.classList.add('affix')
+    } else {
+      sider.classList.remove('affix')
+    }
+  })
+}
+
+function hasBanner() {
   var siteNnav = document.querySelector('.site-nav')
   var agent = navigator.userAgent
   if (/.*Firefox.*/.test(agent)) {
@@ -208,34 +224,35 @@ function animateScrollTo(needScroll) {
       }
     }
   }
+  var sider = document.querySelector('.sidebar-inner'),
+    siteNav = document.querySelector('.site-nav')
+  document.addEventListener(
+    'scroll',
+    function(e) {
+      var scrollTop =
+        e.target.body.scrollTop || e.target.documentElement.scrollTop
 
-  var sider = document.querySelector('.sidebar-inner')
-  if (sider) {
-    document.addEventListener(
-      'scroll',
-      function(e) {
-        var scrollTop =
-            e.target.body.scrollTop || e.target.documentElement.scrollTop,
-          siteNav = document.querySelector('.site-nav')
+      if (!isMobile() && scrollTop >= 500) {
+        siteNav.style.background = 'rgba(255,255,255,.8)'
+        siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
+        sider.classList.add('affix')
+      } else if (isMobile() && scrollTop >= 200) {
+        siteNav.style.background = 'rgba(255,255,255,.8)'
+        siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
+      } else {
+        siteNav.style.background = 'rgba(255, 255, 255, 0.1)'
+        siteNav.style.boxShadow = 'none'
+        !isMobile() && sider.classList.remove('affix')
+      }
+    },
+    { passive: true }
+  )
+}
 
-        if (!isMobile() && scrollTop >= 500) {
-          siteNav.style.background = 'rgba(255,255,255,.8)'
-          siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
-          sider.classList.add('affix')
-        } else if (isMobile() && scrollTop >= 200) {
-          siteNav.style.background = 'rgba(255,255,255,.8)'
-          siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
-        } else {
-          siteNav.style.background = 'rgba(255, 255, 255, 0.1)'
-          siteNav.style.boxShadow = 'none'
-          !isMobile() && sider.classList.remove('affix')
-        }
-      },
-      { passive: true }
-    )
-  }
+;(function() {
+  var btnPay = document.querySelector('.btn-pay'),
+    sitconfig = document.querySelector('.site-config')
 
-  var btnPay = document.querySelector('.btn-pay')
   if (btnPay) {
     btnPay.addEventListener('click', function(e) {
       var qr = document.querySelector('.qr')
@@ -247,6 +264,10 @@ function animateScrollTo(needScroll) {
     })
   }
 
+  if (!sitconfig) {
+    fixSider(50)
+  }
+
   var img = [].slice.call(document.querySelectorAll('img')),
     imgVIew = document.querySelector('.img-view'),
     viewImg = document.querySelector('.img-view > img')
@@ -256,19 +277,16 @@ function animateScrollTo(needScroll) {
       viewImg.alt = this.alt
 
       if (imgVIew.style.display == 'block') {
-        imgVIew.style.display = 'none'
-        document.body.style.overflow = 'auto'
+        imgVIew.classList.add('remove')
+        setTimeout(() => {
+          imgVIew.classList.remove('remove')
+          imgVIew.style.display = 'none'
+        }, 300)
       } else {
         imgVIew.style.display = 'block'
-        document.body.style.overflow = 'hidden'
       }
     }
   })
-
-  /*   var toTop = document.querySelector('.back-top'),
-    toBottom = document.querySelector('.back-bottom')
-  toTop.onclick = () => animateScrollTo('#header')
-  toBottom.onclick = () => animateScrollTo('#footer') */
 
   console.info(
     ' %c Sagiri %c https://github.com/shiyiya/typecho-theme-sagiri ',

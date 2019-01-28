@@ -22,11 +22,8 @@
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
 
     <meta name="author" content="<?php $this->author() ?>" />
-    <?php $this->header('keywords=&generator=&template=&pingback=&xmlrpc=&wlw=&commentReply=&rss1=&rss2=&atom='); ?>
-    <meta name="keywords" content="<?php $this->keywords() ?>" />
-
-
-     <link rel="icon" href="<?php $this->options->fav() or $this->options->themeUrl('favicon.jpg'); ?>" />
+    <?php $this->header('generator=&pingback=&xmlrpc=&wlw='); ?>
+    <link rel="icon" href="<?php $this->options->fav() or $this->options->themeUrl('favicon.jpg'); ?>" />
 
     <!-- About IOS -->
     <meta name="format-detection" content="telephone=no">
@@ -38,8 +35,6 @@
     <meta name="theme-color" content="<?php $this->options->themeColor ? $this->options->themeColor() : _e('#fff') ?>">
     <link rel="apple-touch-icon" sizes="32x32 58x58 72x72 96x96 114x114" href="<?php $this->options->IOSIcon(); ?>">
    
-
-
     <!-- Disable Baidu transformation -->
     <meta http-equiv="Cache-Control" content="no-transform " />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -80,11 +75,25 @@
     <link rel="stylesheet" href="<?php $this->options->themeUrl('./lib/OwO/OwO.min.css'); ?>">
     <?php endif; ?>    
 
-    <!--[if lt IE 9]>
-    <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
-    <script src="//cdnjscn.b0.upaiyun.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
+    <?php if (empty($this->options->StyleSettings) || !in_array('Banner', $this->options->StyleSettings)): ?>
+    <style>
+        .header-wrap{
+            height: 120px;
+        }
+        .site-nav{
+            background:rgba(255,255,255,.8);
+            box-shadow: 0 0 2px 2px rgba(172,172,172,.4);
+        }
+        @media (max-width: 991px) {
+            .header-wrap{
+                height: 70px;
+            }
+        }
+        .sidebar-inner.affix{
+            top: 70px;
+        }
+    </style>
+    <?php endif; ?>
 </head>
 <body>
 <div id="root">
@@ -105,14 +114,19 @@
                  </li>
             </ul>
         </nav>
+        
         <div class="header-wrap">
+        <?php if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings)): ?>
             <div class="site-config" style="background-image:url(<?php $this->options->backGroundImage ? $this->options->backGroundImage() : _e('https://i.loli.net/2018/10/05/5bb7144897e8c.jpg') ?>)">
                 <div class="site-meta">
                     <div class="site-title"><?php $this->options->title(); ?></div>
                     <div class="site-description"><?php $this->options->description(); ?></div>
                 </div>
             </div>
+        <?php endif; ?>
         </div>
+       
+
     </header>
     
 

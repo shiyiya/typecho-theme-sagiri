@@ -1,3 +1,10 @@
+## 2018/1/28
+
+- [fix] header 头配置错误。
+- [feature] 可选 banner 是否显示。
+- [bug]fix any bugs.
+
+<!-- more -->
 ## 2018/10/30
 
 - 修复 archive 页下缩略图问题
