@@ -953,7 +953,7 @@ ol.comment-list {
 ol.comment-list li.comment-parent {
   list-style: none;
 }
-ol.comment-list a {
+.comment-list a {
   border: none;
 }
 .comment-content a {
@@ -1339,7 +1339,7 @@ img[alt='sticker'] {
   padding: 10px;
   max-width: 100% !important;
   max-height: 100% !important;
-  background-origin: content-box;
+ background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   box-sizing: border-box;
