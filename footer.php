@@ -56,6 +56,11 @@
 <!--  Lazy load images -->
 <?php if (!empty($this->options->feature) && in_array('lazyImg', $this->options->feature)): ?>
 <script src="<?php $this->options->themeUrl('util/lazyload.min.js'); ?>"></script>
+<?php endif; ?>
+
+<!-- fastclick -->
+<?php if (!empty($this->options->feature) && in_array('fastclick', $this->options->feature)): ?>
+<script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
 <script>
 if ('addEventListener' in document) {
 	document.addEventListener('DOMContentLoaded', function() {
@@ -63,11 +68,6 @@ if ('addEventListener' in document) {
 	}, false);
 }
 </script>
-<?php endif; ?>
-
-<!-- fastclick -->
-<?php if (!empty($this->options->feature) && in_array('fastclick', $this->options->feature)): ?>
-<script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
 <?php endif; ?>
 
 

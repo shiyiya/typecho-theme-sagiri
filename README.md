@@ -59,7 +59,7 @@ Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
   - 搜索 :  
     新建独立页面 -> 选择模板 -> page-search -> 设置 url 为 search -> 高级选项 -> 隐藏
   - 分类 :
-    新建独立页面 -> 选择模板 -> page-category-> 设置 url 为 category -> 高级选项 -> 隐藏
+    新建独立页面 -> 选择模板 -> page-categories-> 设置 url 为 categorie -> 高级选项 -> 隐藏
   - 示例：
     ![how-to-create-archive-page](https://runtua.cn/usr/uploads/2018/10/3336908615.png)
 
@@ -74,6 +74,14 @@ Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
   暂定以上四个
 
 ## 图片懒加载
+
+```
+// 写法
+![宽::高::描述](图片地址)
+
+//例如
+![300::100::这是一只歪脖子鸟？？.jpg](http://localhost/typecho/usr/themes/typecho-theme-sagiri/img/author.jpg)
+```
 
 ## 友情链接
 

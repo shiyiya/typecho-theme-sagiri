@@ -390,7 +390,7 @@ function thumbUp(){}
 function replaceTag($content,$isLogin = false){
     $config =  Typecho_Widget::widget('Widget_Options')->feature;
     if(in_array('lazyImg', $config)){
-        $content = preg_replace("/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?alt=[\'|\"].*?[\'|\"].*?[\/|img|IMG]?>/sm",'<div class="lazy-loader" lazy-src="$1"><span></span></div>', $content);
+        $content = preg_replace("/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?alt=[\'|\"](.*?)[\'|\"].*?[\/|img|IMG]?>/sm",'<div class="lazy-loader" lazy-src="$1" data="$2"><span></span></div>', $content);
     }
     /* if($isLogin){
         $obj->content = preg_replace("/\[hide\](.*?)\[\/hide\]/sm",'$1',$obj->content);
