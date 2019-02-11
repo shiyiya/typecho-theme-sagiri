@@ -75,6 +75,14 @@ Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 
 ## 图片懒加载
 
+```
+// 写法
+![宽::高::描述](图片地址)
+
+//例如
+![300::100::这是一只歪脖子鸟？？.jpg](http://localhost/typecho/usr/themes/typecho-theme-sagiri/img/author.jpg)
+```
+
 ## 友情链接
 
 ```markdown
