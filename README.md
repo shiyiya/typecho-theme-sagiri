@@ -111,6 +111,12 @@ Authored and maintained by DIYgod with help from contributors ([list](https://gi
 
 欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 & 代码的改进，问题和 bugs 的报告。
 
+### 贡献方式：
+- clone / clone master/dev
+- checkout dev => do something / \\
+- update changelog
+- pr -> dev / pr
+
 ## 许可证
 
 Open sourced under the GPL V3.0 license.
