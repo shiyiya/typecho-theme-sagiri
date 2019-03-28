@@ -106,7 +106,7 @@ function showThumb($obj,$size=null,$link=false){
 
     $fieldThumb = $obj->fields->thumb;
     
-    if(isset($fieldThumb)){
+    if(!empty($thumb) && risset($fieldThumb)){
         return '<img src="'. $fieldThumb .'" alt="'. $obj->fields->thumbAlt .'" />';
     }
 
