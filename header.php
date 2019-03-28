@@ -65,8 +65,8 @@
     <!-- Custom Style -->
     <?php _e($this->options->customCss) ?>
 
-     <!-- Prism -->
-     <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
+    <!-- Prism -->
+    <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
     <link href="<?php $this->options->themeUrl('./lib/prism/'. $this->options->codeHighlightTheme . '/prism.css'); ?>" rel="stylesheet" />
     <?php endif; ?>
 
