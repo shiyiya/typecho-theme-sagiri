@@ -196,34 +196,8 @@ function fixSider(needScroll) {
   })
 }
 
+// change site-nav bgcolor when scrolled into post.
 function hasBanner() {
-  var siteNnav = document.querySelector('.site-nav')
-  var agent = navigator.userAgent
-  if (/.*Firefox.*/.test(agent)) {
-    document.addEventListener(
-      'DOMMouseScroll',
-      function(e) {
-        e = e || window.event
-        var detail = e.detail
-        if (detail > 0) {
-          siteNnav.style.transform = 'translateY(-100%)'
-        } else {
-          siteNnav.style.transform = 'translateY(0%)'
-        }
-      },
-      { passive: true }
-    )
-  } else {
-    document.onmousewheel = function(e) {
-      e = e || window.event
-      var wheelDelta = e.wheelDelta
-      if (wheelDelta > 0) {
-        siteNnav.style.transform = 'translateY(0%)'
-      } else {
-        siteNnav.style.transform = 'translateY(-100%)'
-      }
-    }
-  }
   var sider = document.querySelector('.sidebar-inner'),
     siteNav = document.querySelector('.site-nav')
   document.addEventListener(
@@ -250,9 +224,43 @@ function hasBanner() {
 }
 
 ;(function() {
-  var btnPay = document.querySelector('.btn-pay'),
-    sitconfig = document.querySelector('.site-config')
+  // fixd siderbar.
+  var sitconfig = document.querySelector('.site-config')
+  if (!sitconfig) {
+    fixSider(50)
+  }
 
+  // site-nav animation. for firefox & webkit
+  var siteNav = document.querySelector('.site-nav')
+  var agent = navigator.userAgent
+  if (/.*Firefox.*/.test(agent)) {
+    document.addEventListener(
+      'DOMMouseScroll',
+      function(e) {
+        e = e || window.event
+        var detail = e.detail
+        if (detail > 0) {
+          siteNav.style.transform = 'translateY(-100%)'
+        } else {
+          siteNav.style.transform = 'translateY(0%)'
+        }
+      },
+      { passive: true }
+    )
+  } else {
+    document.onmousewheel = function(e) {
+      e = e || window.event
+      var wheelDelta = e.wheelDelta
+      if (wheelDelta > 0) {
+        siteNav.style.transform = 'translateY(0%)'
+      } else {
+        siteNav.style.transform = 'translateY(-100%)'
+      }
+    }
+  }
+
+  // Donate button control.
+  var btnPay = document.querySelector('.btn-pay')
   if (btnPay) {
     btnPay.addEventListener('click', function(e) {
       var qr = document.querySelector('.qr')
@@ -264,10 +272,7 @@ function hasBanner() {
     })
   }
 
-  if (!sitconfig) {
-    fixSider(50)
-  }
-
+  // click to view img.
   var img = [].slice.call(document.querySelectorAll('img')),
     imgVIew = document.querySelector('.img-view'),
     viewImg = document.querySelector('.img-view > img')
@@ -288,6 +293,7 @@ function hasBanner() {
     }
   })
 
+  // copy-right
   console.info(
     ' %c Sagiri %c https://github.com/shiyiya/typecho-theme-sagiri ',
     'background: #ed143d7d; padding:5px 0;',

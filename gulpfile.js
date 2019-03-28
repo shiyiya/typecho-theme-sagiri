@@ -3,9 +3,7 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   rename = require('gulp-rename'),
   autoprefixer = require('gulp-autoprefixer'),
-  cleanCSS = require('gulp-clean-css'),
-  clean = require('gulp-clean'),
-  gulpSequence = require('gulp-sequence')
+  cleanCSS = require('gulp-clean-css')
 
 gulp.task('build-scripts', function() {
   return gulp
@@ -37,18 +35,8 @@ gulp.task('build-util', function() {
 gulp.task('start', function() {
   gulp.watch(
     ['js/!(*.min).js', 'css/!(*.min).css', 'util/!(*.min).js'],
-    ['build']
+    gulp.parallel(['build'])
   )
 })
 
-gulp.task('build', function() {
-  gulpSequence(
-    'build-scripts',
-    'build-css',
-    'build-util',
-
-    function(err) {
-      console.log(err)
-    }
-  )
-})
+gulp.task('build', gulp.parallel(['build-scripts', 'build-css', 'build-util']))

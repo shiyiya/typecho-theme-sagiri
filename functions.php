@@ -100,8 +100,6 @@ function themeFields(Typecho_Widget_Helper_Layout $layout){
     $layout->addItem($thumbAlt);
 }
 
-
-
 function showThumb($obj,$size=null,$link=false){
 
     $fieldThumb = $obj->fields->thumb;
