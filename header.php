@@ -78,16 +78,11 @@
     <?php if (empty($this->options->StyleSettings) || !in_array('Banner', $this->options->StyleSettings)): ?>
     <style>
         .header-wrap{
-            height: 120px;
+            height: 70px;
         }
         .site-nav{
             background:rgba(255,255,255,.8);
             box-shadow: 0 0 2px 2px rgba(172,172,172,.4);
-        }
-        @media (max-width: 991px) {
-            .header-wrap{
-                height: 70px;
-            }
         }
         .sidebar-inner.affix{
             top: 70px;
