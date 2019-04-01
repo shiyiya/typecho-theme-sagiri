@@ -1,7 +1,7 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 <aside id="sidebar" class="sidebar" >
-    <div class="sidebar-inner">
+    <div class="sidebar-inner <?php if (empty($this->options->StyleSettings) || !in_array('Banner', $this->options->StyleSettings)) _e('affix'); ?>">
         <div class="sider-item">
             <ul class="sidebar-nav" text-center>
                 <?php if($this->is('post')) :?>

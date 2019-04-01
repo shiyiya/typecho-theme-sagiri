@@ -71,15 +71,14 @@ if ('addEventListener' in document) {
 <?php endif; ?>
 
 <!-- Scroll to article area -->
-<?php if(!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings)) :?>
-<script>
-    hasBanner()
-</script>
-    <?php if($this->is('post')): ?>
+<?php if(!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings) && $this->is('post')): ?>
     <script>
+   /*  if (document.body.scrollIntoView) {
+       document.querySelector('.content-wrap').scrollIntoView()
+    }else{ */
         var postScrolltimer = setInterval(postScroll, 10)
+    // }
     </script>
-    <?php endif; ?>
 <?php endif; ?>
 
 <script>

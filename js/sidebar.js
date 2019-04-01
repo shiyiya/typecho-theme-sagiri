@@ -33,13 +33,20 @@
           var li = document.createElement('li'),
             a = document.createElement('a')
 
-          a.href = '#' + _.innerText
-          a.innerHTML = _.id = _.innerText
-          /* a.onclick = e => {
-            e.preventDefault()
-            animateScrollTo(_)
-            return false
-          } */
+          if (document.body.scrollIntoView) {
+            a.href = 'javascript:void(0)'
+            a.innerHTML = _.id = _.innerText
+            a.onclick = function() {
+              document.querySelector('#' + _.innerText).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              })
+              return false
+            }
+          } else {
+            a.href = '#' + _.innerText
+          }
+
           li.appendChild(a)
           tocList.appendChild(li)
         })

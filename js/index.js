@@ -32,6 +32,10 @@ function isMobile() {
   return false
 }
 
+function hasBanner() {
+  return !!document.querySelector('.site-config')
+}
+
 function liveTime(time) {
   if (!time) {
     throw Error('未指定日期！')
@@ -183,55 +187,10 @@ function animateScrollTo(needScroll) {
   }
 }
 
-function fixSider(needScroll) {
-  var sider = document.querySelector('.sidebar-inner')
-  document.addEventListener('scroll', function(e) {
-    var scrollTop =
-      e.target.body.scrollTop || e.target.documentElement.scrollTop
-    if (scrollTop >= needScroll) {
-      sider.classList.add('affix')
-    } else {
-      sider.classList.remove('affix')
-    }
-  })
-}
-
-// change site-nav bgcolor when scrolled into post.
-function hasBanner() {
-  var sider = document.querySelector('.sidebar-inner'),
-    siteNav = document.querySelector('.site-nav')
-  document.addEventListener(
-    'scroll',
-    function(e) {
-      var scrollTop =
-        e.target.body.scrollTop || e.target.documentElement.scrollTop
-
-      if (!isMobile() && scrollTop >= 500) {
-        siteNav.style.background = 'rgba(255,255,255,.8)'
-        siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
-        sider.classList.add('affix')
-      } else if (isMobile() && scrollTop >= 200) {
-        siteNav.style.background = 'rgba(255,255,255,.8)'
-        siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
-      } else {
-        siteNav.style.background = 'rgba(255, 255, 255, 0.1)'
-        siteNav.style.boxShadow = 'none'
-        !isMobile() && sider.classList.remove('affix')
-      }
-    },
-    { passive: true }
-  )
-}
-
 ;(function() {
-  // fixd siderbar.
-  var sitconfig = document.querySelector('.site-config')
-  if (!sitconfig) {
-    fixSider(50)
-  }
-
-  // site-nav animation. for firefox & webkit
+  // site-nav animation. for pc
   var siteNav = document.querySelector('.site-nav')
+  var sider = document.querySelector('.sidebar-inner')
   var agent = navigator.userAgent
   if (/.*Firefox.*/.test(agent)) {
     document.addEventListener(
@@ -259,6 +218,31 @@ function hasBanner() {
     }
   }
 
+  // change site-nav bgcolor when scrolled into post.
+  document.addEventListener(
+    'scroll',
+    function(e) {
+      var scrollTop =
+        e.target.body.scrollTop || e.target.documentElement.scrollTop
+
+      if (hasBanner()) {
+        if (!isMobile() && scrollTop >= 500) {
+          siteNav.style.background = 'rgba(255,255,255,.8)'
+          siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
+          sider.classList.add('affix')
+        } else if (isMobile() && scrollTop >= 200) {
+          siteNav.style.background = 'rgba(255,255,255,.8)'
+          siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
+        } else {
+          siteNav.style.background = 'rgba(255, 255, 255, 0.1)'
+          siteNav.style.boxShadow = 'none'
+          !isMobile() && sider.classList.remove('affix')
+        }
+      }
+    },
+    { passive: true }
+  )
+
   // Donate button control.
   var btnPay = document.querySelector('.btn-pay')
   if (btnPay) {
@@ -273,20 +257,25 @@ function hasBanner() {
   }
 
   // click to view img.
-  var img = [].slice.call(document.querySelectorAll('img')),
+  var img = [].slice.call(document.querySelectorAll('#main img')),
     imgVIew = document.querySelector('.img-view'),
     viewImg = document.querySelector('.img-view > img')
+
+  imgVIew.onclick = function() {
+    this.classList.add('remove')
+    setTimeout(() => {
+      this.classList.remove('remove')
+      this.style.display = 'none'
+    }, 300)
+  }
+  
   img.forEach(v => {
     v.onclick = function() {
       viewImg.src = this.src
       viewImg.alt = this.alt
 
       if (imgVIew.style.display == 'block') {
-        imgVIew.classList.add('remove')
-        setTimeout(() => {
-          imgVIew.classList.remove('remove')
-          imgVIew.style.display = 'none'
-        }, 300)
+        imgVIew.onclick()
       } else {
         imgVIew.style.display = 'block'
       }
