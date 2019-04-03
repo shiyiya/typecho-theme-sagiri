@@ -37,8 +37,6 @@
 
 <canvas id="ribbons"></canvas>
 
-<canvas id="live2d" class="live2d" width="140" height="250"></canvas>
-
 <?php if (!empty($this->options->feature) && in_array('pjax', $this->options->feature)): ?>
 <script src="<?php $this->options->themeUrl('util/pjax.mini.js'); ?>"></script>
 
@@ -117,16 +115,6 @@ var liveTimeer = setInterval(function (){
 <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)): ?>
 <script src="<?php $this->options->themeUrl('./lib/prism/'. $this->options->codeHighlightTheme . '/prism.js'); ?>"></script>
 <?php endif; ?>
-
-<!-- My PAPERWIFE -->
-<?php if($_SERVER['HTTP_HOST'] == 'runtua.cn' || $_SERVER['HTTP_HOST'] == 'www.runtua.cn'): ?>
-<script src="<?php $this->options->themeUrl('./lib/live2d/live2d.js'); ?>"></script>
-<script type="text/javascript">
-    loadlive2d("live2d", "<?php $this->options->themeUrl('./lib/live2d/model.json'); ?>");
-</script>
-<?php endif; ?>
-
-
 </div><!-- End root -->
 
 <?php $this->footer(); ?>
