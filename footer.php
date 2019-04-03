@@ -90,8 +90,7 @@ document.addEventListener('scroll',function(e){
         clientHeight = e.target.body.clientHeight || e.target.documentElement.clientHeight,
         scrollHeight = e.target.body.scrollHeight || e.target.documentElement.scrollHeight;
     if (scrollTop + clientHeight === scrollHeight) {
-        document.querySelector('.loading-more-post') && (document.querySelector('.loading-more-post').style.display = 'block')
-        loadNextPagePost()
+        document.querySelector('.loading-more-post') && (document.querySelector('.loading-more-post').style.display = 'block') && loadNextPagePost()
     }
 })
 <?php endif; ?>

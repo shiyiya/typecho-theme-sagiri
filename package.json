@@ -1,6 +1,6 @@
 {
   "name": "typecho-theme-sagiri",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lovely theme for Typecho.",
   "main": "index.js",
   "directories": {
@@ -16,8 +16,6 @@
     "url": "git+https://github.com/shiyiya/typecho-theme-sagiri.git"
   },
   "keywords": [
-    "typecho",
-    "theme",
     "typecho-theme"
   ],
   "author": "shiyiya",
