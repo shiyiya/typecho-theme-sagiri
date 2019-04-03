@@ -59,7 +59,6 @@ function liveTime(time) {
 
 function request(method, url, param, callback) {
   var xhr = new XMLHttpRequest()
-
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
       if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
@@ -75,7 +74,7 @@ function request(method, url, param, callback) {
       for (var key in param) {
         temp += '&' + key + '=' + param[key]
       }
-      param = temp.slice(1)
+      param = '?' + temp.slice(1)
     }
 
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
@@ -89,32 +88,37 @@ var loadNextPagePost = (() => {
     nexturl =
       document.querySelector('.next > a') &&
       document.querySelector('.next > a').getAttribute('href'),
-    hasNextPost = true,
-    isFetch = false
+    hasNextPost = nexturl
   return () => {
     if (hasNextPost) {
-      isFetch = true
       request('get', nexturl + '?loadNextPagePost=true', null, function(res) {
         var next,
           fragment = document.createElement('div')
         fragment.innerHTML = res
-        isFetch = false
         next = fragment.querySelector('.next')
         if (next || fragment.querySelector('.post')) {
           if (next) {
             nexturl = next.getAttribute('href')
           } else {
+            hasNextPost = false
             var loadMorePost = document.querySelector('.loading-more-post')
             loadMorePost.innerText = '没有更多了'
             setTimeout(function() {
               loadMorePost.parentElement.removeChild(loadMorePost)
             }, 2000)
-            hasNextPost = false
           }
           postWrap.appendChild(fragment)
         }
         return
       })
+    } else {
+      var loadMorePost = document.querySelector('.loading-more-post')
+      if (loadMorePost) return
+      loadMorePost.innerText = '没有更多了'
+      setTimeout(function() {
+        loadMorePost.parentElement.removeChild(loadMorePost)
+      }, 2000)
+      hasNextPost = false
     }
   }
 })()
@@ -268,7 +272,7 @@ function animateScrollTo(needScroll) {
       this.style.display = 'none'
     }, 300)
   }
-  
+
   img.forEach(v => {
     v.onclick = function() {
       viewImg.src = this.src
