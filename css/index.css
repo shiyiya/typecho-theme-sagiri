@@ -1130,7 +1130,7 @@ ol.comment-list ol {
 }
 .tags a:nth-of-type(odd) {
   color: #fff;
-  background-color: #ed143d7d;
+  background-color: #dc143c;
   margin: 5px;
 }
 .tags a:nth-of-type(odd):hover {
