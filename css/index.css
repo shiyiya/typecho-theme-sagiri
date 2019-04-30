@@ -273,6 +273,7 @@ td {
 }
 /* ***      ----         ***** */
 ::-webkit-scrollbar {
+  height: 6px;
   width: 8px;
   background-color: #fff;
 }

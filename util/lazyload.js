@@ -18,7 +18,7 @@ class LazyLoadImg {
   }
 
   init() {
-    if (!_.IntersectionObserver) {
+    if (!window.IntersectionObserver) {
       document.addEventListener('scroll', () => {
         this.LazyLoadImage()
       })
@@ -92,10 +92,19 @@ new LazyLoadImg({
   selector: '.lazy-loader',
   virtualSrc: 'lazy-src',
   callback: function(image, src) {
-    const data = image.getAttribute('data').split('::')
-    if (data.length > 2) {
-      image.classList.remove('lazy-loader')
-      image.innerHTML = `<img src=${src}  style="width:${data[0]}px;height:${data[1]}px" src="${data[2]}" alt="${data[2]}"/>`
+    const img = new Image()
+    img.src = src
+    img.onload = function() {
+      const data = image.getAttribute('data').split('::')
+      if (data.length < 2) {
+        image.classList.remove('lazy-loader')
+        image.innerHTML = `<img src=${src} alt=''/>`
+        return
+      }
+      if (data.length > 2) {
+        image.classList.remove('lazy-loader')
+        image.innerHTML = `<img src=${src} style="width:${data[0]}px;height:${data[1]}px" alt="${data[2]}" />`
+      }
     }
   }
 })

@@ -1,7 +1,7 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
 
-<div  id="main" class="main" role="main">
+<div id="main" class="main" role="main">
     <div class="main-inner clearfix">
         <?php $this->need('sidebar.php'); ?>
         <div class="content-wrap">
