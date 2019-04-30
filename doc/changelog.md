@@ -1,5 +1,9 @@
 ## 2018/2/11
 
+- fix [#17](https://github.com/shiyiya/typecho-theme-sagiri/issues/17)
+
+## 2018/2/11
+
 -[fix]图片懒加载
 
 ## 2018/1/28
