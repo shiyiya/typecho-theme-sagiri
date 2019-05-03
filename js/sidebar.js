@@ -33,19 +33,8 @@
           var li = document.createElement('li'),
             a = document.createElement('a')
 
-          if (document.body.scrollIntoView) {
-            a.href = 'javascript:void(0)'
-            a.innerHTML = _.id = _.innerText
-            a.onclick = function() {
-              document.querySelector('#' + _.innerText).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              })
-              return false
-            }
-          } else {
-            a.href = '#' + _.innerText
-          }
+          a.href = '#' + _.innerText
+          a.innerText = _.id = _.innerText
 
           li.appendChild(a)
           tocList.appendChild(li)
@@ -56,34 +45,38 @@
         sidebarOverview.classList.add('sidebar-nav-active')
         siteOverview.classList.add('sidebar-section-active')
         var li = document.createElement('li')
-        li.innerText = '居然没有目录'
+        li.innerText = 'NO TOC っ°Д°;)っ'
         tocList.appendChild(li)
       }
     }
 
-    var siderOther = document.querySelector('.sider-other'),
-      siderOtherNavs = [].slice.call(
-        siderOther.querySelectorAll('.sidebar-nav > li')
-      ),
-      siderOtherSections = [].slice.call(siderOther.querySelectorAll('section'))
+    var siderOther = document.querySelector('.sider-other')
+    if (siderOther) {
+      var siderOtherNavs = [].slice.call(
+          siderOther.querySelectorAll('.sidebar-nav > li')
+        ),
+        siderOtherSections = [].slice.call(
+          siderOther.querySelectorAll('section')
+        )
 
-    if (siderOther.childElementCount > 1) {
-      siderOtherNavs[0].classList.add('sidebar-nav-active')
-      siderOtherSections[0].classList.add('sidebar-section-active')
+      if (siderOther.childElementCount > 1) {
+        siderOtherNavs[0].classList.add('sidebar-nav-active')
+        siderOtherSections[0].classList.add('sidebar-section-active')
 
-      siderOtherNavs.forEach((nav, key) => {
-        nav.onclick = function() {
-          this.classList.add('sidebar-nav-active')
-          Array.from(this.parentElement.children).map(_ => {
-            if (_ !== this) _.classList.remove('sidebar-nav-active')
-          })
-          siderOtherSections[key].classList.add('sidebar-section-active')
-          siderOtherSections
-            .filter(_ => _ != siderOtherSections[key])
-            .forEach(_ => {
-              _.classList.remove('sidebar-section-active')
+        siderOtherNavs.forEach((nav, key) => {
+          nav.onclick = function() {
+            this.classList.add('sidebar-nav-active')
+            Array.from(this.parentElement.children).map(_ => {
+              if (_ !== this) _.classList.remove('sidebar-nav-active')
             })
-        }
-      })
+            siderOtherSections[key].classList.add('sidebar-section-active')
+            siderOtherSections
+              .filter(_ => _ != siderOtherSections[key])
+              .forEach(_ => {
+                _.classList.remove('sidebar-section-active')
+              })
+          }
+        })
+      }
     }
   })()

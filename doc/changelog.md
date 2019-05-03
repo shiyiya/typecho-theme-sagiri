@@ -1,6 +1,11 @@
-## 2018/2/11
+## 2018/5/2 v1.0.3
+
+- [remove]: remove auto load article & unused code & DNS Prefetch .
+
+## 2018/5/1
 
 - fix [#17](https://github.com/shiyiya/typecho-theme-sagiri/issues/17)
+- configurable article thumbnails.
 
 ## 2018/2/11
 

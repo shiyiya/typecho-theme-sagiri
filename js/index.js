@@ -83,46 +83,6 @@ function request(method, url, param, callback) {
   xhr.send(param)
 }
 
-var loadNextPagePost = (() => {
-  var postWrap = document.querySelector('#posts'),
-    nexturl =
-      document.querySelector('.next > a') &&
-      document.querySelector('.next > a').getAttribute('href'),
-    hasNextPost = nexturl
-  return () => {
-    if (hasNextPost) {
-      request('get', nexturl + '?loadNextPagePost=true', null, function(res) {
-        var next,
-          fragment = document.createElement('div')
-        fragment.innerHTML = res
-        next = fragment.querySelector('.next')
-        if (next || fragment.querySelector('.post')) {
-          if (next) {
-            nexturl = next.getAttribute('href')
-          } else {
-            hasNextPost = false
-            var loadMorePost = document.querySelector('.loading-more-post')
-            loadMorePost.innerText = '没有更多了'
-            setTimeout(function() {
-              loadMorePost.parentElement.removeChild(loadMorePost)
-            }, 2000)
-          }
-          postWrap.appendChild(fragment)
-        }
-        return
-      })
-    } else {
-      var loadMorePost = document.querySelector('.loading-more-post')
-      if (loadMorePost) return
-      loadMorePost.innerText = '没有更多了'
-      setTimeout(function() {
-        loadMorePost.parentElement.removeChild(loadMorePost)
-      }, 2000)
-      hasNextPost = false
-    }
-  }
-})()
-
 function postScroll() {
   var needScroll,
     speed = 10
@@ -261,9 +221,22 @@ function animateScrollTo(needScroll) {
   }
 
   // click to view img.
-  var img = [].slice.call(document.querySelectorAll('#main img')),
+  var main = document.querySelector('#main'),
     imgVIew = document.querySelector('.img-view'),
     viewImg = document.querySelector('.img-view > img')
+    
+  document.addEventListener('click', function(e) {
+    const el = e.target
+    if (main.contains(el) && el.tagName.toLocaleUpperCase() === 'IMG') {
+      viewImg.src = el.src
+      viewImg.alt = el.alt
+      if (imgVIew.style.display == 'block') {
+        imgVIew.onclick()
+      } else {
+        imgVIew.style.display = 'block'
+      }
+    }
+  })
 
   imgVIew.onclick = function() {
     this.classList.add('remove')
@@ -272,19 +245,6 @@ function animateScrollTo(needScroll) {
       this.style.display = 'none'
     }, 300)
   }
-
-  img.forEach(v => {
-    v.onclick = function() {
-      viewImg.src = this.src
-      viewImg.alt = this.alt
-
-      if (imgVIew.style.display == 'block') {
-        imgVIew.onclick()
-      } else {
-        imgVIew.style.display = 'block'
-      }
-    }
-  })
 
   // copy-right
   console.info(
