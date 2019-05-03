@@ -3,7 +3,7 @@
 class Sagiri
 {
     static $name = "Sagiri";
-    static $version = "1.0.2";
+    static $version = "1.0.3";
     static $newVersion;
     static $err = false;
 
@@ -30,14 +30,19 @@ class Sagiri
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
         curl_setopt($curl, CURLOPT_REFERER, 'http://runtua.cn/62.html');
         curl_setopt($curl, CURLOPT_POST, 1);
-        // curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, '');
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headerArray);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+        // curl_setopt($curl, CURLOPT_HEADER, 1); 
         $res = curl_exec($curl);
-        $err = curl_error($curl);
-        $err && self::$err = true;
+        $http_code = curl_getinfo($curl)["http_code"];
         curl_close($curl);
-        return json_decode($res);
+        if (($http_code >= 200 && $http_code < 300) || $http_code === 304 || $http_code === 302) {
+            return json_decode($res);
+        } else {
+            self::$err = true;
+        };
     }
 
     public function update()
@@ -72,7 +77,7 @@ class Sagiri
         $title = $config->title;
         $description = $config->description;
         $siteUrl = $config->siteUrl;
-        $this->comment("http://runtua.cn/62.html/comment?author=theme-helper&mail=no@mail.com&url=http%3A%2F%2Fgithubusercontent.com/shiyiya/typecho-theme-sagiri&text=" . '[' . $title . '](' . $siteUrl  . '):' . $description . " used the theme.");
+        $this->comment("http://runtua.cn/62.html/comment?author=" . $title . "&mail=no@mail.com&url=https://github.com/shiyiya/typecho-theme-sagiri/&text=" . '[' . $title . '](' . $siteUrl  . '):  ' . $description);
     }
 }
 

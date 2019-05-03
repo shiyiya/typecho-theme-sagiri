@@ -5,11 +5,6 @@
 
     <meta charset="<?php $this->options->charset(); ?>" />
 
-    <!-- DNS Prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on" />
-    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-    <link rel="dns-prefetch" href="//secure.gravatar.com" />
-    <link rel="dns-prefetch" href="//i.loli.net" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
@@ -54,13 +49,10 @@
         <meta property="og:locale:alternate" content="zh_CN" />
     <?php endif; ?>
 
-    <?php _e($this->options->GoogleAnalytics) ?>
-
     <!-- CSS Style -->
+    <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/base.min.css'); ?>" />
     <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.min.css'); ?>" />
     <link async rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.min.css'); ?>" />
-    <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/_variable.min.css'); ?>" />
-
 
     <!-- Custom Style -->
     <?php _e($this->options->customCss) ?>
