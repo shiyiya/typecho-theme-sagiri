@@ -1,5 +1,5 @@
 <?php
-
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 class Sagiri
 {
     static $name = "Sagiri";
@@ -76,8 +76,7 @@ class Sagiri
         $config = Typecho_Widget::widget('Widget_Options');
         $title = $config->title;
         $description = $config->description;
-        $siteUrl = $config->siteUrl;
-        $this->comment("http://runtua.cn/62.html/comment?author=" . $title . "&mail=no@mail.com&url=https://github.com/shiyiya/typecho-theme-sagiri/&text=" . '[' . $title . '](' . $siteUrl  . '):  ' . $description);
+        $this->comment("http://runtua.cn/62.html/comment?author=" . $title . "&mail=no@mail.com&url=https://github.com/shiyiya/typecho-theme-sagiri/&text=" . '[' . $title . '](' . empty($_SERVER['HTTPS']) ? 'http://' : 'https://' . $_SERVER['HTTP_HOST'] .  '):  ' . $description);
     }
 }
 

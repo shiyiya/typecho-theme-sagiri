@@ -2,6 +2,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 require_once("theme-helper.php");
+require_once('i18n/index.php');
 
 function themeConfig($form)
 {
