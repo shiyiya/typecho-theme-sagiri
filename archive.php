@@ -35,7 +35,6 @@
                                 <?php echo $thumb; ?>
                             <?php endif; ?>
                         <?php endif; ?>
-                        <?php replaceTag($this->excerpt(100)); ?>
                         <div class="post-content" itemprop="articleBody">
                             <?php $this->excerpt(100); ?>
                             <div text-center class="post-button">

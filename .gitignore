@@ -18,3 +18,5 @@ post/
 # util 
 util/pjaxmini.js
 util/lazyload.js
+
+temp/

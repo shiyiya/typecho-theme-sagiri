@@ -21,11 +21,11 @@ Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 - 轻量级，无 JQery，仅使用 Prism 作为代码高亮
 - 支持代码高亮，5 主题，支持主流代码，使用 Prism
 - 响应式，适用于移动端与桌面端，桌面端 > 移动端
-- 支持首页文章缩略图、~~随机图~~
+- 支持首页文章缩略图、随机图
 - 支持文章目录树、相关文章与~~数学公式渲染~~
 - 独立页面支持归档、分类、友链
 - ~~全站无刷新 miniPjax~~、图片懒加载支持
-- ~~国际化支持（i18N）~~
+- 国际化支持（i18N）
 
 ## 预览
 
@@ -35,7 +35,7 @@ Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 
 > 如果介意联系我将其撤下，想留在这儿请留言或者直接 `PR`。
 
-- https://konoha.moe/
+- 暂无
 
 ## 主题使用
 
@@ -75,6 +75,8 @@ Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 
 ## 图片懒加载
 
+- 不写宽高默认 `loading` 占位
+
 ```
 // 写法
 ![宽::高::描述](图片地址)
@@ -112,6 +114,7 @@ Authored and maintained by DIYgod with help from contributors ([list](https://gi
 欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 & 代码的改进，问题和 bugs 的报告。
 
 ### 贡献方式：
+
 - clone / clone master/dev
 - checkout dev => do something / \\
 - update changelog

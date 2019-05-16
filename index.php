@@ -49,23 +49,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 					</article>
 				<?php endwhile; ?>
 			</section>
-			<div class="loading-more-post" style="display:none">加载中···</div>
-			<?php if (!empty($this->options->feature) && in_array('loadNextPagePost', $this->options->feature)) : ?>
-				<?php $this->pageLink('下一页', 'next', 'hidden'); ?>
-			<?php endif; ?>
 			<?php $this->pageNav('<i class="iconfont icon-prev-m"></i>', '<i class="iconfont icon-next-m"></i>', '2', '...'); ?>
 		</div>
 		<?php $this->need('sidebar.php'); ?>
 	</div>
 </div>
-
-<?php if (!empty($this->options->feature) && in_array('loadNextPagePost', $this->options->feature)) : ?>
-	<style>
-		.page-navigator,
-		.next {
-			display: none
-		}
-	</style>
-<?php endif; ?>
 
 <?php $this->need('footer.php'); ?>
