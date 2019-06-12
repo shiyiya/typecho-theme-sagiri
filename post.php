@@ -49,7 +49,7 @@
             </article>
             <?php $this->need('comments.php'); ?>
         </div>
-        <?php $this->need('sidebar.php'); ?>
+        <?php if (isPc()) $this->need('sidebar.php'); ?>
     </div>
 </div>
 
