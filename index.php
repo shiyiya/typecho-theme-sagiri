@@ -51,7 +51,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 			</section>
 			<?php $this->pageNav('<i class="iconfont icon-prev-m"></i>', '<i class="iconfont icon-next-m"></i>', '2', '...'); ?>
 		</div>
-		<?php $this->need('sidebar.php'); ?>
+
+		<?php if (isPc()) $this->need('sidebar.php'); ?>
 	</div>
 </div>
 

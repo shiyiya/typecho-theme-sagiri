@@ -3,6 +3,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 require_once("theme-helper.php");
 
+// https://github.com/shiyiya/typecho-theme-sagiri/tree/dev/i18n
 // require_once('i18n/index.php');
 
 function themeConfig($form)

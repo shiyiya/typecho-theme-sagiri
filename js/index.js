@@ -39,7 +39,6 @@ function hasBanner() {
 function liveTime(time) {
   if (!time) {
     throw Error('未指定日期！')
-    return void 0
   }
   var time = new Date(time)
   var live = Math.floor(new Date().getTime() - time.getTime()),
@@ -104,51 +103,28 @@ function postScroll() {
   }
 }
 
-function animateScrollTo(needScroll) {
-  var scrollTop = document.body.scrollTop || document.documentElement.scrollTop,
-    scrollHeight =
-      document.body.scrollHeight || document.documentElement.scrollHeight,
-    clientHeight =
-      document.body.clientHeight || document.documentElement.clientHeight
+var __isMoving = false
+function backToTop() {
+  if (__isMoving) return
+  const start = window.pageYOffset
+  let i = 0
+  __isMoving = true
+  interval = setInterval(() => {
+    const next = Math.floor(easeInOutQuad(10 * i, start, -start, 500))
+    if (next <= 0) {
+      window.scrollTo(0, 0)
+      clearInterval(this.interval)
+      __isMoving = false
+    } else {
+      window.scrollTo(0, next)
+    }
+    i++
+  }, 16.7)
+}
 
-  if (typeof needScroll == 'string') {
-    var target = document.querySelector(needScroll),
-      needScroll = Math.floor(target.getBoundingClientRect().top + scrollTop)
-  } else if (needScroll.nodeName) {
-    needScroll = Math.floor(needScroll.getBoundingClientRect().top + scrollTop)
-  }
-
-  if (needScroll == scrollTop) return false
-  if (needScroll > scrollHeight - clientHeight) {
-    needScroll = Math.floor(scrollHeight - clientHeight)
-  }
-
-  if (scrollTop > needScroll) {
-    var timer = setInterval(function() {
-      var scrollTop =
-          document.body.scrollTop || document.documentElement.scrollTop,
-        tspeed = Math.floor(-scrollTop / 30)
-
-      document.documentElement.scrollTop = tspeed + scrollTop
-
-      if (scrollTop <= needScroll) {
-        document.body.scrollTop = document.documentElement.scrollTop = needScroll
-        clearTimeout(timer)
-      }
-    }, 10)
-  } else if (scrollTop < needScroll) {
-    var timer = setInterval(function() {
-      var scrollTop =
-        document.body.scrollTop || document.documentElement.scrollTop
-      var tspeed = needScroll / 30
-      document.documentElement.scrollTop = document.body.scrollTop =
-        tspeed + scrollTop
-      if (scrollTop >= needScroll) {
-        document.body.scrollTop = document.documentElement.scrollTop = needScroll
-        clearTimeout(timer)
-      }
-    }, 10)
-  }
+function easeInOutQuad(t, b, c, d) {
+  if ((t /= d / 2) < 1) return (c / 2) * t * t + b
+  return (-c / 2) * (--t * (t - 2) - 1) + b
 }
 
 ;(function() {
@@ -224,10 +200,10 @@ function animateScrollTo(needScroll) {
   var main = document.querySelector('#main'),
     imgVIew = document.querySelector('.img-view'),
     viewImg = document.querySelector('.img-view > img')
-    
-  document.addEventListener('click', function(e) {
-    const el = e.target
-    if (main.contains(el) && el.tagName.toLocaleUpperCase() === 'IMG') {
+
+  main.addEventListener('click', function(e) {
+    var el = e.target
+    if (el.tagName.toLocaleUpperCase() === 'IMG') {
       viewImg.src = el.src
       viewImg.alt = el.alt
       if (imgVIew.style.display == 'block') {
