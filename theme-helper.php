@@ -3,7 +3,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 class Sagiri
 {
     static $name = "Sagiri";
-    static $version = "1.0.2";
+    static $version = "1.0.3";
     static $newVersion;
     static $err = false;
 
@@ -21,39 +21,15 @@ class Sagiri
         return json_decode($res, true);
     }
 
-    static function comment($url)
-    {
-        $headerArray = array("Content-type:application/x-www-form-urlencoded");
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
-        curl_setopt($curl, CURLOPT_REFERER, 'http://runtua.cn/62.html');
-        curl_setopt($curl, CURLOPT_POST, 1);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, '');
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $headerArray);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-        // curl_setopt($curl, CURLOPT_HEADER, 1); 
-        $res = curl_exec($curl);
-        $http_code = curl_getinfo($curl)["http_code"];
-        curl_close($curl);
-        if (($http_code >= 200 && $http_code < 300) || $http_code === 304 || $http_code === 302) {
-            return json_decode($res);
-        } else {
-            self::$err = true;
-        };
-    }
-
     public function update()
     {
 
-        if (!function_exists('curl_init')) {
+        if (function_exists('curl_init')) {
+            $pkg = $this->geturl("https://raw.githubusercontent.com/shiyiya/typecho-theme-sagiri/master/package.json");
+        } else {
             self::$err = true;
-            return;
         }
 
-        $pkg = $this->geturl("https://raw.githubusercontent.com/shiyiya/typecho-theme-sagiri/master/package.json");
 
         if ($pkg["version"] > self::$version) {
             self::$newVersion = $pkg["version"];
@@ -64,19 +40,6 @@ class Sagiri
         echo "<p>By: <a href='https://github.com/shiyiya/typecho-theme-sagiri'>Shiyiya</a></p>";
         !self::$err ? empty(self::$newVersion) ? print("It's the latest version.") : print("Found new version, <a href='https://github.com/shiyiya/typecho-theme-sagiri'>click to download</a>.") : print("Unable to check for updates.");
         echo "</div>";
-    }
-
-    public function ga()
-    {
-        if (!function_exists('curl_init')) {
-            self::$err = true;
-            return;
-        }
-
-        $config = Typecho_Widget::widget('Widget_Options');
-        $title = $config->title;
-        $description = $config->description;
-        $this->comment("http://runtua.cn/62.html/comment?author=" . $title . "&mail=no@mail.com&url=https://github.com/shiyiya/typecho-theme-sagiri/&text=" . "[" . $title . "](" . empty($_SERVER['HTTPS']) ? "http://" : "https://" . $_SERVER['HTTP_HOST'] .  "):  " . $description);
     }
 }
 
@@ -290,7 +253,7 @@ function getPostView($archive)
             $views = explode(',', $views);
         }
         if (!in_array($cid, $views)) {
-            $db->query($db->update('table.contents')->rows(array('views' => (int)$row['views'] + 1))->where('cid = ?', $cid));
+            $db->query($db->update('table.contents')->rows(array('views' => (int) $row['views'] + 1))->where('cid = ?', $cid));
             array_push($views, $cid);
             $views = implode(',', $views);
             Typecho_Cookie::set('extend_contents_views', $views);

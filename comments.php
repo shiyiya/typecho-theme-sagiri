@@ -85,7 +85,7 @@
     <script src="<?php $this->options->themeUrl('./lib/OwO/OwO.min.js'); ?>"></script>
 
     <script>
-        var OwO_demo = new OwO({
+        new OwO({
             logo: 'OωO表情',
             container: document.getElementsByClassName('OwO')[0],
             target: document.getElementsByClassName('OwO-textarea')[0],
