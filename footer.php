@@ -1,21 +1,7 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
-<!-- 
-    <?php if ($this->options->PWA == 'able') : ?>
-        <div class="tool-bar">
-            <div class="tool-bar-inner">
-               <div class="social-share">
-                                    </div>
-    <div class="site-action">
-        <span class="action-item"><a href="javascript:history.back(-1)">←</a></span>
-        <span class="action-item"><a href="javascript:history.forward(1)">→</a></span>
-        <span class="action-item"><a href="#footer">↓</a></span>
-        <span class="action-item"><a href="#">↑</a></span>
-    </div>
-    </div>
-    </div>
-<?php endif; ?>
--->
+
+
 
 <footer id="footer" role="contentinfo">
     <p><i class="iconfont icon-eye"></i>访问人数 : <?php echo getSiteViews(); ?></p>
@@ -23,9 +9,25 @@
     <p>
         &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
         <?php _e('Power By  <a href="http://www.typecho.org">Typecho</a> '); ?>.
-        <?php _e('<a href="https://github.com/shiyiya/typecho-theme-sagiri" rel="external nofollow">Theme</a> by <a href="https://runtua.cn">Shiyi</a>'); ?>
+        <?php _e('<a href="https://github.com/shiyiya/typecho-theme-sagiri" rel="external nofollow">Theme</a> by <a href="http://runtua.cn">Shiyi</a>'); ?>
     </p>
 </footer>
+
+<!-- <?php if ($this->options->PWA == 'able') : ?>
+    <div class="tool-bar">
+        <div class="tool-bar-inner">
+            <div class="social-share">
+            </div>
+            <div class="site-action">
+                <span class="action-item"><a href="javascript:history.back(-1)">←</a></span>
+                <span class="action-item"><a href="javascript:history.forward(1)">→</a></span>
+                <span class="action-item"><a href="#footer">↓</a></span>
+                <span class="action-item"><a href="#">↑</a></span>
+            </div>
+        </div>
+    </div>
+<?php endif; ?> -->
+
 
 <!-- <div id="back-actions">
     <span class="back-top back"><i class="iconfont icon-prev-m"></i></span>

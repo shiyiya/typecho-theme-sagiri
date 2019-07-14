@@ -705,7 +705,7 @@ ol.comment-list ol {
   top: 22px;
 }
 /* comment end */
-.tool-bar {
+/*. tool-bar {
   transition: transform 0.6s;
   position: fixed;
   z-index: 2;
@@ -731,7 +731,7 @@ ol.comment-list ol {
   cursor: pointer;
   color: #313131;
   border: 0;
-}
+} */
 #footer {
   background: #fff;
   padding: 20px 0px;

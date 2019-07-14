@@ -1,6 +1,6 @@
 <h1 align="center">Sagiri</h1>
 
-> 如 ‘你’ 般可爱，简单纯粹。
+> As lovely as sagiri
 
 [![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE)
 
@@ -22,14 +22,14 @@ Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 - 支持代码高亮，5 主题，支持主流代码，使用 Prism
 - 响应式，适用于移动端与桌面端，桌面端 > 移动端
 - 支持首页文章缩略图、随机图
-- 支持文章目录树、相关文章与~~数学公式渲染~~
+- 支持文章目录树、相关文章
 - 独立页面支持归档、分类、友链
-- ~~全站无刷新 miniPjax~~、图片懒加载支持
+- 图片懒加载支持
 - 国际化支持（i18N）
 
 ## 预览
 
-[![overview](./doc/shot.png)](https://runtua.cn)
+[![overview](./doc/shot.png)](http://runtua.cn)
 
 ## 演示站点
 
@@ -39,7 +39,7 @@ Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 
 ## 主题使用
 
-点击“Download ZIP”下载，解压后将文件夹改名（不改名 typecho 会报文件夹名过长的错误（500））为 Sagiri 后上传到 /usr/themes，并启用主题
+点击“Download ZIP”下载，解压后将文件夹改名（不改名 typecho 会报文件夹名过长的错误（500）为 Sagiri 后上传到 /usr/themes，并启用主题
 
 如果需要更新主题，则先下载最新文件，然后覆盖原文件即可完成更新，部分新增加的功能需要到后台开启才会生效
 
@@ -56,12 +56,12 @@ Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 - 如何创建归档 & 搜索 & 分类
   - 归档 :
     新建独立页面 -> 选择模板 -> page-archive -> 设置 url 为 archive -> 高级选项 -> 隐藏
-  - 搜索 :  
+  - 搜索 :
     新建独立页面 -> 选择模板 -> page-search -> 设置 url 为 search -> 高级选项 -> 隐藏
   - 分类 :
     新建独立页面 -> 选择模板 -> page-categories-> 设置 url 为 categorie -> 高级选项 -> 隐藏
   - 示例：
-    ![how-to-create-archive-page](https://runtua.cn/usr/uploads/2018/10/3336908615.png)
+    ![how-to-create-archive-page](http://runtua.cn/usr/uploads/2018/10/3336908615.png)
 
 ### 头部个性化标徽
 
@@ -107,7 +107,7 @@ ALTER TABLE `typecho_contents` ADD `views` INT(10) NULL DEFAULT '0' AFTER `paren
 **typecho-theme-sagiri** © [shiyi](https://github.com/shiyiya), Released under the [GPL-3.0](./LICENSE) License.<br>
 Authored and maintained by DIYgod with help from contributors ([list](https://github.com/shiyiya/typecho-theme-sagiri/contributors)).
 
-> Blog [@OZOO](https://www.runtua.cn) · GitHub [@shiyi](https://github.com/shiyiya) · Twitter [@shiyi](https://twitter.com/)
+> Blog [@OZOO](http://www.runtua.cn) · GitHub [@shiyi](https://github.com/shiyiya) · Twitter [@shiyi](https://twitter.com/)
 
 ## 贡献
 

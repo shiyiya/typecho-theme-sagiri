@@ -14,7 +14,7 @@
 }
 /* eslint-disable */
 
-function isMobile() {
+var isMobile = (function isMobile() {
   var Agents = navigator.userAgent,
     mobileAgents = [
       'Android',
@@ -30,11 +30,9 @@ function isMobile() {
     }
   }
   return false
-}
+})()
 
-function hasBanner() {
-  return !!document.querySelector('.site-config')
-}
+var hasBanner = !!document.querySelector('.site-config')
 
 function liveTime(time) {
   if (!time) {
@@ -85,7 +83,7 @@ function request(method, url, param, callback) {
 function postScroll() {
   var needScroll,
     speed = 10
-  isMobile() ? (needScroll = 180) : (needScroll = 500)
+  isMobile ? (needScroll = 180) : (needScroll = 500)
 
   var scrollTop = document.body.scrollTop || document.documentElement.scrollTop
   var clientHeight =
@@ -162,21 +160,20 @@ function easeInOutQuad(t, b, c, d) {
   document.addEventListener(
     'scroll',
     function(e) {
-      var scrollTop =
-        e.target.body.scrollTop || e.target.documentElement.scrollTop
+      var scrollTop = e.target.body.scrollTop || e.target.documentElement.scrollTop
 
-      if (hasBanner()) {
-        if (!isMobile() && scrollTop >= 500) {
+      if (hasBanner) {
+        if (!isMobile && scrollTop >= 500) {
           siteNav.style.background = 'rgba(255,255,255,.8)'
           siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
           sider.classList.add('affix')
-        } else if (isMobile() && scrollTop >= 200) {
+        } else if (isMobile && scrollTop >= 200) {
           siteNav.style.background = 'rgba(255,255,255,.8)'
           siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
         } else {
           siteNav.style.background = 'rgba(255, 255, 255, 0.1)'
           siteNav.style.boxShadow = 'none'
-          !isMobile() && sider.classList.remove('affix')
+          !isMobile && sider.classList.remove('affix')
         }
       }
     },
