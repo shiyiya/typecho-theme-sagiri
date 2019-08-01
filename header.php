@@ -18,7 +18,7 @@
 
     <meta name="author" content="<?php $this->author() ?>" />
     <?php $this->header('generator=&pingback=&xmlrpc=&wlw='); ?>
-    <link rel="icon" href="<?php $this->options->fav() or $this->options->themeUrl('favicon.jpg'); ?>" />
+    <link rel="icon" href="<?php $this->options->fav ? $this->options->fav() : $this->options->themeUrl('favicon.jpg'); ?>" />
 
     <!-- About IOS -->
     <meta name="format-detection" content="telephone=no">
@@ -121,6 +121,4 @@
                     </div>
                 <?php endif; ?>
             </div>
-
-
         </header>
