@@ -54,12 +54,12 @@ function isPc()
 }
 
 
-function showThumb($obj, $size = null, $link = false)
+function showThumb($obj, $link = false)
 {
 
     $fieldThumb = $obj->fields->thumb;
 
-    if (!empty($thumb) && risset($fieldThumb)) {
+    if (!empty($fieldThumb) && isset($fieldThumb)) {
         return '<img src="' . $fieldThumb . '" alt="' . $obj->fields->thumbAlt . '" />';
     }
 
