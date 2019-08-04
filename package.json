@@ -1,6 +1,6 @@
 {
   "name": "typecho-theme-sagiri",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Lovely theme for Typecho.",
   "main": "index.js",
   "directories": {
