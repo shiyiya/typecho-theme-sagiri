@@ -1,4 +1,4 @@
-!isMobile() &&
+!isMobile &&
   (function() {
     var sidebarNavToc = document.querySelector('.sidebar-nav-toc ')
     if (sidebarNavToc) {

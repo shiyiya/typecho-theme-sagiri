@@ -14,7 +14,7 @@
 }
 /* eslint-disable */
 
-var isMobile = (function isMobile() {
+var isMobile = (function() {
   var Agents = navigator.userAgent,
     mobileAgents = [
       'Android',
@@ -160,7 +160,8 @@ function easeInOutQuad(t, b, c, d) {
   document.addEventListener(
     'scroll',
     function(e) {
-      var scrollTop = e.target.body.scrollTop || e.target.documentElement.scrollTop
+      var scrollTop =
+        e.target.body.scrollTop || e.target.documentElement.scrollTop
 
       if (hasBanner) {
         if (!isMobile && scrollTop >= 500) {

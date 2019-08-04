@@ -18,7 +18,7 @@ gulp.task('build-css', function() {
   return gulp
     .src('css/!(*.min).css')
     .pipe(cleanCSS())
-    .pipe(autoprefixer({ browsers: ['last 3 versions'], cascade: false }))
+    .pipe(autoprefixer({ cascade: false }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('./css'))
 })
