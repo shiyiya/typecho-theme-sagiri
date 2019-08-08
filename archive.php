@@ -30,10 +30,7 @@
                             </div>
                         </header>
                         <?php if (!empty($this->options->feature) && in_array('showThumb', $this->options->feature)) : ?>
-                            <?php $thumb = showThumb($this, null, true); ?>
-                            <?php if (!empty($thumb)) : ?>
-                                <?php echo $thumb; ?>
-                            <?php endif; ?>
+                            <?php showThumb($this) ?>
                         <?php endif; ?>
                         <div class="post-content" itemprop="articleBody">
                             <?php $this->excerpt(100); ?>

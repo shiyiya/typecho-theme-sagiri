@@ -54,7 +54,7 @@ function isPc()
 }
 
 
-function showThumb($obj, $link = false)
+function showThumb($obj)
 {
 
     $fieldThumb = $obj->fields->thumb;
@@ -68,7 +68,6 @@ function showThumb($obj, $link = false)
     $options = Typecho_Widget::widget('Widget_Options');
     $attach = $obj->attachments(1)->attachment;
 
-
     if (isset($attach->isImage) && $attach->isImage == 1) {
         $thumb = '<img src="' . $attach->url . '" alt="' . $attach->name . '" />';
     } elseif (isset($matches[1][0])) {
@@ -80,9 +79,7 @@ function showThumb($obj, $link = false)
             $thumb = '<img src="' . $options->default_thumb . '" />';
         }
     }
-    if ($link) {
-        return $thumb;
-    }
+    return $thumb;
 }
 
 function getBrowser($agent)
