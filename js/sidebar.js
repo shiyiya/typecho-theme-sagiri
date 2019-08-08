@@ -66,9 +66,12 @@
         siderOtherNavs.forEach((nav, key) => {
           nav.onclick = function() {
             this.classList.add('sidebar-nav-active')
-            Array.from(this.parentElement.children).map(_ => {
-              if (_ !== this) _.classList.remove('sidebar-nav-active')
-            })
+
+            var children = this.parentElement.children
+            for (var i = 0; i < children.length; i++) {
+              if (children[i] !== this) children[i].classList.remove('sidebar-nav-active')
+            }
+
             siderOtherSections[key].classList.add('sidebar-section-active')
             siderOtherSections
               .filter(_ => _ != siderOtherSections[key])

@@ -1,8 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
-
-
-
 <footer id="footer" role="contentinfo">
     <p><i class="iconfont icon-eye"></i>访问人数 : <?php echo getSiteViews(); ?></p>
     <p id="live-time"></p>
@@ -13,7 +10,7 @@
     </p>
 </footer>
 
-<!-- <?php if ($this->options->PWA == 'able') : ?>
+<?php if ($this->options->PWA == 'able') : ?>
     <div class="tool-bar">
         <div class="tool-bar-inner">
             <div class="social-share">
@@ -26,13 +23,13 @@
             </div>
         </div>
     </div>
-<?php endif; ?> -->
+<?php endif; ?>
 
 
-<!-- <div id="back-actions">
-    <span class="back-top back"><i class="iconfont icon-prev-m"></i></span>
-    <span class="back-bottom back"><i class="iconfont icon-next-m"></i></span>
-</div> -->
+<div id="back-actions">
+    <span class="back-top back" onclick="backToTop()"><i class="iconfont icon-prev-m"></i></span>
+    <!-- <span class="back-bottom back"><i class="iconfont icon-next-m"></i></span> -->
+</div>
 
 <div class="img-view">
     <img src="<?php $this->options->backGroundImage() ?>" alt="This is just a placeholder img.">
@@ -83,7 +80,7 @@
 <script>
     // Scroll to article area
     <?php if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings) && $this->is('post')) : ?>
-        var postScrolltimer = setInterval(postScroll, 10)
+        postScroll()
     <?php endif; ?>
 
     // Background like ribbon

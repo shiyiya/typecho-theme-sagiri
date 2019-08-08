@@ -1,18 +1,71 @@
-/* eslint-disable */
-// prettier-ignore
-{
-  function i(){for(x.clearRect(0,0,w,h),q=[{x:0,y:.7*h+f},{x:0,y:.7*h-f}];q[1].x<w+f;)d(q[0],q[1])}function d(e,t){x.beginPath(),x.moveTo(e.x,e.y),x.lineTo(t.x,t.y);var i=t.x+(2*z()-.25)*f,n=y(t.y);x.lineTo(i,n),x.closePath(),r-=u/-50,x.fillStyle="#"+(127*v(r)+128<<16|127*v(r+u/3)+128<<8|127*v(r+u/3*2)+128).toString(16),x.fill(),q[0]=q[1],q[1]={x:i,y:n}}function y(e){var t=e+(2*z()-1.1)*f;return t>h||t<0?y(e):t}var c=document.getElementById("ribbons"),x=c.getContext("2d"),pr=window.devicePixelRatio||1,w=window.innerWidth,h=window.innerHeight,f=90,q,m=Math,r=0,u=2*m.PI,v=m.cos,z=m.random;c.width=w*pr,c.height=h*pr,x.scale(pr,pr),x.globalAlpha=.6;
-  /**
-   * ribbons func
-   * @return {void}
-   */
-  function ribbons() {
-    document.onclick = i
-    document.ontouchstart = i
-    i()
-  }
+var __ribbonsrc__ = {
+  z: -1,
+  alpha: 0.9,
+  size: 120
 }
-/* eslint-disable */
+
+var c = document.createElement('canvas'),
+  c2d = c.getContext('2d'),
+  pr = window.devicePixelRatio || 1,
+  width = window.innerWidth,
+  height = window.innerHeight,
+  s = __ribbonsrc__.size,
+  q,
+  m = Math,
+  r = 0,
+  pi = m.PI * 2,
+  cos = m.cos,
+  randoMath = m.random
+
+c.width = width * pr
+c.height = height * pr
+c.style.cssText =
+  'opacity: ' +
+  __ribbonsrc__.alpha +
+  ';position:fixed;top:0;left:0;z-index: ' +
+  __ribbonsrc__.z +
+  ';width:100%;height:100%;pointer-events:none;'
+
+c2d.scale(pr, pr)
+c2d.globalAlpha = __ribbonsrc__.alpha
+
+document.getElementsByTagName('body')[0].appendChild(c)
+
+function redraw() {
+  c2d.clearRect(0, 0, width, height)
+  q = [{ x: 0, y: height * 0.7 + s }, { x: 0, y: height * 0.7 - s }]
+  while (q[1].x < width + s) draw(q[0], q[1])
+}
+function draw(i, j) {
+  c2d.beginPath()
+  c2d.moveTo(i.x, i.y)
+  c2d.lineTo(j.x, j.y)
+  var k = j.x + (randoMath() * 2 - 0.25) * s,
+    n = line(j.y)
+  c2d.lineTo(k, n)
+  c2d.closePath()
+  r -= pi / -50
+  c2d.fillStyle =
+    '#' +
+    (
+      ((cos(r) * 127 + 128) << 16) |
+      ((cos(r + pi / 3) * 127 + 128) << 8) |
+      (cos(r + (pi / 3) * 2) * 127 + 128)
+    ).toString(16)
+  c2d.fill()
+  q[0] = q[1]
+  q[1] = { x: k, y: n }
+}
+function line(p) {
+  var t = p + (randoMath() * 2 - 1.1) * s
+  return t > height || t < 0 ? line(p) : t
+}
+
+function ribbons() {
+  document.onclick = redraw
+  document.ontouchstart = redraw
+  redraw()
+}
 
 var isMobile = (function() {
   var Agents = navigator.userAgent,
@@ -81,24 +134,41 @@ function request(method, url, param, callback) {
 }
 
 function postScroll() {
-  var needScroll,
-    speed = 10
-  isMobile ? (needScroll = 180) : (needScroll = 500)
+  // ie11 fail ?????????
+  /*  if (document.body.scrollIntoView) {
+    setTimeout(function() {
+      document
+        .querySelector('.content-wrap')
+        .scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        })
+    }, 500)
+    return void 0
+  } */
 
-  var scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-  var clientHeight =
-    document.body.clientHeight || document.documentElement.clientHeight
-  var scrollHeight =
-    document.body.scrollHeight || document.documentElement.scrollHeight
-  if (document.body.scrollTop < 500) {
-    document.body.scrollTop += speed
+  var timer = null,
+    speed = 10,
+    needScroll = isMobile ? 180 : 500
+
+  function scroll() {
+    /* prettier-ignore */
+    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+
+    if (document.body.scrollTop < 500) {
+      document.body.scrollTop += speed
+    }
+    if (document.documentElement.scrollTop < 500) {
+      document.documentElement.scrollTop += speed
+    }
+
+    if (scrollTop >= needScroll) {
+      clearInterval(timer)
+    }
   }
-  if (document.documentElement.scrollTop < 500) {
-    document.documentElement.scrollTop += speed
-  }
-  if (scrollTop >= needScroll || clientHeight + scrollTop >= scrollHeight - 1) {
-    clearInterval(postScrolltimer)
-  }
+
+  timer = setInterval(scroll, 10)
 }
 
 var __isMoving = false
@@ -107,11 +177,11 @@ function backToTop() {
   const start = window.pageYOffset
   let i = 0
   __isMoving = true
-  interval = setInterval(() => {
-    const next = Math.floor(easeInOutQuad(10 * i, start, -start, 500))
+  var interval = setInterval(() => {
+    const next = Math.floor(easeInOutQuad(10 * i, start, -start, 100))
     if (next <= 0) {
       window.scrollTo(0, 0)
-      clearInterval(this.interval)
+      clearInterval(interval)
       __isMoving = false
     } else {
       window.scrollTo(0, next)

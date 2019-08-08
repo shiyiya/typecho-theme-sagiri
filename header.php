@@ -1,11 +1,10 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <!DOCTYPE HTML>
 <html class="no-js" lang="Zh-CN">
+
 <head>
 
     <meta charset="<?php $this->options->charset(); ?>" />
-
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
@@ -113,7 +112,7 @@
 
             <div class="header-wrap">
                 <?php if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings)) : ?>
-                    <div class="site-config" style="background-image:url(<?php $this->options->backGroundImage ? $this->options->backGroundImage() : _e('https://i.loli.net/2018/10/05/5bb7144897e8c.jpg') ?>)">
+                    <div class="site-config <?php !$this->is('post') && _e('anima') ?>" style="background-image:url(<?php $this->options->backGroundImage ? $this->options->backGroundImage() : _e('https://i.loli.net/2018/10/05/5bb7144897e8c.jpg') ?>)">
                         <div class="site-meta">
                             <div class="site-title"><?php $this->options->title(); ?></div>
                             <div class="site-description"><?php $this->options->description(); ?></div>

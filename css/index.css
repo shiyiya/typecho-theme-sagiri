@@ -119,8 +119,10 @@ body,
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
-  animation: fade-in-bottom 1s 0.3s backwards;
   background-attachment: fixed;
+}
+.site-config.anima {
+  animation: fade-in-bottom 1s 0.3s backwards;
 }
 @media (max-width: 991px) {
   .site-config {
@@ -705,7 +707,7 @@ ol.comment-list ol {
   top: 22px;
 }
 /* comment end */
-/*. tool-bar {
+/*.tool-bar {
   transition: transform 0.6s;
   position: fixed;
   z-index: 2;
@@ -860,7 +862,7 @@ ol.comment-list ol {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
 }
 .timeline-archives {
   animation: fade-in-top 0.2s 0.3s backwards;
@@ -869,41 +871,41 @@ ol.comment-list ol {
 @keyframes fade-in-right {
   0% {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translate3d(-20px, 0, 0);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 @keyframes fade-in-left {
   0% {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translate3d(20px, 0, 0);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 @keyframes fade-in-top {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translate3d(0, 20px, 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 @keyframes fade-in-bottom {
   0% {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translate3d(0, -100%, 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 canvas#ribbons {
@@ -994,6 +996,12 @@ img[alt='sticker'] {
   right: 0px;
   bottom: 20%;
   line-height: 1;
+}
+
+@media (min-width: 991px) {
+  #back-actions {
+    display: none;
+  }
 }
 #back-actions .back {
   display: block;
