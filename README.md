@@ -36,6 +36,7 @@ Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 > 如果介意联系我将其撤下，想留在这儿请留言或者直接 `PR`。
 
 - https://www.wuqing.info/
+- https://blog.imlazy.ink:233
 
 ## 主题使用
 
