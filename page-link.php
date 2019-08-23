@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Page of Link
  *
@@ -29,8 +30,8 @@
 
 <script>
   var warp = document.getElementById('link'),
-    br = [...warp.getElementsByTagName('BR')],
-    itemLink = [...document.querySelectorAll('#link ul li')]
+    br = [].slice.call(warp.getElementsByTagName('BR'))
+    itemLink = [].slice.call(document.querySelectorAll('#link ul li'))
 
   br.forEach((v, k) => {
     v.parentElement.removeChild(v)

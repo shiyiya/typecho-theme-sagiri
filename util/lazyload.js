@@ -96,13 +96,12 @@ new LazyLoadImg({
     img.src = src
     img.onload = function() {
       const data = image.getAttribute('data').split('::')
+      image.classList.remove('lazy-loader')
       if (data.length < 2) {
-        image.classList.remove('lazy-loader')
         image.innerHTML = `<img src=${src} alt=''/>`
         return
       }
       if (data.length > 2) {
-        image.classList.remove('lazy-loader')
         image.innerHTML = `<img src=${src} style="width:${data[0]}px;height:${data[1]}px" alt="${data[2]}" />`
       }
     }

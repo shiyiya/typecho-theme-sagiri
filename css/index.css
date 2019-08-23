@@ -367,7 +367,7 @@ body,
   }
 }
 .post {
-  padding: 40px;
+  padding: 40px 40px 20px;
   background: #fff;
   margin-bottom: 40px;
   border-radius: 5px;
@@ -404,7 +404,7 @@ body,
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
   background-color: #97dffd;
-  padding: 7px 11px 7px 32px;
+  padding: 7px 11px 7px 24px;
   line-height: 1;
 }
 @media (max-width: 991px) {
@@ -512,7 +512,7 @@ body,
   padding: 8px 25px;
   font-size: 16px;
   color: #fff;
-  background-color: #ea6f5ae8;
+  background-color: #ea6f5a;
   border-radius: 3px;
 }
 .free-reward .btn-pay:hover {
@@ -1015,8 +1015,8 @@ img[alt='sticker'] {
 .lazy-loader {
   background-color: #59488b;
   padding: 10px;
-  max-width: 100% !important;
-  max-height: 100% !important;
+  max-width: 80% !important;
+  max-height: 80% !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -155,6 +155,8 @@ function postScroll() {
   function scroll() {
     /* prettier-ignore */
     var scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+    var clientHeight = document.body.clientHeight || document.documentElement.clientHeight
+    var scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight
 
     if (document.body.scrollTop < 500) {
       document.body.scrollTop += speed
@@ -163,7 +165,7 @@ function postScroll() {
       document.documentElement.scrollTop += speed
     }
 
-    if (scrollTop >= needScroll) {
+    if (scrollTop >= needScroll || scrollTop + clientHeight >= scrollHeight) {
       clearInterval(timer)
     }
   }
@@ -291,6 +293,7 @@ function easeInOutQuad(t, b, c, d) {
   }
 
   // copy-right
+  console.clear()
   console.info(
     ' %c Sagiri %c https://github.com/shiyiya/typecho-theme-sagiri ',
     'background: #ed143d7d; padding:5px 0;',
