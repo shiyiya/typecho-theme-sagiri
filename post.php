@@ -7,20 +7,19 @@
             <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
                 <div class="post-badge">
                     <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                        <?php $this->category(','); ?>
+                        <?php if($this->category) $this->category(','); else _e('o_o ....')  ?>
                     </span>
                 </div>
                 <header class="post-header">
                     <h1 class="post-title" itemprop="name headline"><?php $this->title() ?></h1>
                     <div class="post-meta">
                         <span><?php _e('<i class="iconfont icon-time"></i> 发表于 '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></span>
-                        <span><?php _e('<i class="iconfont icon-eye"></i> 浏览量 ');
-                                getPostView($this); ?></span>
+                        <span><?php _e('<i class="iconfont icon-eye"></i> 浏览量 '); getPostView($this); ?></span>
                         <span itemprop="interactionCount"><a itemprop="discussionUrl" href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('<i class="iconfont icon-Comments"></i> 没有评论', '<i class="iconfont icon-Comments"></i> 评论数 1', '<i class="iconfont icon-Comments"></i> 评论数 %d'); ?></a></span>
                     </div>
                 </header>
                 <div class="post-content" itemprop="articleBody">
-                    <?php replaceTag($this->content); ?>
+                    <?php replaceTag($this->content, $this->user->hasLogin()); ?>
                 </div>
                 <?php if ($this->options->WechatQR || $this->options->AlipayQR) : ?>
                     <div class="free-reward">

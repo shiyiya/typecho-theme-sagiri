@@ -53,9 +53,6 @@
     <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.min.css'); ?>" />
     <link async rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.min.css'); ?>" />
 
-    <!-- Custom Style -->
-    <?php _e($this->options->customCss) ?>
-
     <!-- Prism -->
     <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)) : ?>
         <link href="<?php $this->options->themeUrl('./lib/prism/' . $this->options->codeHighlightTheme . '/prism.css'); ?>" rel="stylesheet" />
@@ -88,6 +85,9 @@
             }
         </style>
     <?php endif; ?>
+
+    <!-- Custom Style -->
+    <?php _e($this->options->customCss) ?>
 </head>
 
 <body>

@@ -79,7 +79,7 @@
                         <li class="sidebar-nav-random">热评文章</li>
                     <?php endif; ?>
                     <?php if (in_array('randomPost', $this->options->siderbarOption)) : ?>
-                        <li class="sidebar-nav-random">相关文章</li>
+                        <li class="sidebar-nav-random">随机文章</li>
                     <?php endif; ?>
                     <?php if (in_array('recentComment', $this->options->siderbarOption)) : ?>
                         <?php $this->widget('Widget_Comments_Recent', 'ignoreAuthor=true')->to($comments); ?>
