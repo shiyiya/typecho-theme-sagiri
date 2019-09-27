@@ -33,9 +33,12 @@ Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 
 ## 演示站点
 
-> 如果介意联系我将其撤下，想留在这儿请留言或者直接 `PR`。
+内容健康，不得有抄袭或者过多转载；长期稳定，至少不会几个月就无法访问；换皮，这就不用说了。
+如果你认为你满足以上条件，请提交相关 `PR`（[如何 PR](#贡献))
 
-- [https://mianao.info/](https://mianao.info/)
+- https://www.wuqing.info/
+- https://blog.imlazy.ink:233
+- ···
 
 ## 主题使用
 
@@ -111,6 +114,7 @@ Authored and maintained by DIYgod with help from contributors ([list](https://gi
 
 ## 贡献
 
+pr 请在 **dev** 分支操作。
 欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 & 代码的改进，问题和 bugs 的报告。
 
 ## 许可证
