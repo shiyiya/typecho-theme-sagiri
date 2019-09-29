@@ -301,7 +301,7 @@ body {
   margin: 0;
 }
 pre,
-code {
+code:not([class*='language-']) {
   padding: 2px 4px;
   margin: 0 4px;
   word-wrap: break-word;
