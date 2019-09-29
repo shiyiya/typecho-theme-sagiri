@@ -10,7 +10,7 @@ function themeConfig($form)
 {
 
     $sagiri = new Sagiri();
-    // $sagiri->update();
+    $sagiri->update();
 
     $fav = new Typecho_Widget_Helper_Form_Element_Text('fav', NULL, NULL, _t('通用图标'), _t('请填入完整链接，作为网站标签页图标，手机建议大小 114x114'));
     $form->addInput($fav);
