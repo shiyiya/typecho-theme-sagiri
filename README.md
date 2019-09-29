@@ -36,8 +36,9 @@ Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 内容健康，不得有抄袭或者过多转载；长期稳定，至少不会几个月就无法访问；换皮，这就不用说了。
 如果你认为你满足以上条件，请提交相关 `PR`（[如何 PR](#贡献))
 
-- https://www.wuqing.info/
+- https://www.wuqing.info
 - https://blog.imlazy.ink:233
+- https://mianao.info
 - ···
 
 ## 主题使用
