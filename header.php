@@ -33,10 +33,6 @@
     <meta http-equiv="Cache-Control" content="no-transform " />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <!-- Disable Baidu snapshot -->
-    <meta name="Baiduspider" content="noarchive" />
-
-
     <!-- OGP https://www.ogp.me/ -->
     <?php if ($this->is('post') || $this->is('page')) : ?>
         <meta property="og:url" content="<?php $this->permalink() ?>" />
