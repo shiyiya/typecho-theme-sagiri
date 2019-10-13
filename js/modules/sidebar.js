@@ -1,4 +1,4 @@
-!isMobile &&
+!Sagiri.util.isMobile &&
   (function() {
     var sidebarNavToc = document.querySelector('.sidebar-nav-toc ')
     if (sidebarNavToc) {
@@ -69,7 +69,8 @@
 
             var children = this.parentElement.children
             for (var i = 0; i < children.length; i++) {
-              if (children[i] !== this) children[i].classList.remove('sidebar-nav-active')
+              if (children[i] !== this)
+                children[i].classList.remove('sidebar-nav-active')
             }
 
             siderOtherSections[key].classList.add('sidebar-section-active')

@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'Sigmar One';
+  src: url(./co3DmWZ8kjZuErj9Ta3do6Tppg.woff2) format('woff2');
+}
+
+.site-title {
+  color: #fff;
+  font-family: 'Sigmar One';
+  text-shadow: 1px 1px 0 #ff3f1a, -1px -1px 0 #00a7e0;
+}
+
+.brand {
+  position: relative;
+  display: inline-block;
+  padding: 0 40px;
+  color: #fff;
+  background: #222;
+  border-bottom: none;
+  padding: 0;
+  background: 0 0;
+  position: relative;
+  top: 180px;
+  font-size: 68px;
+  text-align: center;
+  text-shadow: 0 1px 1px #47456d;
+  margin-bottom: 130px;
+  z-index: 1;
+  font-family: 'Sigmar One';
+  display: block;
+}
+
+/** animate*/
+.site-title .guide {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.site-title .animate span {
+  position: absolute;
+  opacity: 0;
+}
+
+.site-title .animate {
+  transition: 0.3s;
+}
+
+.site-title .animate:hover {
+  opacity: 0.5;
+}
+/* animate end*/

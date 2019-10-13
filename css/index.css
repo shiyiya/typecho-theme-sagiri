@@ -44,7 +44,7 @@ body,
     display: none;
   }
 }
-.site-nav .menu-item a.current {
+/* .site-nav .menu-item a.current {
   position: relative;
   color: #000;
 }
@@ -59,7 +59,7 @@ body,
   left: 50%;
   color: #000;
   transform: translateX(-50%);
-}
+} */
 @media (max-width: 991px) {
   .menu li.menu-item {
     flex: 1;

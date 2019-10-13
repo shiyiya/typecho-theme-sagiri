@@ -27,7 +27,7 @@
 
 
 <div id="back-actions">
-    <span class="back-top back" onclick="backToTop()"><i class="iconfont icon-prev-m"></i></span>
+    <span class="back-top back""><i class=" iconfont icon-prev-m"></i></span>
     <!-- <span class="back-bottom back"><i class="iconfont icon-next-m"></i></span> -->
 </div>
 
@@ -52,6 +52,7 @@
     </script>
 <?php endif; ?>
 
+<script src="<?php $this->options->themeUrl('js/sagiri.min.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/index.min.js'); ?>"></script>
 
 <!--  Lazy load images -->
@@ -80,18 +81,18 @@
 <script>
     // Scroll to article area
     <?php if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings) && $this->is('post')) : ?>
-        postScroll()
+        Sagiri.F.postScroll()
     <?php endif; ?>
 
     // Background like ribbon
     <?php if (!empty($this->options->feature) && in_array('ribbons', $this->options->feature)) : ?>
-        ribbons()
+        Sagiri.F.ribbons()
     <?php endif; ?>
 
     // How long has the website been alive ?
     <?php if ($this->options->liveTime) : ?>
-        var liveTimeer = setInterval(function() {
-            liveTime('<?php strval($this->options->liveTime()); ?>')
+        setInterval(function() {
+            Sagiri.F.liveTime('<?php strval($this->options->liveTime()); ?>')
         }, 1000)
     <?php endif; ?>
 
