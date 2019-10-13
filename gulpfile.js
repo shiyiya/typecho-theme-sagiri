@@ -6,7 +6,8 @@ var gulp = require('gulp'),
   cleanCSS = require('gulp-clean-css'),
   browserify = require('browserify'),
   stream = require('vinyl-source-stream'),
-  buffer = require('vinyl-buffer')
+  buffer = require('vinyl-buffer'),
+  pkg = require('./package.json')
 
 gulp.task('build-scripts', function() {
   return browserify({
@@ -14,6 +15,10 @@ gulp.task('build-scripts', function() {
     debug: false,
     standalone: 'Sagiri'
   })
+    .transform('browserify-versionify', {
+      placeholder: '__VERSION__',
+      version: pkg.version
+    })
     .transform('babelify')
     .bundle()
     .on('error', function(error) {
@@ -21,6 +26,7 @@ gulp.task('build-scripts', function() {
     })
     .pipe(stream('sagiri.min.js'))
     .pipe(buffer())
+    .pipe(uglify())
     .pipe(gulp.dest('js'))
 })
 
@@ -36,6 +42,7 @@ gulp.task('build-es', function() {
     })
     .pipe(stream('index.min.js'))
     .pipe(buffer())
+    .pipe(uglify())
     .pipe(gulp.dest('js'))
 })
 
@@ -59,7 +66,7 @@ gulp.task('build-util', function() {
 
 gulp.task('start', function() {
   gulp.watch(
-    ['js/*/!(*.min).js', 'css/!(*.min).css', 'util/!(*.min).js'],
+    ['js/**/!(*.min).js', 'css/!(*.min).css', 'util/!(*.min).js'],
     gulp.parallel(['build'])
   )
 })

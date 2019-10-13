@@ -1,5 +1,4 @@
 import utils from './utils'
-import pkg from '../../package.json'
 import ribbons from './ribbons'
 import liveTime from './livetime'
 import postScroll from './postscroll'
@@ -9,7 +8,7 @@ const F = { ribbons, liveTime, postScroll }
 class Sagiri {
   constructor() {
     this.util = utils
-    this.version = pkg.version
+    this.version = '__VERSION__'
     this.hasBanner = !!document.querySelector('.site-config')
     this.F = F // theme Feature GLOBAL F
 
