@@ -46,7 +46,7 @@
 
     <!-- CSS Style -->
     <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/base.min.css'); ?>" />
-    <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/index.min.css'); ?>" />
+    <link async rel="stylesheet" href="<?php $this->options->themeUrl('./css/mix.min.css'); ?>" />
     <link async rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('./css/iconfont.min.css'); ?>" />
 
     <!-- Prism -->
@@ -110,8 +110,25 @@
                 <?php if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings)) : ?>
                     <div class="site-config <?php !$this->is('post') && _e('anima') ?>" style="background-image:url(<?php $this->options->backGroundImage ? $this->options->backGroundImage() : _e('https://i.loli.net/2018/10/05/5bb7144897e8c.jpg') ?>)">
                         <div class="site-meta">
-                            <div class="site-title"><?php $this->options->title(); ?></div>
-                            <div class="site-description"><?php $this->options->description(); ?></div>
+                            <div class="site-title">
+
+                                <div id="animate" class="animate">
+                                    <?php
+                                        $title = $this->options->title;
+                                        for ($i = 0; $i < strlen($title); $i++) {
+                                            echo '<span>' . $title[$i] . '</span>';
+                                        };
+                                        ?>
+                                </div>
+                                <div id="guide" class="guide">
+                                    <?php
+                                        $title = $this->options->title;
+                                        for ($i = 0; $i < strlen($title); $i++) {
+                                            echo '<span>' . $title[$i] . '</span>';
+                                        };
+                                        ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 <?php endif; ?>

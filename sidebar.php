@@ -104,7 +104,3 @@
         <?php endif; ?>
     </div>
 </aside>
-
-<?php if ($this->is('post') || $this->is('page') || $this->is('index')) : ?>
-    <script defer src="<?php $this->options->themeUrl('js/sidebar.min.js'); ?>"></script>
-<?php endif; ?>

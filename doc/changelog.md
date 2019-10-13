@@ -1,3 +1,7 @@
+## 2018/10/13 v1.1
+
+- [U]: 重构 JS
+
 ## 2018/5/2 v1.0.3
 
 - [remove]: remove auto load article & unused code & DNS Prefetch .
