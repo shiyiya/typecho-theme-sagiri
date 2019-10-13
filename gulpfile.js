@@ -9,7 +9,7 @@ var gulp = require('gulp'),
   buffer = require('vinyl-buffer'),
   pkg = require('./package.json')
 
-gulp.task('build-scripts', function() {
+gulp.task('build-sagiri', function() {
   return browserify({
     entries: 'js/global/sagiri.js',
     debug: false,
@@ -30,7 +30,7 @@ gulp.task('build-scripts', function() {
     .pipe(gulp.dest('js'))
 })
 
-gulp.task('build-es', function() {
+gulp.task('build-index', function() {
   return browserify({
     entries: 'js/modules/index.js',
     debug: false
@@ -65,13 +65,17 @@ gulp.task('build-util', function() {
 })
 
 gulp.task('start', function() {
+  gulp.watch(['css/!(*.min).css'], gulp.parallel(['build-css']))
+
   gulp.watch(
-    ['js/**/!(*.min).js', 'css/!(*.min).css', 'util/!(*.min).js'],
-    gulp.parallel(['build'])
+    ['js/**/!(*.min).js'],
+    gulp.parallel(['build-index', 'build-sagiri'])
   )
+
+  gulp.watch(['util/!(*.min).js'], gulp.parallel(['build-util']))
 })
 
 gulp.task(
   'build',
-  gulp.parallel(['build-scripts', 'build-es', 'build-css', 'build-util'])
+  gulp.parallel(['build-index', 'build-sagiri', 'build-css', 'build-util'])
 )

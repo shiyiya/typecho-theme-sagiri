@@ -1,9 +1,5 @@
-// const TweenLite = require('gsap/TweenMax')
-// import { TweenLite } from 'gsap'
-
-// TODO code split
-// import TweenLite from 'gsap/TweenLite' // Fail
-import { TweenLite } from 'gsap'
+import TweenLite from 'gsap/TweenLite'
+import CSSPlugin from 'gsap/CSSPlugin'
 
 const Power3EaseOut = {
   _func: null,
