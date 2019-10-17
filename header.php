@@ -108,28 +108,19 @@
             <div class="header-wrap">
                 <?php if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings)) : ?>
                     <div class="site-config" style="background-image:url(<?php $this->options->backGroundImage ? $this->options->backGroundImage() : _e('https://i.loli.net/2018/10/05/5bb7144897e8c.jpg') ?>)">
-                        <div class="site-meta">
-                            <div class="site-title">
-                                <div id="animate" class="animate">
-                                    <?php
-                                        $title = $this->options->title;
-                                        $len = mb_strlen($title);
-                                        for ($i = 0; $i < $len; $i++) {
-                                            echo '<span>' . mb_substr($title, $i, 1) . '</span>';
-                                        }
-                                        ?>
-
-                                </div>
-                                <div id="guide" class="guide">
-                                    <?php
-                                        $title = $this->options->title;
-                                        $len = mb_strlen($title);
-                                        for ($i = 0; $i < $len; $i++) {
-                                            echo '<span>' . mb_substr($title, $i, 1) . '</span>';
-                                        }
-                                        ?>
-                                </div>
-                            </div>
+                        <div class="site-title site-meta">
+                            <?php
+                                $ID = ['animate', 'guide'];
+                                foreach ($ID as $key => $value) {
+                                    echo ' <div id="' . $value . '" class="' . $value . '">';
+                                    $title = $this->options->title;
+                                    $len = mb_strlen($title);
+                                    for ($i = 0; $i < $len; $i++) {
+                                        echo '<span>' . mb_substr($title, $i, 1) . '</span>';
+                                    }
+                                    echo '</div>';
+                                }
+                                ?>
                         </div>
                     </div>
                 <?php endif; ?>

@@ -55,6 +55,11 @@
 <script src="<?php $this->options->themeUrl('js/sagiri.min.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/index.min.js'); ?>"></script>
 
+<!-- type -->
+<?php if (!empty($this->options->StyleSettings) || in_array('Banner', $this->options->StyleSettings)) : ?>
+    <script src="<?php $this->options->themeUrl('js/type.min.js'); ?>"></script>
+<?php endif; ?>
+
 <!--  Lazy load images -->
 <?php if (!empty($this->options->feature) && in_array('lazyImg', $this->options->feature)) : ?>
     <script src="<?php $this->options->themeUrl('util/lazyload.min.js'); ?>"></script>
