@@ -16,15 +16,15 @@
     ?>
 
     <li id="li-<?php $comments->theId(); ?>" class="comment-body<?php
-                                                                if ($comments->levels > 0) {
-                                                                    echo ' comment-child';
-                                                                    $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
-                                                                } else {
-                                                                    echo ' comment-parent';
-                                                                }
-                                                                $comments->alt(' comment-odd', ' comment-even');
-                                                                echo $commentClass;
-                                                                ?>">
+                                                                    if ($comments->levels > 0) {
+                                                                        echo ' comment-child';
+                                                                        $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
+                                                                    } else {
+                                                                        echo ' comment-parent';
+                                                                    }
+                                                                    $comments->alt(' comment-odd', ' comment-even');
+                                                                    echo $commentClass;
+                                                                    ?>">
         <div id="<?php $comments->theId(); ?>">
             <div class="comment-inner">
                 <div class="comment-author">
@@ -79,20 +79,3 @@
     <?php endif; ?>
 
 </div>
-
-<!-- OwO emoji -->
-<?php if (!empty($this->options->feature) && in_array('commentEmoji', $this->options->feature) && $this->allow('comment')) : ?>
-    <script src="<?php $this->options->themeUrl('./lib/OwO/OwO.min.js'); ?>"></script>
-
-    <script>
-        new OwO({
-            logo: 'OωO表情',
-            container: document.getElementsByClassName('OwO')[0],
-            target: document.getElementsByClassName('OwO-textarea')[0],
-            api: '<?php $this->options->themeUrl('./lib/OwO/OwO.json'); ?>',
-            position: 'down',
-            width: '100%',
-            maxHeight: '250px'
-        })
-    </script>
-<?php endif; ?>

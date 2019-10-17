@@ -15,7 +15,7 @@ class Sagiri {
     // copy-right
     //DO NOT DELETE !
     console.info(
-      ` %c Sagiri ${this.version} %c https://github.com/shiyiya/typecho-theme-sagiri `,
+      ` %c Sagiri PJAX ${this.version} %c https://github.com/shiyiya/typecho-theme-sagiri `,
       'background: #ed143d7d; padding:5px 0;',
       'background: #40b3ec;padding:5px 5px 5px 0;'
     )

@@ -65,8 +65,6 @@ function themeConfig($form)
             'ribbons' => _t('类彩带背景'),
             'codeHighlight' => _t('代码高亮'),
             'commentEmoji' => _t('评论表情'),
-            'fastclick' => _t('解决移动端300ms延迟'),
-            /* 'pjax' => _t('mini-pjax'), */
             'lazyImg' => _t('文章内图片懒加载'),
         ),
         array('showThumb'),

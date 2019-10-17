@@ -4,3 +4,5 @@
 @import './modules/index.css';
 @import './modules/sidebar.css';
 @import '../js/global/type/type.css';
+
+@import '../node_modules/nprogress/nprogress.css';

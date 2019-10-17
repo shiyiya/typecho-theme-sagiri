@@ -38,19 +38,7 @@
 
 <canvas id="ribbons"></canvas>
 
-<!-- <canvas id="live2d" class="live2d" width="140" height="250"></canvas> -->
-
-<?php if (!empty($this->options->feature) && in_array('pjax', $this->options->feature)) : ?>
-    <script src="<?php $this->options->themeUrl('util/pjax.mini.js'); ?>"></script>
-
-    <script>
-        new miniPjax({
-            target: 'a',
-            body: '#root',
-            container: ['.content-wrap', '#sidebar']
-        })
-    </script>
-<?php endif; ?>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 
 <script src="<?php $this->options->themeUrl('js/sagiri.min.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/index.min.js'); ?>"></script>
@@ -60,40 +48,29 @@
     <script src="<?php $this->options->themeUrl('js/type.min.js'); ?>"></script>
 <?php endif; ?>
 
-<!--  Lazy load images -->
-<?php if (!empty($this->options->feature) && in_array('lazyImg', $this->options->feature)) : ?>
-    <script src="<?php $this->options->themeUrl('util/lazyload.min.js'); ?>"></script>
-<?php endif; ?>
-
-<!-- fastclick -->
-<?php if (!empty($this->options->feature) && in_array('fastclick', $this->options->feature)) : ?>
-    <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
-    <script>
-        if ('addEventListener' in document) {
-            document.addEventListener('DOMContentLoaded', function() {
-                FastClick.attach(document.body);
-            }, false);
-        }
-    </script>
-<?php endif; ?>
-
-
 <!-- Code highlight -->
 <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)) : ?>
     <script src="<?php $this->options->themeUrl('./lib/prism/' . $this->options->codeHighlightTheme . '/prism.js'); ?>"></script>
 <?php endif; ?>
 
+<!-- OwO emoji -->
+<?php if (!empty($this->options->feature) && in_array('commentEmoji', $this->options->feature) && $this->allow('comment')) : ?>
+    <script src="<?php $this->options->themeUrl('./lib/OwO/OwO.min.js'); ?>"></script>
+
+    <script>
+        new OwO({
+            logo: 'OωO表情',
+            container: document.getElementsByClassName('OwO')[0],
+            target: document.getElementsByClassName('OwO-textarea')[0],
+            api: '<?php $this->options->themeUrl('./lib/OwO/OwO.json'); ?>',
+            position: 'down',
+            width: '100%',
+            maxHeight: '250px'
+        })
+    </script>
+<?php endif; ?>
+
 <script>
-    // Scroll to article area
-    <?php if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings) && $this->is('post')) : ?>
-        Sagiri.F.postScroll()
-    <?php endif; ?>
-
-    // Background like ribbon
-    <?php if (!empty($this->options->feature) && in_array('ribbons', $this->options->feature)) : ?>
-        Sagiri.F.ribbons()
-    <?php endif; ?>
-
     // How long has the website been alive ?
     <?php if ($this->options->liveTime) : ?>
         setInterval(function() {

@@ -1,7 +1,6 @@
 const backToTop = function() {
   var __isMoving = false
   return function() {
-    console.log(11)
     if (__isMoving) return
     const start = window.pageYOffset
     let i = 0
