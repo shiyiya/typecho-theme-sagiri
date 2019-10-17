@@ -27,7 +27,7 @@
 
 
 <div id="back-actions">
-    <span class="back-top back""><i class=" iconfont icon-prev-m"></i></span>
+    <span class="back-top back"><i class="iconfont icon-prev-m"></i></span>
     <!-- <span class="back-bottom back"><i class="iconfont icon-next-m"></i></span> -->
 </div>
 
