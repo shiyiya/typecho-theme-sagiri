@@ -318,3 +318,10 @@ pre {
 pre code {
   background: none;
 }
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}

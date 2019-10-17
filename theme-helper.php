@@ -3,7 +3,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 class Sagiri
 {
     static $name = "Sagiri";
-    static $version = "1.0.3";
+    static $version = "1.1.0";
     static $newVersion;
     static $err = false;
 
@@ -351,7 +351,7 @@ function replaceTag($content)
         );
     }
 
-    // TODO
+    // TODO short code
     /* $replaceVMap =  array(
         array(
             'from' => '/<a href="(?:https?:\/\/)?(?:www\.)?(?:bilibili|b23)\.(?:tv|com)(?:\/video)?\/av(\d+).*?">bplayer<\/a>/sm',

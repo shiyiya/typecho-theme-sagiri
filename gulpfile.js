@@ -48,7 +48,7 @@ gulp.task('build-index', function() {
 
 gulp.task('build-css', function() {
   return gulp
-    .src('css/!(*.min).css')
+    .src(['css/mix.css', 'css/iconfont.css'])
     .pipe(cleanCSS())
     .pipe(autoprefixer({ cascade: false }))
     .pipe(rename({ suffix: '.min' }))

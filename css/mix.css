@@ -1,2 +1,6 @@
-@import './index.css';
+@import './modules/base.css';
+@import './modules/animations.css';
+@import './modules/header.css';
+@import './modules/index.css';
+@import './modules/sidebar.css';
 @import '../js/modules/type/type.css';
