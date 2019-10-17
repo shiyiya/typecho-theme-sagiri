@@ -3,4 +3,4 @@
 @import './modules/header.css';
 @import './modules/index.css';
 @import './modules/sidebar.css';
-@import '../js/modules/type/type.css';
+@import '../js/global/type/type.css';

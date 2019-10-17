@@ -1,5 +1,4 @@
 require('./sidebar')
-require('./type')
 require('./affix')
 require('./mouse')
 require('./totop')
