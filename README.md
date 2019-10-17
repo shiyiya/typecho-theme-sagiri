@@ -6,6 +6,8 @@
 
 [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
+[PJAX Version](https://github.com/shiyiya/typecho-theme-sagiri/tree/pjax)
+
 ## 介绍
 
 [The English Version](./doc/README-EN.md)
