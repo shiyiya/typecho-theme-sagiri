@@ -15,5 +15,5 @@ export default function liveTime(time) {
     liveSec = Math.floor((liveMin - mliveMin) * 60)
 
   // prettier-ignore
-  document.querySelector('#live-time').innerText ="( •̀ ω •́ ) 被续 " + mliveDay +' 天 ' + mliveHour +' 小时 ' + mliveMin +' 分 ' + liveSec +' 秒'
+  document.querySelector('#live-time').innerText ="( •̀ ω •́ ) " + mliveDay +' Day ' + mliveHour +' Hour ' + mliveMin +' Minute ' + liveSec +' Second'
 }

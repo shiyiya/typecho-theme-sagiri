@@ -46,7 +46,7 @@ button {
   overflow: visible;
 }
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  box-shadow: 0 0 0 1000px #fff inset;
 }
 figure {
   margin: 1em 40px;
@@ -286,8 +286,8 @@ td {
 }
 @font-face {
   font-family: 'Telefon Black';
-  src: url(../font/TelefonBlack.woff) format('woff'),
-    url(../font/TelefonBlack.woff2) format('woff2');
+  src: url(../../assert/font/TelefonBlack.woff) format('woff'),
+    url(../../font/TelefonBlack.woff2) format('woff2');
 }
 body {
   position: relative;
@@ -300,10 +300,13 @@ body {
   background: #f5f7f9;
   margin: 0;
 }
+
+pre {
+  margin: 10px 4px;
+}
 pre,
-code:not([class*='language-']) {
+code {
   padding: 2px 4px;
-  margin: 0 4px;
   word-wrap: break-word;
   color: #555;
   background: #eee;

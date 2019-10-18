@@ -1,107 +1,81 @@
-<h1 align="center">Sagiri</h1>
-
-> As lovely as sagiri
+<p align="center">
+<h1>Sagiri</h1>
+<h3>As lovely as sagiri</h3>
+<a href="">Preview</a> |
+<a href="https://shiyiya.github.io/typecho-theme-sagiri">Documentation</a> |
+<a href="https://github.com/shiyiya/typecho-theme-sagiri/archive/master.zip">Download</a>
+<br>
+<a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/dev">Develop Version</a> |
+<a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/pjax">PJAX Version</a> |
+<a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Releases</a>
+<a href="./doc/changelog.md">Change Log</a>
+<br>
+<blockquote>
+   As lovely as sagiri, **based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a>
+</blockquote>
+</p>
 
 [![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE)
 
 [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
-[PJAX Version](https://github.com/shiyiya/typecho-theme-sagiri/tree/pjax)
+## Installation
 
-## 介绍
+1. Download & git clone from GitHub to your blog's theme folder.
+2. Enable it in the background management, if an error occurs, rename the folder to sagiri
 
-[The English Version](./doc/README-EN.md)
+- If you need to update the theme, download the latest version, then overwrite the original file to complete the update, some new features need to be enabled in the background to take effect.
 
-Sagiri ，简洁可爱的 `typecho` 主题。
-主题样式基于 [hexo-theme-sagiri](https://github.com/DIYgod/hexo-theme-sagiri) 上修改与添加。
+```shell
+git clone https://github.com/shiyiya/typecho-theme-sagiri.git
+```
 
-如果有相关问题 / 想知道更多？
-Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
+## Demo
 
-- [change log](./doc/changelog.md)
+The content is healthy, there must be no plagiarism or excessive reprinting; at least not a few months can not be accessed & change the theme, and that's it!
+If you think you meet the above conditions, please submit the relevant `PR` ([How to PR](#Contribute))
 
-- 轻量级，无 JQery，仅使用 Prism 作为代码高亮
-- 支持代码高亮，5 主题，支持主流代码，使用 Prism
-- 响应式，适用于移动端与桌面端，桌面端 > 移动端
-- 支持首页文章缩略图、随机图
-- 支持文章目录树、相关文章
-- 独立页面支持归档、分类、友链
-- 图片懒加载支持
-- 国际化支持（i18N）
-
-## 预览
-
-[![overview](./doc/shot.png)](http://runtua.cn)
-
-## 演示站点
-
-内容健康，不得有抄袭或者过多转载；长期稳定，至少不会几个月就无法访问；换皮，这就不用说了。
-如果你认为你满足以上条件，请提交相关 `PR`（[如何 PR](#贡献))
-
-- https://www.wuqing.info
 - https://blog.imlazy.ink:233
 - https://mianao.info
 - ···
 
-## 主题使用
+## Features
 
-点击“Download ZIP”下载，解压后将文件夹改名（不改名 typecho 会报文件夹名过长的错误（500）为 Sagiri 后上传到 /usr/themes，并启用主题
+### Rich Code Highlight Theme Choices
 
-如果需要更新主题，则先下载最新文件，然后覆盖原文件即可完成更新，部分新增加的功能需要到后台开启才会生效
+Using Prism.js as code highlighting. sagiri default comes with 5 themes & 32 language, if you need more, just go [here](https://prismjs.com/) to download.
 
-## 相关设置
+<table>
+  <tr>
+    <td><img src="https://i.loli.net/2019/10/18/4qOlZUzcpF6Lo7P.png"></td>
+    <td><img src="https://i.loli.net/2019/10/18/keoYfqXAdcyTS3I.png"></td>
+    <td><img src="https://i.loli.net/2019/10/18/GDqMJtTC9EYykAm.png"></td>
+  </tr>
+  <tr>markup+css+clike+javascript+c+csharp+cpp+ruby+docker+markup-templating+flow+git+go+haskell+java+json+kotlin+markdown+lisp+lua+php+sql+powershell+python+typescript+rust+scala+scheme+pug+swift+yaml+vi</tr>
+</table>
 
-- 缩略图
+### Special Page
 
-  - 文章缩略图为附件第一张图片 -> 文章内第一张图片。
-  - 缩略图支持 Markdown 格式, HTML 格式以及附件形式, Markdown 格式为 `![图片描述](图片链接)` 。
-  - 如果想要自定义某篇文章的缩略图, 但是不想让该图片在文章中出现, 则可上传附件而不使用。
+- todo
+  <tr>
+     <td><img src="https://sm.ms/image/kC5uPUYEdlSca1J"></td>
+     <td><img src="https://sm.ms/image/MGRDZzT7ABSswyU"></td>
+   </tr>
+  <tr>
+     <td><img src=""></td>
+     <td><img src=""></td>
+     <td><img src=""></td>
+   </tr>
 
-- 首页文章概览默认最大输出 100 个字符, 可手动添加截断符 `<!-- more -->` 控制输出。
+Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 
-- 如何创建归档 & 搜索 & 分类
-  - 归档 :
-    新建独立页面 -> 选择模板 -> page-archive -> 设置 url 为 archive -> 高级选项 -> 隐藏
-  - 搜索 :
-    新建独立页面 -> 选择模板 -> page-search -> 设置 url 为 search -> 高级选项 -> 隐藏
-  - 分类 :
-    新建独立页面 -> 选择模板 -> page-categories-> 设置 url 为 categorie -> 高级选项 -> 隐藏
-  - 示例：
-    ![how-to-create-archive-page](http://runtua.cn/usr/uploads/2018/10/3336908615.png)
+### Multi-language Support
 
-### 头部个性化标徽
+- Need more language support, Welcome contribution. ([How to PR](#Contribute))
 
-独立页面文字需为：
+## Other
 
-- Home <-> 主页
-- Comments <-> 留言
-- About <-> 关于
-- Link <-> 友链
-  暂定以上四个
-
-## 图片懒加载
-
-- 不写宽高默认 `loading` 占位
-
-```
-// 写法
-![宽::高::描述](图片地址)
-
-//例如
-![300::100::这是一只歪脖子鸟？？.jpg](http://localhost/typecho/usr/themes/typecho-theme-sagiri/img/author.jpg)
-```
-
-## 友情链接
-
-```markdown
-- ![头像描述](头像链接)[链接描述](链接)<hr> 一个有趣的站点
-- [链接描述](链接) <hr> 另一个有趣的站点
-- [链接描述](链接)
-```
-
-## 备份
-
-由于浏览量是新增字段故迁移时需要新建一个字段
+## BackUp
 
 ```sql
 -- mysql
@@ -115,12 +89,12 @@ Authored and maintained by DIYgod with help from contributors ([list](https://gi
 
 > Blog [@OZOO](http://www.runtua.cn) · GitHub [@shiyi](https://github.com/shiyiya) · Twitter [@shiyi](https://twitter.com/)
 
-## 贡献
+## Contribute
 
-pr 请在 **dev** 分支操作。
-欢迎各种形式的贡献，包括但不限于优化，添加功能，文档 & 代码的改进，问题和 bugs 的报告。
+If you feel like to help us build a better Sagiri, you can
 
-## 许可证
+Write a plugin | Submit a tutorial | Report a bug | Add a translation
+
+## License
 
 Open sourced under the GPL V3.0 license.
-根据 GPL V3.0 许可证开源。
