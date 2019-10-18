@@ -9,7 +9,11 @@ class Sagiri {
   constructor() {
     this.util = utils
     this.version = '__VERSION__'
-    this.hasBanner = !!document.querySelector('.site-config')
+    this.hasBanner =
+      !!document.querySelector('.site-config') ||
+      (document.querySelector('.header-wrap').style.display !== 'none' &&
+        document.querySelector('.header-wrap').style.display !== '')
+
     this.F = F // theme Feature GLOBAL F
 
     // copy-right

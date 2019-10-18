@@ -60,6 +60,7 @@ class Lang_en
             '评论数 1' => ' One comment',
             '%d 条评论' => ' %d comments',
             '条评论' => ' comments',
+            '标签' => 'Tags',
 
 
             /*评论 Comments*/
@@ -114,6 +115,7 @@ class Lang_en
             '返回首页' => 'Return to Home',
             '没有找到搜索结果，请尝试更换关键词。' => 'Can not find the search results, please try to replace the keyword.',
             '正文' => "Text",
+            '没有相关文章' => 'No articles',
             '没有了' => 'No More',
 
             /*登录退出提交 */

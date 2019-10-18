@@ -47,46 +47,8 @@
         border: none
     }
 
-    .category-post-wrap {
-        display: inline-block;
-        width: 33.33%;
-        box-sizing: border-box;
-        float: left;
-        padding: 10px;
-    }
-
-    @media (max-width: 991px) {
-        .category-post-wrap {
-            width: 50%;
-        }
-    }
-
-    .category-post {
-        background-color: #fff;
-        padding: 20px;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, .04);
-    }
-
     .content-wrap {
         float: none
-    }
-
-    .category-post-title {
-        font-weight: normal;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        font-size: 14px;
-        margin: 0;
-    }
-
-    .category-title {
-        margin: 10px;
-        font-size: 14px;
-    }
-
-    .category-post-item {
-        animation: fade-in-top .3s .3s backwards;
     }
 </style>
 

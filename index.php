@@ -16,16 +16,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <div id="main" class="main" role="main">
 	<div class="main-inner clearfix">
 		<div class="content-wrap">
-
 			<section id="posts">
 				<? while ($this->next()) : ?>
 					<? $this->need('component/post-card.php'); ?>
 				<? endwhile; ?>
 			</section>
-
 			<? $this->pageNav('<i class="iconfont icon-prev-m"></i>', '<i class="iconfont icon-next-m"></i>', '2', '...'); ?>
 		</div>
-
 		<? if (isPc()) $this->need('component/sidebar.php'); ?>
 	</div>
 </div>

@@ -1,18 +1,19 @@
+<h1 align="center">Sagiri</h1>
+<h3 align="center">As lovely as sagiri</h3>
+
 <p align="center">
-  <h1>Sagiri</h1>
-  <h3>As lovely as sagiri</h3>
   <a href="">Preview</a> |
   <a href="https://shiyiya.github.io/typecho-theme-sagiri">Documentation</a> |
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/archive/master.zip">Download</a>
-  <br/>
+  <br />
+  <br />
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/dev">Develop Version</a> |
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/pjax">PJAX Version</a> |
-  <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Releases</a>
+  <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Releases</a> |
   <a href="./doc/changelog.md">Change Log</a>
-  <br/>
-  <blockquote>
-    As lovely as sagiri, based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a>
-  </blockquote>
+  <br />
+  <br />
+    <b>As lovely as sagiri, based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a></b>
 </p>
 
 [![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE)
@@ -43,7 +44,9 @@ If you think you meet the above conditions, please submit the relevant `PR` ([Ho
 
 ### Rich Code Highlight Theme Choices
 
-Using Prism.js as code highlighting. sagiri default comes with 5 themes & 32 language, if you need more, just go [here](https://prismjs.com/) to download.
+Using Prism.js as code highlighting. sagiri default comes with 5 themes & supported 32 language, if you need more, just go [here](https://prismjs.com/) to download.
+
+- Supported language: markup+css+clike+javascript+c+csharp+cpp+ruby+docker+markup-templating+flow+git+go+haskell+java+json+kotlin+markdown+lisp+lua+php+sql+powershell+python+typescript+rust+scala+scheme+pug+swift+yaml+vi
 
 <table>
   <tr>
@@ -51,23 +54,35 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & 32 lan
     <td><img src="https://i.loli.net/2019/10/18/keoYfqXAdcyTS3I.png"></td>
     <td><img src="https://i.loli.net/2019/10/18/GDqMJtTC9EYykAm.png"></td>
   </tr>
-  <tr>markup+css+clike+javascript+c+csharp+cpp+ruby+docker+markup-templating+flow+git+go+haskell+java+json+kotlin+markdown+lisp+lua+php+sql+powershell+python+typescript+rust+scala+scheme+pug+swift+yaml+vi</tr>
 </table>
 
 ### Special Page
 
-- todo
+- Create Page.
+
   <tr>
-     <td><img src="https://sm.ms/image/kC5uPUYEdlSca1J"></td>
-     <td><img src="https://sm.ms/image/MGRDZzT7ABSswyU"></td>
-   </tr>
-  <tr>
-     <td><img src=""></td>
-     <td><img src=""></td>
-     <td><img src=""></td>
+     <td><img src="https://i.loli.net/2019/10/18/kC5uPUYEdlSca1J.png"></td>
+     <td><img src="https://i.loli.net/2019/10/18/MGRDZzT7ABSswyU.png"></td>
    </tr>
 
-Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
+- Select the corresponding template and fill in the correct path
+
+<table>
+  <tr>
+     <td><img style="width:20%" src="https://i.loli.net/2019/10/18/vhp6BCEgjRwXa3O.png"></td>
+     <td><img style="width:20%" src="https://i.loli.net/2019/10/18/YbMNLlRIfxASFOT.png"></td>
+     <td><img style="width:20%" src="https://i.loli.net/2019/10/18/gk7YqFKSBsZAzQL.png"></td>
+     <td><img style="width:20%" src="https://i.loli.net/2019/10/18/ltpdW326brZ94UB.png"></td>
+  </tr>
+  <tr>
+     <td><b>search.html</b></td>
+     <td><b>Without restriction</b></td>
+     <td><b>archive.html</b></td>
+     <td><b>category.html</b></td>
+   </tr>
+</table>
+
+- Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 
 ### Multi-language Support
 

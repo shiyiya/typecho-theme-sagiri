@@ -1,6 +1,9 @@
 @import './modules/base.css';
 @import './modules/animations.css';
 @import './modules/header.css';
-@import './modules/index.css';
-@import './modules/sidebar.css';
 @import '../js/global/type/type.css';
+@import './modules/index.css';
+@import './modules/post.css';
+@import './modules/sidebar.css';
+@import './modules/comment.css';
+@import './modules/page.css';

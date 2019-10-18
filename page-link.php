@@ -27,18 +27,3 @@
 
 
 <? $this->need('component/footer.php'); ?>
-
-<script>
-  var warp = document.getElementById('link'),
-    br = [].slice.call(warp.getElementsByTagName('BR'))
-  itemLink = [].slice.call(document.querySelectorAll('#link ul li'))
-
-  br.forEach((v, k) => {
-    v.parentElement.removeChild(v)
-  })
-  itemLink.forEach((v, k) => {
-    if (!!!v.querySelector('img')) {
-      v.style.paddingTop = '10px'
-    }
-  })
-</script>
