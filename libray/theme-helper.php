@@ -1,4 +1,4 @@
-<?php
+<?
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 class Sagiri
 {
@@ -6,6 +6,14 @@ class Sagiri
     static $version = "1.1.0";
     static $newVersion;
     static $err = false;
+    public static $options;
+    public static $widget;
+
+    public static function init($typechoWidget)
+    {
+        Typecho_Widget::widget('Widget_Options')->to(self::$options);
+        self::$widget = $typechoWidget;
+    }
 
     static function geturl($url)
     {
@@ -21,11 +29,11 @@ class Sagiri
         return json_decode($res, true);
     }
 
-    public function update()
+    public static function update()
     {
 
         if (function_exists('curl_init')) {
-            $pkg = $this->geturl("https://raw.githubusercontent.com/shiyiya/typecho-theme-sagiri/master/package.json");
+            $pkg = self::geturl("https://raw.githubusercontent.com/shiyiya/typecho-theme-sagiri/master/package.json");
         } else {
             self::$err = true;
         }
@@ -56,7 +64,6 @@ function isPc()
 
 function showThumb($obj)
 {
-
     $fieldThumb = $obj->fields->thumb;
 
     if (!empty($fieldThumb) && isset($fieldThumb)) {

@@ -11,12 +11,14 @@ lib/live2d/*
 sw.js
 manifest.json
 
-# my post 
+# my post
 post/
 
 
-# util 
+# util
 util/pjaxmini.js
 util/lazyload.js
 
 temp/
+
+assert/img/sticker
