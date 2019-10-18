@@ -6,10 +6,10 @@
         <div class="content-wrap">
             <h3 class="archive-title">
                 <? $this->archiveTitle(array(
-                    'category' => _t('分类 %s 下的文章'),
-                    'search' => _t('包含关键字 %s 的文章'),
-                    'tag' => _t('标签 %s 下的文章'),
-                    'author' => _t('%s 发布的文章')
+                    'category' => _i18n('分类 %s 下的文章'),
+                    'search' => _i18n('包含关键字 %s 的文章'),
+                    'tag' => _i18n('标签 %s 下的文章'),
+                    'author' => _i18n('%s 发布的文章')
                 ), '', ''); ?>
             </h3>
             <? if ($this->have()) : ?>
@@ -18,7 +18,7 @@
                 <? endwhile; ?>
             <? else : ?>
                 <article class="post">
-                    <h2 class="post-title"><? _e('没有找到内容'); ?></h2>
+                    <h2 class="post-title"><? i18n('没有相关文章'); ?></h2>
                 </article>
             <? endif; ?>
 
