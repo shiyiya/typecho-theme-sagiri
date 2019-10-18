@@ -44,7 +44,9 @@ If you think you meet the above conditions, please submit the relevant `PR` ([Ho
 
 ### Rich Code Highlight Theme Choices
 
-Using Prism.js as code highlighting. sagiri default comes with 5 themes & 32 language, if you need more, just go [here](https://prismjs.com/) to download.
+Using Prism.js as code highlighting. sagiri default comes with 5 themes & supported 32 language, if you need more, just go [here](https://prismjs.com/) to download.
+
+- Supported language: markup+css+clike+javascript+c+csharp+cpp+ruby+docker+markup-templating+flow+git+go+haskell+java+json+kotlin+markdown+lisp+lua+php+sql+powershell+python+typescript+rust+scala+scheme+pug+swift+yaml+vi
 
 <table>
   <tr>
@@ -52,23 +54,35 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & 32 lan
     <td><img src="https://i.loli.net/2019/10/18/keoYfqXAdcyTS3I.png"></td>
     <td><img src="https://i.loli.net/2019/10/18/GDqMJtTC9EYykAm.png"></td>
   </tr>
-  <tr>markup+css+clike+javascript+c+csharp+cpp+ruby+docker+markup-templating+flow+git+go+haskell+java+json+kotlin+markdown+lisp+lua+php+sql+powershell+python+typescript+rust+scala+scheme+pug+swift+yaml+vi</tr>
 </table>
 
 ### Special Page
 
-- todo
+- Create Page.
+
   <tr>
-     <td><img src="https://sm.ms/image/kC5uPUYEdlSca1J"></td>
-     <td><img src="https://sm.ms/image/MGRDZzT7ABSswyU"></td>
-   </tr>
-  <tr>
-     <td><img src=""></td>
-     <td><img src=""></td>
-     <td><img src=""></td>
+     <td><img src="https://i.loli.net/2019/10/18/kC5uPUYEdlSca1J.png"></td>
+     <td><img src="https://i.loli.net/2019/10/18/MGRDZzT7ABSswyU.png"></td>
    </tr>
 
-Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
+- Select the corresponding template and fill in the correct path
+
+<table>
+  <tr>
+     <td><img style="width:20%" src="https://i.loli.net/2019/10/18/vhp6BCEgjRwXa3O.png"></td>
+     <td><img style="width:20%" src="https://i.loli.net/2019/10/18/YbMNLlRIfxASFOT.png"></td>
+     <td><img style="width:20%" src="https://i.loli.net/2019/10/18/gk7YqFKSBsZAzQL.png"></td>
+     <td><img style="width:20%" src="https://i.loli.net/2019/10/18/ltpdW326brZ94UB.png"></td>
+  </tr>
+  <tr>
+     <td><b>search.html</b></td>
+     <td><b>Without restriction</b></td>
+     <td><b>archive.html</b></td>
+     <td><b>category.html</b></td>
+   </tr>
+</table>
+
+- Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
 
 ### Multi-language Support
 
