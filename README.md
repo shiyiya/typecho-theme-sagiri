@@ -88,7 +88,32 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & suppor
 
 - Need more language support, Welcome contribution. ([How to PR](#Contribute))
 
-## Other
+## Link
+
+Create a template before this, the content format is as follows
+
+```markdown
+- ![头像描述](头像链接)[链接描述](链接)<hr> 一个有趣的站点
+- [链接描述](链接) <hr> 另一个有趣的站点
+- [链接描述](链接)
+```
+
+## Header Menu Icon
+
+- Home <-> 主页
+- Comments <-> 留言
+- About <-> 关于
+- Link <-> 友链
+- Time
+
+## Lazy load Image
+
+```markdown
+![Image Descript width height](图片地址)
+
+//example
+![how-to-create-archive 690 345](https://website-href-/your/path/file.png)
+```
 
 ## BackUp
 
