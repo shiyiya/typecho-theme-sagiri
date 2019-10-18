@@ -1,18 +1,19 @@
+<h1 align="center">Sagiri</h1>
+<h3 align="center">As lovely as sagiri</h3>
+
 <p align="center">
-  <h1>Sagiri</h1>
-  <h3>As lovely as sagiri</h3>
   <a href="">Preview</a> |
   <a href="https://shiyiya.github.io/typecho-theme-sagiri">Documentation</a> |
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/archive/master.zip">Download</a>
-  <br/>
+  <br />
+  <br />
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/dev">Develop Version</a> |
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/pjax">PJAX Version</a> |
-  <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Releases</a>
+  <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Releases</a> |
   <a href="./doc/changelog.md">Change Log</a>
-  <br/>
-  <blockquote>
-    As lovely as sagiri, based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a>
-  </blockquote>
+  <br />
+  <br />
+    <b>As lovely as sagiri, based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a></b>
 </p>
 
 [![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE)
