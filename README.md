@@ -93,9 +93,9 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & suppor
 Create a template before this, the content format is as follows
 
 ```markdown
-- ![头像描述](头像链接)[链接描述](链接)<hr> 一个有趣的站点
-- [链接描述](链接) <hr> 另一个有趣的站点
-- [链接描述](链接)
+- ![avatar descript](avatar href)[href descript](href)<hr> descript
+- [title](href) <hr> descript
+- [title](href)
 ```
 
 ## Header Menu Icon
@@ -109,10 +109,10 @@ Create a template before this, the content format is as follows
 ## Lazy load Image
 
 ```markdown
-![Image Descript width height](图片地址)
+![width::height::Image Descript](image URL)
 
 //example
-![how-to-create-archive 690 345](https://runtua.cn/usr/uploads/2018/10/3336908615.png)
+![690::345::how-to-create-archive](https://website-href-/your/path/file.png)
 ```
 
 ## BackUp
