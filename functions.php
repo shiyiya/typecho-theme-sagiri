@@ -7,8 +7,9 @@ define('__ICARUS_VERSION__', '1.1.0');
 function themeConfig($form)
 {
     require_once __Sagiri_ROOT__ . 'libray/i18n/index.php';
-    require_once __Sagiri_ROOT__ . 'libray/theme-helper.php';
+    require_once __Sagiri_ROOT__ . 'libray/update.php';
 
+    Update::valid();
 
     $fav = new Typecho_Widget_Helper_Form_Element_Text('fav', NULL, NULL, _t('Favicon'), _i18n('请填入完整链接，作为网站标签页图标，手机建议大小 114x114'));
     $form->addInput($fav);
@@ -98,24 +99,22 @@ function themeConfig($form)
     $codeHighlightTheme = new Typecho_Widget_Helper_Form_Element_Radio(
         'codeHighlightTheme',
         array(
-            'default' => _i18n('默认高亮，灰底'),
-            'okaidia' => _i18n('sublime 默认配色，黑底'),
-            'coy' => _i18n('MDN 配色，白底蓝边'),
-            'Solarized-Light' => _i18n('淡黄底色'),
-            'Tomorrow-Night' => _i18n('黑底色'),
+            'default' => _i18n('Default'),
+            'okaidia' => _i18n('Okaidia'),
+            'coy' => _i18n('COY'),
+            'Solarized-Light' => _i18n('Solarized Light'),
+            'Tomorrow-Night' => _i18n('Tomorrow Night'),
         ),
         'default',
         _i18n('代码高亮主题')
     );
     $form->addInput($codeHighlightTheme);
-
-    Sagiri::update();
 }
 
 function themeInit($widget)
 {
-    require_once __Sagiri_ROOT__ . 'libray/theme-helper.php';
     require_once __Sagiri_ROOT__ . 'libray/i18n/index.php';
+    require_once __Sagiri_ROOT__ . 'libray/theme-helper.php';
 }
 
 
