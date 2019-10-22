@@ -71,7 +71,7 @@
                 <? endif; ?>
                 <textarea name="text" id="textarea" class="OwO-textarea textarea" required placeholder="<? i18n('在这里输入你的评论...（Ctrl/Control + Enter 快捷提交）') ?>"><? $this->remember('text'); ?></textarea>
                 <div class="OwO"></div>
-                <button type="submit" class="submit"><? i18n('评论'); ?></button>
+                <button class="sheen" type="submit" class="submit"><? i18n('评论'); ?></button>
             </form>
         <? endif; ?>
     </div>

@@ -88,6 +88,25 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & suppor
 
 - Need more language support, Welcome contribution. ([How to PR](#Contribute))
 
+### Lazy load Image
+
+```markdown
+![width::height::Image Descript](image URL)
+
+//example
+![690::345::how-to-create-archive](https://website-href-/your/path/file.png)
+```
+
+## Others Setting
+
+- Index Post Card
+  Home Article Overview The default maximum output is **150** characters, you can manually add the truncation `<!-- more -->` control output.
+
+- Article thumbnail
+  weight of the thumbnail: Article field -> The first Upload Image of Article -> Image link in the article -> Random Image
+
+- ...
+
 ## Link
 
 Create a template before this, the content format is as follows
@@ -105,15 +124,6 @@ Create a template before this, the content format is as follows
 - About <-> 关于
 - Link <-> 友链
 - Time
-
-## Lazy load Image
-
-```markdown
-![width::height::Image Descript](image URL)
-
-//example
-![690::345::how-to-create-archive](https://website-href-/your/path/file.png)
-```
 
 ## BackUp
 

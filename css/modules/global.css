@@ -1,0 +1,66 @@
+.sheen {
+  font-size: 12px;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+  color: #40b3ec;
+  border: 2px solid#40b3ec;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.sheen::before {
+  content: '';
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -4.5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
+}
+
+.sheen:hover {
+  font-weight: bold;
+  background-color: #40b3ec;
+  color: #fff;
+}
+
+.sheen:hover::before {
+  transform: skewX(-45deg) translateX(13.5em);
+  transition: all 0.5s ease-in-out;
+}
+
+/**/
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: auto;
+}
+
+@font-face {
+  font-family: 'Telefon Black';
+  src: url(../../assert/font/TelefonBlack.woff) format('woff'),
+    url(../../font/TelefonBlack.woff2) format('woff2');
+}
+
+body {
+  position: relative;
+  font-family: system, -apple-system, BlinkMacSystemFont, 'PingFang SC', Arial,
+    'Microsoft YaHei', Lato, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  line-height: 2;
+  color: #555;
+  background: #efefef;
+  margin: 0;
+}

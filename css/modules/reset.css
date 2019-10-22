@@ -284,26 +284,11 @@ td {
 ::-webkit-scrollbar-thumb {
   background: #ccc;
 }
-@font-face {
-  font-family: 'Telefon Black';
-  src: url(../../assert/font/TelefonBlack.woff) format('woff'),
-    url(../../font/TelefonBlack.woff2) format('woff2');
-}
-body {
-  position: relative;
-  font-family: system, -apple-system, BlinkMacSystemFont, 'PingFang SC', Arial,
-    'Microsoft YaHei', Lato, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-size: 15px;
-  line-height: 2;
-  color: #555;
-  background: #f5f7f9;
-  margin: 0;
-}
 
 pre {
   margin: 10px 4px;
 }
+
 pre,
 code {
   padding: 2px 4px;
@@ -320,11 +305,4 @@ pre {
 }
 pre code {
   background: none;
-}
-
-html,
-body,
-#root {
-  height: 100%;
-  width: 100%;
 }

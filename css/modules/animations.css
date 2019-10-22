@@ -74,3 +74,12 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
