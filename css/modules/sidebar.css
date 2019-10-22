@@ -35,6 +35,7 @@
   display: block;
 }
 .sidebar-nav {
+  user-select: none;
   margin: 0 0 20px 0;
   padding-left: 0;
 }
@@ -70,6 +71,7 @@
   padding: 0;
 }
 .site-author-name {
+  cursor: pointer;
   margin: 5px 0 8px;
   font-weight: 700;
 }

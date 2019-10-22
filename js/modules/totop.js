@@ -1,7 +1,6 @@
 const backToTop = function() {
   var __isMoving = false
   return function() {
-    console.log(11)
     if (__isMoving) return
     const start = window.pageYOffset
     let i = 0
@@ -21,5 +20,9 @@ const backToTop = function() {
     }, 16.7)
   }
 }
+
+document
+  .querySelector('.site-author-name')
+  .addEventListener('click', backToTop())
 
 document.querySelector('#back-actions').addEventListener('click', backToTop())
