@@ -16,9 +16,18 @@
     <b>As lovely as sagiri, based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a></b>
 </p>
 
-[![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE)
+[![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
-[![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
+## Demo
+
+![shot](./screenshot.png)
+
+There must be no plagiarism or excessive reprinting; at least not a few months can not be accessed & change the theme, and that's it!
+If you think you meet the above conditions, please submit the relevant `PR` ([How to PR](#Contribute))
+
+- https://blog.imlazy.ink:233
+- https://mianao.info
+- ···
 
 ## Installation
 
@@ -30,15 +39,6 @@
 ```shell
 git clone https://github.com/shiyiya/typecho-theme-sagiri.git
 ```
-
-## Demo
-
-The content is healthy, there must be no plagiarism or excessive reprinting; at least not a few months can not be accessed & change the theme, and that's it!
-If you think you meet the above conditions, please submit the relevant `PR` ([How to PR](#Contribute))
-
-- https://blog.imlazy.ink:233
-- https://mianao.info
-- ···
 
 ## Features
 
