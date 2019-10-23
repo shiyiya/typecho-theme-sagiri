@@ -12,19 +12,20 @@
         }
     }
 
-    $commentLevelClass = $comments->levels > 0 ? ' comment-child' : ' comment-parent';
+    // $commentLevelClass = $comments->levels > 0 ? ' comment-child' : ' comment-parent';
     ?>
 
-    <li id="li-<? $comments->theId(); ?>" class="comment-body<?
-                                                                    if ($comments->levels > 0) {
-                                                                        echo ' comment-child';
-                                                                        $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
-                                                                    } else {
-                                                                        echo ' comment-parent';
-                                                                    }
-                                                                    $comments->alt(' comment-odd', ' comment-even');
-                                                                    echo $commentClass;
-                                                                    ?>">
+    <li id="li-<? $comments->theId(); ?>" class="comment-body
+    <?
+        if ($comments->levels > 0) {
+            echo ' comment-child';
+            $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
+        } else {
+            echo ' comment-parent';
+        }
+        $comments->alt(' comment-odd', ' comment-even');
+        echo $commentClass;
+        ?>">
         <div id="<? $comments->theId(); ?>">
             <div class="comment-inner">
                 <div class="comment-author">

@@ -88,7 +88,7 @@ gulp.task('start', function() {
 
   gulp.watch(
     ['js/**/!(*.min).js'],
-    gulp.parallel(['build-index', 'build-sagiri'])
+    gulp.parallel(['build-index', 'build-sagiri', 'build-type'])
   )
 
   gulp.watch(['util/!(*.min).js'], gulp.parallel(['build-util']))
@@ -97,6 +97,7 @@ gulp.task('start', function() {
 gulp.task(
   'build',
   gulp.parallel([
+    'build-type',
     'build-index',
     'build-type',
     'build-sagiri',
