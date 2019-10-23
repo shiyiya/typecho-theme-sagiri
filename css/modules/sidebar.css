@@ -35,6 +35,7 @@
   display: block;
 }
 .sidebar-nav {
+  line-height: 1.5;
   user-select: none;
   margin: 0 0 20px 0;
   padding-left: 0;
@@ -85,7 +86,19 @@
   display: inline-block;
 }
 .author-social-links a {
+  width: 50px;
+  box-shadow: 0 5px 25px rgb(64, 179, 236, 0.15);
+  height: 50px;
+  align-items: center;
+  border-radius: 50%;
+  align-content: center;
+  display: flex;
+  justify-content: center;
   border: none;
+}
+.author-social-links a:hover i {
+  display: block;
+  animation: jello-horizontal 0.9s both;
 }
 .site-status-item {
   display: inline-block;
