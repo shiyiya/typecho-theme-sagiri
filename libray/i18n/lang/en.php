@@ -36,11 +36,11 @@ class Lang_en
 
 
             '文章目录' => 'TOC',
-            '热门文章' => 'Popular',
-            '热评文章' => 'Hot review',
+            '热门文章' => 'Most Viewed',
+            '热评文章' => 'Most commented',
             '最新评论' => 'Latest comments',
             '随机文章' => 'Random',
-            '站点概览' => 'Site overview',
+            '站点概览' => 'Overview',
             '日志' => 'Post',
 
             '设置' => 'Setting',

@@ -95,20 +95,24 @@
 .site-config {
   height: 520px;
   width: 100%;
+  background-color: rgba(64, 179, 236, 0.1);
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.site-config.anima {
+
+/* .site-config.anima {
   animation: fade-in-bottom 1s 0.3s backwards;
-}
+} */
+
 @media (max-width: 991px) {
   .site-config {
     height: 200px;
     background-attachment: initial;
   }
 }
+
 .site-meta {
   position: relative;
   top: 200px;

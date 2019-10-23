@@ -1,4 +1,5 @@
 !Sagiri.util.isMobile &&
+  Sagiri.hasSidebar &&
   (function() {
     var sidebarNavToc = document.querySelector('.sidebar-nav-toc ')
     if (sidebarNavToc) {

@@ -13,6 +13,7 @@ class Sagiri {
       !!document.querySelector('.site-config') ||
       (document.querySelector('.header-wrap').style.display !== 'none' &&
         document.querySelector('.header-wrap').style.display !== '')
+    this.hasSidebar = !!document.getElementById('sidebar')
 
     this.F = F // theme Feature GLOBAL F
 

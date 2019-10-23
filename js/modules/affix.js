@@ -11,16 +11,16 @@ document.addEventListener(
 
     if (Sagiri.hasBanner) {
       if (!isMobile && scrollTop >= 500) {
-        siteNav.style.background = 'rgba(255,255,255,.8)'
-        siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
-        sider.classList.add('affix')
+        siteNav.style.background = 'rgba(255, 255, 255, .8)'
+        siteNav.style.boxShadow = '0 0 2px 2px rgba(172, 172, 172, .4)'
+        Sagiri.hasSidebar && sider.classList.add('affix')
       } else if (isMobile && scrollTop >= 200) {
-        siteNav.style.background = 'rgba(255,255,255,.8)'
-        siteNav.style.boxShadow = '0 0 2px 2px rgba(172,172,172,.4)'
+        siteNav.style.background = 'rgba(255, 255, 255, .8)'
+        siteNav.style.boxShadow = '0 0 2px 2px rgba(172, 172, 172, .4)'
       } else {
-        siteNav.style.background = 'rgba(255, 255, 255, 0.1)'
+        siteNav.style.background = 'rgba(255, 255, 255, 0.5)'
         siteNav.style.boxShadow = 'none'
-        !isMobile && sider.classList.remove('affix')
+        !isMobile && Sagiri.hasSidebar && sider.classList.remove('affix')
       }
     }
   },

@@ -23,8 +23,7 @@
                     $this->widget('Widget_Metas_Tag_Cloud', 'ignoreZeroCount=1&limit=30')->to($tags);
                     if (!$category->have() && !($tags->have())) :
                         ?>
-                        <hr title="Hello World" />
-                        <h4>Hello World</h4>
+                        <img src="<? $this->options->themeUrl('assert/img/search.gif'); ?>" placeholder="search" />
                     <? else : ?>
                         <? if ($category->have()) : ?>
                             <hr title="categories" />

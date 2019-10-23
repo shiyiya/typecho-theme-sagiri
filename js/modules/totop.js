@@ -21,8 +21,9 @@ const backToTop = function() {
   }
 }
 
-document
-  .querySelector('.site-author-name')
-  .addEventListener('click', backToTop())
+Sagiri.hasSidebar &&
+  document
+    .querySelector('.site-author-name')
+    .addEventListener('click', backToTop())
 
 document.querySelector('#back-actions').addEventListener('click', backToTop())

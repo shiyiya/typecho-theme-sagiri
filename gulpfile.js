@@ -81,7 +81,10 @@ gulp.task('build-util', function() {
 })
 
 gulp.task('start', function() {
-  gulp.watch(['css/!(*.min).css'], gulp.parallel(['build-css']))
+  gulp.watch(
+    ['css/!(*.min).css', 'css/**/!(*.min).css'],
+    gulp.parallel(['build-css'])
+  )
 
   gulp.watch(
     ['js/**/!(*.min).js'],
