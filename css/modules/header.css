@@ -4,7 +4,7 @@
   top: 0;
   position: fixed;
   z-index: 3;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.5);
   transition: all 0.6s;
 }
 .site-nav:hover {
