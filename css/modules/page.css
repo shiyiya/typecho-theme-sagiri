@@ -2,6 +2,7 @@
 .search-post form {
   position: relative;
 }
+
 .search-post input#s {
   display: block;
   box-sizing: border-box;
@@ -15,12 +16,14 @@
   font-size: 14px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
+
 .search-post input#s:hover,
 .search-post input#s:active,
 .search-post input#s:focus {
   border: 1px solid rgba(184, 197, 214, 1);
   box-shadow: 0 1px 4px #dee5e7;
 }
+
 .search-post button[type='submit'] {
   position: absolute;
   right: 10px;
@@ -30,16 +33,20 @@
   top: 20px;
   transform: translateY(-50%);
 }
+
 .search-post button[type='submit'] .iconfont.icon-search {
   font-size: 20px;
 }
+
 .search-placeholder {
   margin-top: 30px;
 }
+
 .search-placeholder ul {
   margin: 0;
   padding: 0;
 }
+
 .search-placeholder ul li {
   margin: 8px 4px;
   list-style: none;
@@ -50,6 +57,7 @@
 #link ul {
   padding: 0;
 }
+
 #link li {
   box-sizing: border-box;
   width: 40%;
@@ -62,18 +70,22 @@
   text-align: center;
   position: relative;
 }
+
 @media (max-width: 991px) {
   #link li {
     width: 80%;
   }
 }
+
 #link li a {
   font-size: 16px;
   font-weight: 600;
 }
+
 #link li hr {
   margin: 10px;
 }
+
 #link img {
   position: absolute;
   left: 50%;
@@ -103,6 +115,7 @@
   padding: 20px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
+
 .category-post-title {
   font-weight: normal;
   overflow: hidden;

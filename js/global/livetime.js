@@ -2,7 +2,7 @@ export default function liveTime(time) {
   if (!time) {
     throw Error('未指定日期！')
   }
-  var time = new Date(time)
+  time = new Date(time)
   var live = Math.floor(new Date().getTime() - time.getTime()),
     m = 24 * 60 * 60 * 1000
 
@@ -15,5 +15,5 @@ export default function liveTime(time) {
     liveSec = Math.floor((liveMin - mliveMin) * 60)
 
   // prettier-ignore
-  document.querySelector('#live-time').innerText ="( •̀ ω •́ ) " + mliveDay +' Day ' + mliveHour +' Hour ' + mliveMin +' Minute ' + liveSec +' Second'
+  document.querySelector('#live-time').innerText = '( •̀ ω •́ ) ' + mliveDay + ' Day ' + mliveHour + ' Hour ' + mliveMin + ' Minute ' + liveSec + ' Second'
 }

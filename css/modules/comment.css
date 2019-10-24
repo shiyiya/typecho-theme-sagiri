@@ -1,23 +1,27 @@
 #comments {
   animation: fade-in-top 0.3s 0.6s backwards;
 }
+
 .comment-title a,
 [title='Logout'] {
   border: none;
   color: #dc143c;
 }
+
 #comment-form {
   position: relative;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
 }
+
 .comment-parent,
 #comment-form {
   background: #fff;
   border-radius: 5px;
   margin-bottom: 20px;
 }
+
 #comment-form input {
   border-radius: 4px;
   background: #f9f8f8;
@@ -31,10 +35,12 @@
   border-bottom: 1px solid #d8dadc;
   outline: none;
 }
+
 @media (max-width: 991px) {
   #comment-form input {
     width: 100%;
   }
+
   .comment-title {
     padding-left: 10px;
   }
@@ -57,6 +63,7 @@
   border-radius: 9px;
   padding: 10px;
 }
+
 #comment-form button {
   position: absolute;
   outline: none;
@@ -68,38 +75,49 @@
 .comment-list .comments-header {
   border-top: 2px #ccc dotted;
 }
+
 .comment-list .comments-header .comment-title {
   margin-left: 20px;
 }
+
 ol.comment-list {
   padding: 0;
   margin: 0;
 }
+
 ol.comment-list li.comment-parent {
   list-style: none;
 }
+
 .comment-list a {
   border: none;
 }
+
 .comment-content a {
   border-bottom: 1px solid #999;
 }
+
 ol.comment-list p {
   margin: 0;
   word-break: break-all;
 }
+
 ol.comment-list li {
   list-style: none;
 }
+
 ol.comment-list ol {
   padding: 0;
 }
+
 .comment-inner {
   padding: 20px;
 }
+
 .comment-child {
   border-top: 1px solid #eee;
 }
+
 .comment-author .avatar {
   display: inline-block;
   width: 40px;
@@ -108,25 +126,31 @@ ol.comment-list ol {
   vertical-align: middle;
   border-radius: 50%;
 }
+
 .comment-author .fn {
   font-style: normal;
   font-size: 16px;
 }
+
 .device-info {
   float: right;
   margin-right: 15px;
 }
+
 .device-info span {
   margin: 0 10px;
   text-shadow: #40b3ec 1px 1px 6px;
 }
+
 .device-info span:first-child {
   text-shadow: #dc143c 1px 1px 6px;
 }
+
 .comment-content {
   margin: 10px 0;
   color: #313131;
 }
+
 /* .comment-meta {
   letter-spacing: 2px;
 } */
@@ -136,12 +160,15 @@ ol.comment-list ol {
   color: #40b3ec;
   transition: opacity 0.2s;
 }
+
 .comment-inner:hover .comment-reply a {
   opacity: 1;
 }
+
 .comment-by-author {
   position: relative;
 }
+
 .comment-by-author::after {
   content: '#';
   color: #dc143c;

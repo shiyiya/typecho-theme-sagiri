@@ -3,67 +3,81 @@
   float: right;
   position: static;
 }
+
 @media (max-width: 991px) {
   #sidebar {
     display: none;
   }
 }
+
 .sider-item {
+  box-shadow: 0 1px 1px rgba(143, 168, 191, 0.35);
   animation: fade-in-left 0.3s 0.3s backwards;
   background-color: #fff;
   border-radius: 5px;
   padding: 20px;
   box-sizing: border-box;
   color: #555;
-  background: #fff;
-  border-radius: 5px;
   z-index: 2;
   margin-bottom: 10px;
 }
+
 .rand-archive-nav-title {
   margin: 0;
 }
+
 .sidebar-inner.affix {
   position: fixed;
   top: 50px;
   width: 315px;
 }
+
 .sidebar section {
   display: none;
 }
+
 .sidebar section.sidebar-section-active {
   display: block;
 }
+
 .sidebar-nav {
   line-height: 1.5;
   user-select: none;
   margin: 0 0 20px 0;
   padding-left: 0;
 }
+
 .sidebar-nav li {
   display: inline-block;
   cursor: pointer;
 }
+
 .sidebar-nav li + li {
   margin-left: 10px;
 }
+
 .sidebar-nav .sidebar-nav-active {
   color: crimson;
   border-bottom: 1px solid crimson;
 }
+
 .toc-nav {
   margin: 0;
   padding-left: 40px;
 }
+
 .toc-nav ul {
   padding-left: 20px;
 }
+
 .toc-nav .toc-subnav {
   line-height: 1.8;
 }
+
 .toc-subnav a {
   text-decoration: none;
 }
+
 .site-author-image {
   margin: 0 auto;
   max-width: 150px;
@@ -71,20 +85,24 @@
   border: none;
   padding: 0;
 }
+
 .site-author-name {
   cursor: pointer;
   margin: 5px 0 8px;
   font-weight: 700;
 }
+
 .author-social-links {
   padding-left: 0;
   margin: 0 0 5px;
 }
+
 .author-social-links li {
   line-height: 1;
   padding: 0 5px;
   display: inline-block;
 }
+
 .author-social-links a {
   width: 50px;
   box-shadow: 0 5px 25px rgb(64, 179, 236, 0.15);
@@ -96,32 +114,40 @@
   justify-content: center;
   border: none;
 }
+
 .author-social-links a:hover i {
   display: block;
   animation: jello-horizontal 0.9s both;
 }
+
 .site-status-item {
   display: inline-block;
   text-align: center;
   padding: 0 10px 5px;
   line-height: 1.4;
 }
+
 .site-state-item-count,
 .site-state-item-name {
   display: block;
 }
+
 .site-status-posts .site-state-item-name {
   color: #40b3ec;
 }
+
 .site-status-categories .site-state-item-name {
   color: crimson;
 }
+
 .site-state-item-name {
   font-size: 16px;
 }
+
 .site-state-item-count {
   font-weight: 600;
 }
+
 .cc-license a {
   display: inline-block;
   border: none;

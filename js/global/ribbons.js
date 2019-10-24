@@ -36,6 +36,7 @@ function redraw() {
   q = [{ x: 0, y: height * 0.7 + s }, { x: 0, y: height * 0.7 - s }]
   while (q[1].x < width + s) draw(q[0], q[1])
 }
+
 function draw(i, j) {
   c2d.beginPath()
   c2d.moveTo(i.x, i.y)
@@ -56,6 +57,7 @@ function draw(i, j) {
   q[0] = q[1]
   q[1] = { x: k, y: n }
 }
+
 function line(p) {
   var t = p + (randoMath() * 2 - 1.1) * s
   return t > height || t < 0 ? line(p) : t

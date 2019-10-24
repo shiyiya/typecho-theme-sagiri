@@ -6,6 +6,7 @@
     transform: rotate(360deg);
   }
 }
+
 @keyframes fade-none {
   from {
     opacity: 1;
@@ -16,6 +17,7 @@
     transform: scale(0.5, 0.5);
   }
 }
+
 @keyframes fade-out {
   from {
     opacity: 1;
@@ -24,6 +26,7 @@
     opacity: 0;
   }
 }
+
 @keyframes feda-large {
   from {
     opacity: 0;
@@ -34,6 +37,7 @@
     transform: scale(1);
   }
 }
+
 @keyframes fade-in-top {
   0% {
     opacity: 0;
@@ -44,6 +48,7 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
 @keyframes fade-in-bottom {
   0% {
     opacity: 0;
@@ -54,6 +59,7 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
 @keyframes fade-in-right {
   0% {
     opacity: 0;
@@ -64,6 +70,7 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
 @keyframes fade-in-left {
   0% {
     opacity: 0;
