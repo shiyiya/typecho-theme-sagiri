@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp start",
-    "build": "gulp build"
+    "build": "gulp build",
+    "u": "mkdir .\\temp\\js && mkdir .\\temp\\css && copy .\\*.php .\\temp && copy .\\js\\*.min.js .\\temp\\js && copy .\\css\\*.min.css .\\temp\\css && mkdir .\\temp\\doc  && copy .\\doc\\* .\\temp\\doc\\  && mkdir .\\temp\\img && copy .\\img\\* .\\temp\\img\\  && mkdir .\\temp\\font && copy .\\font\\* .\\temp\\font\\  && mkdir .\\temp\\lib && copy .\\lib\\**\\* .\\temp\\lib\\**\\*  && mkdir .\\temp\\util copy .\\util\\* .\\temp\\util\\ "
   },
   "repository": {
     "type": "git",
@@ -31,16 +32,23 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
+    "browserify-versionify": "^1.0.6",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0-beta.2",
     "gulp-clean-css": "^3.10.0",
     "gulp-rename": "^1.4.0",
-    "gulp-uglify": "^3.0.1"
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "core-js": "^3.1.4"
+    "core-js": "^3.1.4",
+    "gsap": "^2.1.3"
   }
 }

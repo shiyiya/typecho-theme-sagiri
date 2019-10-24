@@ -35,12 +35,12 @@ class Lang_en
             '评论RSS' => 'Comment RSS',
 
 
-            '文章目录' => 'Article Directory',
-            '热门文章' => 'Popular',
-            '热评文章' => 'Hot review',
+            '文章目录' => 'TOC',
+            '热门文章' => 'Most Viewed',
+            '热评文章' => 'Most commented',
             '最新评论' => 'Latest comments',
             '随机文章' => 'Random',
-            '站点概览' => 'Site overview',
+            '站点概览' => 'Overview',
             '日志' => 'Post',
 
             '设置' => 'Setting',
@@ -168,11 +168,6 @@ class Lang_en
             '文章内图片懒加载' => 'Lazy loading Image',
             '额外功能设置' => 'Extra feature settings',
             '侧栏相关设置' => 'Sidebar related settings',
-            '默认高亮，灰底' => 'Default highlight, gray background',
-            'sublime 默认配色，黑底' => 'Sublime default color, black bottom',
-            'MDN 配色，白底蓝边' => 'MDN color matching, blue side on white',
-            '淡黄底色' => 'Light yellow background',
-            '黑底色' => 'Black background',
         );
     }
 

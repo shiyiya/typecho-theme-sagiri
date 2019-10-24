@@ -1,7 +1,7 @@
 <? if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 <footer id="footer" role="contentinfo">
-    <p><i class="iconfont icon-eye"></i> PV : <? echo getSiteViews(); ?></p>
+    <p><i class="iconfont icon-view"></i> PV : <? echo getSiteViews(); ?></p>
     <p id="live-time"></p>
     <p>
         &copy; <? echo date('Y'); ?> <a href="<? $this->options->siteUrl(); ?>"><? $this->options->title(); ?></a>.

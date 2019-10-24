@@ -20,7 +20,7 @@
           <? $this->content(); ?>
         </div>
       </article>
-      <? $this->need('component/comment.php'); ?>
+      <? $this->need('component/comments.php'); ?>
     </div>
   </div>
 </div>

@@ -16,9 +16,18 @@
     <b>As lovely as sagiri, based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a></b>
 </p>
 
-[![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE)
+[![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
-[![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
+## Demo
+
+![shot](./screenshot.png)
+
+There must be no plagiarism or excessive reprinting; at least not a few months can not be accessed & change the theme, and that's it!
+If you think you meet the above conditions, please submit the relevant `PR` ([How to PR](#Contribute))
+
+- https://blog.imlazy.ink:233
+- https://mianao.info
+- ···
 
 ## Installation
 
@@ -30,15 +39,6 @@
 ```shell
 git clone https://github.com/shiyiya/typecho-theme-sagiri.git
 ```
-
-## Demo
-
-The content is healthy, there must be no plagiarism or excessive reprinting; at least not a few months can not be accessed & change the theme, and that's it!
-If you think you meet the above conditions, please submit the relevant `PR` ([How to PR](#Contribute))
-
-- https://blog.imlazy.ink:233
-- https://mianao.info
-- ···
 
 ## Features
 
@@ -88,14 +88,33 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & suppor
 
 - Need more language support, Welcome contribution. ([How to PR](#Contribute))
 
+### Lazy load Image
+
+```markdown
+![width::height::Image Descript](image URL)
+
+//example
+![690::345::how-to-create-archive](https://website-href-/your/path/file.png)
+```
+
+## Others Setting
+
+- Index Post Card
+  Home Article Overview The default maximum output is **150** characters, you can manually add the truncation `<!-- more -->` control output.
+
+- Article thumbnail
+  weight of the thumbnail: Article field -> The first Upload Image of Article -> Image link in the article -> Random Image
+
+- ...
+
 ## Link
 
 Create a template before this, the content format is as follows
 
 ```markdown
-- ![头像描述](头像链接)[链接描述](链接)<hr> 一个有趣的站点
-- [链接描述](链接) <hr> 另一个有趣的站点
-- [链接描述](链接)
+- ![avatar descript](avatar href)[href descript](href)<hr> descript
+- [title](href) <hr> descript
+- [title](href)
 ```
 
 ## Header Menu Icon
@@ -105,15 +124,6 @@ Create a template before this, the content format is as follows
 - About <-> 关于
 - Link <-> 友链
 - Time
-
-## Lazy load Image
-
-```markdown
-![Image Descript width height](图片地址)
-
-//example
-![how-to-create-archive 690 345](https://website-href-/your/path/file.png)
-```
 
 ## BackUp
 

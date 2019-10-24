@@ -26,27 +26,27 @@
                         <? if ($this->options->GitHubLink) : ?>
                             <li>
                                 <a href="<? $this->options->GitHubLink(); ?>" title="Github">
-                                    <i class="iconfont icon-github"></i>
+                                    <i class="iconfont icon-github jello-horizontal"></i>
                                 </a>
                             </li>
                         <? endif; ?>
                         <? if ($this->options->TwitterLink) : ?>
                             <li>
                                 <a href="<? $this->options->TwitterLink(); ?>" title="Twitter">
-                                    <i class="iconfont icon-twitter"></i>
+                                    <i class="iconfont jello-horizontal icon-twitter"></i>
                                 </a>
                             </li>
                         <? endif; ?>
                         <? if ($this->options->QQLink) : ?>
                             <li>
                                 <a href="<? $this->options->QQLink(); ?>" title="QQ">
-                                    <i class="iconfont icon-qq"></i>
+                                    <i class="iconfont jello-horizontal icon-qq"></i>
                                 </a>
                             </li>
                         <? endif; ?>
                         <li>
                             <a href="<? $this->options->feedUrl(); ?>" title="RSS">
-                                <i class="iconfont icon-rss"></i>
+                                <i class="iconfont jello-horizontal icon-rss"></i>
                             </a>
                         </li>
                     </ul>

@@ -12,19 +12,20 @@
         }
     }
 
-    $commentLevelClass = $comments->levels > 0 ? ' comment-child' : ' comment-parent';
+    // $commentLevelClass = $comments->levels > 0 ? ' comment-child' : ' comment-parent';
     ?>
 
-    <li id="li-<? $comments->theId(); ?>" class="comment-body<?
-                                                                    if ($comments->levels > 0) {
-                                                                        echo ' comment-child';
-                                                                        $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
-                                                                    } else {
-                                                                        echo ' comment-parent';
-                                                                    }
-                                                                    $comments->alt(' comment-odd', ' comment-even');
-                                                                    echo $commentClass;
-                                                                    ?>">
+    <li id="li-<? $comments->theId(); ?>" class="comment-body
+    <?
+        if ($comments->levels > 0) {
+            echo ' comment-child';
+            $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
+        } else {
+            echo ' comment-parent';
+        }
+        $comments->alt(' comment-odd', ' comment-even');
+        echo $commentClass;
+        ?>">
         <div id="<? $comments->theId(); ?>">
             <div class="comment-inner">
                 <div class="comment-author">
@@ -71,7 +72,7 @@
                 <? endif; ?>
                 <textarea name="text" id="textarea" class="OwO-textarea textarea" required placeholder="<? i18n('在这里输入你的评论...（Ctrl/Control + Enter 快捷提交）') ?>"><? $this->remember('text'); ?></textarea>
                 <div class="OwO"></div>
-                <button type="submit" class="submit"><? i18n('评论'); ?></button>
+                <button class="sheen" type="submit" class="submit"><? i18n('评论'); ?></button>
             </form>
         <? endif; ?>
     </div>
