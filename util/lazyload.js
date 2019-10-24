@@ -19,10 +19,7 @@ class LazyLoadImg {
 
   init() {
     if (!window.IntersectionObserver) {
-      document.addEventListener('scroll', () => {
-        this.LazyLoadImage()
-      })
-
+      document.addEventListener('scroll', this.LazyLoadImage)
       return
     }
 
@@ -48,12 +45,13 @@ class LazyLoadImg {
   }
 
   LazyLoadImage() {
-    const windowinnerHeight = window.innerHeight
+    const windowInnerHeight = window.innerHeight
+    const windowInnerWidth = window.innerWidth
 
     this.images.forEach(image => {
-      const { top } = image.getBoundingClientRect()
-
-      if (top <= windowinnerHeight) this.loadImage(image)
+      const { top, left } = image.getBoundingClientRect()
+      if (top <= windowInnerHeight && left <= windowInnerWidth)
+        this.loadImage(image)
     })
   }
 
@@ -84,6 +82,7 @@ class LazyLoadImg {
 
   destroy() {
     this.observer.disconnect()
+    document.removeEventListener('scroll', this.LazyLoadImage)
     this.settings = null
   }
 }
@@ -95,15 +94,10 @@ new LazyLoadImg({
     const img = new Image()
     img.src = src
     img.onload = function() {
-      const data = image.getAttribute('data').split('::')
-      image.classList.remove('lazy-loader')
-      if (data.length < 2) {
-        image.innerHTML = `<img src=${src} alt=''/>`
-        return
-      }
-      if (data.length > 2) {
-        image.innerHTML = `<img src=${src} style="width:${data[0]}px;height:${data[1]}px" alt="${data[2]}" />`
-      }
+      image.src = src
+    }
+    img.onerror = function() {
+      //this.src =
     }
   }
 })

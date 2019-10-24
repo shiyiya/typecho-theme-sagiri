@@ -1,5 +1,6 @@
 <?
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+require_once 'utils.php';
 
 function isPc()
 {
@@ -11,30 +12,34 @@ function isPc()
 }
 
 
-function showThumb($obj)
+function showThumb($obj, $themeUrl)
 {
     $fieldThumb = $obj->fields->thumb;
+    $src = ' src="' . $themeUrl . '/assert/img/loader.gif' . '" class="lazy-loader" ';
 
     if (!empty($fieldThumb) && isset($fieldThumb)) {
-        return '<img src="' . $fieldThumb . '" alt="' . $obj->fields->thumbAlt . '" />';
+        return '<img' . $src . ' lazy-src="' . $fieldThumb . '" alt="' . $obj->fields->thumbAlt . '" />';
     }
 
     preg_match_all("/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?alt=[\'|\"](.*?)[\'|\"].*?[\/]?>/", $obj->content, $matches);
+
     $thumb = '';
-    $options = Typecho_Widget::widget('Widget_Options');
+    $default_thumb = Typecho_Widget::widget('Widget_Options')->default_thumb;
     $attach = $obj->attachments(1)->attachment;
 
     if (isset($attach->isImage) && $attach->isImage == 1) {
-        $thumb = '<img src="' . $attach->url . '" alt="' . $attach->name . '" />';
+        $thumb = '<img' . $src . ' lazy-src="' . $attach->url . '" alt="' . $attach->name . '"bb />';
     } elseif (isset($matches[1][0])) {
-        $thumb = $matches[0][0];
+        $thumb =  imgToLay($matches[0][0], $themeUrl);
     }
 
     if (empty($thumb)) {
-        if (!empty($options->default_thumb)) {
-            $thumb = '<img src="' . $options->default_thumb . '" />';
+        if (!empty($default_thumb)) {
+            echo 'dd';
+            $thumb = '<img' . $src . ' lazy-src="' . $default_thumb . '" aa />';
         }
     }
+
     return $thumb;
 }
 
@@ -123,47 +128,15 @@ function getBrowser($agent)
 function getOs($agent)
 {
     if (preg_match('/win/i', $agent)) {
-        if (preg_match('/nt 6.0/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-windows"></i> Vista';
-        } else if (preg_match('/nt 6.1/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-windows"></i> 7';
-        } else if (preg_match('/nt 6.2/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-windows"></i> 8';
-        } else if (preg_match('/nt 6.3/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-windows"></i> 8.1';
-        } else if (preg_match('/nt 5.1/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-windows"></i> XP';
-        } else if (preg_match('/nt 10.0/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-windows"></i> 10';
-        } else {
-            $OSVersion = '<i class="iconfont icon-windows"></i>';
-        }
+        $OSVersion = '<i class="iconfont icon-windows"></i>';
     } else if (preg_match('/android/i', $agent)) {
-        if (preg_match('/android 9/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-android"></i> P';
-        } else if (preg_match('/android 8/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-android"></i> O';
-        } else if (preg_match('/android 7/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-android"></i> N';
-        } else if (preg_match('/android 6/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-android"></i> M';
-        } else if (preg_match('/android 5/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-android"></i> L';
-        } else {
-            $OSVersion = '<i class="iconfont icon-android"></i>';
-        }
+        $OSVersion = '<i class="iconfont icon-android"></i>';
     } else if (preg_match('/ubuntu/i', $agent)) {
         $OSVersion = '<i class="iconfont icon-linux"></i>';
     } else if (preg_match('/linux/i', $agent)) {
         $OSVersion = '<i class="iconfont icon-linux"></i>';
     } else if (preg_match('/iPhone/i', $agent)) {
-        if (preg_match('/iPhone OS 11/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-iphone"></i> 11';
-        } else if (preg_match('/iPhone OS 12/i', $agent)) {
-            $OSVersion = '<i class="iconfont icon-iphone"></i> 12';
-        } else {
-            $OSVersion = '<i class="iconfont icon-iphone"></i> < 11';
-        }
+        $OSVersion = '<i class="iconfont icon-iphone"></i> < 11';
     } else if (preg_match('/mac/i', $agent)) {
         $OSVersion = '<i class="iconfont icon-mac"></i>';
     } else if (preg_match('/fusion/i', $agent)) {
@@ -296,15 +269,12 @@ function getRecentComments()
 function thumbUp()
 { }
 
-function replaceTag($content)
+function replaceTag($content, $themeUrl = '')
 {
     $config = Typecho_Widget::widget('Widget_Options')->feature;
+
     if ($config !== null && in_array('lazyImg', $config)) {
-        $content = preg_replace(
-            "/<[img|IMG].*?src=[\'|\"](?<src>.*?)[\'|\"].*?alt=[\'|\"](?<alt>.*?)[\'|\"].*?[\/|img|IMG]?>/sm",
-            '<div class="lazy-loader loading" lazy-src="$1" data="$2"><span><span></div>',
-            $content
-        );
+        $content = imgToLay($content, $themeUrl);
     }
 
     // TODO ADD short code

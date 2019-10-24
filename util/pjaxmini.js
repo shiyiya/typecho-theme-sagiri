@@ -13,6 +13,7 @@
       this.option = option
       this.init(option)
     }
+
     init(option) {
       const targetDom = [...document.querySelectorAll(option.target)],
         _this = this
@@ -26,7 +27,7 @@
         // 非当前域和锚点跳转
         if (!url.match(theUrl) || /#/.test(hash)) return null
 
-        i.onclick = async function(e) {
+        i.onclick = async function (e) {
           const event = e || window.event
 
           event.preventDefault()
@@ -43,7 +44,7 @@
           return void 0
         }
       })
-      window.addEventListener('popstate', async function(e) {
+      window.addEventListener('popstate', async function (e) {
         //重新挂载 点击事件
         const url = e.target.location.href,
           domString = await _this.fetchData(url),
