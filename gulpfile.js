@@ -7,7 +7,8 @@ var gulp = require('gulp'),
   browserify = require('browserify'),
   stream = require('vinyl-source-stream'),
   buffer = require('vinyl-buffer'),
-  pkg = require('./package.json')
+  pkg = require('./package.json'),
+  sass = require('gulp-sass')
 
 gulp.task('build-sagiri', function() {
   return browserify({
@@ -65,7 +66,8 @@ gulp.task('build-type', function() {
 gulp.task('build-css', function() {
   return gulp
     .src(['css/mix.css', 'css/iconfont.css'])
-    .pipe(cleanCSS())
+    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(cleanCSS({ compatibility: 'ie9', level: 2 }))
     .pipe(autoprefixer({ cascade: false }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('./css'))

@@ -1,5 +1,5 @@
 @import './modules/reset.css';
-@import './modules/global.css';
+@import './modules/global.scss';
 @import './modules/animations.css';
 @import './modules/header.css';
 @import '../js/global/type/type.css';
