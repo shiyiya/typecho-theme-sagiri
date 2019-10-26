@@ -31,13 +31,13 @@
   <? if ($this->is('post')) : ?>
 
     <div class="post-content" itemprop="articleBody">
-      <? replaceTag($this->content, $this->user->hasLogin()); ?>
+      <? replaceTag($this->content, $this->options->themeUrl); ?>
     </div>
 
   <? else : ?>
 
     <? if (!empty($this->options->feature) && in_array('showThumb', $this->options->feature)) : ?>
-      <? $thumb = showThumb($this);
+      <? $thumb = showThumb($this, $this->options->themeUrl);
           if (!empty($thumb)) : ?>
         <? echo $thumb; ?>
       <? endif; ?>
