@@ -61,6 +61,7 @@ class Lang_en
             '%d 条评论' => ' %d comments',
             '条评论' => ' comments',
             '标签' => 'Tags',
+            '浏览量' => ' PV ',
 
 
             /*评论 Comments*/
