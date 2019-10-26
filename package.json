@@ -9,8 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp start",
-    "build": "gulp build",
-    "u": "mkdir .\\temp\\js && mkdir .\\temp\\css && copy .\\*.php .\\temp && copy .\\js\\*.min.js .\\temp\\js && copy .\\css\\*.min.css .\\temp\\css && mkdir .\\temp\\doc  && copy .\\doc\\* .\\temp\\doc\\  && mkdir .\\temp\\img && copy .\\img\\* .\\temp\\img\\  && mkdir .\\temp\\font && copy .\\font\\* .\\temp\\font\\  && mkdir .\\temp\\lib && copy .\\lib\\**\\* .\\temp\\lib\\**\\*  && mkdir .\\temp\\util copy .\\util\\* .\\temp\\util\\ "
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
