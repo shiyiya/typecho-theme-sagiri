@@ -2,12 +2,12 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 define('__Sagiri_ROOT__', dirname(__FILE__) . '/');
-define('__ICARUS_VERSION__', '1.1.0');
+define('__Sagiri_VERSION__', '1.1.0');
 
 function themeConfig($form)
 {
-    require_once __Sagiri_ROOT__ . 'libray/i18n/index.php';
-    require_once __Sagiri_ROOT__ . 'libray/update.php';
+    require_once 'libray/i18n/index.php';
+    require_once 'libray/update.php';
 
     Update::valid();
 
@@ -106,15 +106,17 @@ function themeConfig($form)
             'Tomorrow-Night' => _i18n('Tomorrow Night'),
         ),
         'default',
-        _i18n('代码高亮主题')
+        _i18n('代码高亮'),
+        _i18n('代码高亮')
     );
     $form->addInput($codeHighlightTheme);
 }
 
 function themeInit($widget)
 {
-    require_once __Sagiri_ROOT__ . 'libray/i18n/index.php';
-    require_once __Sagiri_ROOT__ . 'libray/theme-helper.php';
+
+    require_once 'libray/i18n/index.php';
+    require_once 'libray/theme-helper.php';
 }
 
 
