@@ -96,8 +96,8 @@ new LazyLoadImg({
     img.onload = function() {
       image.src = src
     }
-    img.onerror = function() {
-      //this.src =
+    img.onerror = img.onabort = function() {
+      image.remove()
     }
   }
 })
