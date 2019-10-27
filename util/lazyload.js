@@ -19,7 +19,8 @@ class LazyLoadImg {
 
   init() {
     if (!window.IntersectionObserver) {
-      document.addEventListener('scroll', this.LazyLoadImage)
+      this.LazyLoadImage()
+      document.addEventListener('scroll', this.LazyLoadImage.bind(this))
       return
     }
 
