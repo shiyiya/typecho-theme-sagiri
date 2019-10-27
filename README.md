@@ -91,10 +91,10 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & suppor
 ### Lazy load Image
 
 ```markdown
-![width::height::Image Descript](image URL)
+![Image Descript](image URL)
 
 //example
-![690::345::how-to-create-archive](https://website-href-/your/path/file.png)
+![how-to-create-archive](https://website-href-/your/path/file.png)
 ```
 
 ## Others Setting
@@ -128,9 +128,19 @@ Create a template before this, the content format is as follows
 ## BackUp
 
 ```sql
--- mysql
+-- postview(mysql)
 ALTER TABLE `typecho_contents` ADD `views` INT(10) NULL DEFAULT '0' AFTER `parent`;
+
+-- siteview(mysql)
+
 ```
+
+## Comment Emoji
+
+How to import custom Emoji ?
+
+- [OwO](https://github.com/DIYgod/OwO)
+- [Emjio Util](https://github.com/shiyiya/typecho-theme-sagiri/blob/dev/util/emjioUtil.min.js)
 
 ## Author
 
