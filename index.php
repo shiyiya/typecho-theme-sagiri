@@ -3,7 +3,7 @@
 /**
  * Sagiri - Lovely theme for Typecho.
  *
- * @package Sagiri`
+ * @package Sagiri
  * @author shiyi
  * @version 1.1.3
  * @link https://github.com/shiyiya/typecho-theme-sagiri
