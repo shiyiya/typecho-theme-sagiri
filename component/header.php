@@ -1,6 +1,6 @@
 <? if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <!DOCTYPE HTML>
-<html class="no-js" lang="Zh-CN">
+<html class="no-js" lang="<? i18nLang() ?>">
 
 <head>
 
@@ -113,7 +113,7 @@
 
             <div class="header-wrap">
                 <? if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings)) : ?>
-                    <div class="site-config" style="background-image:url(<? $this->options->backGroundImage ? $this->options->backGroundImage() : _e('https://i.loli.net/2018/10/05/5bb7144897e8c.jpg') ?>)">
+                    <div class="site-config" style="background-image:url(<? $this->options->backGroundImage ? $this->options->backGroundImage() : _e('https://i.loli.net/2019/10/27/5FsvlogZqOeCczR.jpg') ?>)">
                         <div class="site-title site-meta">
                             <?
                                 $ID = ['animate', 'guide'];

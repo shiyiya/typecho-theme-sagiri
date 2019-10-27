@@ -138,6 +138,7 @@
   font-size: 48px;
   font-weight: 600;
   color: #000;
+  cursor: pointer;
 }
 
 .site-description {

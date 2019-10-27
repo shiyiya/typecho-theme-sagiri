@@ -10,6 +10,7 @@ mkdir temp/css
 mkdir temp/doc
 
 cp -f ./*.php ./temp
+cp -f ./*.js ./temp
 cp -f ./*.md ./temp
 cp -f  ./package.json ./temp
 cp -f ./*.png ./temp

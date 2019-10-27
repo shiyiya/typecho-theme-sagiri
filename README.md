@@ -8,7 +8,7 @@
   <br />
   <br />
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/dev">Develop Version</a> |
-  <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/pjax">PJAX Version</a> |
+  <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/pjax">PJAX Version( donate )</a> |
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Releases</a> |
   <a href="./doc/changelog.md">Change Log</a>
   <br />
