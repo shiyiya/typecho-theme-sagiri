@@ -1,9 +1,18 @@
 #!/bin/sh
 
-cp ./*.php ./temp
-cp ./*.md ./temp
-cp ./package.json ./temp
-cp ./*.png ./temp
+mkdir temp
+mkdir temp/assert
+mkdir temp/component
+mkdir temp/libray
+mkdir temp/util
+mkdir temp/js
+mkdir temp/css
+mkdir temp/doc
+
+cp -f ./*.php ./temp
+cp -f ./*.md ./temp
+cp -f  ./package.json ./temp
+cp -f ./*.png ./temp
 cp -f ./js/* ./temp/js/
 cp -f ./css/* ./temp/css/
 cp -f ./doc/* ./temp/doc/

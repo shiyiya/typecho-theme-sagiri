@@ -140,7 +140,7 @@ ALTER TABLE `typecho_contents` ADD `views` INT(10) NULL DEFAULT '0' AFTER `paren
 How to import custom Emoji ?
 
 - [OwO](https://github.com/DIYgod/OwO)
-- [Emjio Util](https://github.com/shiyiya/typecho-theme-sagiri/blob/dev/util/emjioUtil.min.js)
+- [Emjio Util](./util/emjioUtil.min.js)
 
 ## Author
 
