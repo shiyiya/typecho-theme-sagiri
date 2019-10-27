@@ -25,27 +25,27 @@
                     <ul class="author-social-links">
                         <? if ($this->options->GitHubLink) : ?>
                             <li>
-                                <a href="<? $this->options->GitHubLink(); ?>" title="Github">
+                                <a href="<? $this->options->GitHubLink(); ?>" title="Github" alt="Github" aria-label="Github">
                                     <i class="iconfont icon-github jello-horizontal"></i>
                                 </a>
                             </li>
                         <? endif; ?>
                         <? if ($this->options->TwitterLink) : ?>
                             <li>
-                                <a href="<? $this->options->TwitterLink(); ?>" title="Twitter">
+                                <a href="<? $this->options->TwitterLink(); ?>" title="Twitter" alt="Twitter" aria-label="Twitter">
                                     <i class="iconfont jello-horizontal icon-twitter"></i>
                                 </a>
                             </li>
                         <? endif; ?>
                         <? if ($this->options->QQLink) : ?>
                             <li>
-                                <a href="<? $this->options->QQLink(); ?>" title="QQ">
+                                <a href="<? $this->options->QQLink(); ?>" title="QQ" alt="QQ" aria-label="QQ">
                                     <i class="iconfont jello-horizontal icon-qq"></i>
                                 </a>
                             </li>
                         <? endif; ?>
                         <li>
-                            <a href="<? $this->options->feedUrl(); ?>" title="RSS">
+                            <a href="<? $this->options->feedUrl(); ?>" title="RSS" alt="RSS" aria-label="RSS">
                                 <i class="iconfont jello-horizontal icon-rss"></i>
                             </a>
                         </li>

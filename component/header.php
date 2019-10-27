@@ -7,7 +7,7 @@
     <meta charset="<? $this->options->charset(); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, shrink-to-fit=no" />
     <title><? $this->archiveTitle(array(
                 'category' => _i18n('分类 %s 下的文章'),
                 'search' => _i18n('包含关键字 %s 的文章'),
@@ -106,7 +106,7 @@
                         </li>
                     <? endwhile; ?>
                     <li class="menu-item search">
-                        <a href="<? $this->options->rewrite ?  $this->options->siteUrl('search.html') : $this->options->siteUrl('index.php/search.html') ?>"><i class="iconfont icon-search"></i></a>
+                        <a href="<? $this->options->rewrite ?  $this->options->siteUrl('search.html') : $this->options->siteUrl('index.php/search.html') ?>" alt="<? i18n(搜索) ?>" aria-label="Search"><i class="iconfont icon-search"></i></a>
                     </li>
                 </ul>
             </nav>

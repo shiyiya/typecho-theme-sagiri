@@ -21,7 +21,7 @@ class Lang_en
 
             '首页' => 'Home',
             '关于' => 'About',
-            '搜索…' => 'Search',
+            '搜索' => 'Search',
             '分类' => 'Categories',
 
             '登录' => 'Login',
