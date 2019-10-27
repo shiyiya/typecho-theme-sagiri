@@ -14,33 +14,50 @@ function isPc()
 
 function showThumb($obj, $themeUrl)
 {
+    $config = Typecho_Widget::widget('Widget_Options')->feature;
+
+    $src = '';
+    $alt = '';
+    $title = '';
+    $lazySrc = ' src="' . $themeUrl . '/assert/img/loader.gif' . '" class="lazy-loader" ';
+
     $fieldThumb = $obj->fields->thumb;
-    $src = ' src="' . $themeUrl . '/assert/img/loader.gif' . '" class="lazy-loader" ';
-
-    if (!empty($fieldThumb) && isset($fieldThumb)) {
-        return '<img' . $src . ' lazy-src="' . $fieldThumb . '" alt="' . $obj->fields->thumbAlt . '" />';
+    if (!empty($fieldThumb) && isset($fieldThumb)) { // typecho custom field
+        $src = $fieldThumb;
+        $alt = $obj->fields->thumbAlt;
+        goto to;
     }
 
-    preg_match_all("/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?alt=[\'|\"](.*?)[\'|\"].*?[\/]?>/", $obj->content, $matches);
-
-    $thumb = '';
-    $default_thumb = Typecho_Widget::widget('Widget_Options')->default_thumb;
+    // uploaded image of post content
     $attach = $obj->attachments(1)->attachment;
-
     if (isset($attach->isImage) && $attach->isImage == 1) {
-        $thumb = '<img' . $src . ' lazy-src="' . $attach->url . '" alt="' . $attach->name . '"bb />';
-    } elseif (isset($matches[1][0])) {
-        $thumb =  imgToLay($matches[0][0], $themeUrl);
+        $src = $attach->url;
+        $alt = $attach->name;
+        goto to;
     }
 
-    if (empty($thumb)) {
-        if (!empty($default_thumb)) {
-            echo 'dd';
-            $thumb = '<img' . $src . ' lazy-src="' . $default_thumb . '" aa />';
-        }
+    // image of post content
+    preg_match_all("/<[img|IMG].*?src=[\'|\"](.*?)[\'|\"].*?alt=[\'|\"](.*?)[\'|\"].*?[\/]?>/", $obj->content, $matches);
+    if (isset($matches[1][0])) {
+        $src = $matches[1][0];
+        $alt = $matches[2][0];
+        goto to;
     }
 
-    return $thumb;
+    // random image
+    $default_thumb = Typecho_Widget::widget('Widget_Options')->default_thumb;
+    if (!empty($default_thumb)) {
+        $src = $default_thumb;
+        $alt = '';
+        goto to;
+    }
+
+    to: if ($config !== null && in_array('lazyImg', $config) && !empty($src)) {
+        if (empty($title)) $title = $alt;
+        echo '<img' . $lazySrc . 'lazy-src="' . $src . '" alt="' . $alt . '" title="' . $title . '" />';
+    } elseif ($config !== null && !in_array('lazyImg', $config) && !empty($src)) {
+        echo '<img src="' . $src . '" alt="' . $alt . '" title="' . $title . '" />';
+    }
 }
 
 function getBrowser($agent)
