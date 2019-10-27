@@ -19,4 +19,4 @@ cp -f ./css/* ./temp/css/
 cp -f ./doc/* ./temp/doc/
 cp -f ./component/* ./temp/component/
 cp -f ./libray/* ./temp/libray/
-cp -f ./util/* ./temp/util/
+cp -Rf ./util/* ./temp/util/

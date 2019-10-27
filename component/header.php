@@ -18,6 +18,7 @@
     <meta name="author" content="<? $this->author() ?>" />
     <? $this->header('generator=&pingback=&xmlrpc=&wlw='); ?>
     <link rel="icon" href="<? $this->options->fav ? $this->options->fav() : $this->options->themeUrl('assert/img/favicon.jpg'); ?>" />
+    <link rel="manifest" href="<? $this->options->themeUrl('util/sw/manifest.json') ?>" />
 
     <!-- About IOS -->
     <meta name="format-detection" content="telephone=no">

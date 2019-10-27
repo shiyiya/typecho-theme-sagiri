@@ -103,6 +103,17 @@
 
     // Custom Javascript
     <? _e($this->options->customScript) ?>
+
+    // server worker
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.min.js')
+            .then(function(reg) {
+                console.log('%c Sagiri serviceWorker is working ! ', 'background: #000; color:#f6f93e; padding:5px 0;', );
+            })
+            .catch(function(error) {
+                console.log('serviceWorker failed with ' + error);
+            });
+    }
 </script>
 
 </div><!-- End root -->

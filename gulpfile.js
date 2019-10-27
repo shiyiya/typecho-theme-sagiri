@@ -75,7 +75,7 @@ gulp.task('build-css', function() {
 
 gulp.task('build-util', function() {
   return gulp
-    .src('util/!(*.min).js')
+    .src(['util/!(*.min).js', 'util/**/!(*.min).js'])
     .pipe(babel())
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
