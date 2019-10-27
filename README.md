@@ -7,8 +7,7 @@
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/archive/master.zip">Download</a>
   <br />
   <br />
-  <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/dev">Develop Version</a> |
-  <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/pjax">PJAX Version</a> |
+  <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/pjax">PJAX Version( donate )</a> |
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Releases</a> |
   <a href="./doc/changelog.md">Change Log</a>
   <br />
@@ -16,7 +15,7 @@
     <b>As lovely as sagiri, based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a></b>
 </p>
 
-[![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
+[![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#Donate)
 
 ## Demo
 
@@ -91,10 +90,10 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & suppor
 ### Lazy load Image
 
 ```markdown
-![width::height::Image Descript](image URL)
+![Image Descript](image URL)
 
 //example
-![690::345::how-to-create-archive](https://website-href-/your/path/file.png)
+![how-to-create-archive](https://website-href-/your/path/file.png)
 ```
 
 ## Others Setting
@@ -128,9 +127,19 @@ Create a template before this, the content format is as follows
 ## BackUp
 
 ```sql
--- mysql
+-- postview(mysql)
 ALTER TABLE `typecho_contents` ADD `views` INT(10) NULL DEFAULT '0' AFTER `parent`;
+
+-- siteview(mysql)
+
 ```
+
+## Comment Emoji
+
+How to import custom Emoji ?
+
+- [OwO](https://github.com/DIYgod/OwO)
+- [Emjio Util](./util/emjioUtil.min.js)
 
 ## Author
 
@@ -138,6 +147,12 @@ ALTER TABLE `typecho_contents` ADD `views` INT(10) NULL DEFAULT '0' AFTER `paren
 Authored and maintained by DIYgod with help from contributors ([list](https://github.com/shiyiya/typecho-theme-sagiri/contributors)).
 
 > Blog [@OZOO](http://www.runtua.cn) · GitHub [@shiyi](https://github.com/shiyiya) · Twitter [@shiyi](https://twitter.com/)
+
+## Donate
+
+- [Donate via Paypal](https://paypal.me/)
+- [Donate via WeChat Pay](https://i.loli.net/2019/10/27/n5fAVZyRlN63EH4.png)
+- [Donate via Alipay]()
 
 ## Contribute
 

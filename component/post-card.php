@@ -37,10 +37,7 @@
   <? else : ?>
 
     <? if (!empty($this->options->feature) && in_array('showThumb', $this->options->feature)) : ?>
-      <? $thumb = showThumb($this, $this->options->themeUrl);
-          if (!empty($thumb)) : ?>
-        <? echo $thumb; ?>
-      <? endif; ?>
+      <? showThumb($this, $this->options->themeUrl); ?>
     <? endif; ?>
     <div class="post-content" itemprop="articleBody">
       <? replaceTag($this->excerpt(150)); ?>

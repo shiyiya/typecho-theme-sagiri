@@ -8,7 +8,7 @@ class Update
   public static function getVersion()
   {
     $pkg = json_decode(file_get_contents(__DIR__ . '/../package.json'), true);
-    self::$version = +$pkg['version'];
+    self::$version = $pkg['version'];
 
     echo "<style>.theme-info{ text-align:center; margin:1em 0; } .theme-info > *{ margin:0 0 1rem } .buttons a{ background:#467b96; color:#fff; border-radius:4px; padding:.5em .75em; display:inline-block }</style>"
       . "<div class='theme-info'> "
@@ -25,36 +25,42 @@ class Update
   {
     echo
       "
-      <script>
-        var hasCheck = false
-        const uper = setInterval(() => {
-          if (typeof $ === 'undefined') return
+    <script>
+    var hasCheck = false
+    var uper = setInterval(function() {
+      if (typeof $ === 'undefined') return
 
-          if (hasCheck === true) {
-            clearInterval(uper)
-            return
-          }
+      if (hasCheck === true) {
+        clearInterval(uper)
+        return
+      }
 
-          console.log('--- checking update from github. ---')
+      console.log('--- checking update from github. ---')
 
-          hasCheck = true
-          $.ajax({
-            type: 'GET',
-            url: 'https://raw.githubusercontent.com/shiyiya/typecho-theme-sagiri/master/package.json',
-            dataType: 'json',
-            success: function(data) {
-              if (data.version > " . self::$version . ") {
-                $('.up').html('Found new version, <a href=\"https: //github.com/shiyiya/typecho-theme-sagiri target=\"_blank\" \"> ' + data.version + ' => click to download</a>')
-              }
-              console.log('[succeed]: ...')
-            },
-            error: function(err) {
-              console.log('[failed]: ...')
-              $('.up').html('Unable to check for updates.')
+      $.ajax({
+        type: 'GET',
+        url: 'https://raw.githubusercontent.com/shiyiya/typecho-theme-sagiri/master/package.json',
+        dataType: 'json',
+        success: function(data) {
+          var version = '" . self::$version . "'.split('.')
+          data.version.split('.').forEach(function(c, i) {
+            if (!!version[i] && +c > +version[i]) {
+              console.log('[succeed]: ', 'Found new version', data.version)
+              $('.up').html('Found new version, <a href=\"https: //github.com/shiyiya/typecho-theme-sagiri target=\"_blank\" \"> ' + data.version + ' => click to download</a>')
             }
+            hasCheck = true
+            console.log('[Status]: ', version, '------', data.version)
+            return;
           })
-        }, 500);
-      </script>
+        },
+        error: function(err) {
+          hasCheck = true
+          console.log('[failed]: ', err)
+          $('.up').html('Unable to check for updates.')
+        }
+      })
+    }, 500);
+</script>
       ";
   }
 
@@ -67,11 +73,11 @@ class Update
 
 ?>
 
+<!--
 
-
-<!-- <script>
+<script>
   var hasCheck = false
-  const uper = setInterval(() => {
+  var uper = setInterval(function() {
     if (typeof $ === 'undefined') return
 
     if (hasCheck === true) {
@@ -81,19 +87,25 @@ class Update
 
     console.log('--- checking update from github. ---')
 
-    hasCheck = true
     $.ajax({
       type: 'GET',
       url: 'https://raw.githubusercontent.com/shiyiya/typecho-theme-sagiri/master/package.json',
       dataType: 'json',
       success: function(data) {
-        if (data.version > " . self::$version . ") {
-          $('.up').html('Found new version, <a href=\"https: //github.com/shiyiya/typecho-theme-sagiri target=\"_blank\" \"> ' + data.version + ' => click to download</a>')
-        }
-        console.log('[succeed]: ...')
+        var version = '" . self::$version . "'.split('.')
+        data.version.split('.').forEach(function(c, i) {
+          if (!!version[i] && +c > +version[i]) {
+            console.log('[succeed]: ', 'Found new version', data.version)
+            $('.up').html('Found new version, <a href=\"https: //github.com/shiyiya/typecho-theme-sagiri target=\"_blank\" \"> ' + data.version + ' => click to download</a>')
+          }
+          hasCheck = true
+          console.log('[Status]: ', version, '------', data.version)
+          return;
+        })
       },
       error: function(err) {
-        console.log('[failed]: ...')
+        hasCheck = true
+        console.log('[failed]: ', err)
         $('.up').html('Unable to check for updates.')
       }
     })

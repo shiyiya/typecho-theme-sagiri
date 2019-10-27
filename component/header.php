@@ -1,13 +1,13 @@
 <? if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <!DOCTYPE HTML>
-<html class="no-js" lang="Zh-CN">
+<html class="no-js" lang="<? i18nLang() ?>">
 
 <head>
 
     <meta charset="<? $this->options->charset(); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, shrink-to-fit=no" />
     <title><? $this->archiveTitle(array(
                 'category' => _i18n('分类 %s 下的文章'),
                 'search' => _i18n('包含关键字 %s 的文章'),
@@ -18,6 +18,7 @@
     <meta name="author" content="<? $this->author() ?>" />
     <? $this->header('generator=&pingback=&xmlrpc=&wlw='); ?>
     <link rel="icon" href="<? $this->options->fav ? $this->options->fav() : $this->options->themeUrl('assert/img/favicon.jpg'); ?>" />
+    <link rel="manifest" href="<? $this->options->themeUrl('util/sw/manifest.json') ?>" />
 
     <!-- About IOS -->
     <meta name="format-detection" content="telephone=no">
@@ -106,14 +107,14 @@
                         </li>
                     <? endwhile; ?>
                     <li class="menu-item search">
-                        <a href="<? $this->options->rewrite ?  $this->options->siteUrl('search.html') : $this->options->siteUrl('index.php/search.html') ?>"><i class="iconfont icon-search"></i></a>
+                        <a href="<? $this->options->rewrite ?  $this->options->siteUrl('search.html') : $this->options->siteUrl('index.php/search.html') ?>" alt="<? i18n(搜索) ?>" aria-label="Search"><i class="iconfont icon-search"></i></a>
                     </li>
                 </ul>
             </nav>
 
             <div class="header-wrap">
                 <? if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings)) : ?>
-                    <div class="site-config" style="background-image:url(<? $this->options->backGroundImage ? $this->options->backGroundImage() : _e('https://i.loli.net/2018/10/05/5bb7144897e8c.jpg') ?>)">
+                    <div class="site-config" style="background-image:url(<? $this->options->backGroundImage ? $this->options->backGroundImage() : _e('https://i.loli.net/2019/10/27/5FsvlogZqOeCczR.jpg') ?>)">
                         <div class="site-title site-meta">
                             <?
                                 $ID = ['animate', 'guide'];
