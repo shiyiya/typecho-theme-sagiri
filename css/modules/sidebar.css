@@ -61,6 +61,11 @@
   border-bottom: 1px solid crimson;
 }
 
+.post-toc-wrap {
+  overflow-y: auto;
+  max-height: 300px;
+}
+
 .toc-nav {
   margin: 0;
   padding-left: 40px;
