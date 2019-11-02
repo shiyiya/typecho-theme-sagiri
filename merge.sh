@@ -18,5 +18,5 @@ cp -f ./js/* ./temp/js/
 cp -f ./css/* ./temp/css/
 cp -f ./doc/* ./temp/doc/
 cp -f ./component/* ./temp/component/
-cp -f ./libray/* ./temp/libray/
+cp -Rf ./libray/* ./temp/libray/
 cp -Rf ./util/* ./temp/util/
