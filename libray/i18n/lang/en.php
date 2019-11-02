@@ -1,27 +1,20 @@
 <?
-if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 class Lang_en
 {
 
-    /**
-     * @return string 返回语言名称
-     */
     public function name()
     {
         return "English";
     }
 
-    /**
-     * @return array 返回包含翻译文本的数组
-     */
     public function translated()
     {
         return array(
 
             '首页' => 'Home',
             '关于' => 'About',
-            '搜索…' => 'Search',
+            '搜索' => 'Search',
             '分类' => 'Categories',
 
             '登录' => 'Login',
@@ -61,6 +54,7 @@ class Lang_en
             '%d 条评论' => ' %d comments',
             '条评论' => ' comments',
             '标签' => 'Tags',
+            '浏览量' => ' PV ',
 
 
             /*评论 Comments*/
@@ -168,12 +162,11 @@ class Lang_en
             '文章内图片懒加载' => 'Lazy loading Image',
             '额外功能设置' => 'Extra feature settings',
             '侧栏相关设置' => 'Sidebar related settings',
+            '文章浏览数' => 'Post view',
+            '文章浏览数统计' => 'Post view statistics'
         );
     }
 
-    /**
-     * @return string 返回日期的格式化字符串
-     */
     public function dateFormat()
     {
         return "F j, Y";
