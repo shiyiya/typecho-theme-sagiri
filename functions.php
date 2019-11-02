@@ -1,9 +1,6 @@
 <?
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
-define('__Sagiri_ROOT__', dirname(__FILE__) . '/');
-define('__Sagiri_VERSION__', '1.1.0');
-
 function themeConfig($form)
 {
     require_once 'libray/i18n/index.php';
@@ -114,17 +111,22 @@ function themeConfig($form)
 
 function themeInit($widget)
 {
-
     require_once 'libray/i18n/index.php';
     require_once 'libray/theme-helper.php';
+    require_once 'libray/pv.php';
 }
 
 
 function themeFields(Typecho_Widget_Helper_Layout $layout)
 {
+    require_once 'libray/i18n/index.php';
+
     $thumb = new Typecho_Widget_Helper_Form_Element_Text('thumb', NULL, NULL, _t('头图地址(thumb)'), _t('输入图片URL，则优先使用该图片作为头图。'));
     $layout->addItem($thumb);
 
     $thumbAlt = new Typecho_Widget_Helper_Form_Element_Text('thumbAlt', NULL, NULL, _t('头图描述(alt)'), _t('输入图片的描述。'));
     $layout->addItem($thumbAlt);
+
+    $views = new Typecho_Widget_Helper_Form_Element_Text('views', NULL, 0, _i18n('文章浏览数'), _i18n('文章浏览数统计'));
+    $layout->addItem($views);
 }
