@@ -124,16 +124,6 @@ Create a template before this, the content format is as follows
 - Link <-> 友链
 - Time
 
-## BackUp
-
-```sql
--- postview(mysql)
-ALTER TABLE `typecho_contents` ADD `views` INT(10) NULL DEFAULT '0' AFTER `parent`;
-
--- siteview(mysql)
-
-```
-
 ## Comment Emoji
 
 How to import custom Emoji ?
@@ -158,7 +148,13 @@ Authored and maintained by DIYgod with help from contributors ([list](https://gi
 
 If you feel like to help us build a better Sagiri, you can
 
-Write a plugin | Submit a tutorial | Report a bug | Add a translation
+- Write a plugin
+- [Submit a tutorial](https://github.com/shiyiya/typecho-theme-sagiri/tree/gh-pages)
+- [Report a bug | Feature request](https://github.com/shiyiya/typecho-theme-sagiri/issues/new/choose)
+- Add a translation
+  - [jp](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/jp.php)
+  - [zh_tw](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_TW.php)
+  - [zh_CN](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_CN.php)
 
 ## License
 
