@@ -1,3 +1,13 @@
+## 2018/11/2
+
+- [F] Fix when the article title is too much, the Toc display error(layout).
+  修复文章标题过多时，目录显示错位
+- [A] add jp & zh_tw lang.
+- [F] Replace DB insert with typecho custom field.
+  使用自定义字段替换数据库操作（不会破坏原有数据库结构）
+
+<!--  -->
+
 ## 2018/10/13 v1.1
 
 - [U]: 重构 JS
