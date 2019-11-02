@@ -11,7 +11,6 @@ function isPc()
     return true;
 }
 
-
 function showThumb($obj, $themeUrl)
 {
     $config = Typecho_Widget::widget('Widget_Options')->feature;
@@ -164,19 +163,6 @@ function getOs($agent)
     echo $OSVersion;
 }
 
-function getSiteViews()
-{
-    $db = Typecho_Db::get();
-    $prefix = $db->getPrefix();
-    if (array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
-        $pom = $db->fetchAll("SELECT SUM(VIEWS) FROM `" . $prefix . "contents` WHERE `type`='page' or `type`='post'");
-        $num = number_format($pom[0]['SUM(VIEWS)'], 0, '', '');
-        return $num;
-    } else {
-        return 0;
-    }
-}
-
 function getRandomPosts($limit = 5)
 {
     $db = Typecho_Db::get();
@@ -201,30 +187,6 @@ function getRandomPosts($limit = 5)
             $post_title = htmlspecialchars($val['title']);
             $permalink = $val['permalink'];
             echo '<li><a href="' . $permalink . '" title="' . $post_title . '" >' . $post_title . '</a></li>';
-        }
-        echo '</ul>';
-    }
-}
-
-function getTopView($limit = 5)
-{
-    $days = 99999999999999;
-    $time = time() - (24 * 60 * 60 * $days);
-    $db = Typecho_Db::get();
-    $result = $db->fetchAll($db->select()->from('table.contents')
-        ->where('created >= ?', $time)
-        ->where('type = ?', 'post')
-        ->where('status = ?', 'publish')
-        ->where('created <= ?', time())
-        ->limit($limit)
-        ->order('views', Typecho_Db::SORT_DESC));
-    if ($result) {
-        echo '<ul class="top-view-archive list">';
-        foreach ($result as $val) {
-            $val = Typecho_Widget::widget('Widget_Abstract_Contents')->filter($val);
-            $post_title = htmlspecialchars($val['title']);
-            $permalink = $val['permalink'];
-            echo '<li><a href="' . $permalink . '" title="' . $val['views'] . '人看过">' . $post_title . '</a></li>';
         }
         echo '</ul>';
     }
