@@ -113,7 +113,7 @@ function themeInit($widget)
 {
     require_once 'libray/i18n/index.php';
     require_once 'libray/theme-helper.php';
-    require_once 'libray/pv.php';
+    require_once 'libray/field.php';
 }
 
 

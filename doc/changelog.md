@@ -5,6 +5,7 @@
 - [A] add jp & zh_tw lang.
 - [F] Replace DB insert with typecho custom field.
   使用自定义字段替换数据库操作（不会破坏原有数据库结构）
+- [F] fix site title position (mobile)
 
 <!--  -->
 
