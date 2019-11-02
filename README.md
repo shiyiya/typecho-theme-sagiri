@@ -152,7 +152,7 @@ If you feel like to help us build a better Sagiri, you can
 - [Submit a tutorial](https://github.com/shiyiya/typecho-theme-sagiri/tree/gh-pages)
 - [Report a bug | Feature request](https://github.com/shiyiya/typecho-theme-sagiri/issues/new/choose)
 - Add a translation
-  - [jp](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/jp.php)
+  - [Japan](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/ja.php)
   - [zh_tw](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_TW.php)
   - [zh_CN](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_CN.php)
 
