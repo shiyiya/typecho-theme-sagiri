@@ -47,6 +47,7 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "browser-sync": "^2.26.7",
     "core-js": "^3.1.4",
     "gsap": "^2.1.3"
   }

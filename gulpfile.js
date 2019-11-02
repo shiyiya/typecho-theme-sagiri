@@ -8,7 +8,9 @@ var gulp = require('gulp'),
   stream = require('vinyl-source-stream'),
   buffer = require('vinyl-buffer'),
   pkg = require('./package.json'),
-  sass = require('gulp-sass')
+  sass = require('gulp-sass'),
+  browserSync = require('browser-sync').create(),
+  reload = browserSync.reload
 
 gulp.task('build-sagiri', function() {
   return browserify({
@@ -83,6 +85,12 @@ gulp.task('build-util', function() {
 })
 
 gulp.task('start', function() {
+  browserSync.init({
+    proxy: 'localhost'
+  })
+
+  gulp.watch(['./*', './**/*']).on('change', reload)
+
   gulp.watch(
     ['css/!(*.min).css', 'css/**/!(*.min).css'],
     gulp.parallel(['build-css'])
