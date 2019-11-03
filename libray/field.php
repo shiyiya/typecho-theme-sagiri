@@ -7,6 +7,7 @@ function getFieldByName($name, $limit = 5)
   $fields = $db->fetchAll(
     $db->select()->from('table.fields')
       ->where('name = ?', $name)
+      ->order('int_value', Typecho_Db::SORT_DESC)
       ->limit($limit)
   );
   return  $fields;
@@ -61,7 +62,7 @@ function getTopView()
     . ' and created >= ' . $time
     . ' and created <= ' . time()
     . ' and type = "post" and status = "publish"'
-    . ' order by views ASC';
+    . ' order by instr("' . $cid . '", cid)';
 
   $result =  $db->fetchAll($query);
 
@@ -70,7 +71,7 @@ function getTopView()
     $val = Typecho_Widget::widget('Widget_Abstract_Contents')->filter($val);
     $post_title = htmlspecialchars($val['title']);
     $permalink = $val['permalink'];
-    echo '<li><a href="' . $permalink . '" title="' . $cidsMap[$val['cid']] . '人看过">' . $post_title  . '</a></li>';
+    echo '<li><a href="' . $permalink . '" title="' . $cidsMap[$val['cid']] . '人看过">' . $post_title . '</a></li>';
   }
   echo '</ul>';
 }
