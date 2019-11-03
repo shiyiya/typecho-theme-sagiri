@@ -1,5 +1,7 @@
 #!/bin/sh
 
+rm -Rf temp
+
 mkdir temp
 mkdir temp/assert
 mkdir temp/component
