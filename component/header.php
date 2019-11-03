@@ -115,11 +115,14 @@
             <div class="header-wrap">
                 <? if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings)) : ?>
                     <div class="site-config" style="background-image:url(<? $this->options->backGroundImage ? $this->options->backGroundImage() : _e('https://i.loli.net/2019/10/27/5FsvlogZqOeCczR.jpg') ?>)">
-                        <div>
-                            <h2 class="site-title"><? $this->options->title() ?></h2>
-                            <span class="site-meta"><?php $this->options->description() ?></span>
+                        <div class="site-config-wrap">
+                            <div class="animated">
+                                <h2 class="site-title"><? $this->options->title() ?></h2>
+                                <span class="site-meta"><?php $this->options->description() ?></span>
+                            </div>
                         </div>
                     </div>
+
                 <? endif; ?>
             </div>
         </header>

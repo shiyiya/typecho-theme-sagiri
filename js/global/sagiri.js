@@ -25,12 +25,18 @@ class Sagiri {
       'background: #40b3ec; padding:5px 5px 5px 0; color: #000;'
     )
 
-    window.onload = function() {
-      console.log(
-        `%c页面加载完毕消耗了 ${Math.round(performance.now() * 100) / 100} ms`,
+    document.addEventListener('DOMContentLoaded', function() {
+      console.info(
+        `%cTime used: ${Math.round(performance.now() * 100) / 100} ms | ${
+          performance.memory
+            ? `Memory used ${Math.round(
+                (performance.memory.usedJSHeapSize / 1024) * 100
+              ) / 100} K`
+            : ''
+        }`,
         'background: #40b3ec; color: #fff; padding:5px ;'
       )
-    }
+    })
   }
 }
 
