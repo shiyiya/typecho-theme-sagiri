@@ -6,7 +6,7 @@
 
 ## 2019/11/3
 
-- [S] remove Site Title animation.
+- [S] replace Site Title animation.
   移除 Title 动画。
 - [S] Banner height -> 550px -> 350px (PC)
 - [F] fix topView post order.
