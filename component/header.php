@@ -115,18 +115,11 @@
             <div class="header-wrap">
                 <? if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings)) : ?>
                     <div class="site-config" style="background-image:url(<? $this->options->backGroundImage ? $this->options->backGroundImage() : _e('https://i.loli.net/2019/10/27/5FsvlogZqOeCczR.jpg') ?>)">
-                        <div class="site-title site-meta">
-                            <?
-                                $ID = ['animate', 'guide'];
-                                foreach ($ID as $key => $value) {
-                                    echo ' <div id="' . $value . '" class="' . $value . '">';
-                                    $title = $this->options->title;
-                                    $len = mb_strlen($title);
-                                    for ($i = 0; $i < $len; $i++) {
-                                        echo '<span>' . mb_substr($title, $i, 1) . '</span>';
-                                    }
-                                    echo '</div>';
-                                } ?>
+                        <div class="site-config-wrap">
+                            <div class="animated">
+                                <h2 class="site-title"><? $this->options->title() ?></h2>
+                                <span class="site-meta"><?php $this->options->description() ?></span>
+                            </div>
                         </div>
                     </div>
                 <? endif; ?>

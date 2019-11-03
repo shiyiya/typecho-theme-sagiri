@@ -1,4 +1,17 @@
-## 2018/11/2
+[F] Fix Bug.
+[S] Style Change.
+[A] Add Feature.
+[U] Update Config.
+[Doc] Update DOC.
+
+## 2019/11/3 (v1.1.4)
+
+- [S] replace Site Title animation.
+  移除 Title 动画。
+- [S] Banner height -> 550px -> 350px (PC)
+- [F] fix topView post order.
+
+## 2019/11/2
 
 - [F] Fix when the article title is too much, the Toc display error(layout).
   修复文章标题过多时，目录显示错位
