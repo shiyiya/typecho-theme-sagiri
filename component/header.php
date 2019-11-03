@@ -122,7 +122,6 @@
                             </div>
                         </div>
                     </div>
-
                 <? endif; ?>
             </div>
         </header>

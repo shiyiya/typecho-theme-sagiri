@@ -4,7 +4,7 @@
 [U] Update Config.
 [Doc] Update DOC.
 
-## 2019/11/3
+## 2019/11/3 (V1.1.4)
 
 - [S] replace Site Title animation.
   移除 Title 动画。
