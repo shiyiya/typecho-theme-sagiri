@@ -77,7 +77,7 @@
 
 @media (max-width: 991px) {
   .post {
-    padding: 40px 20px;
+    padding: 40px 20px 20px;
     border-radius: 0;
   }
 }
@@ -170,11 +170,6 @@
   text-overflow: ellipsis;
   overflow: hidden;
   margin-top: 10px;
-}
-
-.post-button {
-  margin: 0 auto;
-  padding: 20px 0 10px 0;
 }
 
 .post img {

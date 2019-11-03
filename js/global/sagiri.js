@@ -20,10 +20,17 @@ class Sagiri {
     // copy-right
     //DO NOT DELETE !
     console.info(
-      ` %c Sagiri ${this.version} %c https://github.com/shiyiya/typecho-theme-sagiri `,
-      'background: #ed143d7d; padding:5px 0;',
-      'background: #40b3ec;padding:5px 5px 5px 0;'
+      `%c Sagiri ${this.version} %c https://github.com/shiyiya/typecho-theme-sagiri `,
+      'background: #ed143d7d; padding:5px 0; color: #fff;',
+      'background: #40b3ec; padding:5px 5px 5px 0; color: #000;'
     )
+
+    window.onload = function() {
+      console.log(
+        `%c页面加载完毕消耗了 ${Math.round(performance.now() * 100) / 100} ms`,
+        'background: #40b3ec; color: #fff; padding:5px ;'
+      )
+    }
   }
 }
 

@@ -49,22 +49,6 @@ gulp.task('build-index', function() {
     .pipe(gulp.dest('js'))
 })
 
-gulp.task('build-type', function() {
-  return browserify({
-    entries: 'js/global/type/index.js',
-    debug: false
-  })
-    .transform('babelify')
-    .bundle()
-    .on('error', function(error) {
-      console.log(error.toString())
-    })
-    .pipe(stream('type.min.js'))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(gulp.dest('js'))
-})
-
 gulp.task('build-css', function() {
   return gulp
     .src(['css/mix.css', 'css/iconfont.css'])
@@ -98,7 +82,7 @@ gulp.task('start', function() {
 
   gulp.watch(
     ['js/**/!(*.min).js'],
-    gulp.parallel(['build-index', 'build-sagiri', 'build-type'])
+    gulp.parallel(['build-index', 'build-sagiri'])
   )
 
   gulp.watch(['util/!(*.min).js'], gulp.parallel(['build-util']))
@@ -106,12 +90,5 @@ gulp.task('start', function() {
 
 gulp.task(
   'build',
-  gulp.parallel([
-    'build-type',
-    'build-index',
-    'build-type',
-    'build-sagiri',
-    'build-css',
-    'build-util'
-  ])
+  gulp.parallel(['build-index', 'build-sagiri', 'build-css', 'build-util'])
 )

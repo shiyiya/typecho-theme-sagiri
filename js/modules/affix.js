@@ -5,7 +5,7 @@ var isMobile = Sagiri.util.isMobile
 
 function affix(scrollTop) {
   if (Sagiri.hasBanner) {
-    if (!isMobile && scrollTop >= 500) {
+    if (!isMobile && scrollTop >= 320) {
       siteNav.style.background = 'rgba(255, 255, 255, .8)'
       siteNav.style.boxShadow = '0 0 2px 2px rgba(172, 172, 172, .4)'
       Sagiri.hasSidebar && sider.classList.add('affix')

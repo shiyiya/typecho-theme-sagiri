@@ -92,7 +92,7 @@
 .header-wrap {
   position: relative;
   width: 100%;
-  height: 550px;
+  height: 380px;
   padding: 0;
   box-shadow: initial;
   border-radius: initial;
@@ -106,18 +106,23 @@
 }
 
 .site-config {
-  height: 520px;
+  line-height: 1;
+  height: 350px;
   width: 100%;
   background-color: rgba(64, 179, 236, 0.1);
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 0 #ff3f1a, -1px -1px 0 #00a7e0;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
-
-/* .site-config.anima {
-  animation: fade-in-bottom 1s 0.3s backwards;
-} */
 
 @media (max-width: 991px) {
   .site-config {
@@ -126,33 +131,25 @@
   }
 }
 
-.site-meta {
-  position: relative;
-  top: 200px;
-  text-align: center;
-}
-
 .site-title {
+  line-height: 1;
   -webkit-font-smoothing: antialiased;
   font-family: 'Telefon Black', Sans-Serif;
   font-size: 48px;
-  font-weight: 600;
-  color: #000;
-  cursor: pointer;
 }
 
-.site-description {
-  font-size: 36px;
-  font-weight: 400;
-  color: #000;
+.site-meta {
+  font-size: 32px;
+  font-weight: lighter;
+  opacity: 0.9;
 }
 
 @media (max-width: 991px) {
-  .site-meta {
-    top: 90px;
+  .site-title {
+    font-size: 30px;
   }
 
-  .site-description {
-    display: none;
+  .site-meta {
+    font-size: 20px;
   }
 }

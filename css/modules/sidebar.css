@@ -22,6 +22,10 @@
   margin-bottom: 10px;
 }
 
+.sider-item section > ul {
+  margin: 0;
+}
+
 .rand-archive-nav-title {
   margin: 0;
 }

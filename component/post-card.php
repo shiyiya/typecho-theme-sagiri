@@ -40,7 +40,7 @@
       <? showThumb($this, $this->options->themeUrl); ?>
     <? endif; ?>
     <div class="post-content" itemprop="articleBody">
-      <? replaceTag($this->excerpt(150)); ?>
+      <p><? replaceTag($this->excerpt(150)); ?></p>
       <div text-center class="post-button">
         <a href="<? $this->permalink() ?>" class="sheen">
           <? _e('- ' . _i18n('阅读全文') . ' -'); ?>

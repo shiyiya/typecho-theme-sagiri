@@ -64,12 +64,14 @@
   padding: 10px;
 }
 
+#comment-form .submit {
+  text-align: right;
+  margin: 0;
+}
+
 #comment-form button {
-  position: absolute;
   outline: none;
   padding: 6px 20px;
-  right: 40px;
-  bottom: 20px;
 }
 
 .comment-list .comments-header {
