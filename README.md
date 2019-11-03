@@ -15,7 +15,7 @@
     <b>As lovely as sagiri, based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a></b>
 </p>
 
-[![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#Donate)
+[![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
 ## Demo
 
@@ -99,12 +99,21 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & suppor
 ## Others Setting
 
 - Index Post Card
-  Home Article Overview The default maximum output is **150** characters, you can manually add the truncation `<!-- more -->` control output.
+  Home Article Overview The default maximum output is **Infinity** characters, you can manually add the truncation `<!-- more -->` control output.
+
+  ⬇ ⬇ ⬇ example (Article content)
+
+  ```markdown
+  ## hello world
+
+  <!--more-->
+
+  **I will not show it on the single page**
+  ~~Can you find me?~~
+  ```
 
 - Article thumbnail
   weight of the thumbnail: Article field -> The first Upload Image of Article -> Image link in the article -> Random Image
-
-- ...
 
 ## Link
 

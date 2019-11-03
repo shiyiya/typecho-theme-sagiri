@@ -4,7 +4,11 @@
 [U] Update Config.
 [Doc] Update DOC.
 
-## 2019/11/3 (v1.1.4)
+## 2019/11/3
+
+[A] You need add the truncation `<!-- more -->` control output (Home Article & ...).
+
+## 2019/11/3 (V1.1.4)
 
 - [S] replace Site Title animation.
   移除 Title 动画。
