@@ -4,22 +4,22 @@
 <p align="center">
   <a href="">Preview</a> |
   <a href="https://shiyiya.github.io/typecho-theme-sagiri">Documentation</a> |
-  <a href="https://github.com/shiyiya/typecho-theme-sagiri/archive/master.zip">Download</a>
+  <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Download</a> |
   <br />
   <br />
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/pjax">PJAX Version</a> |
-  <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Releases</a> |
   <a href="./doc/changelog.md">Change Log</a> |
   <a href="#donate">Donate 捐赠支持</a>
   <br />
   <br />
-    <b>As lovely as sagiri, based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a></b>
+  <b>As lovely as sagiri, based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a></b>
+
 </p>
 
 [![stars](https://flat.badgen.net/github/stars/shiyiya/typecho-theme-sagiri?icon=github)](https://github.com/shiyiya/typecho-theme-sagiri)
 [![npm](https://flat.badgen.net/npm/v/typecho-theme-sagiri/?color=fb3e44)](https://www.npmjs.com/package/typecho-theme-sagiri)
-[![](https://data.jsdelivr.com/v1/package/npm/typecho-theme-sagiri/badge)](https://www.jsdelivr.com/package/npm/typecho-theme-sagiri)
-[![](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
+[![jsdelivr](https://data.jsdelivr.com/v1/package/npm/typecho-theme-sagiri/badge)](https://www.jsdelivr.com/package/npm/typecho-theme-sagiri)
+[![license](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
 ## Demo
 
@@ -34,7 +34,7 @@ If you think you meet the above conditions, please submit the relevant `PR` ([Ho
 
 ## Installation
 
-1. Download & git clone from GitHub to your blog's theme folder.
+1. Download from [releases](https://github.com/shiyiya/typecho-theme-sagiri/releases) to your blog's theme folder.
 2. Enable it in the background management, if an error occurs, rename the folder to sagiri
 
 - If you need to update the theme, download the latest version, then overwrite the original file to complete the update, some new features need to be enabled in the background to take effect.
@@ -90,6 +90,11 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & suppor
 ### Multi-language Support
 
 - Need more language support, Welcome contribution. ([How to PR](#Contribute))
+- Add a translation
+  - [en](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/en.php)
+  - [Japan](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/ja.php)
+  - [zh_tw](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_TW.php)
+  - [zh_CN](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_CN.php)
 
 ### Lazy load Image
 
@@ -187,6 +192,7 @@ If you feel like to help us build a better Sagiri, you can
 - [Submit a tutorial](https://github.com/shiyiya/typecho-theme-sagiri/tree/gh-pages)
 - [Report a bug | Feature request](https://github.com/shiyiya/typecho-theme-sagiri/issues/new/choose)
 - Add a translation
+  - [en](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/en.php)
   - [Japan](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/ja.php)
   - [zh_tw](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_TW.php)
   - [zh_CN](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_CN.php)
