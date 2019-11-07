@@ -56,7 +56,7 @@
     <? endif; ?>
 
     <!-- OwO emoji style -->
-    <? if (!empty($this->options->feature) && in_array('commentEmoji', $this->options->feature) && $this->allow('comment')) : ?>
+    <? if (!empty($this->options->feature) && in_array('commentEmoji', $this->options->feature) && $this->allow('comment') && $this->is('single')) : ?>
         <link rel="stylesheet" href="<? CDNUrl('./js/lib/OwO/OwO.min.css'); ?>">
     <? endif; ?>
 

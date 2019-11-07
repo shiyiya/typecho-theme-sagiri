@@ -21,7 +21,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 					<? $this->need('component/post-card.php'); ?>
 				<? endwhile; ?>
 			</section>
-			<? $this->pageNav('<i class="iconfont icon-prev-m"></i>', '<i class="iconfont icon-next-m"></i>', '2', '...'); ?>
+			<? $this->pageNav('<i class="iconfont icon-prev-m" aria-label="prev"></i>', '<i class="iconfont icon-next-m" aria-label="next"></i>', '2', '...'); ?>
 		</div>
 		<? if (isPc()) $this->need('component/sidebar.php'); ?>
 	</div>

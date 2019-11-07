@@ -4,6 +4,11 @@
 [U] Update Config.
 [Doc] Update DOC.
 
+## 2019/11/7
+
+[A]: add instantclick
+[DOC]: CN README
+
 ## 2019/11/4
 
 [S] video style at mobile.

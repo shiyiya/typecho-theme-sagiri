@@ -5,6 +5,7 @@
   <a href="">Preview</a> |
   <a href="https://shiyiya.github.io/typecho-theme-sagiri">Documentation</a> |
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Download</a> |
+  <a href="./doc/README-CN.md">中文文档</a>
   <br />
   <br />
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/pjax">PJAX Version</a> |
@@ -44,6 +45,8 @@ git clone https://github.com/shiyiya/typecho-theme-sagiri.git
 ```
 
 ## Features
+
+### Instantclick
 
 ### Rich Code Highlight Theme Choices
 

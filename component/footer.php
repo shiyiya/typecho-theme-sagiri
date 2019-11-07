@@ -38,9 +38,6 @@
     <img src="<? $this->options->backGroundImage() ?>" alt="This is just a placeholder img.">
 </div>
 
-
-<canvas id="ribbons"></canvas>
-
 <!-- <canvas id="live2d" class="live2d" width="140" height="250"></canvas> -->
 
 <? if (!empty($this->options->feature) && in_array('pjax', $this->options->feature)) : ?>
@@ -58,8 +55,12 @@
 <script src="<? CDNUrl('js/sagiri.min.js'); ?>"></script>
 <script src="<? CDNUrl('js/index.min.js'); ?>"></script>
 
-
+<script src="<? CDNUrl('js/lib/instantclick.min.js') ?>" data-no-instant></script>
+<script data-no-instant>
+    InstantClick.init(50);
+</script>
 <!--  Lazy load images -->
+
 <? if (!empty($this->options->feature) && in_array('lazyImg', $this->options->feature)) : ?>
     <script src="<? CDNUrl('util/lazyload.min.js'); ?>"></script>
 <? endif; ?>

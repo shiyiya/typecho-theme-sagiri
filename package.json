@@ -27,7 +27,7 @@
   "browserslist": {
     "production": [
       "last 3 version",
-      "ie 10"
+      "ie 9"
     ]
   },
   "devDependencies": {

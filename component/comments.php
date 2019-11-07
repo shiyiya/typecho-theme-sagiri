@@ -86,14 +86,14 @@
 
 <!-- OwO emoji -->
 <? if (!empty($this->options->feature) && in_array('commentEmoji', $this->options->feature) && $this->allow('comment')) : ?>
-    <script src="<? CDNUrl('./js/lib/OwO/OwO.min.js'); ?>"></script>
+    <script src="<? CDNUrl('js/lib/OwO/OwO.min.js'); ?>"></script>
 
     <script>
         new OwO({
             logo: 'OωO',
             container: document.getElementsByClassName('OwO')[0],
             target: document.getElementsByClassName('OwO-textarea')[0],
-            api: '<? CDNUrl('./js/lib/OwO/OwO.json '); ?>',
+            api: '<? CDNUrl('js/lib/OwO/OwO.json '); ?>',
             position: 'down',
             width: '100%',
             maxHeight: '250px'

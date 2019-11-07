@@ -186,5 +186,7 @@ function _i18n($string)
 
 function i18nLang()
 {
-  echo I18n::Instance()->lang;
+  $lang = I18n::Instance()->lang;
+  $htmlLang = mb_split('_', $lang, 2)[0];
+  echo  $htmlLang;
 }
