@@ -17,7 +17,7 @@ function replaceTag($content)
 }
 
 
-function imgToLay($content)
+function imgToLay($content, $themeUrl)
 {
   $REG = '<img class="lazy-loader" lazy-src="$1" src="' . $themeUrl . '/assert/img/loader.gif' . '" alt="$2" title="$3" />';
   $content = preg_replace(
