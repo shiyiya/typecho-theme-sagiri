@@ -1,6 +1,6 @@
 <?
 
-class Lang_zh_TW implements Lang
+class Lang_zh_TW
 {
     public function name()
     {

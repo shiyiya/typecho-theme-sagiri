@@ -18,7 +18,7 @@
             <? endif; ?>
             <section class="site-overview-wrap <? if ($this->is('index') || $this->is('page'))  _e('sidebar-section-active'); ?>" text-center>
                 <div class="site-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                    <img src="<? $this->options->authorImage ? $this->options->authorImage() : $this->options->themeUrl('./assert/img/author.jpg'); ?>" alt="author" class="site-author-image" itemprop="image">
+                    <img src="<? $this->options->authorImage ? $this->options->authorImage() : CDNUrl('assert/img/author.jpg'); ?>" alt="author" class="site-author-image" itemprop="image">
                     <p class="site-author-name"><? $this->user->screenName(); ?></p>
                 </div>
                 <div class="author-social">

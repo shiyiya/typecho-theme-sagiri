@@ -1,6 +1,6 @@
 <?
 
-class Lang_en implements Lang
+class Lang_en
 {
 
     public function name()
@@ -24,10 +24,10 @@ class Lang_en implements Lang
             '日志' => 'Post',
             '文章RSS' => 'Articles RSS',
             '文章目录' => 'TOC',
-            '热门文章' => 'Most Viewed',
+            '热门文章' => 'Trending',
             '热评文章' => 'Most commented',
-            '最新评论' => 'Latest comments',
             '随机文章' => 'Random',
+            '最新评论' => 'Latest comments',
             '站点概览' => 'Overview',
             '次浏览' => 'views',
 

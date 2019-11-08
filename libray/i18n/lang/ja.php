@@ -1,7 +1,6 @@
 <?
 
-
-class Lang_ja  implements Lang
+class Lang_ja
 {
   public function name()
   {

@@ -19,7 +19,7 @@
     <meta name="author" content="<? $this->author() ?>" />
     <? $this->header('generator=&pingback=&xmlrpc=&wlw='); ?>
     <link rel="icon" href="<? $this->options->fav ? $this->options->fav() : CDNUrl('assert/img/favicon.jpg'); ?>" />
-    <link rel="manifest" href="<? CDNUrl('util/sw/manifest.json') ?>" />
+    <link rel="manifest" href="<? $this->options->themeUrl('util/sw/manifest.json'); ?>" />
 
     <!-- About IOS -->
     <meta name="format-detection" content="telephone=no">
@@ -29,7 +29,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
     <meta name="apple-mobile-web-app-title" content="<? $this->options->title() ?>" />
     <meta name="theme-color" content="#40b3ec" />
-    <link rel="apple-touch-icon" sizes="32x32 58x58 72x72 96x96 114x114" href="<? $this->options->IOSIcon(); ?>" />
+    <link rel="apple-touch-icon" sizes="57x57 72x72 114x114 144x144" href="<? $this->options->fav ? $this->options->fav() : CDNUrl('assert/img/favicon.jpg'); ?>" />
 
     <!-- Disable Baidu transformation -->
     <meta http-equiv="Cache-Control" content="no-transform " />
@@ -53,11 +53,6 @@
     <!-- Prism -->
     <? if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)) : ?>
         <link href="<? CDNUrl('./js/lib/prism/' . $this->options->codeHighlightTheme . '/prism.css'); ?>" rel="stylesheet" />
-    <? endif; ?>
-
-    <!-- OwO emoji style -->
-    <? if (!empty($this->options->feature) && in_array('commentEmoji', $this->options->feature) && $this->allow('comment') && $this->is('single')) : ?>
-        <link rel="stylesheet" href="<? CDNUrl('./js/lib/OwO/OwO.min.css'); ?>">
     <? endif; ?>
 
     <? if (empty($this->options->StyleSettings) || !in_array('Banner', $this->options->StyleSettings)) : ?>

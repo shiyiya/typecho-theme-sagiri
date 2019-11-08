@@ -8,10 +8,11 @@ function themeConfig($form)
 
     Update::valid();
 
+    Helper::options()->commentsAntiSpam = true;
+    Helper::options()->commentsCheckReferer = false;
+
     $fav = new Typecho_Widget_Helper_Form_Element_Text('fav', NULL, NULL, _t('Favicon'), _i18n('请填入完整链接，作为网站标签页图标，手机建议大小 114x114'));
     $form->addInput($fav);
-    $IOSIcon = new Typecho_Widget_Helper_Form_Element_Text('IOSIcon', NULL, NULL, _t('IOS Favicon'), _i18n('请填入完整链接，作为网站图标，手机建议大小 114x114'));
-    $form->addInput($IOSIcon);
     $default_thumb = new Typecho_Widget_Helper_Form_Element_Text('default_thumb', NULL, NULL, _i18n('文章默认、随机头图'), _i18n('若文章内未抓取到图片则默认使用此地址作为图片'));
     $form->addInput($default_thumb);
 

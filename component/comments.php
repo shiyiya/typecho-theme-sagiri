@@ -53,6 +53,10 @@
     </li>
 <? } ?>
 
+<!-- OwO emoji style -->
+<? if (!empty($this->options->feature) && in_array('commentEmoji', $this->options->feature) && $this->allow('comment')) : ?>
+    <link rel="stylesheet" href="<? CDNUrl('./js/lib/OwO/OwO.min.css'); ?>">
+<? endif; ?>
 
 <div id="comments">
     <? $this->comments()->to($comments); ?>

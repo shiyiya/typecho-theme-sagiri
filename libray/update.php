@@ -21,11 +21,10 @@ class Update
       . "<div class='theme-info'> "
       . "<h2>" . $pkg['name'] . "</h2>"
       . "<p>" . $pkg['description'] . "</p>"
-      . "<p>By: <a href='https://github.com/shiyiya/typecho-theme-sagiri' target='_blank'>Shiyiya</a></p>"
+      . "<p>By: <a href='https://github.com/shiyiya/typecho-theme-sagiri' target='_blank'>Shiyiya</a> | <a href='https://github.com/shiyiya/typecho-theme-sagiri/issues' target='_blank'>建议&反馈</a></p>"
       . "Current Version: " . self::$version
       . "&nbsp; | &nbsp;"
       . "<span class='up'> It's the latest version. </span>"
-      . "<p><a href='https://github.com/shiyiya/typecho-theme-sagiri/issues' target='_blank'>建议&反馈</a>"
       . "</div>";
   }
 
