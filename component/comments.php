@@ -66,11 +66,11 @@
                 <? if ($this->user->hasLogin()) : ?>
                     <p><? i18n('用户名'); ?>: <a href="<? $this->options->profileUrl(); ?>"><? $this->user->screenName(); ?></a>. <a href="<? $this->options->logoutUrl(); ?>" title="Logout"><? i18n('退出'); ?> &raquo;</a></p>
                 <? else : ?>
-                    <input type="text" name="author" id="author" class="text" value="<? $this->remember('author'); ?>" required placeholder="<? i18n('名称') ?>" />
+                    <input type="text" name="author" id="author" class="text" value="<? $this->remember('author'); ?>" required placeholder="<? i18n('姓名或昵称') ?>" />
                     <input type="email" name="mail" id="mail" class="text" value="<? $this->remember('mail'); ?>" <? if ($this->options->commentsRequireMail) : ?> required<? endif; ?> placeholder="<? i18n('邮箱') ?>" />
-                    <input type="url" name="url" id="url" class="text" placeholder="<? i18n('网址'); ?>" value="<? $this->remember('url'); ?>" <? if ($this->options->commentsRequireURL) : ?> required<? endif; ?> />
+                    <input type="url" name="url" id="url" class="text" placeholder="<? i18n('网站或博客'); ?>" value="<? $this->remember('url'); ?>" <? if ($this->options->commentsRequireURL) : ?> required<? endif; ?> />
                 <? endif; ?>
-                <textarea name="text" id="textarea" class="OwO-textarea textarea" required placeholder="<? i18n('在这里输入你的评论...（Ctrl/Control + Enter 快捷提交）') ?>"><? $this->remember('text'); ?></textarea>
+                <textarea name="text" id="textarea" class="OwO-textarea textarea" required placeholder="<? i18n('说点什么吧……') ?>"><? $this->remember('text'); ?></textarea>
                 <div class="OwO"></div>
                 <p class="submit"><button class="sheen" type="submit" class="submit"><? i18n('评论'); ?></button></p>
             </form>

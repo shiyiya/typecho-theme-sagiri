@@ -1,7 +1,7 @@
 <?
 
 
-class Lang_zh_CN
+class Lang_zh_CN  implements Lang
 {
     public function name()
     {

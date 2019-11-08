@@ -28,7 +28,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
     <meta name="apple-mobile-web-app-title" content="<? $this->options->title() ?>" />
-    <meta name="theme-color" content="<? $this->options->themeColor ? $this->options->themeColor() : _e('#fff') ?>" />
+    <meta name="theme-color" content="#40b3ec" />
     <link rel="apple-touch-icon" sizes="32x32 58x58 72x72 96x96 114x114" href="<? $this->options->IOSIcon(); ?>" />
 
     <!-- Disable Baidu transformation -->
