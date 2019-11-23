@@ -53,7 +53,7 @@ gulp.task('build-css', function() {
   return gulp
     .src(['css/mix.css', 'css/iconfont.css'])
     .pipe(sass({ outputStyle: 'compressed' }))
-    .pipe(cleanCSS({ compatibility: 'ie9', level: 2 }))
+    .pipe(cleanCSS({ compatibility: 'ie10', level: 2 }))
     .pipe(autoprefixer({ cascade: false }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('./css'))
