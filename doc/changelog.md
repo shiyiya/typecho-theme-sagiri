@@ -4,6 +4,12 @@
 [U] Update Config.
 [Doc] Update DOC.
 
+## 2019/11/23
+
+[F] #27
+
+- php5 not support <?
+
 ## 2019/11/7
 
 [A]: add instantclick

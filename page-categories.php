@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * Template Page of Category
@@ -6,38 +6,38 @@
  * @package custom
  */
 ?>
-<? if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<? $this->need('component/header.php'); ?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php $this->need('component/header.php'); ?>
 
 <div id="main" class="main" role="main">
     <div class="main-inner clearfix">
         <div class="content-wrap">
-            <? $this->widget('Widget_Metas_Category_List')->to($categorys); ?>
-            <? if ($categorys->have()) : ?>
-                <? while ($categorys->next()) : ?>
-                    <? if ($categorys->count) : ?>
+            <?php $this->widget('Widget_Metas_Category_List')->to($categorys); ?>
+            <?php if ($categorys->have()) : ?>
+                <?php while ($categorys->next()) : ?>
+                    <?php if ($categorys->count) : ?>
                         <h1 class="category-title" itemprop="name headline">
-                            <a class="category-title-link" itemprop="url" href="<? $categorys->permalink(); ?>"><? $categorys->name(); ?></a>
-                            <span> ：<? $categorys->count(); ?></span>
+                            <a class="category-title-link" itemprop="url" href="<?php $categorys->permalink(); ?>"><?php $categorys->name(); ?></a>
+                            <span> ：<?php $categorys->count(); ?></span>
                         </h1>
-                    <? endif; ?>
-                    <? $catlist = $this->widget('Widget_Archive@categorys_' . $categorys->mid, 'pageSize=10000&type=category', 'mid=' . $categorys->mid); ?>
-                    <? if ($catlist->have()) : ?>
+                    <?php endif; ?>
+                    <?php $catlist = $this->widget('Widget_Archive@categorys_' . $categorys->mid, 'pageSize=10000&type=category', 'mid=' . $categorys->mid); ?>
+                    <?php if ($catlist->have()) : ?>
                         <div class="category-post-item clearfix">
-                            <? while ($catlist->next()) : ?>
+                            <?php while ($catlist->next()) : ?>
                                 <div class="category-post-wrap ">
                                     <article class="category-post" text-center itemscope itemtype="http://schema.org/BlogPosting">
-                                        <a href="<? $catlist->permalink() ?>">
-                                            <h2 class="category-post-title"><? $catlist->title() ?></h2>
+                                        <a href="<?php $catlist->permalink() ?>">
+                                            <h2 class="category-post-title"><?php $catlist->title() ?></h2>
                                         </a>
-                                        <? $catlist->date('M j, Y'); ?>
+                                        <?php $catlist->date('M j, Y'); ?>
                                     </article>
                                 </div>
-                            <? endwhile; ?>
+                            <?php endwhile; ?>
                         </div>
-                    <? endif; ?>
-                <? endwhile; ?>
-            <? endif; ?>
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -52,4 +52,4 @@
     }
 </style>
 
-<? $this->need('component/footer.php'); ?>
+<?php $this->need('component/footer.php'); ?>

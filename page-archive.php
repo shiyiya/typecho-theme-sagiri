@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * Template Page of Timeline Archives
@@ -6,13 +6,13 @@
  * @package custom
  */
 ?>
-<? if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<? $this->need('component/header.php'); ?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php $this->need('component/header.php'); ?>
 
 <div id="main" class="main" role="main">
     <div class="main-inner clearfix">
         <div class="content-wrap timeline-wrap">
-            <?
+            <?php
             $stat = Typecho_Widget::widget('Widget_Stat');
             $this->widget('Widget_Contents_Post_Recent', 'pageSize=' . $stat->publishedPostsNum)->to($archives);
             $year = 0;
@@ -60,4 +60,4 @@
     }
 </style>
 
-<? $this->need('component/footer.php'); ?>
+<?php $this->need('component/footer.php'); ?>

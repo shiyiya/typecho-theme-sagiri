@@ -1,5 +1,4 @@
-<?
-
+<?php
 /**
  * Sagiri - Lovely theme for Typecho.
  *
@@ -11,20 +10,20 @@
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
-<? $this->need('component/header.php'); ?>
+<?php $this->need('component/header.php'); ?>
 
 <div id="main" class="main" role="main">
 	<div class="main-inner clearfix">
 		<div class="content-wrap">
 			<section id="posts">
-				<? while ($this->next()) : ?>
-					<? $this->need('component/post-card.php'); ?>
-				<? endwhile; ?>
+				<?php while ($this->next()) : ?>
+					<?php $this->need('component/post-card.php'); ?>
+				<?php endwhile; ?>
 			</section>
-			<? $this->pageNav('<i class="iconfont icon-prev-m" aria-label="prev"></i>', '<i class="iconfont icon-next-m" aria-label="next"></i>', '2', '...'); ?>
+			<?php $this->pageNav('<i class="iconfont icon-prev-m" aria-label="prev"></i>', '<i class="iconfont icon-next-m" aria-label="next"></i>', '2', '...'); ?>
 		</div>
-		<? if (isPc()) $this->need('component/sidebar.php'); ?>
+		<?php if (isPc()) $this->need('component/sidebar.php'); ?>
 	</div>
 </div>
 
-<? $this->need('component/footer.php'); ?>
+<?php $this->need('component/footer.php'); ?>

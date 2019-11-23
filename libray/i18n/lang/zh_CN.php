@@ -1,4 +1,4 @@
-<?
+<?php
 
 class Lang_zh_CN
 {

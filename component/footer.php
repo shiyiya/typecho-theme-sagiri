@@ -1,19 +1,19 @@
-<? if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 <footer id="footer" role="contentinfo">
-    <?
+    <?php
 
     ?>
-    <p><i class="iconfont icon-view"></i><? echo _i18n('浏览量') . ' : ' . siteViewer(); ?></p>
+    <p><i class="iconfont icon-view"></i><?php echo _i18n('浏览量') . ' : ' . siteViewer(); ?></p>
     <p id="live-time"></p>
     <p>
-        &copy; <? echo date('Y'); ?> <a href="<? $this->options->siteUrl(); ?>"><? $this->options->title(); ?></a>.
-        <? _e('Power By  <a href="http://www.typecho.org">Typecho</a> '); ?>.
-        <? _e('<a href="https://github.com/shiyiya/typecho-theme-sagiri" rel="external nofollow">Theme</a> by <a href="http://runtua.cn">Shiyi</a>'); ?>
+        &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
+        <?php _e('Power By  <a href="http://www.typecho.org">Typecho</a> '); ?>.
+        <?php _e('<a href="https://github.com/shiyiya/typecho-theme-sagiri" rel="external nofollow">Theme</a> by <a href="http://runtua.cn">Shiyi</a>'); ?>
     </p>
 </footer>
 
-<? if ($this->options->PWA == 'able') : ?>
+<?php if ($this->options->PWA == 'able') : ?>
     <div class="tool-bar">
         <div class="tool-bar-inner">
             <div class="social-share">
@@ -26,7 +26,7 @@
             </div>
         </div>
     </div>
-<? endif; ?>
+<?php endif; ?>
 
 
 <div id="back-actions">
@@ -35,13 +35,13 @@
 </div>
 
 <div class="img-view">
-    <img src="<? $this->options->backGroundImage() ?>" alt="This is just a placeholder img.">
+    <img src="<?php $this->options->backGroundImage() ?>" alt="This is just a placeholder img.">
 </div>
 
 <!-- <canvas id="live2d" class="live2d" width="140" height="250"></canvas> -->
 
-<? if (!empty($this->options->feature) && in_array('pjax', $this->options->feature)) : ?>
-    <script src="<? CDNUrl('util/pjax.mini.js'); ?>"></script>
+<?php if (!empty($this->options->feature) && in_array('pjax', $this->options->feature)) : ?>
+    <script src="<?php CDNUrl('util/pjax.mini.js'); ?>"></script>
 
     <script>
         new miniPjax({
@@ -50,23 +50,23 @@
             container: ['.content-wrap', '#sidebar']
         })
     </script>
-<? endif; ?>
+<?php endif; ?>
 
-<script src="<? CDNUrl('js/sagiri.min.js'); ?>"></script>
-<script src="<? CDNUrl('js/index.min.js'); ?>"></script>
+<script src="<?php CDNUrl('js/sagiri.min.js'); ?>"></script>
+<script src="<?php CDNUrl('js/index.min.js'); ?>"></script>
 
-<script src="<? CDNUrl('js/lib/instantclick.min.js') ?>" data-no-instant></script>
+<script src="<?php CDNUrl('js/lib/instantclick.min.js') ?>" data-no-instant></script>
 <script data-no-instant>
     InstantClick.init(50);
 </script>
 <!--  Lazy load images -->
 
-<? if (!empty($this->options->feature) && in_array('lazyImg', $this->options->feature)) : ?>
-    <script src="<? CDNUrl('util/lazyload.min.js'); ?>"></script>
-<? endif; ?>
+<?php if (!empty($this->options->feature) && in_array('lazyImg', $this->options->feature)) : ?>
+    <script src="<?php CDNUrl('util/lazyload.min.js'); ?>"></script>
+<?php endif; ?>
 
 <!-- fastclick -->
-<? if (!empty($this->options->feature) && in_array('fastclick', $this->options->feature)) : ?>
+<?php if (!empty($this->options->feature) && in_array('fastclick', $this->options->feature)) : ?>
     <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
     <script>
         if ('addEventListener' in document) {
@@ -75,34 +75,34 @@
             }, false);
         }
     </script>
-<? endif; ?>
+<?php endif; ?>
 
 
 <!-- Code highlight -->
-<? if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)) : ?>
-    <script src="<? CDNUrl('./js/lib/prism/' . $this->options->codeHighlightTheme . '/prism.js'); ?>"></script>
-<? endif; ?>
+<?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)) : ?>
+    <script src="<?php CDNUrl('./js/lib/prism/' . $this->options->codeHighlightTheme . '/prism.js'); ?>"></script>
+<?php endif; ?>
 
 <script>
     // Scroll to article area
-    <? if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings) && $this->is('post')) : ?>
+    <?php if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings) && $this->is('post')) : ?>
         Sagiri.F.postScroll()
-    <? endif; ?>
+    <?php endif; ?>
 
     // Background like ribbon
-    <? if (!empty($this->options->feature) && in_array('ribbons', $this->options->feature)) : ?>
+    <?php if (!empty($this->options->feature) && in_array('ribbons', $this->options->feature)) : ?>
         Sagiri.F.ribbons()
-    <? endif; ?>
+    <?php endif; ?>
 
     // How long has the website been alive ?
-    <? if ($this->options->liveTime) : ?>
+    <?php if ($this->options->liveTime) : ?>
         setInterval(function() {
-            Sagiri.F.liveTime('<? strval($this->options->liveTime()); ?>')
+            Sagiri.F.liveTime('<?php strval($this->options->liveTime()); ?>')
         }, 1000)
-    <? endif; ?>
+    <?php endif; ?>
 
     // Custom Javascript
-    <? _e($this->options->customScript) ?>
+    <?php _e($this->options->customScript) ?>
 
     // server worker
     // if ('serviceWorker' in navigator) {
@@ -118,7 +118,7 @@
 
 </div><!-- End root -->
 
-<? $this->footer(); ?>
+<?php $this->footer(); ?>
 
 </body>
 

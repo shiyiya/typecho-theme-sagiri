@@ -1,15 +1,12 @@
-<?
+<?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 function themeConfig($form)
 {
-    require_once 'libray/i18n/index.php';
-    require_once 'libray/update.php';
+    include_once 'libray/i18n/index.php';
+    include_once 'libray/update.php';
 
     Update::valid();
-
-    Helper::options()->commentsAntiSpam = true;
-    Helper::options()->commentsCheckReferer = false;
 
     $fav = new Typecho_Widget_Helper_Form_Element_Text('fav', NULL, NULL, _t('Favicon'), _i18n('请填入完整链接，作为网站标签页图标，手机建议大小 114x114'));
     $form->addInput($fav);
@@ -86,7 +83,8 @@ function themeConfig($form)
             'local' => _i18n('local'),
             'jsdelivr' => _i18n('jsdelivr'),
         ),
-        array('local'),
+       'local',
+        _i18n('CDN setting'),
         _i18n('CDN setting')
     );
     $form->addInput($CDN);

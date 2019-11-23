@@ -1,11 +1,11 @@
-<? if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<? $this->need('component/header.php'); ?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php $this->need('component/header.php'); ?>
 
 <div id="main" class="main" role="main">
     <section class="home-404">
         <h1>Oh, Oooops!</h1>
         <p>Something went worong.Please try again</p>
-        <a href="<? $this->options->siteUrl() ?>" class="btn">Go home</a>
+        <a href="<?php $this->options->siteUrl() ?>" class="btn">Go home</a>
     </section>
 </div>
 
@@ -56,4 +56,4 @@
     }
 </style>
 
-<? $this->need('component/footer.php'); ?>
+<?php $this->need('component/footer.php'); ?>
