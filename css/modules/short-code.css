@@ -1,0 +1,18 @@
+.sagiri-video-wrapper.bilibili > iframe,
+.sagiri-video-wrapper.youtube > iframe {
+  height: 500px;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .sagiri-video-wrapper.bilibili > iframe,
+  .sagiri-video-wrapper.youtube > iframe {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+.sagiri-video-wrapper video {
+  max-width: 100%;
+  max-height: 400px;
+}
