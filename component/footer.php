@@ -75,7 +75,7 @@
 
 <!-- Code highlight -->
 <? if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)) : ?>
-    <script src="<? $this->options->themeUrl('./js/lib/prism/' . $this->options->codeHighlightTheme . '/prism.js'); ?>"></script>
+    <script src="<? $this->options->themeUrl('./js/lib/prism/prism.js'); ?>"></script>
 <? endif; ?>
 
 <script>

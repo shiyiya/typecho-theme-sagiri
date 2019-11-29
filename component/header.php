@@ -51,7 +51,8 @@
 
     <!-- Prism -->
     <? if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)) : ?>
-        <link href="<? $this->options->themeUrl('./js/lib/prism/' . $this->options->codeHighlightTheme . '/prism.css'); ?>" rel="stylesheet" />
+        <link href="<? $this->options->themeUrl('./js/lib/prism/prism-' . $this->options->codeHighlightTheme . '.css'); ?>" rel="stylesheet" />
+        <link href="<? $this->options->themeUrl('./js/lib/prism/prism-toolbar.css'); ?>" rel="stylesheet" />
     <? endif; ?>
 
     <!-- OwO emoji style -->
