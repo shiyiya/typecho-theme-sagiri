@@ -200,6 +200,10 @@ If you feel like to help us build a better Sagiri, you can
   - [zh_tw](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_TW.php)
   - [zh_CN](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_CN.php)
 
+### Contribute List
+
+- [dragonflylee](https://github.com/dragonflylee)
+
 ## License
 
 The All Html,CSS,JavaScript,and PHP files are licensed under the GNU General Public License v3:
