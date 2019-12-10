@@ -153,7 +153,7 @@
 
   - Youtube（[yplayer]为必须）：
     [yplayer](https://www.youtube.com/watch?v=wv1bHjMGUBY)
-    [bplayer](Youtube 视频链接)
+    [yplayer](Youtube 视频链接)
   ```
 
 - 将会渲染成：
@@ -217,6 +217,10 @@ Authored and maintained by DIYgod with help from contributors ([list](https://gi
   - [Japan](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/ja.php)
   - [zh_tw](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_TW.php)
   - [zh_CN](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_CN.php)
+
+### 贡献者
+
+- [dragonflylee](https://github.com/dragonflylee)
 
 ## License
 
