@@ -43,7 +43,7 @@ function themeConfig($form)
         array(
             'Banner' => _i18n('是否显示 Banner'),
         ),
-        array(),
+        array('Banner'),
         _i18n('主题样式设置')
     );
     $form->addInput($StyleSettings->multiMode());
