@@ -52,7 +52,8 @@
 
     <!-- Prism -->
     <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)) : ?>
-        <link href="<?php CDNUrl('js/lib/prism/' . $this->options->codeHighlightTheme . '/prism.css'); ?>" rel="stylesheet" />
+        <link href="<?php CDNUrl('js/lib/prism/prism-' . $this->options->codeHighlightTheme . '.css'); ?>" rel="stylesheet" />
+        <link href="<?php CDNUrl('js/lib/prism/prism-toolbar.css'); ?>" rel="stylesheet" />
     <?php endif; ?>
 
     <?php if (empty($this->options->StyleSettings) || !in_array('Banner', $this->options->StyleSettings)) : ?>

@@ -80,7 +80,7 @@
 
 <!-- Code highlight -->
 <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)) : ?>
-    <script src="<?php CDNUrl('./js/lib/prism/' . $this->options->codeHighlightTheme . '/prism.js'); ?>"></script>
+    <script src="<?php CDNUrl('./js/lib/prism/prism.js'); ?>"></script>
 <?php endif; ?>
 
 <script>
