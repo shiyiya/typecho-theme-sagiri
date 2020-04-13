@@ -1,9 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 <footer id="footer" role="contentinfo">
-    <?php
-
-    ?>
     <p><i class="iconfont icon-view"></i><?php echo _i18n('浏览量') . ' : ' . siteViewer(); ?></p>
     <p id="live-time"></p>
     <p>
@@ -41,7 +38,7 @@
 <!-- <canvas id="live2d" class="live2d" width="140" height="250"></canvas> -->
 
 <?php if (!empty($this->options->feature) && in_array('pjax', $this->options->feature)) : ?>
-    <script src="<?php CDNUrl('util/pjax.mini.js'); ?>"></script>
+    <!-- <script src="<?php CDNUrl('util/pjax.mini.js'); ?>"></script>
 
     <script>
         new miniPjax({
@@ -49,16 +46,17 @@
             body: '#root',
             container: ['.content-wrap', '#sidebar']
         })
+    </script> -->
+    <script src="<?php CDNUrl('js/lib/instantclick.min.js') ?>" data-no-instant></script>
+    <script data-no-instant>
+        InstantClick.init(50);
     </script>
 <?php endif; ?>
 
 <script src="<?php CDNUrl('js/sagiri.min.js'); ?>"></script>
 <script src="<?php CDNUrl('js/index.min.js'); ?>"></script>
 
-<script src="<?php CDNUrl('js/lib/instantclick.min.js') ?>" data-no-instant></script>
-<script data-no-instant>
-    InstantClick.init(50);
-</script>
+
 <!--  Lazy load images -->
 
 <?php if (!empty($this->options->feature) && in_array('lazyImg', $this->options->feature)) : ?>

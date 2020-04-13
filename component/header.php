@@ -104,7 +104,7 @@
                         </li>
                     <?php endwhile; ?>
                     <li class="menu-item search">
-                        <a href="<?php $this->options->rewrite ?  $this->options->siteUrl('search.html') : $this->options->siteUrl('index.php/search.html') ?>" alt="<?php i18n(搜索) ?>" aria-label="Search"><i class="iconfont icon-search"></i></a>
+                        <a href="<?php $this->options->rewrite ?  $this->options->siteUrl('search.html') : $this->options->siteUrl('index.php/search.html') ?>" alt="<?php i18n('搜索') ?>" aria-label="<?php i18n('搜索') ?>"><i class="iconfont icon-search"></i></a>
                     </li>
                 </ul>
             </nav>
