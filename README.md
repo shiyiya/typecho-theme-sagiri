@@ -26,9 +26,6 @@
 
 ![shot](https://cdn.jsdelivr.net/npm/typecho-theme-sagiri@1.1.4/screenshot.png)
 
-There must be no plagiarism or excessive reprinting; at least not a few months can not be accessed & change the theme, and that's it!
-If you think you meet the above conditions, please submit the relevant `PR` ([How to PR](#Contribute))
-
 - https://blog.imlazy.ink:233
 - https://mianao.info
 - ···
@@ -44,15 +41,19 @@ If you think you meet the above conditions, please submit the relevant `PR` ([Ho
 git clone https://github.com/shiyiya/typecho-theme-sagiri.git
 ```
 
-## Features
+## Configuration
 
-### Instantclick
+Most of Feature was off, turn on by yourself.
 
-### Rich Code Highlight Theme Choices
+- [ ] Instantclick
+- [x] Code Highlight
+- [ ] Lazy load Image
+- [x] Short Code
+- [ ] OwO (Comment Emoji)
+
+### Code Highlight
 
 Using Prism.js as code highlighting. sagiri default comes with 5 themes & supported 32 language, if you need more, just go [here](https://prismjs.com/) to download.
-
-- Supported language: markup+css+clike+javascript+c+csharp+cpp+ruby+docker+markup-templating+flow+git+go+haskell+java+json+kotlin+markdown+lisp+lua+php+sql+powershell+python+typescript+rust+scala+scheme+pug+swift+yaml+vi
 
 <table>
   <tr>
@@ -88,9 +89,7 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & suppor
    </tr>
 </table>
 
-- Tencent Group: [861379856](https://jq.qq.com/?_wv=1027&k=5kACJ6v)
-
-### Multi-language Support
+### Multi-language
 
 - Need more language support, Welcome contribution. ([How to PR](#Contribute))
 - Add a translation
@@ -99,16 +98,7 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & suppor
   - [zh_tw](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_TW.php)
   - [zh_CN](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/libray/i18n/lang/zh_CN.php)
 
-### Lazy load Image
-
-```markdown
-![Image Descript](image URL)
-
-//example
-![how-to-create-archive](https://website-href-/your/path/file.png)
-```
-
-### Short Code Support
+### Short Code
 
 - video Short Code
 
@@ -128,7 +118,7 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & suppor
 
 - ...
 
-## Others Setting
+## Others
 
 - Index Post Card
   Home Article Overview The default maximum output is **Infinity** characters, you can manually add the truncation `<!-- more -->` control output.
@@ -156,14 +146,6 @@ Create a template before this, the content format is as follows
 - [title](href) <hr> descript
 - [title](href)
 ```
-
-## Header Menu Icon
-
-- Home <-> 主页
-- Comments <-> 留言
-- About <-> 关于
-- Link <-> 友链
-- Time
 
 ## Comment Emoji
 
