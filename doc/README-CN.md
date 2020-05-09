@@ -30,17 +30,6 @@
 - https://mianao.info
 - ···
 
-如果你想（不想）展示在这里，可以提交相关 `PR`；不过呢，需要满足一些小小的条件：
-
-- 网站可稳定访问（至少不会几个月就无法访问）
-- 内容健康，和谐。（你懂的）
-- 更换模板（至少不会几个月就更换模板）
-
-当然最好：
-
-- 跟进主题更新
-- DIY 能力强
-
 ## 特性
 
 - Instantclick
@@ -59,9 +48,21 @@
 
 - 如果后台检测有更新，点击对应的链接去下载最新版本，重复以上步骤，并选择直接覆盖对应文件；新的功能可能需要重新启用主题方可生效。
 
+## 配置
+
+大部分功能默认未开启，请自行开启。
+
+- [ ] Instantclick
+- [x] Code Highlight
+- [ ] Lazy load Image
+- [x] Short Code
+- [ ] OwO (Comment Emoji)
+
 ### 代码高亮
 
 自带的高亮主题：COY，default，okaidia，Solarized Light，Tomorrow Night
+
+**更多主题和语言支持请自行到 [Prism.js 官网](https://prismjs.com/) 下载。**
 
 <table>
   <tr>
@@ -70,10 +71,6 @@
     <td><img src="https://i.loli.net/2019/10/18/GDqMJtTC9EYykAm.png"></td>
   </tr>
 </table>
-
-默认支持的语言：markup+css+clike+javascript+c+csharp+cpp+ruby+docker+markup-templating+flow+git+go+haskell+java+json+kotlin+markdown+lisp+lua+php+sql+powershell+python+typescript+rust+scala+scheme+pug+swift+yaml+vi
-
-**更多主题和语言支持请自行到 [Prism.js 官网](https://prismjs.com/) 下载。**
 
 ### 独立页面
 
