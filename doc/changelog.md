@@ -4,6 +4,14 @@
 [U] Update Config.
 [Doc] Update DOC.
 
+## 2020/5/18 (V1.1.4)
+
+- pjax
+  - owo
+  - ribbons
+
+**version tag in candy branch**
+
 ## 2019/11/23
 
 [F] #27

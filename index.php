@@ -1,10 +1,11 @@
 <?php
+
 /**
  * Sagiri - Lovely theme for Typecho.
  *
  * @package Sagiri
  * @author shiyi
- * @version 1.1.7
+ * @version 1.1.9
  * @link https://github.com/shiyiya/typecho-theme-sagiri
  */
 
