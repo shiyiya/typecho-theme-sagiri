@@ -5,7 +5,7 @@
  *
  * @package Sagiri
  * @author shiyi
- * @version 1.1.9
+ * @version 1.2.0
  * @link https://github.com/shiyiya/typecho-theme-sagiri
  */
 

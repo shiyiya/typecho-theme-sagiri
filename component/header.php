@@ -46,6 +46,11 @@
         <meta property="og:locale:alternate" content="zh_CN" />
     <?php endif; ?>
 
+    <!-- QQ Share -->
+    <meta itemprop="name" content="<?php $this->options->title() ?>" />
+    <meta itemprop="description" name="description" content=" <?php $this->description() ?>" />
+    <meta itemprop="image" content="<?php $this->options->authorImage ? $this->options->authorImage() : CDNUrl('assert/img/author.jpg'); ?>" />
+
     <!-- CSS Style -->
     <link async rel="stylesheet" href="<?php CDNUrl('css/mix.min.css'); ?>" />
     <link async rel="stylesheet" type="text/css" href="<?php CDNUrl('css/iconfont.min.css'); ?>" />

@@ -29,11 +29,9 @@
   </header>
 
   <?php if ($this->is('post')) : ?>
-
     <div class="post-content" itemprop="articleBody">
       <?php replaceTag($this->content); ?>
     </div>
-
   <?php else : ?>
 
     <?php if (!empty($this->options->feature) && in_array('showThumb', $this->options->feature)) : ?>

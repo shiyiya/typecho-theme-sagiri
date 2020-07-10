@@ -1,6 +1,6 @@
 {
   "name": "typecho-theme-sagiri",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "Lovely theme for Typecho.",
   "main": "index.js",
   "directories": {
@@ -29,6 +29,9 @@
       "last 3 version",
       "ie 10"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
