@@ -40,6 +40,14 @@ function videoTagToHtml($content)
 
     ),
     array(
+      'from' => '/<a href="(?:https?:\/\/)?(?:www\.)?(?:bilibili|b23)\.(?:tv|com)(?:\/video)?\/(.*)?">bplayer<\/a>/',
+      'to' =>
+      '<div class="sagiri-video-wrapper bilibili embed-responsive embed-responsive-16by9">
+        <iframe src="//player.bilibili.com/player.html?bvid=$1&cid=126106723&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+      </div>'
+
+    ),
+    array(
       'from' => '/<a href="\/(:*.*.(mp4|ogv|mov|webm))">lplayer<\/a>/',
       'to' =>
       '<div class="sagiri-video-wrapper local">
