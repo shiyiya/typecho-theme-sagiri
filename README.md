@@ -72,7 +72,7 @@ Using Prism.js as code highlighting. sagiri default comes with 5 themes & suppor
      <td><img src="https://i.loli.net/2019/10/18/MGRDZzT7ABSswyU.png"></td>
    </tr>
 
-- Select the corresponding template and fill in the correct path
+- Select the corresponding template and fill in the correct path and turn off "allow commomt"
 
 <table>
   <tr>

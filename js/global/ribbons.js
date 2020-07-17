@@ -1,5 +1,5 @@
 
-function wrap(params) {
+const wrap = (function (params) {
   var __ribbonsrc__ = {
     z: -1,
     alpha: 0.9,
@@ -72,12 +72,12 @@ function wrap(params) {
       while (q[1].x < width + s) draw(q[0], q[1])
     }
   }
-}
+})()
 
 function ribbons() {
   document.onclick = wrap.redraw
   document.ontouchstart = wrap.redraw
-  wrap().redraw()
+  wrap.redraw()
 }
 
 export default ribbons

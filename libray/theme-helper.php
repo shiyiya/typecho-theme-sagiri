@@ -45,19 +45,27 @@ function showThumb($obj)
         goto to;
     }
 
+    // https://s0.xinger.ink/acgimg/acgurl.php
     // random image
     $default_thumb = Typecho_Widget::widget('Widget_Options')->default_thumb;
     if (!empty($default_thumb)) {
-        $src = $default_thumb;
-        $alt = '';
+        $url = parse_url($default_thumb);
+
+        if (empty($url['query']))
+            $src = $default_thumb . '?_te_sagiri_t=' . time();
+        else
+            $src = $default_thumb . '&_te_sagiri_t=' . time();
         goto to;
     }
 
-    to: if ($config !== null && in_array('lazyImg', $config) && !empty($src)) {
-        if (empty($title)) $title = $alt;
-        echo '<img' . $lazySrc . 'lazy-src="' . $src . '" alt="' . $alt . '" title="' . $title . '" />';
-    } elseif ($config !== null && !in_array('lazyImg', $config) && !empty($src)) {
-        echo '<img src="' . $src . '" alt="' . $alt . '" title="' . $title . '" />';
+    to: {
+        if (empty($src)) return;
+        if (empty($title) && !empty($alt)) $title = $alt;
+
+        if ($config !== null && in_array('lazyImg', $config)) {
+            echo '<img' . $lazySrc . 'lazy-src="' . $src .  (empty($alt) ? '' : ('" alt="' . $alt)) . (empty($title) ? '' : ('" title="' . $title)) . '" />';
+        } else
+            echo '<img src="' . $src . (empty($alt) ? '' : ('" alt="' . $alt)) . (empty($title) ? '' : ('" title="' . $title)) . '" />';
     }
 }
 
@@ -172,9 +180,8 @@ function getRandomPosts($limit = 5)
     $adapterName = $db->getAdapterName();
     $rand = "RAND()";
 
-    if ($adapterName == 'pgsql' || $adapterName == 'Pdo_Pgsql' || $adapterName == 'Pdo_SQLite' || $adapterName == 'SQLite') {
+    if ($adapterName == 'pgsql' || $adapterName == 'Pdo_Pgsql' || $adapterName == 'Pdo_SQLite' || $adapterName == 'SQLite')
         $rand = 'RANDOM()';
-    }
 
     $result = $db->fetchAll($db->select()->from('table.contents')
         ->where('status = ?', 'publish')
@@ -217,7 +224,9 @@ function getTopCommentPosts($limit = 5)
 }
 
 function getRecentComments()
-{ }
+{
+}
 
 function thumbUp()
-{ }
+{
+}
