@@ -4,6 +4,11 @@
 [U] Update Config.
 [Doc] Update DOC.
 
+## 2020/7/10 (V1.2.1)
+
+- [S] timeline page style changed.
+- [F] ribbons not work.
+
 ## 2020/7/10 (V1.2.0)
 
 - [F] #36

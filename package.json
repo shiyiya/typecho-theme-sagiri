@@ -1,13 +1,12 @@
 {
   "name": "typecho-theme-sagiri",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Lovely theme for Typecho.",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp start",
     "build": "gulp build"
   },
@@ -31,10 +30,10 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
     "babelify": "^10.0.0",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.9",
     "browserify": "^16.5.0",
     "browserify-versionify": "^1.0.6",
     "gulp": "^4.0.0",
