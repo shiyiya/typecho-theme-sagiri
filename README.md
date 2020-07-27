@@ -2,7 +2,7 @@
 <h3 align="center">As lovely as sagiri</h3>
 
 <p align="center">
-  <a href="">Preview</a> |
+  <a href="http://120.26.162.70:2233/">Preview</a> |
   <a href="https://shiyiya.github.io/typecho-theme-sagiri">Documentation</a> |
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Download</a> |
   <a href="./doc/README-CN.md">(CN DOC) 中文文档</a>
@@ -26,6 +26,7 @@
 
 ![shot](https://cdn.jsdelivr.net/npm/typecho-theme-sagiri@1.1.4/screenshot.png)
 
+- [theme demo](http://120.26.162.70:2233/)
 - https://blog.imlazy.ink:233
 - https://mianao.info
 - ···
