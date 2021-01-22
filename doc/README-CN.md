@@ -2,7 +2,7 @@
 <h3 align="center">As lovely as sagiri</h3>
 
 <p align="center">
-  <a href="">预览</a> |
+  <a href="(http://120.26.162.70:2233/">预览</a> |
   <a href="https://shiyiya.github.io/typecho-theme-sagiri">文档</a> |
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">下载</a> |
   <a href="../README.md">英文文档（EN Documentation）</a>
@@ -26,6 +26,7 @@
 
 ![shot](https://cdn.jsdelivr.net/npm/typecho-theme-sagiri@1.1.4/screenshot.png)
 
+- [theme demo](http://120.26.162.70:2233/)
 - https://blog.imlazy.ink:233
 - https://mianao.info
 - ···
@@ -192,7 +193,7 @@ How to import custom Emoji ?
 **typecho-theme-sagiri** © [shiyi](https://github.com/shiyiya), Released under the [GPL-3.0](./LICENSE) License.<br>
 Authored and maintained by DIYgod with help from contributors ([list](https://github.com/shiyiya/typecho-theme-sagiri/contributors)).
 
-> Blog [@OZOO](http://www.runtua.cn) · GitHub [@shiyi](https://github.com/shiyiya) · Twitter [@shiyi](https://twitter.com/)
+> · GitHub [@shiyi](https://github.com/shiyiya)
 
 ## 捐赠
 
