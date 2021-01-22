@@ -160,15 +160,13 @@ How to import custom Emoji ?
 **typecho-theme-sagiri** © [shiyi](https://github.com/shiyiya), Released under the [GPL-3.0](./LICENSE) License.<br>
 Authored and maintained by DIYgod with help from contributors ([list](https://github.com/shiyiya/typecho-theme-sagiri/contributors)).
 
-> Blog [@OZOO](http://www.runtua.cn) · GitHub [@shiyi](https://github.com/shiyiya) · Twitter [@shiyi](https://twitter.com/)
+> · GitHub [@shiyi](https://github.com/shiyiya)
 
 ## Donate
 
 Thank you for your support :-)
 
-- [Donate via Paypal](https://paypal.me/)
-- [Donate via WeChat Pay](https://i.loli.net/2019/10/27/n5fAVZyRlN63EH4.png)
-- [Donate via Alipay]()
+- [Donate via Paypal](https://paypal.me/ShiYiYa)
 
 ## Contribute
 

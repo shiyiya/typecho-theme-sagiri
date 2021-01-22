@@ -6,7 +6,7 @@
     <p>
         &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
         <?php _e('Power By  <a href="http://www.typecho.org">Typecho</a> '); ?>.
-        <?php _e('<a href="https://github.com/shiyiya/typecho-theme-sagiri" rel="external nofollow">Theme</a> by <a href="http://runtua.cn">Shiyi</a>'); ?>
+        <?php _e('<a href="https://github.com/shiyiya/typecho-theme-sagiri" rel="external nofollow">Theme</a> by <a href="https://github.com/shiyiya">Shiyi</a>'); ?>
     </p>
 </footer>
 

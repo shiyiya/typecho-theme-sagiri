@@ -193,7 +193,7 @@ How to import custom Emoji ?
 **typecho-theme-sagiri** © [shiyi](https://github.com/shiyiya), Released under the [GPL-3.0](./LICENSE) License.<br>
 Authored and maintained by DIYgod with help from contributors ([list](https://github.com/shiyiya/typecho-theme-sagiri/contributors)).
 
-> Blog [@OZOO](http://www.runtua.cn) · GitHub [@shiyi](https://github.com/shiyiya) · Twitter [@shiyi](https://twitter.com/)
+> · GitHub [@shiyi](https://github.com/shiyiya)
 
 ## 捐赠
 
