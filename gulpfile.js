@@ -8,11 +8,11 @@ var gulp = require('gulp'),
   stream = require('vinyl-source-stream'),
   buffer = require('vinyl-buffer'),
   pkg = require('./package.json'),
-  sass = require('gulp-sass'),
+  sass = require('gulp-dart-sass'),
   browserSync = require('browser-sync').create(),
   reload = browserSync.reload
 
-gulp.task('build-sagiri', function() {
+gulp.task('build-sagiri', function () {
   return browserify({
     entries: 'js/global/sagiri.js',
     debug: false,
@@ -24,7 +24,7 @@ gulp.task('build-sagiri', function() {
     })
     .transform('babelify')
     .bundle()
-    .on('error', function(error) {
+    .on('error', function (error) {
       console.log(error.toString())
     })
     .pipe(stream('sagiri.min.js'))
@@ -33,14 +33,14 @@ gulp.task('build-sagiri', function() {
     .pipe(gulp.dest('js'))
 })
 
-gulp.task('build-index', function() {
+gulp.task('build-index', function () {
   return browserify({
     entries: 'js/modules/index.js',
     debug: false
   })
     .transform('babelify')
     .bundle()
-    .on('error', function(error) {
+    .on('error', function (error) {
       console.log(error.toString())
     })
     .pipe(stream('index.min.js'))
@@ -49,17 +49,17 @@ gulp.task('build-index', function() {
     .pipe(gulp.dest('js'))
 })
 
-gulp.task('build-css', function() {
+gulp.task('build-css', function () {
   return gulp
     .src(['css/mix.css', 'css/iconfont.css'])
     .pipe(sass({ outputStyle: 'compressed' }))
-    .pipe(cleanCSS({ compatibility: 'ie10', level: 2 }))
+    .pipe(cleanCSS({ compatibility: 'ie9', level: 2 }))
     .pipe(autoprefixer({ cascade: false }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('./css'))
 })
 
-gulp.task('build-util', function() {
+gulp.task('build-util', function () {
   return gulp
     .src(['util/!(*.min).js', 'util/**/!(*.min).js'])
     .pipe(babel())
@@ -68,7 +68,7 @@ gulp.task('build-util', function() {
     .pipe(gulp.dest('util'))
 })
 
-gulp.task('start', function() {
+gulp.task('start', function () {
   browserSync.init({
     proxy: 'localhost'
   })
