@@ -16,3 +16,5 @@ yarn.lock
 
 *.min.js
 *.min.css
+
+build/

@@ -2,9 +2,9 @@ name: NodeJS with Gulp
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
@@ -15,21 +15,30 @@ jobs:
         node-version: [16.x]
 
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-
-    - name: Build
-      run: |
-        npm install
-        gulp
-    steps:
       - uses: actions/checkout@v2
 
-    - uses: meeDamian/github-release@2.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        files: release/
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build
+        run: |
+          pnpm i
+          pnpm run build
+
+      - name: cp php file
+        run: |
+          cp ./package.json ./build
+          cp ./screenshot.png ./build
+          cp ./*.php ./build
+          mkdir ./build/component
+          mkdir ./build/libray
+          cp ./component/* ./build/component
+          cp ./libray/* ./build/libray
+
+      - name: upload assets
+      - uses: meeDamian/github-release@2.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: build/
