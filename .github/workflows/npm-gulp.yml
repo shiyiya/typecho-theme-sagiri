@@ -35,8 +35,8 @@ jobs:
           cp ./*.php ./build
           mkdir ./build/component
           mkdir ./build/libray
-          mkdir ./assert ./build/assert
-          cp ./assert ./build
+          mkdir ./build/assert
+          cp ./assert ./build/assert
           cp ./component/* ./build/component
           cp ./libray/* ./build/libray
 
