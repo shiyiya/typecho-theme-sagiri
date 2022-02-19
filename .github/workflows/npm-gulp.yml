@@ -33,12 +33,9 @@ jobs:
           cp ./package.json ./build
           cp ./screenshot.png ./build
           cp ./*.php ./build
-          mkdir ./build/component
-          mkdir ./build/libray
-          mkdir ./build/assert
-          cp ./assert/* ./build/assert
-          cp ./component/* ./build/component
-          cp ./libray/* ./build/libray
+          cp -r ./assert ./build
+          cp -r ./component ./build
+          cp -r ./libray ./build
 
       - name: upload assets
         uses: meeDamian/github-release@2.0
