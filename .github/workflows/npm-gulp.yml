@@ -21,7 +21,6 @@ jobs:
         id: tag
         run: |
           echo ::set-output name=RELEASE_TAG::"v1.2.3"
-          echo ::set-output name=RELEASE_NAME::"$GITHUB_WORKFLOW"
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -46,7 +45,8 @@ jobs:
       - name: upload assets
         uses: meeDamian/github-release@2.0
         with:
+          allow_override: true
           token: ${{ secrets.GIT_HUB_TOKEN }}
           tag: ${{ steps.tag.outputs.RELEASE_TAG }}
-          name: ${{ steps.tag.outputs.RELEASE_NAME }}
+          name: ${{ steps.tag.outputs.RELEASE_TAG }}
           files: build/
