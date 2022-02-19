@@ -18,9 +18,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set enviroment for github-release
+        id: tag
         run: |
-          echo ::set-env name=RELEASE_TAG::"v1.2.3"
-          echo ::set-env name=RELEASE_NAME::"$GITHUB_WORKFLOW"
+          echo ::set-output name=RELEASE_TAG::"v1.2.3"
+          echo ::set-output name=RELEASE_NAME::"$GITHUB_WORKFLOW"
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -46,6 +47,6 @@ jobs:
         uses: meeDamian/github-release@2.0
         with:
           token: ${{ secrets.GIT_HUB_TOKEN }}
+          tag: ${{ steps.tag.outputs.RELEASE_TAG }}
+          name: ${{ steps.tag.outputs.RELEASE_NAME }}
           files: build/
-          tag: ${{ env.RELEASE_TAG }}
-          name: ${{ env.RELEASE_NAME }}
