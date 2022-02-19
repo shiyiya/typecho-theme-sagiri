@@ -36,7 +36,7 @@ jobs:
           mkdir ./build/component
           mkdir ./build/libray
           mkdir ./build/assert
-          cp ./assert ./build/assert
+          cp ./assert/* ./build/assert
           cp ./component/* ./build/component
           cp ./libray/* ./build/libray
 
