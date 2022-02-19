@@ -41,6 +41,7 @@ jobs:
           cp -r ./assert ./build
           cp -r ./component ./build
           cp -r ./libray ./build
+          cp -r ./js/lib ./build/js
 
       - name: upload assets
         uses: meeDamian/github-release@2.0
