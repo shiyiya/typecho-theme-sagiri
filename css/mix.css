@@ -1,0 +1,10 @@
+@import './modules/reset.css';
+@import './modules/global.scss';
+@import './modules/animations.css';
+@import './modules/header.css';
+@import './modules/index.css';
+@import './modules/post.css';
+@import './modules/sidebar.css';
+@import './modules/comment.css';
+@import './modules/page.css';
+@import './modules/short-code.css';
