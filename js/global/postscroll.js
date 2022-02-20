@@ -1,16 +1,4 @@
 export default function postScroll() {
-  // ie11 fail ?????????
-  // if (document.body.scrollIntoView) {
-  //   setTimeout(function() {
-  //     document.querySelector('.content-wrap').scrollIntoView({
-  //       behavior: 'smooth',
-  //       block: 'start',
-  //       inline: 'nearest'
-  //     })
-  //   }, 500)
-  //   return void 0
-  // }
-
   var timer = null,
     speed = 10,
     needScroll = Sagiri.util.isMobile ? 130 : 300

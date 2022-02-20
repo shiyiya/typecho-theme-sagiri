@@ -1,6 +1,6 @@
 export default function liveTime(time) {
   if (!time) {
-    throw Error('未指定日期！')
+    throw Error('invalid time')
   }
   time = new Date(time)
   var live = Math.floor(new Date().getTime() - time.getTime()),
