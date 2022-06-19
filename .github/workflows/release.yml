@@ -35,6 +35,7 @@ jobs:
 
       - name: cp php file
         run: |
+          mkdir -p build
           cp ./package.json ./build
           cp ./screenshot.png ./build
           cp ./*.php ./build
