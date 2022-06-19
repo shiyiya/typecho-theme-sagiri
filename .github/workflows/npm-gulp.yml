@@ -47,7 +47,7 @@ jobs:
       - name: cp cdn file to branche
         run: |
           git checkout gh-sourceg
-          cp -r ./build ./
+          cp -r ./build/* ./
           git add .
           git commit -m "${{ steps.tag.outputs.RELEASE_TAG }}"
           git push origin gh-sourceg
