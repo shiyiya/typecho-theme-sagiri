@@ -21,16 +21,20 @@ jobs:
         run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: echo env
+        run: |
+          npm whoami
 
       - name: Build
         run: |
           npm i pnpm -g
           pnpm i
           pnpm run build
-          npm whoami
 
       - name: cp php file
         run: |
@@ -51,7 +55,16 @@ jobs:
             build/*
 
         if: ${{ steps.release.outputs.release_created }}
+      - run: npm ci
+        if: ${{ steps.release.outputs.release_created }}
       - name: Publish
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: ${{ steps.release.outputs.release_created }}
+      - uses: actions/setup-node@v3
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+      - run: npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.GIT_HUB_TOKEN }}
