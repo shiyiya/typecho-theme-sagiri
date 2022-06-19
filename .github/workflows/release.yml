@@ -50,6 +50,7 @@ jobs:
 
       - name: cp cdn file to branche
         run: |
+          git fetch
           git checkout gh-sourceg
           cp -r ./build/* ./
           git add .
