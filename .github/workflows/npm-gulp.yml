@@ -17,10 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      ## TODO: get version from package.json
       - name: Set enviroment for github-release
         id: tag
         run: |
-          echo ::set-output name=RELEASE_TAG::"v1.2.3"
+          echo ::set-output name=RELEASE_TAG::"v1.3.0"
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -42,6 +43,14 @@ jobs:
           cp -r ./component ./build
           cp -r ./libray ./build
           cp -r ./js/lib ./build/js
+
+      - name: cp cdn file to branche
+        run: |
+          git checkout gh-sourceg
+          cp -r ./build ./
+          git add .
+          git commit -m "${{ steps.tag.outputs.RELEASE_TAG }}"
+          git push origin gh-sourceg
 
       - name: upload assets
         uses: meeDamian/github-release@2.0

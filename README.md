@@ -17,10 +17,16 @@
 
 </p>
 
-[![stars](https://flat.badgen.net/github/stars/shiyiya/typecho-theme-sagiri?icon=github)](https://github.com/shiyiya/typecho-theme-sagiri)
+## @bylin/typecho-theme-sagiri
+
+[![npm](https://flat.badgen.net/npm/v/@bylin/typecho-theme-sagiri/?color=fb3e44)](https://www.npmjs.com/package/@bylin/typecho-theme-sagiri)
+[![jsdelivr](https://data.jsdelivr.com/v1/package/npm/@bylin/typecho-theme-sagiri/badge)](https://www.jsdelivr.com/package/npm/@bylin/typecho-theme-sagiri)
+[![license](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
+
+## typecho-theme-sagiri - deprecated
+
 [![npm](https://flat.badgen.net/npm/v/typecho-theme-sagiri/?color=fb3e44)](https://www.npmjs.com/package/typecho-theme-sagiri)
 [![jsdelivr](https://data.jsdelivr.com/v1/package/npm/typecho-theme-sagiri/badge)](https://www.jsdelivr.com/package/npm/typecho-theme-sagiri)
-[![license](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
 ## Demo
 
