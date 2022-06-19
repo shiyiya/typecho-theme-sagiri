@@ -26,10 +26,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
 
-      - name: echo env
-        run: |
-          npm whoami
-
       - name: Build
         run: |
           npm i pnpm -g
