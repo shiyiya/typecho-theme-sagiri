@@ -2,10 +2,17 @@
   "name": "@bylin/typecho-theme-sagiri",
   "version": "1.3.0",
   "description": "Lovely theme for Typecho.",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "js/index.min.js",
+  "files": [
+    "*.min.css",
+    "*.min.js",
+    "js/lib/**/*.js",
+    "js/lib/**/*.css",
+    "js/lib/**/*.json",
+    "assets/**/*",
+    "screenshot.png",
+    "README.md"
+  ],
   "scripts": {
     "start": "gulp start",
     "build": "gulp build"
