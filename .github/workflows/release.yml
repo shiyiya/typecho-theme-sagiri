@@ -2,8 +2,8 @@ name: RELEASE_TAG
 
 on:
   push:
-    tags:
-      - v*
+    branches:
+      - master
 
 jobs:
   build:
@@ -43,14 +43,6 @@ jobs:
           cp -r ./libray ./build
           cp -r ./js/lib ./build/js
 
-        run: |
-          git fetch
-          git checkout gh-sourceg
-          cp -r ./build/* ./
-          git add .
-          git commit -m "version:  ${{ steps.vars.outputs.tag }}"
-          git push origin gh-sourceg
-
       - uses: google-github-actions/release-please-action@v3
         with:
           token: ${{ secrets.GIT_HUB_TOKEN }}
@@ -58,6 +50,7 @@ jobs:
           extra-files: |
             build/*
 
+        if: ${{ steps.release.outputs.release_created }}
       - name: Publish
         run: npm publish
         env:

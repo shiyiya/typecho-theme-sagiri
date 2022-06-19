@@ -14,7 +14,4 @@ node_modules/
 yarn-lock.json
 yarn.lock
 
-*.min.js
-*.min.css
-
 build/

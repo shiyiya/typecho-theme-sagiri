@@ -30,7 +30,7 @@ gulp.task('build-sagiri', function () {
     .pipe(stream('sagiri.min.js'))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest('js'))
 })
 
 gulp.task('build-index', function () {
@@ -46,7 +46,7 @@ gulp.task('build-index', function () {
     .pipe(stream('index.min.js'))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest('js'))
 })
 
 gulp.task('build-css', function () {
@@ -56,7 +56,7 @@ gulp.task('build-css', function () {
     .pipe(cleanCSS({ compatibility: 'ie9', level: 2 }))
     .pipe(autoprefixer({ cascade: false }))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest('./css'))
 })
 
 gulp.task('build-util', function () {
@@ -65,7 +65,7 @@ gulp.task('build-util', function () {
     .pipe(babel())
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('build/util'))
+    .pipe(gulp.dest('util'))
 })
 
 gulp.task('start', function () {
