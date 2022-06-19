@@ -30,6 +30,7 @@ jobs:
           npm i pnpm -g
           pnpm i
           pnpm run build
+          npm whoami
 
       - name: cp php file
         run: |
