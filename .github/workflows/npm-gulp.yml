@@ -32,13 +32,3 @@ jobs:
           npm i pnpm -g
           pnpm i
           pnpm run build
-
-      - name: cp php file
-        run: |
-          cp ./package.json ./build
-          cp ./screenshot.png ./build
-          cp ./*.php ./build
-          cp -r ./assert ./build
-          cp -r ./component ./build
-          cp -r ./libray ./build
-          cp -r ./js/lib ./build/js

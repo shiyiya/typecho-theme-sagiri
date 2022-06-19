@@ -16,10 +16,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Set output
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ m atrix.node-version }}
 
       - name: Build
         run: |
@@ -37,13 +41,13 @@ jobs:
           cp -r ./libray ./build
           cp -r ./js/lib ./build/js
 
-      - name:create release
+      - name: create release
         uses: meeDamian/github-release@2.0
         with:
           allow_override: true
           token: ${{ secrets.GIT_HUB_TOKEN }}
-          tag:  ${{ env.GITHUB_TAG }}
-          name: ${{ env.GITHUB_TAG }}
+          tag: ${{ steps.vars.outputs.tag }}
+          name: ${{ steps.vars.outputs.tag }}
           files: build/
 
       - name: cp cdn file to branche
@@ -51,5 +55,5 @@ jobs:
           git checkout gh-sourceg
           cp -r ./build/* ./
           git add .
-          git commit -m "version: ${{ env.GITHUB_TAG }}"
+          git commit -m "version:  ${{ steps.vars.outputs.tag }}"
           git push origin gh-sourceg
