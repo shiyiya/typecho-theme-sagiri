@@ -30,6 +30,8 @@ jobs:
           npm i pnpm -g
           pnpm i
           pnpm run build
+          git config --global user.email "actions@github.com"
+          git config --global user.name "Github Actions"
 
       - name: cp php file
         run: |
@@ -41,14 +43,6 @@ jobs:
           cp -r ./libray ./build
           cp -r ./js/lib ./build/js
 
-      - uses: google-github-actions/release-please-action@v3
-        with:
-          token: ${{ secrets.GIT_HUB_TOKEN }}
-          release-type: node
-          extra-files: |
-            build/*
-
-      - name: cp cdn file to branche
         run: |
           git fetch
           git checkout gh-sourceg
@@ -56,6 +50,13 @@ jobs:
           git add .
           git commit -m "version:  ${{ steps.vars.outputs.tag }}"
           git push origin gh-sourceg
+
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          token: ${{ secrets.GIT_HUB_TOKEN }}
+          release-type: node
+          extra-files: |
+            build/*
 
       - name: Publish
         run: npm publish
