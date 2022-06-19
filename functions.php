@@ -83,6 +83,7 @@ function themeConfig($form)
         array(
             'local' => _i18n('local'),
             'jsdelivr' => _i18n('jsdelivr'),
+            'sourcegcdn' => _i18n('sourcegcdn'),
         ),
         'local',
         _i18n('CDN setting'),

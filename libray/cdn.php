@@ -7,6 +7,7 @@ function CDNUrl($path)
   $CDN = [
     'local' => Typecho_Widget::widget('Widget_Options')->themeUrl,
     'jsdelivr' =>  'https://cdn.jsdelivr.net/npm/typecho-theme-sagiri@' . __THEME_VERSION__,
+    'sourcegcdn' =>  'https://npm.sourcegcdn.com/typecho-theme-sagiri@' . __THEME_VERSION__,
   ];
 
   echo $CDN[$type] . '/' . $path;
