@@ -18,7 +18,7 @@
 
     <meta name="author" content="<?php $this->author() ?>" />
     <?php $this->header('generator=&pingback=&xmlrpc=&wlw='); ?>
-    <link rel="icon" href="<?php $this->options->fav ? $this->options->fav() : CDNUrl('assert/img/favicon.jpg'); ?>" />
+    <link rel="icon" href="<?php $this->options->fav ? $this->options->fav() : CDNUrl('assets/img/favicon.jpg'); ?>" />
     <link rel="manifest" href="<?php $this->options->themeUrl('util/sw/manifest.json'); ?>" />
 
     <!-- About IOS -->
@@ -29,7 +29,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
     <meta name="apple-mobile-web-app-title" content="<?php $this->options->title() ?>" />
     <meta name="theme-color" content="#40b3ec" />
-    <link rel="apple-touch-icon" sizes="57x57 72x72 114x114 144x144" href="<?php $this->options->fav ? $this->options->fav() : CDNUrl('assert/img/favicon.jpg'); ?>" />
+    <link rel="apple-touch-icon" sizes="57x57 72x72 114x114 144x144" href="<?php $this->options->fav ? $this->options->fav() : CDNUrl('assets/img/favicon.jpg'); ?>" />
 
     <!-- Disable Baidu transformation -->
     <meta http-equiv="Cache-Control" content="no-transform " />
@@ -49,7 +49,7 @@
     <!-- QQ Share -->
     <meta itemprop="name" content="<?php $this->options->title() ?>" />
     <meta itemprop="description" name="description" content=" <?php $this->description() ?>" />
-    <meta itemprop="image" content="<?php $this->options->authorImage ? $this->options->authorImage() : CDNUrl('assert/img/author.jpg'); ?>" />
+    <meta itemprop="image" content="<?php $this->options->authorImage ? $this->options->authorImage() : CDNUrl('assets/img/author.jpg'); ?>" />
 
     <!-- CSS Style -->
     <link async rel="stylesheet" href="<?php CDNUrl('css/mix.min.css'); ?>" />
@@ -116,7 +116,7 @@
 
             <div class="header-wrap">
                 <?php if (!empty($this->options->StyleSettings) && in_array('Banner', $this->options->StyleSettings)) : ?>
-                    <div class="site-config" style="background-image:url(<?php $this->options->backGroundImage ? $this->options->backGroundImage() : CDNUrl('assert/img/banner.jpg') ?>)">
+                    <div class="site-config" style="background-image:url(<?php $this->options->backGroundImage ? $this->options->backGroundImage() : CDNUrl('assets/img/banner.jpg') ?>)">
                         <div class="site-config-wrap">
                             <div class="animated">
                                 <h2 class="site-title"><?php $this->options->title() ?></h2>

@@ -53,7 +53,7 @@
 
 #comment-form textarea {
   box-sizing: border-box;
-  background: #f9f8f8 url('../../assert/img/comment-bg.png') right top no-repeat;
+  background: #f9f8f8 url('../../assets/img/comment-bg.png') right top no-repeat;
   background-size: 20%;
   outline: none;
   border: none;

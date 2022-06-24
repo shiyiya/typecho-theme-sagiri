@@ -20,7 +20,7 @@ function showThumb($obj)
     $src = '';
     $alt = '';
     $title = '';
-    $lazySrc = ' src="' . $themeUrl . '/assert/img/loader.gif' . '" class="lazy-loader" ';
+    $lazySrc = ' src="' . $themeUrl . '/assets/img/loader.gif' . '" class="lazy-loader" ';
 
     $fieldThumb = $obj->fields->thumb;
     if (!empty($fieldThumb) && isset($fieldThumb)) { // typecho custom field

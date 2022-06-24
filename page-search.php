@@ -23,7 +23,7 @@
                     $this->widget('Widget_Metas_Tag_Cloud', 'ignoreZeroCount=1&limit=30')->to($tags);
                     if (!$category->have() && !($tags->have())) :
                         ?>
-                        <img src="<?php CDNUrl('assert/img/search.gif'); ?>" placeholder="search" />
+                        <img src="<?php CDNUrl('assets/img/search.gif'); ?>" placeholder="search" />
                     <?php else : ?>
                         <?php if ($category->have()) : ?>
                             <hr title="categories" />
