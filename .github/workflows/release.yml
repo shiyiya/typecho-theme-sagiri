@@ -34,14 +34,23 @@ jobs:
 
       - name: cp php file
         run: |
-          mkdir -p build
+          rm -rf ./build
+          mkdir -p ./build
+          cp ./README.md ./build
           cp ./package.json ./build
           cp ./screenshot.png ./build
           cp ./*.php ./build
-          cp -r ./assert ./build
           cp -r ./component ./build
           cp -r ./libray ./build
-          cp -r ./js/lib ./build/js
+          cp -r ./assets ./build
+          mkdir ./build/js
+          mkdir ./build/util
+          cp -r ./js/lib ./build/js/lib
+          cp -r ./js/*.min.js  ./build/js
+          cp -r ./util/*.min.js ./build/util
+          cp -r ./util/**/*.min.js ./build/util
+          mkdir ./build/css
+          cp -r ./css/*.min.css  ./build/css
 
       - uses: google-github-actions/release-please-action@v3
         with:

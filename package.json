@@ -4,10 +4,12 @@
   "description": "Lovely theme for Typecho.",
   "main": "js/index.min.js",
   "files": [
+    "assets/",
     "js/*.min.js",
     "js/lib/",
+    "util/*.min.js",
+    "util/**/*.min.js",
     "css/*.min.css",
-    "assets/",
     "screenshot.png",
     "README.md"
   ],
