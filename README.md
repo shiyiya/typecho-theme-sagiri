@@ -3,7 +3,6 @@
 
 <p align="center">
   <a href="">Preview</a> |
-  <a href="https://shiyiya.github.io/typecho-theme-sagiri">Documentation</a> |
   <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Download</a> |
   <a href="./doc/README-CN.md">中文文档</a>
   <br />
@@ -23,7 +22,7 @@
 [![jsdelivr](https://data.jsdelivr.com/v1/package/npm/@bylin/typecho-theme-sagiri/badge)](https://www.jsdelivr.com/package/npm/@bylin/typecho-theme-sagiri)
 [![license](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
-## typecho-theme-sagiri - deprecated
+## ~~typecho-theme-sagiri~~ - deprecated
 
 [![npm](https://flat.badgen.net/npm/v/typecho-theme-sagiri/?color=fb3e44)](https://www.npmjs.com/package/typecho-theme-sagiri)
 [![jsdelivr](https://data.jsdelivr.com/v1/package/npm/typecho-theme-sagiri/badge)](https://www.jsdelivr.com/package/npm/typecho-theme-sagiri)
