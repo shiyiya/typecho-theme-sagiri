@@ -3,8 +3,6 @@ import ribbons from './ribbons'
 import liveTime from './livetime'
 import postScroll from './postscroll'
 
-const F = { ribbons, liveTime, postScroll }
-
 class Sagiri {
   constructor() {
     this.util = utils
@@ -15,9 +13,9 @@ class Sagiri {
         document.querySelector('.header-wrap').style.display !== '')
     this.hasSidebar = !!document.getElementById('sidebar')
 
-    this.F = F // theme Feature GLOBAL F
+    this.F = { ribbons, liveTime, postScroll } // theme Feature GLOBAL F
 
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', () => {
       // copy-right
       //DO NOT DELETE !
       console.info(
@@ -27,11 +25,12 @@ class Sagiri {
       )
       console.info(
         `%cTime used: ${Math.round(performance.now() * 100) / 100} ms | ${
-        performance.memory
-          ? `Memory used ${Math.round(
-            (performance.memory.usedJSHeapSize / 1024) * 100
-          ) / 100} K`
-          : ''
+          performance.memory
+            ? `Memory used ${
+                Math.round((performance.memory.usedJSHeapSize / 1024) * 100) /
+                100
+              } K`
+            : ''
         }`,
         'background: #40b3ec; color: #fff; padding:5px ;'
       )
