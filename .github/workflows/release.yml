@@ -29,7 +29,7 @@ jobs:
       - name: Build
         run: |
           npm i pnpm -g
-          pnpm i
+          pnpm install --no-frozen-lockfile
           pnpm run build
 
       - name: cp php file
