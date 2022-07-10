@@ -85,7 +85,9 @@
     <?php endif; ?>
 
     <!-- Custom Style -->
-    <?php _e($this->options->customCss) ?>
+    <?php if (!empty($this->options->customCss)) : ?>
+        <?php _e($this->options->customCss) ?>
+    <?php endif; ?>
 </head>
 
 <body>

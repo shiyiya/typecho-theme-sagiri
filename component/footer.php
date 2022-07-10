@@ -109,7 +109,9 @@
     <?php endif; ?>
 
     // Custom Javascript
-    <?php _e($this->options->customScript) ?>
+    <?php if (!empty($this->options->customScript)): ?>
+        <?php _e($this->options->customScript) ?>
+    <?php endif; ?>
 
     // server worker
     // if ('serviceWorker' in navigator) {
