@@ -1,6 +1,6 @@
 {
   "name": "@bylin/typecho-theme-sagiri",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Lovely theme for Typecho.",
   "main": "js/index.min.js",
   "files": [
