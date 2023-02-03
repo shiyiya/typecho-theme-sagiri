@@ -2,18 +2,11 @@
 <h3 align="center">As lovely as sagiri</h3>
 
 <p align="center">
-  <a href="">Preview</a> |
-  <a href="https://github.com/shiyiya/typecho-theme-sagiri/releases">Download</a> |
-  <a href="./doc/README-CN.md">中文文档</a>
-  <br />
-  <br />
-  <a href="https://github.com/shiyiya/typecho-theme-sagiri/tree/pjax">PJAX Version</a> |
-  <a href="./doc/changelog.md">Change Log</a> |
+  <a href="https://github.com/shiyiya/typecho-theme-sagiri/archive/refs/heads/master.zip">Download</a> |
+  <a href="./doc/README-CN.md">中文文档</a> |
   <a href="#donate">Donate</a>
   <br />
-  <br />
   <b>As lovely as sagiri, based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a></b>
-
 </p>
 
 ## @bylin/typecho-theme-sagiri
@@ -37,7 +30,7 @@
 
 ## Installation
 
-1. Download from `build.tgz` of [releases](https://github.com/shiyiya/typecho-theme-sagiri/releases) to your blog's theme folder.
+1. Download from [master](https://github.com/shiyiya/typecho-theme-sagiri/archive/refs/heads/master.zip) to your blog's theme folder and **change the folder name to typecho-theme-sagiri**.
 2. Enable it in the background management, if an error occurs, rename the folder to sagiri
 
 - If you need to update the theme, download the latest version, then overwrite the original file to complete the update, some new features need to be enabled in the background to take effect.
