@@ -10,7 +10,7 @@
 <?php $this->need('component/header.php'); ?>
 
 <div id="main" class="main" role="main">
-    <div class="main-inner clearfix">
+    <div class="main-inner">
         <div class="content-wrap">
             <?php $this->widget('Widget_Metas_Category_List')->to($categorys); ?>
             <?php if ($categorys->have()) : ?>
