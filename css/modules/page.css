@@ -98,9 +98,6 @@
 
 /* category */
 .category-post-wrap {
-  display: inline-block;
-  width: 33.33%;
-  box-sizing: border-box;
   padding: 10px;
 }
 
@@ -131,6 +128,8 @@
 }
 
 .category-post-item {
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
   animation: fade-in-top 0.3s 0.3s backwards;
 }
 
