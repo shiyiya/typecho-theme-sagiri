@@ -58,17 +58,30 @@
   box-sizing: border-box;
   padding: 0 12px;
   line-height: inherit;
-  transition-property: background-color;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
   color: #000;
   font-size: 16px;
   border-bottom: none;
+  transition: transform 0.2s;
 }
 
-.menu .menu-item a:hover {
-  text-shadow: 1px 1px 1px #000;
+.menu .menu-item a:active {
+  transform: scale(0.9);
+}
+
+.menu .menu-item a:hover::after,
+.menu .menu-item a.current::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+  content: '';
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  height: 70%;
+  border-radius: 5px;
 }
 
 @media (max-width: 991px) {
