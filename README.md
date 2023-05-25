@@ -9,13 +9,13 @@
   <b>As lovely as sagiri, based on <a href="https://github.com/DIYgod/hexo-theme-sagiri">hexo-theme-sagiri</a></b>
 </p>
 
-## @bylin/typecho-theme-sagiri
+### @bylin/typecho-theme-sagiri
 
 [![npm](https://flat.badgen.net/npm/v/@bylin/typecho-theme-sagiri/?color=fb3e44)](https://www.npmjs.com/package/@bylin/typecho-theme-sagiri)
 [![jsdelivr](https://data.jsdelivr.com/v1/package/npm/@bylin/typecho-theme-sagiri/badge)](https://www.jsdelivr.com/package/npm/@bylin/typecho-theme-sagiri)
 [![license](https://img.shields.io/badge/license-GPL%203-blue.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri/blob/master/LICENSE) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?style=flat-square)](https://github.com/shiyiya/typecho-theme-sagiri#donate)
 
-## ~~typecho-theme-sagiri~~ - deprecated
+### ~~typecho-theme-sagiri~~ - deprecated
 
 [![npm](https://flat.badgen.net/npm/v/typecho-theme-sagiri/?color=fb3e44)](https://www.npmjs.com/package/typecho-theme-sagiri)
 [![jsdelivr](https://data.jsdelivr.com/v1/package/npm/typecho-theme-sagiri/badge)](https://www.jsdelivr.com/package/npm/typecho-theme-sagiri)
@@ -75,11 +75,14 @@ Using [Prism.js](https://prismjs.com/) as code highlighting.
 - video Short Code
 
   ```markdown
-  - bilibili video
-    [bplayer](https://www.bilibili.com/video/av68718423)
+  - m3u8,flv,mdp,mp4,etc.
+    [vplayer](https://example.com/path/hls.m3u8)
 
   - local video
     [lplayer](/usr/uploads/2019/11/330578098.mp4)
+
+  - bilibili video
+    [bplayer](https://www.bilibili.com/video/av68718423)
 
   - youtube video
     [yplayer](https://www.youtube.com/watch?v=wv1bHjMGUBY)

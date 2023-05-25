@@ -35,7 +35,7 @@ function videoTagToHtml($content)
       'from' => '/<a href="(?:https?:\/\/)?(?:www\.)?(?:bilibili|b23)\.(?:tv|com)(?:\/video)?\/av(\d+).*?">bplayer<\/a>/',
       'to' =>
       '<div class="sagiri-video-wrapper bilibili embed-responsive embed-responsive-16by9">
-        <iframe src="//player.bilibili.com/player.html?aid=$1&cid=126106723&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+        <iframe src="//player.bilibili.com/player.html?aid=$1&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       </div>'
 
     ),
@@ -43,7 +43,7 @@ function videoTagToHtml($content)
       'from' => '/<a href="(?:https?:\/\/)?(?:www\.)?(?:bilibili|b23)\.(?:tv|com)(?:\/video)?\/(.*)?">bplayer<\/a>/',
       'to' =>
       '<div class="sagiri-video-wrapper bilibili embed-responsive embed-responsive-16by9">
-        <iframe src="//player.bilibili.com/player.html?bvid=$1&cid=126106723&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+        <iframe src="//player.bilibili.com/player.html?bvid=$1&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       </div>'
 
     ),
@@ -57,6 +57,13 @@ function videoTagToHtml($content)
       </div>'
     ),
     array(
+      'from' => '/<a href="(https?:\/\/.*(m3u8|mdp|flv|mp4|ogv|mov|webm).*)">vplayer<\/a>/',
+      'to' =>
+      '<div class="sagiri-video-wrapper oplayer">
+        <iframe src="https://ohplayer.netlify.app/oplay?src=$1" allowfullscreen="true"></iframe>
+      </div>'
+    ),
+    array(
       'from' => '/<a href="(?:https?:\/\/)?(?:www\.)?(?:youtube\/.com\/watch\?(?:\S*?&?v\=)|youtu\.be\/)([a-zA-Z0-9_-]{6,11})">yplayer<\/a>/',
       'to' =>
       '<div class="sagiri-video-wrapper youtube">
@@ -66,7 +73,7 @@ function videoTagToHtml($content)
   );
 
   foreach ($replaceVMap as $_ => $value) {
-    $content =   preg_replace(
+    $content = preg_replace(
       $value['from'],
       $value['to'],
       $content
