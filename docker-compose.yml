@@ -10,4 +10,4 @@ services:
     ports:
       - 8080:80
     volumes:
-      - /var/typecho:/app/usr
+      - ./:/app/usr/themes/sagiri
