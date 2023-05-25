@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  typecho:
+    image: joyqi/typecho:nightly-php7.4-apache
+    container_name: typecho-server
+    restart: always
+    environment:
+      - TYPECHO_SITE_URL=https://te.com
+    ports:
+      - 8080:80
+    volumes:
+      - /var/typecho:/app/usr
