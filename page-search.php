@@ -10,8 +10,8 @@
 <?php $this->need('component/header.php'); ?>
 
 <div id="main" class="main search-main" role="main">
-    <div class="main-inner clearfix">
-        <div class="content-wrap">
+    <div class="main-inner">
+        <div class="content-wrap is-search">
             <article class="post search-post" text-center itemscope itemtype="http://schema.org/BlogPosting">
                 <form id="search" method="post" action="<?php $this->options->siteUrl(); ?>" role="search">
                     <input type="text" id="s" name="s" class="text" placeholder="<?php _e('输入关键字搜索'); ?>" required />
@@ -51,11 +51,5 @@
         </div>
     </div>
 </div>
-
-<style>
-    .content-wrap {
-        float: none
-    }
-</style>
 
 <?php $this->need('component/footer.php'); ?>

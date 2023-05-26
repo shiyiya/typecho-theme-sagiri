@@ -11,7 +11,7 @@
 
 <div id="main" class="main" role="main">
     <div class="main-inner">
-        <div class="content-wrap">
+        <div class="content-wrap is-category">
             <?php $this->widget('Widget_Metas_Category_List')->to($categorys); ?>
             <?php if ($categorys->have()) : ?>
                 <?php while ($categorys->next()) : ?>
@@ -23,7 +23,7 @@
                     <?php endif; ?>
                     <?php $catlist = $this->widget('Widget_Archive@categorys_' . $categorys->mid, 'pageSize=10000&type=category', 'mid=' . $categorys->mid); ?>
                     <?php if ($catlist->have()) : ?>
-                        <div class="category-post-item clearfix">
+                        <div class="category-post-item">
                             <?php while ($catlist->next()) : ?>
                                 <div class="category-post-wrap ">
                                     <article class="category-post" text-center itemscope itemtype="http://schema.org/BlogPosting">
@@ -41,15 +41,5 @@
         </div>
     </div>
 </div>
-
-<style>
-    .content-wrap a {
-        border: none
-    }
-
-    .content-wrap {
-        float: none
-    }
-</style>
 
 <?php $this->need('component/footer.php'); ?>
