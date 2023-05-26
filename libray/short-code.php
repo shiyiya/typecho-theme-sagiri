@@ -64,7 +64,7 @@ function videoTagToHtml($content)
       </div>'
     ),
     array(
-      'from' => '/<a href="(?:https?:\/\/)?(?:www\.)?(?:youtube\/.com\/watch\?(?:\S*?&?v\=)|youtu\.be\/)([a-zA-Z0-9_-]{6,11})">yplayer<\/a>/',
+      'from' => '/<a href="(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?(?:\S*?&?v\=(.+))">yplayer<\/a>/',
       'to' =>
       '<div class="sagiri-video-wrapper youtube">
         <iframe src="https://www.youtube.com/embed/$1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

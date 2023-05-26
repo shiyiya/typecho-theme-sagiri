@@ -76,24 +76,25 @@ Using [Prism.js](https://prismjs.com/) as code highlighting.
 
   ```markdown
   - m3u8,flv,mdp,mp4,etc.
-    [vplayer](https://example.com/path/hls.m3u8)
+    [vplayer](https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8)
 
   - local video
     [lplayer](/usr/uploads/2019/11/330578098.mp4)
 
   - bilibili video
-    [bplayer](https://www.bilibili.com/video/av68718423)
+    [bplayer](https://www.bilibili.com/video/BV1UT411t77g)
 
   - youtube video
     [yplayer](https://www.youtube.com/watch?v=wv1bHjMGUBY)
   ```
 
-- ...
+  - ...
 
 ## Others
 
 - Index Post Card
   Home Article Overview The default maximum output is **Infinity** characters, you can manually add the truncation `<!-- more -->` control output.
+  ![more](image.png)
 
   ```markdown
   ## hello world
@@ -103,6 +104,8 @@ Using [Prism.js](https://prismjs.com/) as code highlighting.
   **I will not show it on the single page**
   ~~Can you find me?~~
   ```
+
+````
 
 - Article thumbnail
   weight of the thumbnail: Article field -> The first Upload Image of Article -> Image link in the article -> Random Image
@@ -154,3 +157,4 @@ If you feel like to help us build a better Sagiri, you can
 The All Html,CSS,JavaScript,and PHP files are licensed under the GNU General Public License v3:
 
 http://www.gnu.org/licenses/gpl-3.0.html
+````
