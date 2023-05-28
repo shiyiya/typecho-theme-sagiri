@@ -31,12 +31,17 @@
   height: 50px;
   line-height: 50px;
   margin: 0 20px 0 0;
+  vertical-align: bottom;
 }
 
 @media (max-width: 991px) {
   .menu li.menu-item {
     flex: 1;
     margin: 0;
+  }
+  .menu .menu-item a svg,
+  .menu .menu-item.search {
+    display: none;
   }
 }
 
@@ -57,7 +62,7 @@
 }
 
 .menu .menu-item a svg {
-  margin-right: 0.2em;
+  margin-right: 0.4em;
 }
 
 .menu .menu-item a:active {
