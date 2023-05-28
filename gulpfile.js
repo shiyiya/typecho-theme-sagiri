@@ -51,7 +51,7 @@ gulp.task('build-index', function () {
 
 gulp.task('build-css', function () {
   return gulp
-    .src(['css/mix.css', 'css/iconfont.css'])
+    .src(['css/mix.css'])
     .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(cleanCSS({ compatibility: 'ie9', level: 2 }))
     .pipe(autoprefixer({ cascade: false }))

@@ -53,7 +53,6 @@
 
     <!-- CSS Style -->
     <link async rel="stylesheet" href="<?php CDNUrl('css/mix.min.css'); ?>" />
-    <link async rel="stylesheet" type="text/css" href="<?php CDNUrl('css/iconfont.min.css'); ?>" />
 
     <!-- Prism -->
     <?php if (!empty($this->options->feature) && in_array('codeHighlight', $this->options->feature)) : ?>
@@ -97,21 +96,22 @@
                 <ul id='menu' class="menu">
                     <li class="menu-item">
                         <a <?php if ($this->is('index')) : ?> class="current" <?php endif; ?> href="<?php $this->options->siteUrl(); ?>">
-                            <?php _e('<i class="iconfont icon-Home"></i>');
-                            i18n('首页');
-                            ?>
+                            <?php i18n('首页'); ?>
                         </a>
                     </li>
                     <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                     <?php while ($pages->next()) : ?>
                         <li class="menu-item">
-                            <a <?php if ($this->is('page', $pages->slug)) : ?> class="current" <?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>" rel="section"><i class="iconfont icon-<?php $pages->title(); ?>"></i>
+                            <!-- svg use -->
+                            <a <?php if ($this->is('page', $pages->slug)) : ?> class="current" <?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>" rel="section">
                                 <?php i18n($pages->title); ?>
                             </a>
                         </li>
                     <?php endwhile; ?>
                     <li class="menu-item search">
-                        <a href="<?php $this->options->rewrite ?  $this->options->siteUrl('search.html') : $this->options->siteUrl('index.php/search.html') ?>" alt="<?php i18n('搜索') ?>" aria-label="<?php i18n('搜索') ?>"><i class="iconfont icon-search"></i></a>
+                        <a href="<?php $this->options->rewrite ?  $this->options->siteUrl('search.html') : $this->options->siteUrl('index.php/search.html') ?>" alt="<?php i18n('搜索') ?>" aria-label="<?php i18n('搜索') ?>">
+                            <svg width="1em" height="1em" viewBox="0 0 1024 1024" ><path d="M469.333333 768c-166.4 0-298.666667-132.266667-298.666666-298.666667s132.266667-298.666667 298.666666-298.666666 298.666667 132.266667 298.666667 298.666666-132.266667 298.666667-298.666667 298.666667z m0-85.333333c119.466667 0 213.333333-93.866667 213.333334-213.333334s-93.866667-213.333333-213.333334-213.333333-213.333333 93.866667-213.333333 213.333333 93.866667 213.333333 213.333333 213.333334z m251.733334 0l119.466666 119.466666-59.733333 59.733334-119.466667-119.466667 59.733334-59.733333z"></path></svg>
+                        </a>
                     </li>
                 </ul>
             </nav>

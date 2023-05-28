@@ -5,7 +5,7 @@
  *
  * @package Sagiri
  * @author shiyi
- * @version 1.3.6-unreleased
+ * @version 1.3.6
  * @link https://github.com/shiyiya/typecho-theme-sagiri
  */
 
@@ -21,7 +21,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 					<?php $this->need('component/post-card.php'); ?>
 				<?php endwhile; ?>
 			</section>
-			<?php $this->pageNav('<i class="iconfont icon-prev-m" aria-label="prev"></i>', '<i class="iconfont icon-next-m" aria-label="next"></i>', '2', '...'); ?>
+			<?php $this->pageNav('<', '>', '2', '...'); ?>
 		</div>
 		<?php if (isPc()) $this->need('component/sidebar.php'); ?>
 	</div>

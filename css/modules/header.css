@@ -39,21 +39,19 @@
 }
 
 @media (max-width: 991px) {
-  .menu li.menu-item .iconfont {
-    display: none;
-  }
-}
-
-@media (max-width: 991px) {
   .menu li.menu-item {
     flex: 1;
     -webkit-box-flex: 1;
     margin: 0;
+    text-align: center;
   }
 }
 
 .menu .menu-item a {
-  display: block;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
   position: relative;
   box-sizing: border-box;
   padding: 0 12px;
@@ -63,6 +61,10 @@
   border-bottom: none;
   transition: transform 0.2s;
   text-align: center;
+}
+
+.menu .menu-item a svg {
+  margin-right: 0.2em;
 }
 
 .menu .menu-item a:active {

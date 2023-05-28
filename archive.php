@@ -22,7 +22,7 @@
                 </article>
             <?php endif; ?>
 
-            <?php $this->pageNav('<i class="iconfont icon-prev-m"></i>', '<i class="iconfont icon-next-m"></i>', '2', '...'); ?>
+            <?php $this->pageNav('<', '>', '2', '...'); ?>
         </div>
     </div>
 </div>

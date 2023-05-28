@@ -1,7 +1,7 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 <footer id="footer" role="contentinfo">
-    <p><i class="iconfont icon-view"></i> <?php echo _i18n('浏览量') . ' : ' . siteViewer(); ?></p>
+    <p><?php echo _i18n('浏览量') . ' : ' . siteViewer(); ?></p>
     <p id="live-time"></p>
     <p>
         &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
@@ -27,8 +27,9 @@
 
 
 <div id="back-actions">
-    <span class="back-top back"><i class="iconfont icon-prev-m"></i></span>
-    <!-- <span class="back-bottom back"><i class="iconfont icon-next-m"></i></span> -->
+    <span class="back">
+        <svg width="1em" height="1em" viewBox="0 0 24 24"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6l-6 6z" fill="currentColor"></path></svg>
+    </span>
 </div>
 
 <div class="img-view">

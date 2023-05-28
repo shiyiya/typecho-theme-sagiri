@@ -50,10 +50,6 @@
   border-radius: 3px;
 }
 
-.page-navigator li a .iconfont {
-  font-size: 14px;
-}
-
 .page-navigator li a:hover,
 .loading-more-post:hover,
 .page-navigator li.current a {
@@ -218,8 +214,8 @@ img[alt='sticker'] {
 
 #back-actions {
   position: fixed;
-  right: 0px;
-  bottom: 20%;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom));
   line-height: 1;
 }
 
@@ -230,10 +226,15 @@ img[alt='sticker'] {
 }
 
 #back-actions .back {
-  display: block;
-  padding: 15px;
-  border: #dee5e7 1px solid;
-  transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  background-color: #f6f8f8;
+  width: 2.25em;
+  height: 2.25em;
+  color: #00a7e0;
+  margin-top: 0.5em;
+  background: #fff;
+  border-radius: 66%;
+  transition: transform 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px #7878781a, 0 5px 20px #78787833;
 }

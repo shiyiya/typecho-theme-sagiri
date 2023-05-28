@@ -26,8 +26,14 @@
             <?php endif; ?>
             <div itemprop="keywords" class="tags"><?php $this->tags('', true, ''); ?></div>
             <footer class="post-footer">
-                <div class="post-nav-next post-nav-item"><i class="iconfont icon-prev-m"></i><?php $this->thePrev('%s', _i18n('没有了')); ?></div>
-                <div class="post-nav-prev post-nav-item"><?php $this->theNext('%s', _i18n('没有了')); ?><i class="iconfont icon-next-m"></i></div>
+                <div class="post-nav-next post-nav-item">
+                    <svg r180 width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M6.23 20.23L8 22l10-10L8 2L6.23 3.77L14.46 12z"></path></svg>
+                    <?php $this->thePrev('%s', _i18n('没有了')); ?>
+                </div>
+                <div class="post-nav-prev post-nav-item">
+                    <?php $this->theNext('%s', _i18n('没有了')); ?>
+                    <svg width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M6.23 20.23L8 22l10-10L8 2L6.23 3.77L14.46 12z"></path></svg>
+                </div>
             </footer>
             </article>
             <?php $this->need('component/comments.php'); ?>

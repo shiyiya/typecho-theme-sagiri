@@ -15,7 +15,9 @@
             <article class="post search-post" text-center itemscope itemtype="http://schema.org/BlogPosting">
                 <form id="search" method="post" action="<?php $this->options->siteUrl(); ?>" role="search">
                     <input type="text" id="s" name="s" class="text" placeholder="<?php _e('输入关键字搜索'); ?>" required />
-                    <button type="submit" class="submit"><i class="iconfont icon-search"></i></button>
+                    <button type="submit" class="submit">
+                        <svg width="100%" height="100%" viewBox="0 0 1024 1024" ><path d="M469.333333 768c-166.4 0-298.666667-132.266667-298.666666-298.666667s132.266667-298.666667 298.666666-298.666666 298.666667 132.266667 298.666667 298.666666-132.266667 298.666667-298.666667 298.666667z m0-85.333333c119.466667 0 213.333333-93.866667 213.333334-213.333334s-93.866667-213.333333-213.333334-213.333333-213.333333 93.866667-213.333333 213.333333 93.866667 213.333333 213.333333 213.333334z m251.733334 0l119.466666 119.466666-59.733333 59.733334-119.466667-119.466667 59.733334-59.733333z"></path></svg>
+                    </button>
                 </form>
                 <div class="search-placeholder">
                     <?php

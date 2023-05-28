@@ -146,7 +146,7 @@ function getBrowser($agent)
         $safari_vern = explode('.', $str1[1]);
         $browserVersion = 'Safari ' . $safari_vern[0];
     } else {
-        $browserVersion = '404 Browser';
+        $browserVersion = '';
     }
     echo $browserVersion;
 }
@@ -154,21 +154,21 @@ function getBrowser($agent)
 function getOs($agent)
 {
     if (preg_match('/win/i', $agent)) {
-        $OSVersion = '<i class="iconfont icon-windows"></i>';
+        $OSVersion = 'Windows';
     } else if (preg_match('/android/i', $agent)) {
-        $OSVersion = '<i class="iconfont icon-android"></i>';
+        $OSVersion = 'Android';
     } else if (preg_match('/ubuntu/i', $agent)) {
-        $OSVersion = '<i class="iconfont icon-linux"></i>';
+        $OSVersion = 'Ubuntu';
     } else if (preg_match('/linux/i', $agent)) {
-        $OSVersion = '<i class="iconfont icon-linux"></i>';
+        $OSVersion = 'Linux';
     } else if (preg_match('/iPhone/i', $agent)) {
-        $OSVersion = '<i class="iconfont icon-iphone"></i> < 11';
+        $OSVersion = 'IPhone';
     } else if (preg_match('/mac/i', $agent)) {
-        $OSVersion = '<i class="iconfont icon-mac"></i>';
+        $OSVersion = 'Mac';
     } else if (preg_match('/fusion/i', $agent)) {
-        $OSVersion = '<i class="iconfont icon-android"></i>';
+        $OSVersion = 'Fusion';
     } else {
-        $OSVersion = '404 OS';
+        $OSVersion = '';
     }
     echo $OSVersion;
 }

@@ -91,8 +91,7 @@
   margin: 0 auto;
   max-width: 150px;
   max-height: 150px;
-  border: none;
-  padding: 0;
+  border-radius: 50%;
 }
 
 .site-author-name {
@@ -113,18 +112,35 @@
 }
 
 .author-social-links a {
-  width: 50px;
-  box-shadow: 0 5px 25px rgb(64, 179, 236, 0.15);
-  height: 50px;
+  width: 35px;
+  height: 35px;
   align-items: center;
   border-radius: 50%;
   align-content: center;
   display: flex;
   justify-content: center;
   border: none;
+  font-size: 21px;
+  fill: #fff;
 }
 
-.author-social-links a:hover i {
+.author-social-links a[title='RSS'] {
+  background-color: rgb(236, 158, 60);
+}
+
+.author-social-links a[title='Github'] {
+  background-color: rgb(37, 41, 46);
+}
+
+.author-social-links a[title='Twitter'] {
+  background-color: rgb(2, 164, 237);
+}
+
+.author-social-links a[title='QQ'] {
+  background-color: rgb(18, 183, 245);
+}
+
+.author-social-links a:hover svg {
   display: block;
   animation: jello-horizontal 0.9s both;
 }

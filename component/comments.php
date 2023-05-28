@@ -83,7 +83,7 @@
 
     <?php if ($comments->have()) : ?>
         <?php $comments->listComments(); ?>
-        <?php $comments->pageNav('<i class="iconfont icon-prev-m"></i>', '<i class="iconfont icon-next-m"></i>'); ?>
+        <?php $comments->pageNav('<', '>'); ?>
     <?php endif; ?>
 
 </div>

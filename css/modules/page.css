@@ -11,7 +11,7 @@
   padding: 0 40px 0 18px;
   color: #313131;
   border: 1px solid rgba(184, 197, 214, 0.2);
-  border-radius: 20px;
+  border-radius: 8px;
   outline: none;
   font-size: 14px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
@@ -20,11 +20,13 @@
 .search-post input#s:hover,
 .search-post input#s:active,
 .search-post input#s:focus {
-  border: 1px solid rgba(184, 197, 214, 1);
-  box-shadow: 0 1px 4px #dee5e7;
+  border: 2px solid #26c9ff;
+  box-shadow: 0 2px 4px #dee5e7;
 }
 
 .search-post button[type='submit'] {
+  width: 30px;
+  height: 100%;
   position: absolute;
   right: 10px;
   border: none;
@@ -32,10 +34,6 @@
   outline: none;
   top: 20px;
   transform: translateY(-50%);
-}
-
-.search-post button[type='submit'] .iconfont.icon-search {
-  font-size: 20px;
 }
 
 .search-placeholder {
