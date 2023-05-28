@@ -17,8 +17,6 @@
   padding-left: 0;
   margin: 0 auto;
   width: 1110px;
-  position: relative;
-  text-align: left;
 }
 
 @media (max-width: 991px) {
@@ -29,30 +27,25 @@
 }
 
 .menu li.menu-item {
-  border: 0;
   display: inline-block;
   height: 50px;
   line-height: 50px;
-  position: relative;
-  text-align: left;
   margin: 0 20px 0 0;
 }
 
 @media (max-width: 991px) {
   .menu li.menu-item {
     flex: 1;
-    -webkit-box-flex: 1;
     margin: 0;
-    text-align: center;
   }
 }
 
 .menu .menu-item a {
+  position: relative;
   width: 100%;
   height: 100%;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  position: relative;
   box-sizing: border-box;
   padding: 0 12px;
   line-height: inherit;
@@ -60,7 +53,7 @@
   font-size: 16px;
   border-bottom: none;
   transition: transform 0.2s;
-  text-align: center;
+  justify-content: center;
 }
 
 .menu .menu-item a svg {
@@ -96,13 +89,6 @@
 
 .menu .menu-item.search {
   float: right;
-  margin: 0 0 0 20px;
-}
-
-@media (max-width: 991px) {
-  .menu .menu-item.search {
-    display: none;
-  }
 }
 
 .header-wrap {

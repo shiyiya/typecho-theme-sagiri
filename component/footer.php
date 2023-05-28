@@ -5,8 +5,8 @@
     <p id="live-time"></p>
     <p>
         &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
-        <?php _e('Power By  <a href="http://www.typecho.org">Typecho</a> '); ?>.
-        <?php _e('<a href="https://github.com/shiyiya/typecho-theme-sagiri" rel="external nofollow">Theme</a> by <a href="https://github.com/shiyiya">Shiyi</a>'); ?>
+        <?php _e('Power By  <a href="http://www.typecho.org" target="_blank">Typecho</a> '); ?>.
+        <?php _e('<a href="https://github.com/shiyiya/typecho-theme-sagiri" rel="external nofollow" target="_blank">Theme</a> by <a href="https://github.com/shiyiya" target="_blank">Shiyi</a>'); ?>
     </p>
 </footer>
 

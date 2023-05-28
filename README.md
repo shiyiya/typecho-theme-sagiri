@@ -30,8 +30,8 @@
 
 ## Installation
 
-1. Download from [master](https://github.com/shiyiya/typecho-theme-sagiri/archive/refs/heads/master.zip) to your blog's theme folder and **change the folder name to typecho-theme-sagiri**.
-2. Enable it in the background management, if an error occurs, rename the folder to sagiri
+1. Download from [release](https://github.com/shiyiya/typecho-theme-sagiri/releases) to your blog's theme folder and **change the folder name to sagiri**.
+2. Enable it in the background management.
 
 - If you need to update the theme, download the latest version, then overwrite the original file to complete the update, some new features need to be enabled in the background to take effect.
 
