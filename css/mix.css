@@ -8,7 +8,3 @@
 @import './modules/comment.css';
 @import './modules/page.css';
 @import './modules/short-code.css';
-
-[r180] {
-  transform: rotate(180deg);
-}

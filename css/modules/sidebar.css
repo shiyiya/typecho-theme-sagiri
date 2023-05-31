@@ -120,8 +120,12 @@
   display: flex;
   justify-content: center;
   border: none;
-  font-size: 21px;
   fill: #fff;
+}
+
+.author-social-links a svg {
+  width: 24px;
+  height: 24px;
 }
 
 .author-social-links a[title='RSS'] {
@@ -138,6 +142,11 @@
 
 .author-social-links a[title='QQ'] {
   background-color: rgb(18, 183, 245);
+}
+
+.author-social-links a[title='mode'],
+.author-social-links a[title='sun'] {
+  background-color: rgb(227, 227, 227);
 }
 
 .author-social-links a:hover svg {
