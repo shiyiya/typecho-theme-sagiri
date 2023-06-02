@@ -46,9 +46,18 @@
   }
 }
 
+#comment-form input,
+#comment-form textarea {
+  border: 1px solid transparent;
+  transition: all 0.25s ease-in-out 0s;
+}
+
 #comment-form input:focus,
 #comment-form textarea:focus {
-  background-color: #f3f1f1;
+  background-color: #fff;
+  border: 1px solid rgba(38, 201, 255, 1);
+  box-shadow: 0 0 0 0.2rem rgba(38, 201, 255, 0.25);
+  box-sizing: border-box;
 }
 
 #comment-form textarea {
@@ -56,11 +65,10 @@
   background: #f9f8f8 url('../../assets/img/comment-bg.png') right top no-repeat;
   background-size: 20%;
   outline: none;
-  border: none;
   height: 150px;
   width: 100%;
   resize: none;
-  border-radius: 9px;
+  border-radius: 4px;
   padding: 10px;
 }
 

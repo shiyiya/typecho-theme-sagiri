@@ -15,13 +15,12 @@
   outline: none;
   font-size: 14px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease-in-out 0s;
 }
 
-.search-post input#s:hover,
-.search-post input#s:active,
 .search-post input#s:focus {
-  border: 2px solid #26c9ff;
-  box-shadow: 0 2px 4px #dee5e7;
+  border: 1px solid rgba(38, 201, 255, 1);
+  box-shadow: 0 0 0 0.2rem rgba(38, 201, 255, 0.25);
 }
 
 .search-post button[type='submit'] {
