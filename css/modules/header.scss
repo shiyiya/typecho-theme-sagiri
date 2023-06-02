@@ -1,0 +1,225 @@
+.no-banner {
+  .header-wrap {
+    height: 70px;
+  }
+
+  .site-nav {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 2px 2px rgba(172, 172, 172, 0.4);
+  }
+
+  .sidebar-inner.affix {
+    top: 70px;
+  }
+
+  @media (max-width: 991px) {
+    .content-wrap {
+      min-height: 720px;
+    }
+  }
+}
+
+.site-nav {
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.6s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 2px 2px rgba(172, 172, 172, 0.4);
+  }
+}
+
+.menu {
+  padding-left: 0;
+  margin: 0 auto;
+  width: 1110px;
+
+  .menu-item {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 20px 0 0;
+    vertical-align: bottom;
+
+    &.search {
+      float: right;
+    }
+
+    a {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 0 12px;
+      line-height: inherit;
+      color: #000;
+      font-size: 16px;
+      border-bottom: none;
+      transition: transform 0.2s;
+      justify-content: center;
+
+      &:hover::after,
+      &.current::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        display: block;
+        content: '';
+        width: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        height: 70%;
+        border-radius: 5px;
+      }
+
+      svg {
+        margin-right: 0.4em;
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .menu {
+    display: flex;
+    width: 100%;
+  }
+
+  .menu .menu-item {
+    flex: 1;
+    margin: 0;
+  }
+  .menu .menu-item a svg,
+  .menu .menu-item.search {
+    display: none;
+  }
+
+  .menu .menu-item a:hover::after,
+  .menu .menu-item a.current::after {
+    width: 80%;
+  }
+}
+
+@media (max-width: 991px) {
+  .header-wrap {
+    width: auto;
+    height: 200px;
+
+    .site-config {
+      height: 200px;
+      background-attachment: initial;
+
+      .site-title {
+        font-size: 30px;
+      }
+
+      .site-meta {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.header-wrap {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  padding: 0;
+  box-shadow: initial;
+  border-radius: initial;
+
+  .site-config {
+    line-height: 1;
+    height: 350px;
+    width: 100%;
+    background-color: rgba(64, 179, 236, 0.1);
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 0 #ff3f1a, -1px -1px 0 #00a7e0;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    .animated {
+      position: relative;
+    }
+
+    .animated::before,
+    .animated::after {
+      content: '';
+      position: absolute;
+      height: 13px;
+      background-color: #000;
+      transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+      opacity: 0;
+    }
+
+    .animated::before {
+      background-color: #26c9ff;
+      width: 0;
+      top: -15px;
+      box-shadow: 0 0 0 #26c9ff;
+      right: 13%;
+      border-radius: 20px 10px 10px 20px;
+      transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+    }
+
+    .animated::after {
+      position: absolute;
+      background-color: red;
+      width: 0;
+      height: 13px;
+      bottom: -20px;
+      box-shadow: 0 0 0 red;
+      left: 13%;
+      border-radius: 10px 20px 20px 10px;
+      z-index: 1000;
+      transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+    }
+
+    &:hover .animated::before,
+    &:hover .animated::after {
+      width: 87%;
+      opacity: 0.7;
+    }
+
+    &:hover .animated::before {
+      box-shadow: 0 0 30px #26c9ff;
+    }
+    &:hover .animated::after {
+      box-shadow: 0 0 30px red;
+    }
+
+    .site-title {
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      font-family: 'Telefon Black', Sans-Serif;
+      font-size: 48px;
+    }
+
+    .site-meta {
+      font-size: 32px;
+      font-weight: lighter;
+      opacity: 0.9;
+    }
+  }
+}

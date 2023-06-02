@@ -1,7 +1,7 @@
 @import './modules/reset.css';
 @import './modules/global.scss';
 @import './modules/animations.css';
-@import './modules/header.css';
+@import './modules/header.scss';
 @import './modules/index.css';
 @import './modules/post.css';
 @import './modules/sidebar.css';

@@ -10,22 +10,6 @@
     </p>
 </footer>
 
-<?php if ($this->options->PWA == 'able') : ?>
-    <div class="tool-bar">
-        <div class="tool-bar-inner">
-            <div class="social-share">
-            </div>
-            <div class="site-action">
-                <span class="action-item"><a href="javascript:history.back(-1)">←</a></span>
-                <span class="action-item"><a href="javascript:history.forward(1)">→</a></span>
-                <span class="action-item"><a href="#footer">↓</a></span>
-                <span class="action-item"><a href="#">↑</a></span>
-            </div>
-        </div>
-    </div>
-<?php endif; ?>
-
-
 <div id="back-actions">
     <span class="back">
         <svg width="1em" height="1em" viewBox="0 0 24 24"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6l-6 6z" fill="currentColor"></path></svg>

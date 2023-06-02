@@ -1,10 +1,8 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 <!DOCTYPE HTML>
-<html class="no-js" lang="<?php i18nLang() ?>">
-
+<html lang="<?php i18nLang() ?>">
 <head>
-
     <meta charset="<?php $this->options->charset(); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
@@ -15,7 +13,6 @@
                 'tag' => _i18n('标签 %s 下的文章'),
                 'author' => _i18n('%s 发布的文章')
             ), '', ' - '); ?><?php $this->options->title(); ?></title>
-
     <meta name="author" content="<?php $this->author() ?>" />
     <?php $this->header('generator=&pingback=&xmlrpc=&wlw='); ?>
     <link rel="icon" href="<?php $this->options->fav ? $this->options->fav() : CDNUrl('assets/img/favicon.jpg'); ?>" />
@@ -60,29 +57,6 @@
         <link href="<?php CDNUrl('js/lib/prism/prism-toolbar.css'); ?>" rel="stylesheet" />
     <?php endif; ?>
 
-    <?php if (empty($this->options->StyleSettings) || !in_array('Banner', $this->options->StyleSettings)) : ?>
-        <style>
-            .header-wrap {
-                height: 70px;
-            }
-
-            .site-nav {
-                background: rgba(255, 255, 255, .8);
-                box-shadow: 0 0 2px 2px rgba(172, 172, 172, .4);
-            }
-
-            .sidebar-inner.affix {
-                top: 70px;
-            }
-
-            @media (max-width: 991px) {
-                .content-wrap {
-                    min-height: 720px;
-                }
-            }
-        </style>
-    <?php endif; ?>
-
     <svg style="display:none">
         <defs>
             <g id="start-page"><svg viewBox="0 0 1024 1024"><path d="M512 165c191.6 0 347 155.3 347 347S703.6 859 512 859 165 703.6 165 512s155.4-347 347-347m0-100.4C265.3 64.6 64.6 265.3 64.6 512S265.3 959.4 512 959.4 959.4 758.7 959.4 512 758.7 64.6 512 64.6z"></path><path d="M512 709.1c-34.4 0-66.7-10.2-90.7-28.6-22-16.9-26.2-48.4-9.3-70.4 16.9-22 48.5-26.1 70.4-9.3 5 3.8 15.4 7.9 29.6 7.9 14.2 0 24.6-4.1 29.6-7.9 22-16.9 53.5-12.7 70.4 9.3 16.9 22 12.7 53.5-9.3 70.4-24.1 18.4-56.3 28.6-90.7 28.6z"></path><path d="M346.8 352.3c-27.7 0-50.2 22.5-50.2 50.2v47.2c0 27.7 22.5 50.2 50.2 50.2s50.2-22.5 50.2-50.2v-47.2c0.1-27.7-22.4-50.2-50.2-50.2zM677.2 352.3c-27.7 0-50.2 22.5-50.2 50.2v47.2c0 27.7 22.5 50.2 50.2 50.2s50.2-22.5 50.2-50.2v-47.2c0-27.7-22.5-50.2-50.2-50.2z"></path></svg></g>
@@ -103,7 +77,7 @@
 </head>
 
 <body>
-    <div id="root">
+    <div id="root" class="<?php (empty($this->options->StyleSettings) || !in_array('Banner', $this->options->StyleSettings)) ? _e('no-banner') : _e('banner') ?>">
         <header id="header">
             <nav role="navigation" class="site-nav">
                 <ul id='menu' class="menu">

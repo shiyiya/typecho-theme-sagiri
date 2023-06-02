@@ -105,19 +105,6 @@ function themeConfig($form)
         _i18n('代码高亮')
     );
     $form->addInput($codeHighlightTheme);
-
-
-    /* $PWA = new Typecho_Widget_Helper_Form_Element_Radio(
-    'PWA',
-    array(
-      'able' => _t('启用'),
-      'disable' => _t('禁用'),
-    ),
-    'disable',
-    _t('桌面支持'),
-    _t('默认禁止')
-  );
-  $form->addInput($PWA); */
 }
 
 function themeInit($widget)

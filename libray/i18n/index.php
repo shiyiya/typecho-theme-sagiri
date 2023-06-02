@@ -89,6 +89,8 @@ class I18n
       }
 
       $this->loaded = true;
+    }else{
+      $this->lang = Typecho_Widget::widget('Widget_Options')->lang;
     }
   }
 
@@ -188,5 +190,5 @@ function i18nLang()
 {
   $lang = I18n::Instance()->lang;
   $htmlLang = mb_split('_', $lang, 2)[0];
-  echo  $htmlLang;
+  echo $htmlLang;
 }

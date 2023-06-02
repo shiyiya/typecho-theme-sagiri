@@ -60,33 +60,6 @@
 
 /* page-navigator end */
 
-/*.tool-bar {
-  transition: transform 0.6s;
-  position: fixed;
-  z-index: 2;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 48px;
-  line-height: 48px;
-  border-top: 1px solid #e0e0e0;
-  background-color: #fff;
-}
-.tool-bar-inner {
-  max-width: 990px;
-  padding: 0px 10px;
-  margin: 0 auto;
-}
-.site-action {
-  float: right;
-}
-.site-action a {
-  font-size: 14px;
-  padding: 12px;
-  cursor: pointer;
-  color: #313131;
-  border: 0;
-} */
 #footer {
   background: #fff;
   padding: 20px 0px;
