@@ -1,5 +1,6 @@
 @import './modules/reset.css';
 @import './modules/global.scss';
+@import './modules/dark.scss';
 @import './modules/animations.css';
 @import './modules/header.css';
 @import './modules/index.css';

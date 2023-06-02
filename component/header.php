@@ -1,7 +1,7 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 <!DOCTYPE HTML>
-<html class="no-js" lang="<?php i18nLang() ?>">
+<html class="dark" lang="<?php i18nLang() ?>">
 
 <head>
 

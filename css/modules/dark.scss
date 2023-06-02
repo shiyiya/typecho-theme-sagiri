@@ -1,0 +1,84 @@
+html.dark body {
+  --cardBackground: rgb(22, 27, 34);
+  --borderColor: #e5e7eb;
+  --textColor: rgba(255, 255, 255, 0.9);
+  --scaffoldBackgroundColor: rgb(13, 17, 23);
+  --navBackground: rgb(22, 27, 34, 0.7);
+  // --navBackgroundShadow: 0 0 2px 2px rgba(172, 172, 172, .4)
+
+  color: var(--textColor);
+  background-color: var(--scaffoldBackgroundColor);
+
+  .comment-content {
+    color: var(--textColor);
+  }
+
+  a,
+  .menu .menu-item a {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  a:hover {
+    color: hsla(0, 0%, 100%, 0.7);
+  }
+
+  .sheen {
+    background-color: var(--scaffoldBackgroundColor);
+
+    &:hover {
+      border-bottom-color: $primary_color;
+    }
+  }
+
+  .site-nav {
+    background-color: var(--navBackground);
+
+    &:hover {
+      background-color: rgb(22, 27, 34);
+    }
+  }
+
+  .menu .menu-item a:hover::after,
+  .menu .menu-item a.current::after {
+    background-color: hsla(0, 0%, 100%, 0.08);
+    color: hsla(0, 0%, 100%, 0.7);
+  }
+
+  .post-meta > span:nth-child(2) {
+    color: var(--textColor);
+  }
+
+  .post-footer {
+    border-top: 1px solid rgb(51, 51, 53);
+  }
+
+  .sider-item,
+  .post,
+  #footer,
+  #comment-form,
+  #comment-form textarea,
+  .timeline-wrap,
+  .category-post,
+  input#s,
+  #comment-form,
+  .comment-parent {
+    color: var(--textColor);
+    background-color: var(--cardBackground);
+    border: 1px solid rgb(51, 51, 53);
+  }
+
+  .post-button a {
+    color: $primary_color;
+  }
+
+  #footer a {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  #footer a,
+  .post-button a {
+    &:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  }
+}

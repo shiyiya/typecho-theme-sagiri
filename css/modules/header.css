@@ -9,8 +9,13 @@
 }
 
 .site-nav:hover {
-  background: rgba(255, 255, 255, 0.8) !important;
-  box-shadow: 0 0 2px 2px rgba(172, 172, 172, 0.4) !important;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 2px 2px rgba(172, 172, 172, 0.4);
+}
+
+.site-nav.affix {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 2px 2px rgba(172, 172, 172, 0.4);
 }
 
 .menu {
@@ -63,6 +68,7 @@
 
 .menu .menu-item a svg {
   margin-right: 0.4em;
+  fill: #fff;
 }
 
 .menu .menu-item a:active {

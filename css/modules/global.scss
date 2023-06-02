@@ -74,7 +74,7 @@
 html,
 body,
 #root {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   scroll-behavior: auto;
 }
@@ -97,9 +97,9 @@ body {
   margin: 0;
 }
 
-$primary_color: '#26c9ff'; // 蓝
+$primary_color: #26c9ff; // 蓝
 
-$primary_color2: '#dc143c'; // 红
+$primary_color2: #dc143c; // 红
 
 [r180] {
   transform: rotate(180deg);

@@ -76,7 +76,7 @@ gulp.task('start', function () {
   gulp.watch(['./*', './**/*']).on('change', reload)
 
   gulp.watch(
-    ['css/!(*.min).css', 'css/**/!(*.min).css'],
+    ['css/!(*.min).css', 'css/**/!(*.min).css', 'css/**/!(*.min).scss'],
     gulp.parallel(['build-css'])
   )
 
