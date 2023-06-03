@@ -27,27 +27,36 @@
 
 /* page-navigator */
 .page-navigator {
-  display: block;
   margin: 20px 0;
-  border-top: none;
   background: #fff;
   padding: 15px 0;
   border-radius: 5px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 1px rgba(143, 168, 191, 0.35);
 }
 
 .page-navigator li {
   list-style: none;
   display: inline-block;
-  margin: 5px 0;
+  margin: 0 10px;
 }
 
 .page-navigator li a {
   box-sizing: border-box;
-  margin: 0 10px;
-  padding: 4px 12px;
   border: 1px solid #c9c7c7;
   border-radius: 3px;
+  width: 35px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-navigator li a svg {
+  width: 1em;
+  height: 1em;
 }
 
 .page-navigator li a:hover,
@@ -56,6 +65,7 @@
   background-color: #00a7e0;
   color: #fff;
   border-color: transparent;
+  fill: #fff;
 }
 
 /* page-navigator end */

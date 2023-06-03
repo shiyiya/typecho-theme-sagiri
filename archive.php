@@ -22,7 +22,7 @@
                 </article>
             <?php endif; ?>
 
-            <?php $this->pageNav('<', '>', '2', '...'); ?>
+            <?php $this->pageNav('<svg r180><use xlink:href="#previous" /></svg>', '<svg><use xlink:href="#previous" /></svg>', '2', '...'); ?>
         </div>
     </div>
 </div>

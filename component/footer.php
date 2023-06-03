@@ -63,6 +63,7 @@
     <script src="<?php CDNUrl('js/lib/OwO/OwO.min.js'); ?>"></script>
 
     <script>
+    if( document.getElementsByClassName('OwO')[0]){
         new OwO({
             logo: 'OωO',
             container: document.getElementsByClassName('OwO')[0],
@@ -72,6 +73,7 @@
             width: '100%',
             maxHeight: '250px'
         })
+    }
     </script>
 <?php endif; ?>
 

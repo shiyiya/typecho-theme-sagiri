@@ -21,7 +21,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 					<?php $this->need('component/post-card.php'); ?>
 				<?php endwhile; ?>
 			</section>
-			<?php $this->pageNav('<', '>', '2', '...'); ?>
+			<?php $this->pageNav('<svg r180><use xlink:href="#previous" /></svg>', '<svg><use xlink:href="#previous" /></svg>', '2', '...'); ?>
 		</div>
 		<?php if (isPc()) $this->need('component/sidebar.php'); ?>
 	</div>

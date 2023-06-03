@@ -6,8 +6,7 @@ export default function postScroll() {
   function scroll() {
     var scrollTop =
       document.body.scrollTop || document.documentElement.scrollTop
-    var clientHeight =
-      document.body.clientHeight || document.documentElement.clientHeight
+    var clientHeight = window.innerHeight
     var scrollHeight =
       document.body.scrollHeight || document.documentElement.scrollHeight
 

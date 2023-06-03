@@ -5,8 +5,7 @@ var agent = navigator.userAgent
 function flag() {
   var scrollHeight =
     document.body.scrollHeight || document.documentElement.scrollHeight
-  var clientHeight =
-    document.body.clientHeight || document.documentElement.clientHeight
+  var clientHeight = window.innerHeight
   var canScrollTop = scrollHeight - clientHeight
   return canScrollTop > clientHeight / 2
 }
@@ -14,12 +13,11 @@ function flag() {
 if (/.*Firefox.*/.test(agent)) {
   document.addEventListener(
     'DOMMouseScroll',
-    function(e) {
-      e = e || window.event
-      var detail = e.detail
-
+    function (e) {
       if (flag()) {
-        if (detail > 0 && scrollTop > 0) {
+        e = e || window.event
+        var detail = e.detail
+        if (detail > 0) {
           siteNav.style.transform = 'translateY(-100%)'
         } else {
           siteNav.style.transform = 'translateY(0%)'
@@ -29,10 +27,10 @@ if (/.*Firefox.*/.test(agent)) {
     { passive: true }
   )
 } else {
-  document.onmousewheel = function(e) {
-    e = e || window.event
-    var wheelDelta = e.wheelDelta
+  document.onmousewheel = function (e) {
     if (flag()) {
+      e = e || window.event
+      var wheelDelta = e.wheelDelta
       if (wheelDelta > 0) {
         siteNav.style.transform = 'translateY(0%)'
       } else {
