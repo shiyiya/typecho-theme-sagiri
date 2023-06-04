@@ -1,6 +1,6 @@
-const backToTop = function() {
+const backToTop = function () {
   var __isMoving = false
-  return function() {
+  return function () {
     if (__isMoving) return
     const start = window.pageYOffset
     let i = 0
@@ -20,10 +20,5 @@ const backToTop = function() {
     }, 16.7)
   }
 }
-
-Sagiri.hasSidebar &&
-  document
-    .querySelector('.site-author-name')
-    .addEventListener('click', backToTop())
 
 document.querySelector('#back-actions').addEventListener('click', backToTop())

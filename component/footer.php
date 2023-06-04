@@ -12,7 +12,7 @@
 
 <div id="back-actions">
     <span class="back">
-        <svg width="1em" height="1em" viewBox="0 0 24 24"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6l-6 6z" fill="currentColor"></path></svg>
+        <svg width="1em" height="1em" viewBox="0 0 24 24"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6l-6 6z"></path></svg>
     </span>
 </div>
 

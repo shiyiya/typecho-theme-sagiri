@@ -18,9 +18,9 @@ if (/.*Firefox.*/.test(agent)) {
         e = e || window.event
         var detail = e.detail
         if (detail > 0) {
-          siteNav.style.transform = 'translateY(-100%)'
+          siteNav?.classList.add('hidden')
         } else {
-          siteNav.style.transform = 'translateY(0%)'
+          siteNav?.classList.remove('hidden')
         }
       }
     },
@@ -32,9 +32,9 @@ if (/.*Firefox.*/.test(agent)) {
       e = e || window.event
       var wheelDelta = e.wheelDelta
       if (wheelDelta > 0) {
-        siteNav.style.transform = 'translateY(0%)'
+        siteNav?.classList.remove('hidden')
       } else {
-        siteNav.style.transform = 'translateY(-100%)'
+        siteNav?.classList.add('hidden')
       }
     }
   }

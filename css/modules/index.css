@@ -199,25 +199,39 @@ img[alt='sticker'] {
   position: fixed;
   right: 1rem;
   bottom: calc(1rem + env(safe-area-inset-bottom));
-  line-height: 1;
+  bottom: 50px;
+  right: 10px;
+  opacity: 0;
+  transition: all 0.2;
 }
 
-@media (min-width: 991px) {
-  #back-actions {
-    display: none;
-  }
+#back-actions.affix {
+  opacity: 1;
 }
 
 #back-actions .back {
   width: 2.25em;
   height: 2.25em;
-  color: #00a7e0;
+  fill: #00a7e0;
   margin-top: 0.5em;
   background: #fff;
-  border-radius: 66%;
+  border-radius: 5px;
   transition: transform 0.3s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 10px #7878781a, 0 5px 20px #78787833;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#back-actions .back:hover {
+  fill: #fff;
+  background-color: #4cb5f5;
+}
+
+@media (min-width: 992px) {
+  #back-actions {
+    right: calc(50% - 448px);
+  }
 }
