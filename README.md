@@ -24,8 +24,9 @@
 
 ![shot](https://cdn.jsdelivr.net/npm/typecho-theme-sagiri@1.1.4/screenshot.png)
 
+- https://www.longdaiquan.cn/
 - https://blog.imlazy.ink:233
-- https://mianao.info
+- ~~https://mianao.info~~
 - ···
 
 ## Installation
@@ -104,8 +105,6 @@ Using [Prism.js](https://prismjs.com/) as code highlighting.
   **I will not show it on the single page**
   ~~Can you find me?~~
   ```
-
-````
 
 - Article thumbnail
   weight of the thumbnail: Article field -> The first Upload Image of Article -> Image link in the article -> Random Image
