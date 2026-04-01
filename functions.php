@@ -60,6 +60,7 @@ function themeConfig($form)
             'codeHighlight' => _i18n('代码高亮'),
             'commentEmoji' => _i18n('评论表情'),
             'lazyImg' => _i18n('文章内图片懒加载'),
+            'admonition' => _i18n('Admonition 提示块'),
             'pjax' => _i18n('instantclick 支持'),
         ),
         array(),

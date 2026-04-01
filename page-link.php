@@ -17,7 +17,7 @@
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <h1 class="post-title" itemprop="name headline"><a class="post-title-link" itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
         <div id="link" class="post-content" itemprop="articleBody">
-          <?php $this->content(); ?>
+          <?php replaceTag($this->content); ?>
         </div>
       </article>
       <?php $this->need('component/comments.php'); ?>

@@ -13,6 +13,10 @@ function replaceTag($content)
 
   $content = videoTagToHtml($content);
 
+  if ($themeFeature !== null && in_array('admonition', $themeFeature)) {
+    $content = admonitionTagToHtml($content);
+  }
+
   echo $content;
 }
 
@@ -81,6 +85,34 @@ function videoTagToHtml($content)
   }
 
   return $content;
+}
+
+function admonitionTagToHtml($content)
+{
+  $titleMap = array(
+    'NOTE' => 'Note',
+    'TIP' => 'Tip',
+    'IMPORTANT' => 'Important',
+    'WARNING' => 'Warning',
+    'CAUTION' => 'Caution'
+  );
+
+  return preg_replace_callback('/<blockquote>\s*(.*?)\s*<\/blockquote>/is', function ($matches) use ($titleMap) {
+    $innerHtml = $matches[1];
+    if (!preg_match('/^\s*(?:<p>\s*)?\[!\s*(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\s*\]/is', $innerHtml, $alertMatches)) {
+      return $matches[0];
+    }
+
+    $type = strtoupper($alertMatches[1]);
+    $bodyHtml = preg_replace('/^\s*(?:<p>\s*)?\[!\s*(?:NOTE|TIP|IMPORTANT|WARNING|CAUTION)\s*\]\s*(?:<br\s*\/?>\s*)?/is', '', $innerHtml, 1);
+    $bodyHtml = preg_replace('/^\s*<\/p>\s*/is', '', $bodyHtml, 1);
+
+    if (trim($bodyHtml) === '') {
+      $bodyHtml = '<p></p>';
+    }
+
+    return '<div class="admonition admonition-' . strtolower($type) . '"><p class="admonition-title">' . $titleMap[$type] . '</p>' . $bodyHtml . '</div>';
+  }, $content);
 }
 
 
