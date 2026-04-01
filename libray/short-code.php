@@ -107,10 +107,6 @@ function admonitionTagToHtml($content)
     $bodyHtml = preg_replace('/^\s*(?:<p>\s*)?\[!\s*(?:NOTE|TIP|IMPORTANT|WARNING|CAUTION)\s*\]\s*(?:<br\s*\/?>\s*)?/is', '', $innerHtml, 1);
     $bodyHtml = preg_replace('/^\s*<\/p>\s*/is', '', $bodyHtml, 1);
 
-    if (trim($bodyHtml) === '') {
-      $bodyHtml = '<p></p>';
-    }
-
     return '<div class="admonition admonition-' . strtolower($type) . '"><p class="admonition-title">' . $titleMap[$type] . '</p>' . $bodyHtml . '</div>';
   }, $content);
 }

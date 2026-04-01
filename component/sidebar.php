@@ -18,20 +18,7 @@
             <?php endif; ?>
             <section class="site-overview-wrap <?php if ($this->is('index') || $this->is('page'))  _e('sidebar-section-active'); ?>" text-center>
                 <div class="site-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                    <?php
-                    $siteAvatarUrl = '';
-                    $customAvatar = trim((string)$this->options->authorImage);
-                    $avatarEmail = trim((string)$this->options->siteAvatarEmail);
-                    if ($customAvatar !== '') {
-                        $siteAvatarUrl = $customAvatar;
-                    } elseif ($avatarEmail !== '') {
-                        $siteAvatarUrl = Typecho_Common::gravatarUrl($avatarEmail, 150, '', '', true);
-                    }
-
-                    if ($siteAvatarUrl === '') {
-                        $siteAvatarUrl = rtrim($this->options->themeUrl, '/') . '/assets/img/author.jpg';
-                    }
-                    ?>
+                    <?php $siteAvatarUrl = getSiteAvatarUrl($this->options); ?>
                     <img src="<?php _e($siteAvatarUrl); ?>" alt="author" class="site-author-image" itemprop="image">
                     <p class="site-author-name"><?php $this->user->screenName(); ?></p>
                 </div>

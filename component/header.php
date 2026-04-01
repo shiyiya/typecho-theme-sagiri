@@ -46,20 +46,7 @@
     <!-- QQ Share -->
     <meta itemprop="name" content="<?php $this->options->title() ?>" />
     <meta itemprop="description" name="description" content=" <?php $this->description() ?>" />
-    <?php
-    $siteAvatarUrl = '';
-    $customAvatar = trim((string)$this->options->authorImage);
-    $avatarEmail = trim((string)$this->options->siteAvatarEmail);
-    if ($customAvatar !== '') {
-        $siteAvatarUrl = $customAvatar;
-    } elseif ($avatarEmail !== '') {
-        $siteAvatarUrl = Typecho_Common::gravatarUrl($avatarEmail, 150, '', '', true);
-    }
-
-    if ($siteAvatarUrl === '') {
-        $siteAvatarUrl = rtrim($this->options->themeUrl, '/') . '/assets/img/author.jpg';
-    }
-    ?>
+    <?php $siteAvatarUrl = getSiteAvatarUrl($this->options); ?>
     <meta itemprop="image" content="<?php _e($siteAvatarUrl); ?>" />
 
     <!-- CSS Style -->
