@@ -69,6 +69,25 @@ function showThumb($obj)
     }
 }
 
+function getSiteAvatarUrl($options = null)
+{
+    if ($options === null) {
+        $options = Typecho_Widget::widget('Widget_Options');
+    }
+
+    $customAvatar = trim((string) $options->authorImage);
+    if ($customAvatar !== '') {
+        return $customAvatar;
+    }
+
+    $avatarEmail = trim((string) $options->siteAvatarEmail);
+    if ($avatarEmail !== '') {
+        return Typecho_Common::gravatarUrl($avatarEmail, 150, '', '', true);
+    }
+
+    return rtrim($options->themeUrl, '/') . '/assets/img/author.jpg';
+}
+
 function getBrowser($agent)
 {
     if (preg_match('/MSIE\s([^\s|;]+)/i', $agent, $regs)) {

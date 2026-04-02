@@ -46,7 +46,8 @@
     <!-- QQ Share -->
     <meta itemprop="name" content="<?php $this->options->title() ?>" />
     <meta itemprop="description" name="description" content=" <?php $this->description() ?>" />
-    <meta itemprop="image" content="<?php $this->options->authorImage ? $this->options->authorImage() : CDNUrl('assets/img/author.jpg'); ?>" />
+    <?php $siteAvatarUrl = getSiteAvatarUrl($this->options); ?>
+    <meta itemprop="image" content="<?php _e($siteAvatarUrl); ?>" />
 
     <!-- CSS Style -->
     <link async rel="stylesheet" href="<?php CDNUrl('css/mix.min.css'); ?>" />

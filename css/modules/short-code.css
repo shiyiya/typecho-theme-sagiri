@@ -4,3 +4,51 @@
   aspect-ratio: 16/9;
   border: none;
 }
+
+.admonition {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  border-left: 3px solid #38a3fd;
+  background: #eef6fd;
+  border-radius: 4px;
+  color: #555;
+}
+
+.admonition .admonition-title {
+  margin: 0 0 8px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.admonition > :last-child {
+  margin-bottom: 0;
+}
+
+.admonition > :not(.admonition-title):first-of-type {
+  margin-top: 0;
+}
+
+.admonition-note {
+  border-left-color: #38a3fd;
+  background: #eef6fd;
+}
+
+.admonition-tip {
+  border-left-color: #4caf50;
+  background: #edf8ee;
+}
+
+.admonition-important {
+  border-left-color: #7c4dff;
+  background: #f3eeff;
+}
+
+.admonition-warning {
+  border-left-color: #ff9800;
+  background: #fff6e9;
+}
+
+.admonition-caution {
+  border-left-color: #f44336;
+  background: #ffeeee;
+}
